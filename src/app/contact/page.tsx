@@ -21,7 +21,7 @@ export default function ContactPage() {
               <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/20 bg-brand-lime/5 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
                 Pick a Time That Works
               </div>
-              <h1 className="text-4xl md:text-6xl font-serif text-white font-black mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif text-white font-black mb-6 leading-tight">
                 Ready to <span className="text-brand-lime block">Dominate Your Local Market?</span>
               </h1>
               <p className="text-lg text-blue-100/70 font-sans leading-relaxed mb-8">
@@ -29,29 +29,29 @@ export default function ContactPage() {
               </p>
               
               <div className="space-y-6 mb-12">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-lime/10 flex items-center justify-center shrink-0">
-                    <svg className="w-6 h-6 text-brand-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-center gap-4 w-full">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-lime/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-brand-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div>
-                    <p className="text-sm text-blue-200/50 font-bold uppercase tracking-wider">Email Us Directly</p>
-                    <a href="mailto:mahabubkabir@multiprodigital.com" className="text-lg text-white font-medium hover:text-brand-lime transition-colors">
+                  <div className="min-w-0 pr-2">
+                    <p className="text-xs sm:text-sm text-blue-200/50 font-bold uppercase tracking-wider">Email Us Directly</p>
+                    <a href="mailto:mahabubkabir@multiprodigital.com" className="text-base sm:text-lg text-white font-medium hover:text-brand-lime transition-colors block break-all leading-tight mt-1">
                       mahabubkabir@multiprodigital.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-lime/10 flex items-center justify-center shrink-0">
-                    <svg className="w-6 h-6 text-brand-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-center gap-4 w-full">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-lime/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 text-brand-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div>
-                    <p className="text-sm text-blue-200/50 font-bold uppercase tracking-wider">Average Response Time</p>
-                    <span className="text-lg text-white font-medium">Under 2 hours</span>
+                  <div className="min-w-0">
+                    <p className="text-xs sm:text-sm text-blue-200/50 font-bold uppercase tracking-wider">Average Response Time</p>
+                    <span className="text-base sm:text-lg text-white font-medium block mt-1">Under 2 hours</span>
                   </div>
                 </div>
               </div>
@@ -183,10 +183,10 @@ export default function ContactPage() {
                 <div className="flex justify-center pt-2">
                   <button 
                     type="submit"
-                    className="relative group overflow-hidden w-full max-w-sm px-8 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white whitespace-nowrap text-nowrap select-none touch-manipulation mx-auto"
+                    className="relative group overflow-hidden w-full max-w-sm px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto"
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-3">
+                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
                       Get Your Free Audit
                       <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </span>
