@@ -1,12 +1,48 @@
-import React from 'react';
-import Link from 'next/link';
+'use client'
 
-export const metadata = {
-  title: 'Contact Us | MultiPro Digital',
-  description: 'Get started scaling your moving company. Schedule a call or request a free Website and Google Business Profile Audit today.',
-};
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function ContactPage() {
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSuccess(true);
+        // Small delay for the user to see the success state before redirecting
+        setTimeout(() => {
+          router.push('/success');
+        }, 1500);
+      } else {
+        setError(result.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <div className="bg-[#0b1f38] min-h-screen pt-32 pb-24 relative overflow-hidden mt-20">
@@ -101,100 +137,127 @@ export default function ContactPage() {
               </p>
             </div>
            
-           <div className="bg-white/70 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,1)] border border-brand-lime/20">
-             <form action="https://formsubmit.co/mahabubkabir@multiprodigital.com" method="POST" className="space-y-5">
-                {/* Anti-spam honeypot */}
-                <input type="text" name="_honey" style={{ display: 'none' }} />
-                
-                {/* Success Redirect - Update this with your final domain later */}
-                <input type="hidden" name="_next" value="https://multiprodigital.com/success" />
-                <input type="hidden" name="_subject" value="New Website Audit Request!" />
-                
-                <div className="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Name <span className="text-[#1da4ff]">*</span></label>
-                    <input 
-                      type="text" 
-                      name="Name"
-                      placeholder="John Doe"
-                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Company Name <span className="text-[#1da4ff]">*</span></label>
-                    <input 
-                      type="text" 
-                      name="Company"
-                      placeholder="Elite Movers LLC"
-                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Email Address <span className="text-[#1da4ff]">*</span></label>
-                    <input 
-                      type="email" 
-                      name="Email"
-                      placeholder="john@elitemovers.com"
-                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Website URL <span className="text-[#1da4ff]">*</span></label>
-                    <input 
-                      type="text" 
-                      name="Website"
-                      placeholder="https://yourwebsite.com"
-                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-slate-900 text-sm font-bold mb-1.5">Current Monthly Moves</label>
-                  <div className="relative">
-                    <select name="Monthly Moves" defaultValue="" className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 appearance-none focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm">
-                      <option value="" disabled className="text-slate-500">Select an option...</option>
-                      <option value="0-10">0 - 10 Moves</option>
-                      <option value="11-30">11 - 30 Moves</option>
-                      <option value="31-100">31 - 100 Moves</option>
-                      <option value="100+">100+ Moves</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+           <div className="bg-white/70 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,1)] border border-brand-lime/20 relative">
+             {isSuccess ? (
+               <div className="py-20 text-center animate-in fade-in zoom-in duration-500">
+                 <div className="w-20 h-20 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
+                   <svg className="w-10 h-10 text-[#1A365D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                 </div>
+                 <h3 className="text-3xl font-serif font-black text-[#0b1f38] mb-4">Request Received!</h3>
+                 <p className="text-slate-600 text-lg">Redirecting you to our success page...</p>
+               </div>
+             ) : (
+               <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Anti-spam honeypot */}
+                  <input type="text" name="_honey" style={{ display: 'none' }} />
+                  
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Name <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="text" 
+                        name="Name"
+                        placeholder="John Doe"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Company Name <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="text" 
+                        name="Company"
+                        placeholder="Elite Movers LLC"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
                     </div>
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Biggest Challenge</label>
-                  <textarea 
-                    name="Biggest Challenge"
-                    rows={3}
-                    className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm resize-none"
-                  ></textarea>
-                </div>
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Email Address <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="email" 
+                        name="Email"
+                        placeholder="john@elitemovers.com"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website URL <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="text" 
+                        name="Website"
+                        placeholder="https://yourwebsite.com"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                  </div>
 
-                <div className="flex justify-center pt-2">
-                  <button 
-                    type="submit"
-                    className="relative group overflow-hidden w-full max-w-sm px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto"
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
-                      Get Your Free Audit
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                    <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />
-                  </button>
-                </div>
-             </form>
+                  <div>
+                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Current Monthly Moves</label>
+                    <div className="relative">
+                      <select name="Monthly Moves" defaultValue="" disabled={isSubmitting} className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 appearance-none focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm">
+                        <option value="" disabled className="text-slate-500">Select an option...</option>
+                        <option value="0-10">0 - 10 Moves</option>
+                        <option value="11-30">11 - 30 Moves</option>
+                        <option value="31-100">31 - 100 Moves</option>
+                        <option value="100+">100+ Moves</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Biggest Challenge</label>
+                    <textarea 
+                      name="Biggest Challenge"
+                      rows={3}
+                      disabled={isSubmitting}
+                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm resize-none"
+                    ></textarea>
+                  </div>
+
+                  {error && (
+                    <div className="p-4 rounded-lg bg-red-50 text-red-600 text-sm font-medium border border-red-100 animate-shake">
+                      {error}
+                    </div>
+                  )}
+
+                  <div className="flex justify-center pt-2">
+                    <button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`relative group overflow-hidden w-full max-w-sm px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:rotate-0`}
+                      style={{ WebkitTapHighlightColor: 'transparent' }}
+                    >
+                      <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin h-5 w-5 text-[#1A365D]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            Get Your Free Audit
+                            <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                          </>
+                        )}
+                      </span>
+                      {!isSubmitting && <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />}
+                    </button>
+                  </div>
+               </form>
+             )}
            </div>
         </div>
       </section>
