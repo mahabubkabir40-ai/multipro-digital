@@ -108,45 +108,44 @@ export default function Portfolio() {
               key={result.id} 
               className="group relative rounded-2xl overflow-hidden bg-slate-950 border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-brand-lime/50 hover:shadow-[0_20px_40px_-15px_rgba(154,251,22,0.15)] active:-translate-y-1 active:border-brand-lime/30 select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
+              onTouchStart={() => {}}
             >
-              <div className="relative aspect-square md:aspect-[4/3] w-full overflow-hidden">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
                 {/* Image */}
                 <img 
                   src={result.image} 
                   alt={`Local SEO and Google Maps ranking case study for ${result.name}`} 
-                  className="w-full h-full object-cover transform scale-110 md:scale-100 md:group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover transform scale-100 group-hover:scale-110 group-active:scale-110 transition-transform duration-700 ease-out"
                 />
 
-                {/* Mobile: Full Dark Overlay. Desktop: Gradient default, Full dark on hover */}
-                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 hidden md:block md:group-hover:opacity-0 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-slate-950/80 md:bg-slate-950/90 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 z-20 md:backdrop-blur-[2px]" />
+                {/* Hover Reveal Overlays */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 group-hover:opacity-0 group-active:opacity-0 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 z-20 backdrop-blur-[2px]" />
 
-                {/* Info Hierarchy (Title & Category) */}
-                {/* Mobile: Always Top. Desktop: Bottom, then translates up on hover */}
-                <div className="absolute left-6 right-6 z-30 transition-all duration-500 top-6 md:top-auto md:bottom-6 md:group-hover:-translate-y-44">
-                  <span className="text-brand-lime text-[11px] font-black uppercase tracking-widest drop-shadow-md">
+                {/* Info Hierarchy */}
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 sm:right-6 right-4 z-30 transition-transform duration-500 group-hover:-translate-y-40 sm:group-hover:-translate-y-44 group-active:-translate-y-40 sm:group-active:-translate-y-44">
+                  <span className="text-brand-lime text-[10px] sm:text-[11px] font-black uppercase tracking-widest drop-shadow-md">
                     {result.category[1] || result.category[0]}
                   </span>
-                  <h3 className="text-white font-serif font-bold text-2xl sm:text-3xl md:text-2xl mt-1 drop-shadow-md leading-snug">
+                  <h3 className="text-white font-serif font-bold text-xl sm:text-2xl mt-1 drop-shadow-md leading-snug">
                     {result.name}
                   </h3>
                 </div>
 
-                {/* Content (Metrics & CTA) */}
-                {/* Mobile: Always Visible at Bottom. Desktop: Hidden at Bottom, translates up on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-30 translate-y-0 opacity-100 md:translate-y-8 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 md:delay-75 flex flex-col justify-end h-full md:h-auto pointer-events-auto">
+                {/* Hover Reveal Content (Metrics & CTA) */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-30 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-active:translate-y-0 group-active:opacity-100 transition-all duration-500 delay-75 flex flex-col justify-end">
                   
-                  <div className="mb-6 border-l-[3px] border-brand-lime pl-4 mt-auto md:mt-0">
+                  <div className="mb-4 sm:mb-6 border-l-[3px] border-brand-lime pl-3 sm:pl-4">
                     <div className="flex items-end gap-2 text-brand-lime">
-                      <span className="text-4xl sm:text-5xl font-black leading-none tracking-tighter">{result.metric}</span>
+                      <span className="text-3xl sm:text-5xl font-black leading-none tracking-tighter">{result.metric}</span>
                     </div>
-                    <p className="text-white font-bold text-sm sm:text-base tracking-wide mt-2">{result.metricLabel}</p>
-                    <p className="text-white/60 text-xs sm:text-sm font-sans mt-1">{result.timeframe}</p>
+                    <p className="text-white font-bold text-xs sm:text-base tracking-wide mt-1 sm:mt-2">{result.metricLabel}</p>
+                    <p className="text-white/60 text-xs sm:text-sm font-sans mt-0.5 sm:mt-1">{result.timeframe}</p>
                   </div>
 
                   <Link 
                     href="/contact#audit-form"
-                    className="relative group/btn overflow-hidden w-full py-3 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.05] active:scale-90 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
+                    className="relative group/btn overflow-hidden w-full py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.05] active:scale-90 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
