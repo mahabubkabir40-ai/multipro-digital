@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [activeCardId, setActiveCardId] = useState<number | null>(null);
 
   const filters = ['All', 'Google Business Profile Ranking', 'Website Ranking'];
 
@@ -103,27 +104,31 @@ export default function Portfolio() {
 
         {/* Premium Editorial Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredResults.map((result) => (
+          {filteredResults.map((result) => {
+            const isActive = activeCardId === result.id;
+            return (
             <div 
               key={result.id} 
-              className="group relative rounded-2xl overflow-hidden bg-slate-950 border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-brand-lime/50 hover:shadow-[0_20px_40px_-15px_rgba(154,251,22,0.15)] active:-translate-y-1 active:border-brand-lime/30 select-none touch-manipulation"
+              className={`relative rounded-2xl overflow-hidden bg-slate-950 border transition-all duration-500 shadow-2xl select-none touch-manipulation cursor-pointer ${isActive ? 'border-brand-lime/50 shadow-[0_20px_40px_-15px_rgba(154,251,22,0.15)] -translate-y-2' : 'border-white/10'}`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
-              onTouchStart={() => {}}
+              onClick={() => setActiveCardId(isActive ? null : result.id)}
+              onMouseEnter={() => setActiveCardId(result.id)}
+              onMouseLeave={() => setActiveCardId(null)}
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 {/* Image */}
                 <img 
                   src={result.image} 
                   alt={`Local SEO and Google Maps ranking case study for ${result.name}`} 
-                  className="w-full h-full object-cover transform scale-100 group-hover:scale-110 group-active:scale-110 transition-transform duration-700 ease-out"
+                  className={`w-full h-full object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
                 />
 
                 {/* Hover Reveal Overlays */}
-                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 group-hover:opacity-0 group-active:opacity-0 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-slate-950/90 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 z-20 backdrop-blur-[2px]" />
+                <div className={`absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
+                <div className={`absolute inset-0 bg-slate-950/90 transition-opacity duration-500 z-20 backdrop-blur-[2px] ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
 
                 {/* Info Hierarchy */}
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 sm:right-6 right-4 z-30 transition-transform duration-500 group-hover:-translate-y-40 sm:group-hover:-translate-y-44 group-active:-translate-y-40 sm:group-active:-translate-y-44">
+                <div className={`absolute bottom-4 left-4 sm:bottom-6 sm:left-6 sm:right-6 right-4 z-30 transition-transform duration-500 ${isActive ? '-translate-y-40 sm:-translate-y-44' : 'translate-y-0'}`}>
                   <span className="text-brand-lime text-[10px] sm:text-[11px] font-black uppercase tracking-widest drop-shadow-md">
                     {result.category[1] || result.category[0]}
                   </span>
@@ -133,7 +138,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Hover Reveal Content (Metrics & CTA) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-30 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-active:translate-y-0 group-active:opacity-100 transition-all duration-500 delay-75 flex flex-col justify-end">
+                <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-30 transition-all duration-500 delay-75 flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-8 opacity-0 pointer-events-none'}`}>
                   
                   <div className="mb-4 sm:mb-6 border-l-[3px] border-brand-lime pl-3 sm:pl-4">
                     <div className="flex items-end gap-2 text-brand-lime">
@@ -145,6 +150,7 @@ export default function Portfolio() {
 
                   <Link 
                     href="/contact#audit-form"
+                    onClick={(e) => e.stopPropagation()}
                     className="relative group/btn overflow-hidden w-full py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.05] active:scale-90 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                   >
@@ -156,7 +162,8 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
