@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,9 +9,11 @@ export default function Footer() {
           
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-6 group">
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - SEO and Marketing for Movers" 
+                width={120}
+                height={48}
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90"
               />
             </Link>

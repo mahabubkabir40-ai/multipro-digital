@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,9 +14,12 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - Leading Marketing Agency for Moving Companies" 
+                width={120}
+                height={64}
+                priority
                 className="h-14 md:h-16 w-auto object-contain transition-all duration-500 ease-out 
                            group-hover:scale-[1.08] group-hover:-rotate-3 
                            filter drop-shadow-sm group-hover:drop-shadow-[0_0_15px_rgba(154,251,22,0.6)]"

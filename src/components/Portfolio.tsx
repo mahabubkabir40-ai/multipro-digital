@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -117,10 +118,12 @@ export default function Portfolio() {
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 {/* Image */}
-                <img 
+                <Image 
                   src={result.image} 
                   alt={`Local SEO and Google Maps ranking case study for ${result.name}`} 
-                  className={`w-full h-full object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className={`object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
                 />
 
                 {/* Hover Reveal Overlays */}

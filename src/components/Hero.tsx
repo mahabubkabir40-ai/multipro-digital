@@ -2,28 +2,51 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     setMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
     <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-40 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
-      {/* 10/10 Premium Animated Background (Ken Burns Effect) */}
+      {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
-        {/* Premium Background Video */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
-        >
-          <source src="/moving-truck.mp4" type="video/mp4" />
-        </video>
+        {/* Only load high-res video on Desktop to save mobile LCP */}
+        {mounted && !isMobile && (
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
+          >
+            <source src="/moving-truck.mp4" type="video/mp4" />
+          </video>
+        )}
+        
+        {/* High-quality static fallback for Mobile/Tablet */}
+        {(isMobile || !mounted) && (
+          <div className="absolute inset-0 opacity-40 mix-blend-overlay">
+            <Image 
+              src="/blog-cover-movers.png" 
+              alt="Premium moving truck background" 
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
 
         {/* Navy Overlay to ensure Emerald & White text pops */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900/40" />
@@ -32,7 +55,7 @@ export default function Hero() {
         {/* Subtle Tech Blueprint Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] mix-blend-overlay" />
 
-        {/* Animated Glow Orbs - Soothed Ambiance */}
+        {/* Animated Glow Orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[128px] mix-blend-screen" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[128px] mix-blend-screen" />
       </div>
@@ -74,14 +97,20 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl">
             <div className="flex -space-x-4">
               {[
-                "/avatars/Adrian-owner.jpg.webp",
-                "/avatars/David-Owner.jpg.webp",
-                "/avatars/Garret-owner.jpg.webp",
-                "/avatars/Mountain%20Movers.png",
-                "/avatars/Sunshine%20Movers.png"
-              ].map((src, index) => (
+                { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Owner" },
+                { src: "/avatars/David-Owner.jpg.webp", alt: "David - Moving Company Owner" },
+                { src: "/avatars/Garret-owner.jpg.webp", alt: "Garret - Moving Company Owner" },
+                { src: "/avatars/Mountain%20Movers.png", alt: "Mountain Movers Success Partner" },
+                { src: "/avatars/Sunshine%20Movers.png", alt: "Sunshine Movers Success Partner" }
+              ].map((avatar, index) => (
                 <div key={index} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
-                  <img src={src} alt="Success portrait of a moving company owner partnered with MultiPro Digital" className="w-full h-full object-cover" />
+                  <Image 
+                    src={avatar.src} 
+                    alt={avatar.alt} 
+                    width={48} 
+                    height={48} 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
               ))}
             </div>
