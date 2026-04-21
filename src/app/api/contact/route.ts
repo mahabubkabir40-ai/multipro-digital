@@ -38,6 +38,7 @@ export async function POST(request: Request) {
     `;
 
     // Send the email using Resend
+    const { data, error } = await resend.emails.send({
       from: 'Multipro Digital <leads@multiprodigital.com>',
       to: "mahabubkabir@multiprodigital.com",
       subject: subject,
