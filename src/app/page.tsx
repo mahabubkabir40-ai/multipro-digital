@@ -12,27 +12,27 @@ export default function Home() {
     <main className="flex flex-col flex-1">
       <Hero />
         
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <ProblemSolution />
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <HowItWorks />
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <Portfolio />
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <Testimonials />
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <CTA />
         </ScrollReveal>
 
-        <ScrollReveal>
+        <ScrollReveal className="optimized-section">
           <FAQ />
       </ScrollReveal>
     </main>

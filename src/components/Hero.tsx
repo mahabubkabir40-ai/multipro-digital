@@ -43,8 +43,8 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            quality={75}
+            sizes="(max-width: 640px) 480px, (max-width: 1024px) 1024px, 100vw"
+            quality={55} // Aggressive compression to save ~400KB
           />
         </div>
 
@@ -110,8 +110,8 @@ export default function Hero() {
                     width={48} 
                     height={48} 
                     className="w-full h-full object-cover"
-                    priority={index < 3} // Only prioritize first few for LCP help if they are visible
-                    quality={60} // Aggressive compression for these small avatars
+                    loading="lazy" // Force lazy load to clear pipe for LCP
+                    quality={40} // Aggressive compression for these small avatars
                   />
                 </div>
               ))}
