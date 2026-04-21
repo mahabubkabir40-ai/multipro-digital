@@ -48,17 +48,18 @@ export async function POST(request: Request) {
       console.error("Resend Error:", error);
       return NextResponse.json({ 
         success: false, 
-        error: "Our secure email engine is temporarily unavailable. We have been notified." 
+        error: `Resend API Error: ${error.message || 'Unknown'}` 
       }, { status: 500 });
     }
 
     return NextResponse.json({ success: true, message: "Lead sent successfully" });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error("API Connection Error:", error);
+    const hasKey = !!process.env.RESEND_API_KEY;
     return NextResponse.json({ 
       success: false, 
-      error: "Technical error connecting to the mail server. Please try again." 
+      error: `Internal Server Error: ${error.message || 'Unknown error'}. Key Present: ${hasKey}` 
     }, { status: 500 });
   }
 }
