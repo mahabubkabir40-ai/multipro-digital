@@ -38,9 +38,8 @@ export async function POST(request: Request) {
     `;
 
     // Send the email using Resend
-    const { data, error } = await resend.emails.send({
-      from: 'Multipro Digital <onboarding@resend.dev>', // Note: This is for development. Once your domain is verified, use your own email.
-      to: ['mahabubkabir40@gmail.com'],
+      from: 'Multipro Digital <leads@multiprodigital.com>',
+      to: "mahabubkabir@multiprodigital.com",
       subject: subject,
       html: emailHtml,
       replyTo: cleanData.email as string,
