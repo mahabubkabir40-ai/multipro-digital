@@ -37,5 +37,11 @@ body {
 /* Performance Optimization for LCP */
 .optimized-section {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 500px; /* Placeholder size for better scrollbar stability */
+  contain-intrinsic-size: 1px 500px;
+}
+
+.hero-optimize {
+  content-visibility: visible;
+  contain: paint;
+  priority: high; /* Hint for browsers that support it */
 }

@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-40 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
+    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-40 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900 hero-optimize">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
         {/* VIDEO: Gated by JS to save 38MB bandwidth on mobile */}
@@ -35,7 +35,8 @@ export default function Hero() {
           </video>
         )}
         
-        {/* STATIC FALLBACK: Always in HTML for instant LCP on mobile/tablet */}
+        {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
+        {/* We use CSS classes instead of JS state for the initial block/hidden to avoid hydration flickering */}
         <div className={`absolute inset-0 opacity-40 mix-blend-overlay ${mounted && !isMobile ? 'hidden' : 'block'}`}>
           <Image 
             src="/blog-cover-movers.png" 
@@ -43,8 +44,8 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 640px) 480px, (max-width: 1024px) 1024px, 100vw"
-            quality={55} // Aggressive compression to save ~400KB
+            sizes="(max-width: 480px) 480px, (max-width: 1024px) 1024px, 100vw"
+            quality={45} // More aggressive compression for mobile performance
           />
         </div>
 
@@ -52,12 +53,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900" />
         
-        {/* Subtle Tech Blueprint Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] mix-blend-overlay" />
+        {/* Subtle Tech Blueprint Grid Overlay - Hidden on mobile to save paint time */}
+        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] mix-blend-overlay" />
 
-        {/* Animated Glow Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[128px] mix-blend-screen" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[128px] mix-blend-screen" />
+        {/* Animated Glow Orbs - Hidden on mobile to significantly reduce LCP paint lag */}
+        <div className="hidden lg:block absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[128px] mix-blend-screen" />
+        <div className="hidden lg:block absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[128px] mix-blend-screen" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

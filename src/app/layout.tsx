@@ -30,6 +30,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${playfair.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col font-sans">
         <Navbar />
         {children}
