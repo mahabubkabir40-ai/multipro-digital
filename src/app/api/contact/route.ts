@@ -50,7 +50,7 @@ export async function POST(request: Request) {
       console.error("Resend Error:", error);
       return NextResponse.json({ 
         success: false, 
-        error: "Our secure email engine is temporarily unavailable. We have been notified." 
+        error: `Resend Error: ${error.message || 'Unknown error'}` 
       }, { status: 500 });
     }
 
