@@ -44,8 +44,8 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 480px) 480px, (max-width: 1024px) 1024px, 100vw"
-            quality={45} // More aggressive compression for mobile performance
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 1024px, 100vw"
+            quality={40} // Further reduced for maximum mobile speed
           />
         </div>
 
@@ -65,13 +65,13 @@ export default function Hero() {
         <div className="max-w-4xl relative">
           
           {/* Top Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-8">
             <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping" />
             <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
             <span className="text-brand-lime text-xs font-bold tracking-widest uppercase font-sans">#1 Mover Marketing Agency</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-[1.1] tracking-tight mb-6 sm:mb-8 drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-[1.1] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
             Stop Letting Your Moving Trucks Sit Idle <br className="hidden md:block" />
             <span className="text-brand-lime font-black">While Competitors Take Your Jobs.</span>
           </h1>
