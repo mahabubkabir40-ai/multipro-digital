@@ -42,7 +42,7 @@ export async function POST(request: Request) {
       to: ['mahabubkabir@multiprodigital.com'],
       subject: subject,
       html: emailHtml,
-      reply_to: cleanData.email,
+      replyTo: cleanData.email as string,
     });
 
     if (error) {
