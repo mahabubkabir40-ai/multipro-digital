@@ -48,7 +48,7 @@ export async function POST(request: Request) {
       console.error("Resend Error:", error);
       return NextResponse.json({ 
         success: false, 
-        error: `Resend API Error: ${error.message || 'Unknown'}` 
+        error: "Our secure email engine is temporarily unavailable. We have been notified." 
       }, { status: 500 });
     }
 
@@ -56,10 +56,9 @@ export async function POST(request: Request) {
 
   } catch (error: any) {
     console.error("API Connection Error:", error);
-    const hasKey = !!process.env.RESEND_API_KEY;
     return NextResponse.json({ 
       success: false, 
-      error: `Internal Server Error: ${error.message || 'Unknown error'}. Key Present: ${hasKey}` 
+      error: "Technical error connecting to the mail server. Please try again." 
     }, { status: 500 });
   }
 }
