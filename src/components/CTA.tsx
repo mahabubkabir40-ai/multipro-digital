@@ -38,7 +38,7 @@ export default function CTA() {
           <div className="flex justify-center">
             <Link 
               href="/contact#audit-form"
-              className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white flex items-center justify-center whitespace-nowrap select-none touch-manipulation"
+              className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <span className="relative z-10 flex items-center justify-center gap-1.5 px-3">
