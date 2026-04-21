@@ -8,10 +8,12 @@ export async function POST(request: Request) {
     const formData = await request.json();
 
     // Clean up data for the email body
+    // Clean and normalize the data
     const cleanData: Record<string, any> = {};
     for (const [key, value] of Object.entries(formData)) {
       if (!key.startsWith('_') || key === '_subject') {
-        cleanData[key] = value;
+        // Convert keys to lowercase to match our template (e.g., 'Name' becomes 'name')
+        cleanData[key.toLowerCase()] = value;
       }
     }
 
