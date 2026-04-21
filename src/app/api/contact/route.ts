@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     console.error("API Connection Error:", error);
     return NextResponse.json({ 
       success: false, 
-      error: "Technical error connecting to the mail server. Please try again." 
+      error: `Technical error: ${error.message || error.toString()}` 
     }, { status: 500 });
   }
 }
