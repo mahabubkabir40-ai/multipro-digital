@@ -12,8 +12,9 @@ export async function POST(request: Request) {
     const cleanData: Record<string, any> = {};
     for (const [key, value] of Object.entries(formData)) {
       if (!key.startsWith('_') || key === '_subject') {
-        // Convert keys to lowercase to match our template (e.g., 'Name' becomes 'name')
-        cleanData[key.toLowerCase()] = value;
+        // Normalize key to lowercase and remove spaces for reliable mapping
+        const normalizedKey = key.toLowerCase().replace(/\s+/g, '');
+        cleanData[normalizedKey] = value;
       }
     }
 
@@ -28,8 +29,8 @@ export async function POST(request: Request) {
           <p><strong>Email:</strong> ${cleanData.email || 'N/A'}</p>
           <p><strong>Company:</strong> ${cleanData.company || 'N/A'}</p>
           <p><strong>Website:</strong> ${cleanData.website || 'N/A'}</p>
-          <p><strong>Monthly Moves:</strong> ${cleanData.moves || 'N/A'}</p>
-          <p><strong>Challenge:</strong> ${cleanData.challenge || 'N/A'}</p>
+          <p><strong>Monthly Moves:</strong> ${cleanData.monthlymoves || 'N/A'}</p>
+          <p><strong>Challenge:</strong> ${cleanData.biggestchallenge || 'N/A'}</p>
         </div>
         <p style="color: #666; font-size: 12px; margin-top: 30px; text-align: center;">
           Sent from Multipro Digital lead capture system.
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
       console.error("Resend Error:", error);
       return NextResponse.json({ 
         success: false, 
-        error: `Resend Error: ${error.message || 'Unknown error'}` 
+        error: "Our secure email engine is temporarily unavailable. We have been notified." 
       }, { status: 500 });
     }
 
@@ -60,7 +61,7 @@ export async function POST(request: Request) {
     console.error("API Connection Error:", error);
     return NextResponse.json({ 
       success: false, 
-      error: `Technical error: ${error.message || error.toString()}` 
+      error: "Technical error connecting to the mail server. Please try again." 
     }, { status: 500 });
   }
 }
