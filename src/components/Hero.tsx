@@ -22,7 +22,7 @@ export default function Hero() {
     <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-40 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
-        {/* Only load high-res video on Desktop to save mobile LCP */}
+        {/* VIDEO: Gated by JS to save 38MB bandwidth on mobile */}
         {mounted && !isMobile && (
           <video 
             autoPlay 
@@ -35,18 +35,18 @@ export default function Hero() {
           </video>
         )}
         
-        {/* High-quality static fallback for Mobile/Tablet */}
-        {(isMobile || !mounted) && (
-          <div className="absolute inset-0 opacity-40 mix-blend-overlay">
-            <Image 
-              src="/blog-cover-movers.png" 
-              alt="Premium moving truck background" 
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
+        {/* STATIC FALLBACK: Always in HTML for instant LCP on mobile/tablet */}
+        <div className={`absolute inset-0 opacity-40 mix-blend-overlay ${mounted && !isMobile ? 'hidden' : 'block'}`}>
+          <Image 
+            src="/blog-cover-movers.png" 
+            alt="Premium moving truck background" 
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            quality={75}
+          />
+        </div>
 
         {/* Navy Overlay to ensure Emerald & White text pops */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-slate-900/40" />
@@ -109,7 +109,9 @@ export default function Hero() {
                     alt={avatar.alt} 
                     width={48} 
                     height={48} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover"
+                    priority={index < 3} // Only prioritize first few for LCP help if they are visible
+                    quality={60} // Aggressive compression for these small avatars
                   />
                 </div>
               ))}
