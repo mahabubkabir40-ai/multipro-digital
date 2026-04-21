@@ -34,14 +34,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Performance Optimization for LCP */
-.optimized-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 500px;
-}
-
 .hero-optimize {
   content-visibility: visible;
   contain: paint;
-  priority: high; /* Hint for browsers that support it */
+}
+
+.hero-optimize h1 {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Hardware acceleration hint */
 }

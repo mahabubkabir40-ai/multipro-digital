@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-40 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900 hero-optimize">
+    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-24 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900 hero-optimize">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
         {/* VIDEO: Gated by JS to save 38MB bandwidth on mobile */}
@@ -44,8 +44,8 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 1024px, 100vw"
-            quality={40} // Further reduced for maximum mobile speed
+            sizes="(max-width: 480px) 390px, (max-width: 1024px) 1024px, 100vw"
+            quality={35} // Absolute minimum for mobile LCP speed
           />
         </div>
 
@@ -94,38 +94,40 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Social Proof Trust Bar */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl">
-            <div className="flex -space-x-4">
-              {[
-                { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Owner" },
-                { src: "/avatars/David-Owner.jpg.webp", alt: "David - Moving Company Owner" },
-                { src: "/avatars/Garret-owner.jpg.webp", alt: "Garret - Moving Company Owner" },
-                { src: "/avatars/Mountain%20Movers.png", alt: "Mountain Movers Success Partner" },
-                { src: "/avatars/Sunshine%20Movers.png", alt: "Sunshine Movers Success Partner" }
-              ].map((avatar, index) => (
-                <div key={index} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
-                  <Image 
-                    src={avatar.src} 
-                    alt={avatar.alt} 
-                    width={48} 
-                    height={48} 
-                    className="w-full h-full object-cover"
-                    loading="lazy" // Force lazy load to clear pipe for LCP
-                    quality={40} // Aggressive compression for these small avatars
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <div className="flex text-brand-lime gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+          {/* Social Proof Trust Bar - Delayed to clear network for LCP image */}
+          {mounted && (
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl animate-in fade-in duration-1000">
+              <div className="flex -space-x-4">
+                {[
+                  { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Owner" },
+                  { src: "/avatars/David-Owner.jpg.webp", alt: "David - Moving Company Owner" },
+                  { src: "/avatars/Garret-owner.jpg.webp", alt: "Garret - Moving Company Owner" },
+                  { src: "/avatars/Mountain%20Movers.png", alt: "Mountain Movers Success Partner" },
+                  { src: "/avatars/Sunshine%20Movers.png", alt: "Sunshine Movers Success Partner" }
+                ].map((avatar, index) => (
+                  <div key={index} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
+                    <Image 
+                      src={avatar.src} 
+                      alt={avatar.alt} 
+                      width={48} 
+                      height={48} 
+                      className="w-full h-full object-cover"
+                      loading="lazy" 
+                      quality={40} 
+                    />
+                  </div>
                 ))}
               </div>
-              <p className="text-white text-sm sm:text-base font-bold font-sans tracking-wide">Over 25+ Happy Clients</p>
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="flex text-brand-lime gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                  ))}
+                </div>
+                <p className="text-white text-sm sm:text-base font-bold font-sans tracking-wide">Over 25+ Happy Clients</p>
+              </div>
             </div>
-          </div>
+          )}
 
         </div>
       </div>
