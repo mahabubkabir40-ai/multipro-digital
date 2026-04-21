@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/free-consultation',
+        destination: '/contact',
+        permanent: true,
+      },
     ];
   },
 };
