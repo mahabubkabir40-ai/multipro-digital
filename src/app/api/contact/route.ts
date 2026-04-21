@@ -1,11 +1,14 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend with API Key from environment variables
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const formData = await request.json();
 
-    // Clean up data for FormSubmit AJAX API
-    // We remove _next because it's for browser redirects, not AJAX
+    // Clean up data for the email body
     const cleanData: Record<string, any> = {};
     for (const [key, value] of Object.entries(formData)) {
       if (!key.startsWith('_') || key === '_subject') {
@@ -13,43 +16,47 @@ export async function POST(request: Request) {
       }
     }
 
-    // Forwarding the data to FormSubmit via server-side fetch
-    const response = await fetch('https://formsubmit.co/ajax/mahabubkabir@multiprodigital.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Origin': 'https://www.multiprodigital.com',
-        'Referer': 'https://www.multiprodigital.com/contact',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      },
-      body: JSON.stringify({
-        ...cleanData,
-        _subject: cleanData._subject || "New Website Audit Request",
-      })
+    const subject = cleanData._subject || "New Website Audit Request";
+
+    // Format the email content as professional HTML
+    const emailHtml = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+        <h2 style="color: #102B4E; border-bottom: 2px solid #9afb16; padding-bottom: 10px;">${subject}</h2>
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+          <p><strong>Name:</strong> ${cleanData.name || 'N/A'}</p>
+          <p><strong>Email:</strong> ${cleanData.email || 'N/A'}</p>
+          <p><strong>Company:</strong> ${cleanData.company || 'N/A'}</p>
+          <p><strong>Website:</strong> ${cleanData.website || 'N/A'}</p>
+          <p><strong>Monthly Moves:</strong> ${cleanData.moves || 'N/A'}</p>
+          <p><strong>Challenge:</strong> ${cleanData.challenge || 'N/A'}</p>
+        </div>
+        <p style="color: #666; font-size: 12px; margin-top: 30px; text-align: center;">
+          Sent from Multipro Digital lead capture system.
+        </p>
+      </div>
+    `;
+
+    // Send the email using Resend
+    const { data, error } = await resend.emails.send({
+      from: 'Multipro Digital <onboarding@resend.dev>', // Note: This is for development. Once your domain is verified, use your own email.
+      to: ['mahabubkabir@multiprodigital.com'],
+      subject: subject,
+      html: emailHtml,
+      reply_to: cleanData.email,
     });
 
-    // Check if the response is actually JSON before parsing
-    const contentType = response.headers.get("content-type");
-    let result;
-    if (contentType && contentType.includes("application/json")) {
-      result = await response.json();
-    } else {
-      const text = await response.text();
-      result = { message: text };
-    }
-
-    if (response.ok) {
-      return NextResponse.json({ success: true, message: "Email sent successfully" });
-    } else {
-      console.error("FormSubmit Error:", result);
+    if (error) {
+      console.error("Resend Error:", error);
       return NextResponse.json({ 
         success: false, 
-        error: "The email service is temporarily unavailable. Please try again in 5 minutes." 
-      }, { status: response.status });
+        error: "Our secure email engine is temporarily unavailable. We have been notified." 
+      }, { status: 500 });
     }
+
+    return NextResponse.json({ success: true, message: "Lead sent successfully" });
+
   } catch (error) {
-    console.error("API Error:", error);
+    console.error("API Connection Error:", error);
     return NextResponse.json({ 
       success: false, 
       error: "Technical error connecting to the mail server. Please try again." 
