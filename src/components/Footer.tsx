@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#0b1f38] pt-20 pb-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
           
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="inline-block mb-6 group">
               <Image 
                 src="/logo.png" 
@@ -17,12 +17,12 @@ export default function Footer() {
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90"
               />
             </Link>
-            <p className="text-blue-200/60 font-sans text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-blue-200/60 font-sans text-sm leading-relaxed mb-6 max-w-xs mx-auto md:mx-0">
               Multipro Digital helps moving companies get more jobs through powerful local SEO and marketing. We make it easy for movers to rank higher, attract more customers, and stay fully booked year-round.
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-serif font-bold text-lg mb-6">Company</h4>
             <ul className="space-y-4">
               <li><Link href="/about" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">About Us</Link></li>
@@ -32,10 +32,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-serif font-bold text-lg mb-6">Let's Connect</h4>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-6 mt-2">
+            <div className="flex flex-col gap-6 items-center md:items-start">
+              <div className="flex items-center justify-center md:justify-start gap-6 mt-2">
                 <Link href="https://www.linkedin.com/in/mahabub-kabir/" className="text-blue-200/60 hover:text-brand-lime transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
                   <span className="sr-only">LinkedIn</span>
                   <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -63,11 +63,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-serif font-bold text-lg mb-6">Contact</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:mahabubkabir@multiprodigital.com" className="inline-flex items-center gap-3 text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans break-all">
+                <a href="mailto:mahabubkabir@multiprodigital.com" className="inline-flex items-center justify-center md:justify-start gap-3 text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans break-all">
                   <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                   mahabubkabir@multiprodigital.com
                 </a>
