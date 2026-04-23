@@ -213,7 +213,7 @@ export default function MarketingTipsPage() {
                 <div className="bg-red-50 border border-red-100 p-8 rounded-2xl space-y-4 mb-16">
                   {[
                     "Inconsistent NAP consistency across directories (Name, Address, Phone)",
-                    "Failing to prioritize <a href='https://www.brightlocal.com/learn/local-seo/introduction-to-local-seo/what-are-local-citations/' target='_blank' rel='noopener' className='text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4'>citation building</a> on high-authority sites",
+                    <span key="citation">Failing to prioritize <a href='https://www.brightlocal.com/learn/local-seo/introduction-to-local-seo/what-are-local-citations/' target='_blank' rel='noopener' className='text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors'>citation building</a> on high-authority sites</span>,
                     "Neglecting website mobile speed (68% of moving searches are mobile)",
                     "Ignoring negative reviews instead of addressing them professionally"
                   ].map((mistake, i) => (
