@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AutoLinker from '@/components/AutoLinker';
 import { ArrowRight, Clock, User, ChevronRight, CheckCircle2, MapPin, Search, Star, MessageSquare, Camera, Settings, XCircle, AlertTriangle } from 'lucide-react';
 
 export const metadata = {
@@ -102,13 +103,13 @@ export default function MarketingTipsPage() {
             {/* Main Article Body */}
             <article className="lg:w-2/3 order-1 lg:order-2">
               <div className="prose prose-lg max-w-none text-slate-700 font-sans leading-relaxed">
-                <p className="text-xl text-slate-900 font-bold mb-12 border-l-4 border-brand-lime pl-6 italic">
+                <AutoLinker className="block text-xl text-slate-900 font-bold mb-12 border-l-4 border-brand-lime pl-6 italic">
                   If you’re a moving company owner watching competitors fill their top spots on Google Maps while your business sits buried on page 2, you’re not alone.
-                </p>
+                </AutoLinker>
 
-                <p className="mb-8">
+                <p className="block mb-8">
                   The difference between ranking #1 and #11 can mean the difference between a fully booked calendar and scrambling for shared leads. 
-                  The good news? Google Maps ranking isn’t luck—it’s a system. And once you understand how it works, you can dominate your local market.
+                  The good news? A solid <Link href="/" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors">local SEO for movers</Link> strategy isn’t luck—it’s a system. And once you understand how it works, you can dominate local search and grow your business.
                 </p>
 
                 <h2 id="ranking-system" className="text-3xl font-serif font-black text-brand-blue mt-16 mb-8 flex items-center gap-3">
@@ -158,7 +159,7 @@ export default function MarketingTipsPage() {
                   <Search className="w-8 h-8 text-brand-lime" />
                   How to Beat Competitors Already Ranking #1-3
                 </h2>
-                <p className="mb-6">Outranking established competitors requires strategy, not just effort. Here’s how:</p>
+                <AutoLinker className="block mb-6">Outranking established competitors requires strategy, not just effort. Here’s how:</AutoLinker>
                 <div className="space-y-6 mb-12">
                   <div className="flex gap-6 items-start">
                     <div className="w-1 w-full max-w-[4px] self-stretch bg-brand-lime rounded-full" />
@@ -211,8 +212,8 @@ export default function MarketingTipsPage() {
                 </h2>
                 <div className="bg-red-50 border border-red-100 p-8 rounded-2xl space-y-4 mb-16">
                   {[
-                    "Inconsistent NAP (Name, Address, Phone) across directories",
-                    "Buying fake reviews (Google will penalize you heavily)",
+                    "Inconsistent NAP consistency across directories (Name, Address, Phone)",
+                    "Failing to prioritize <a href='https://www.brightlocal.com/learn/local-seo/introduction-to-local-seo/what-are-local-citations/' target='_blank' rel='noopener' className='text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4'>citation building</a> on high-authority sites",
                     "Neglecting website mobile speed (68% of moving searches are mobile)",
                     "Ignoring negative reviews instead of addressing them professionally"
                   ].map((mistake, i) => (
@@ -222,6 +223,10 @@ export default function MarketingTipsPage() {
                     </div>
                   ))}
                 </div>
+
+                <p className="block mb-12 text-slate-700">
+                  Ranking #1 on Google Maps takes time, but you don't have to do it alone. The Multipro Digital team is here to help you automate your growth. If you have questions about your specific market, feel free to <Link href="/contact" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4">get in touch</Link> with us today.
+                </p>
 
                 <div className="text-center py-16 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
                   <h3 className="text-2xl font-serif font-black text-brand-blue mb-6">Want to see where you rank right now?</h3>
