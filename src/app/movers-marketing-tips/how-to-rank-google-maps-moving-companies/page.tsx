@@ -225,7 +225,7 @@ export default function MarketingTipsPage() {
                 </div>
 
                 <p className="block mb-12 text-slate-700">
-                  Ranking #1 on Google Maps takes time, but you don't have to do it alone. The Multipro Digital team is here to help you automate your growth. If you have questions about your specific market, feel free to <Link href="/contact" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4">get in touch</Link> with us today.
+                  Ranking #1 on Google Maps takes time, but you don't have to do it alone. The Multipro Digital team is here to help you automate your growth. If you have questions about your specific market, feel free to <Link href="/contact" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-all duration-300">get in touch</Link> with us today.
                 </p>
 
                 <div className="text-center py-16 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
