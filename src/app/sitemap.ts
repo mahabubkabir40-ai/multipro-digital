@@ -13,7 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy-policy',
     '/movers-marketing-tips',
+    '/locations',
   ].map((route) => ({
+
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
