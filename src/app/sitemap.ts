@@ -13,9 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy-policy',
     '/movers-marketing-tips',
-    '/locations',
+    '/service-areas',
   ].map((route) => ({
-
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
@@ -42,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Dynamic location routes
-  const locationDir = path.join(process.cwd(), 'src/app/locations')
+  const locationDir = path.join(process.cwd(), 'src/app/service-areas')
   let locationRoutes: MetadataRoute.Sitemap = []
 
   try {
@@ -52,15 +51,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .map(dirent => dirent.name)
 
       locationRoutes = folders.map((slug) => ({
-        url: `${baseUrl}/locations/${slug}`,
+        url: `${baseUrl}/service-areas/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.9,
       }))
     }
   } catch (error) {
-    console.error('Error reading location directory for sitemap:', error)
+    console.error('Error reading service-areas directory for sitemap:', error)
   }
+
 
   return [...routes, ...blogRoutes, ...locationRoutes]
 

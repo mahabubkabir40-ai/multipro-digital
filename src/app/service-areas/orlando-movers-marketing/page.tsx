@@ -16,7 +16,7 @@ const locationSchema = {
   "@type": "LocalBusiness",
   "name": "Multipro Digital - Orlando Movers Marketing",
   "image": "https://www.multiprodigital.com/blog-cover-movers.png",
-  "url": "https://www.multiprodigital.com/locations/orlando-movers-marketing",
+  "url": "https://www.multiprodigital.com/service-areas/orlando-movers-marketing",
   "telephone": "",
   "address": {
     "@type": "PostalAddress",
@@ -49,7 +49,7 @@ export default function OrlandoLocationPage() {
             <nav className="flex items-center gap-2 text-brand-lime/80 text-sm font-black uppercase tracking-widest mb-8">
               <Link href="/" className="hover:text-brand-lime">Home</Link>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-white">Locations</span>
+              <Link href="/service-areas" className="text-white hover:text-brand-lime">Service Areas</Link>
               <ChevronRight className="w-4 h-4" />
               <span className="text-brand-lime">Orlando</span>
             </nav>

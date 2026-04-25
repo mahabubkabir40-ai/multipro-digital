@@ -18,7 +18,7 @@ const locationsHubSchema = {
     {
       "@type": "ListItem",
       "position": 1,
-      "url": "https://www.multiprodigital.com/locations/orlando-movers-marketing"
+      "url": "https://www.multiprodigital.com/service-areas/orlando-movers-marketing"
     }
   ]
 };
@@ -63,7 +63,8 @@ export default function LocationsPage() {
             {locations.map((loc, i) => (
               <Link 
                 key={i} 
-                href={`/locations/${loc.slug}`}
+                href={`/service-areas/${loc.slug}`}
+
                 className="group relative bg-white p-8 rounded-3xl border border-slate-200 hover:border-brand-lime transition-all duration-500 hover:shadow-2xl hover:shadow-brand-lime/10"
               >
                 <div className="flex justify-between items-start mb-6">
