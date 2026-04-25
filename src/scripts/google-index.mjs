@@ -3,10 +3,12 @@ import path from 'path';
 import { google } from 'googleapis';
 
 const HOST = 'https://www.multiprodigital.com';
-const KEY_FILE = path.join(process.cwd(), 'multipro-analytics-a701c3f764cd.json');
+const KEY_FILE = path.join(process.cwd(), 'google-indexing-key.json');
+const keys = JSON.parse(fs.readFileSync(KEY_FILE, 'utf8'));
 
 const jwtClient = new google.auth.JWT({
-  keyFile: KEY_FILE,
+  email: keys.client_email,
+  key: keys.private_key,
   scopes: ['https://www.googleapis.com/auth/indexing'],
 });
 
