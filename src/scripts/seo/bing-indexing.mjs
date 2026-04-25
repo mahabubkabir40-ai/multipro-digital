@@ -6,7 +6,6 @@ const HOST = 'www.multiprodigital.com';
 const KEY = '5f82b7c4d5e94b2a8d3e1f0c2a9b4d7e';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
-// Define the root of the project (relative to where this script runs)
 const root = process.cwd();
 
 const getDynamicRoutes = (dirPath, prefix) => {
@@ -28,7 +27,7 @@ const urls = [
   ...getDynamicRoutes('src/app/service-areas', 'service-areas')
 ];
 
-console.log('🚀 Preparing to submit the following URLs to IndexNow (Bing/DuckDuckGo):');
+console.log('🚀 Preparing to submit URLs to Bing IndexNow:');
 urls.forEach(url => console.log(` - ${url}`));
 
 const data = JSON.stringify({
@@ -51,23 +50,15 @@ const options = {
 
 const req = https.request(options, (res) => {
   console.log(`\n📡 Status Code: ${res.statusCode}`);
-  
   if (res.statusCode === 200) {
-    console.log('✅ Success! Bing has received your URLs and will begin crawling immediately.');
+    console.log('✅ Success! Bing has received your URLs.');
   } else if (res.statusCode === 202) {
-    console.log('⌛ Accepted! Your URLs have been queued for processing.');
+    console.log('⌛ Accepted! Your URLs have been queued.');
   } else {
-    console.log('❌ Error: Something went wrong with the submission.');
+    console.log('❌ Error: Submission failed.');
   }
-
-  res.on('data', (d) => {
-    process.stdout.write(d);
-  });
 });
 
-req.on('error', (error) => {
-  console.error('\n❌ Network Error:', error);
-});
-
+req.on('error', (e) => console.error('\n❌ Network Error:', e));
 req.write(data);
 req.end();
