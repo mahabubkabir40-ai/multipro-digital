@@ -239,20 +239,29 @@ export default function OrlandoLocationPage() {
             </div>
             <div className="lg:w-2/3 grid sm:grid-cols-2 gap-4">
               {[
-                { name: "Lake Eola Park", area: "Downtown Orlando", icon: "📍" },
-                { name: "Amway Center", area: "West Church St", icon: "🏀" },
-                { name: "Dr. Phillips Center", area: "Performing Arts", icon: "🎭" },
-                { name: "UCF Main Campus", area: "East Orlando", icon: "🎓" },
-                { name: "ICON Park", area: "International Drive", icon: "🎡" },
-                { name: "Harry P. Leu Gardens", area: "North Orlando", icon: "🌿" }
+                { name: "Lake Eola Park", area: "Downtown Orlando", icon: "📍", url: "https://en.wikipedia.org/wiki/Lake_Eola_Park" },
+                { name: "Amway Center", area: "West Church St", icon: "🏀", url: "https://en.wikipedia.org/wiki/Amway_Center" },
+                { name: "Dr. Phillips Center", area: "Performing Arts", icon: "🎭", url: "https://en.wikipedia.org/wiki/Dr._Phillips_Center_for_the_Performing_Arts" },
+                { name: "UCF Main Campus", area: "East Orlando", icon: "🎓", url: "https://en.wikipedia.org/wiki/University_of_Central_Florida" },
+                { name: "ICON Park", area: "International Drive", icon: "🎡", url: "https://iconparkorlando.com/" },
+                { name: "Harry P. Leu Gardens", area: "North Orlando", icon: "🌿", url: "https://en.wikipedia.org/wiki/Harry_P._Leu_Gardens" }
               ].map((landmark, i) => (
-                <div key={i} className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-lime/30 transition-all hover:bg-white hover:shadow-lg group">
+                <a 
+                  key={i} 
+                  href={landmark.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-lime/30 transition-all hover:bg-white hover:shadow-lg group cursor-pointer"
+                >
                   <div className="text-2xl group-hover:scale-125 transition-transform">{landmark.icon}</div>
                   <div>
-                    <div className="font-bold text-brand-blue">{landmark.name}</div>
+                    <div className="font-bold text-brand-blue flex items-center gap-2">
+                      {landmark.name}
+                      <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
                     <div className="text-xs text-slate-400 font-black uppercase tracking-widest">{landmark.area}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
