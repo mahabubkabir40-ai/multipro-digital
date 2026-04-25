@@ -17,7 +17,7 @@
   --color-brand-lime: var(--color-brand-lime);
   --color-brand-lime-hover: var(--color-brand-lime-hover);
   --font-sans: var(--font-m-sans);
-  --font-serif: var(--font-m-sans);
+  --font-serif: var(--font-m-serif);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +30,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-m-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 

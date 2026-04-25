@@ -9,7 +9,8 @@
     "lint": "next lint",
     "index-bing": "node src/scripts/seo/bing-indexing.mjs",
     "index-google": "node src/scripts/seo/google-indexing.mjs",
-    "get-seo": "node src/scripts/seo/google-reporting.js"
+    "get-seo": "node src/scripts/seo/google-reporting.js",
+    "get-bing-seo": "node src/scripts/seo/bing-reporting.js"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.1",

@@ -39,6 +39,13 @@ async function run() {
           startDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
           endDate: new Date().toISOString().split('T')[0],
           dimensions: ['query'],
+          dimensionFilterGroups: [{
+            filters: [{
+              dimension: 'country',
+              operator: 'equals',
+              expression: 'usa'
+            }]
+          }],
           rowLimit: 10
         }
       });
@@ -69,6 +76,14 @@ async function run() {
       dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }],
       dimensions: [{ name: 'pageTitle' }],
       metrics: [{ name: 'activeUsers' }, { name: 'screenPageViews' }],
+      dimensionFilter: {
+        filter: {
+          fieldName: 'countryId',
+          stringFilter: {
+            value: 'US'
+          }
+        }
+      },
     });
 
     console.log('\nTop Pages (Last 30 Days):');
