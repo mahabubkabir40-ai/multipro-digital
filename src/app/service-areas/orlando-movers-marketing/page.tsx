@@ -181,29 +181,28 @@ export default function OrlandoLocationPage() {
 
       {/* 5. NEIGHBORHOODS (Dark Navy Contrast) */}
       <section className="py-24 bg-[#0b1f38] relative overflow-hidden">
-        {/* Subtle decorative grid */}
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:32px_32px]" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-black text-white mb-6">
-              Serving Every <span className="text-brand-lime italic">Corner of Orlando</span>
+              Sending Your Crews to Every <span className="text-brand-lime italic">Corner of Orlando</span>
             </h2>
             <p className="text-xl text-blue-100/80">
-              We provide hyper-local SEO for every neighborhood and suburb in Central Florida.
+              We capture high-intent leads in the suburbs where your crews want to work.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Winter Park", desc: "High-ticket residential moves & luxury estates." },
-              { name: "Lake Nona", desc: "Rapidly growing medical city & family moves." },
-              { name: "Dr. Phillips", desc: "Exclusive upscale moving & commercial SEO." },
-              { name: "Downtown Orlando", desc: "High-volume condo moves & corporate relocation." },
-              { name: "Windermere", desc: "Elite residential moving & high-intent leads." },
-              { name: "Maitland", desc: "Suburban family moving & commercial focus." },
-              { name: "Altamonte Springs", desc: "High-density apartment moves & local SEO." },
-              { name: "Kissimmee", desc: "Tourist-district commercial & family residential." }
+              { name: "Winter Park", desc: "Targeting high-ticket residential estates and luxury relocations." },
+              { name: "Lake Nona", desc: "Capturing the rapid expansion of medical city and family growth." },
+              { name: "Dr. Phillips", desc: "Dominating upscale commercial moves and high-revenue accounts." },
+              { name: "Downtown Orlando", desc: "High-volume corporate relocation and premium condo logistics." },
+              { name: "Windermere", desc: "Elite estate moving leads with high-intent search profiles." },
+              { name: "Maitland", desc: "Stable suburban family moves to keep your local trucks full." },
+              { name: "Altamonte Springs", desc: "High-density residential leads for consistent weekly volume." },
+              { name: "Kissimmee", desc: "Tourist-district commercial logistics and large-scale moves." }
             ].map((area, i) => (
               <div key={i} className="p-8 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-brand-lime/50 transition-all group hover:shadow-2xl">
                 <div className="w-10 h-10 bg-brand-lime/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-lime/20 transition-colors">
@@ -223,18 +222,18 @@ export default function OrlandoLocationPage() {
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/3">
               <h2 className="text-3xl md:text-4xl font-serif font-black text-brand-blue mb-6">
-                Local Presence in the <span className="text-brand-lime italic">Heart of Orlando</span>
+                Strategic Visibility Where Your <span className="text-brand-lime italic">Customers Live</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                Our Orlando-based strategy ensures your moving company is visible to homeowners moving near the city's most iconic locations.
+                We position your brand around Orlando's most valuable hubs to ensure you're the first mover owners see when planning a relocation.
               </p>
               <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200">
                 <div className="flex items-center gap-3 text-brand-blue font-bold mb-2">
                   <div className="w-2 h-2 rounded-full bg-brand-lime animate-ping" />
-                  SEO Tip:
+                  Owner Insight:
                 </div>
                 <p className="text-sm text-slate-500 italic">
-                  Mentioning local landmarks helps Google's 'Geographic Relevance' algorithm place your business at the center of the local moving market.
+                  Local authority isn't just SEO—it's building the trust needed to book large-scale, high-profit moves without haggling on price.
                 </p>
               </div>
             </div>
