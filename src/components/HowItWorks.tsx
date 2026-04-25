@@ -1,4 +1,6 @@
 import { MapPin, Rocket, SearchCode } from 'lucide-react';
+import AutoLinker from './AutoLinker';
+
 
 export default function HowItWorks() {
   const steps = [
@@ -56,8 +58,9 @@ export default function HowItWorks() {
                 </h4>
                 {/* Fixed the description contrast */}
                 <p className="text-slate-600 leading-relaxed font-sans">
-                  {step.description}
+                  <AutoLinker>{step.description}</AutoLinker>
                 </p>
+
               </div>
             </div>
           ))}

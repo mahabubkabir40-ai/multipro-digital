@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import AutoLinker from '@/components/AutoLinker';
+
 
 export const metadata = {
   title: 'About Us | Specialized Local SEO for Movers | Multipro Digital',
@@ -35,7 +37,7 @@ export default function AboutPage() {
               Driven by Results.
             </h1>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium leading-relaxed max-w-2xl mb-10">
-              Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping moving companies across the USA. We partner with moving businesses to fill their calendars and dominate local search.
+              <AutoLinker>Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping USA moving companies. We partner with American movers to fill their calendars and dominate local search.</AutoLinker>
             </p>
           </div>
         </div>
@@ -51,7 +53,7 @@ export default function AboutPage() {
               </h2>
               <div className="w-24 h-1.5 bg-brand-lime rounded-full mb-8"></div>
               <p className="text-slate-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                We believe in the power of specialization. Unlike generalist agencies that try to serve everyone, we chose to master one industry. That means we already know what your customers are searching for, we know which keywords convert, and we know exactly how to beat your competitors.
+                <AutoLinker>We believe in the power of specialization. Unlike generalist agencies that try to serve everyone, we chose to master one industry. That means we already know what your customers are searching for, we know which keywords convert, and we know exactly how to beat your competitors.</AutoLinker>
               </p>
             </div>
             
@@ -106,7 +108,9 @@ export default function AboutPage() {
                 <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
               </div>
               <h3 className="text-xl font-bold text-[#0b1f38] mb-4">Professional Team</h3>
-              <p className="text-slate-600 leading-relaxed">We have a dedicated team of professionals with extensive experience in digital marketing, from GBP management to website technical overhauls.</p>
+              <p className="text-slate-600 leading-relaxed">
+                <AutoLinker>We have a dedicated team of professionals with extensive experience in digital marketing, from GBP management to website technical overhauls.</AutoLinker>
+              </p>
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
             </div>
           </div>

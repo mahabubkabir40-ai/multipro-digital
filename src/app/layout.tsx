@@ -2,8 +2,31 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import Script from "next/script";
 import "./globals.css";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Multipro Digital",
+  "url": "https://www.multiprodigital.com",
+  "logo": "https://www.multiprodigital.com/logo.png",
+  "image": "https://www.multiprodigital.com/blog-cover-movers.png",
+  "description": "Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping moving companies dominate local search.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "serviceType": "Local SEO for Movers, Moving Leads Generation",
+  "sameAs": [
+    "https://www.linkedin.com/in/mahabub-kabir/",
+    "https://www.instagram.com/multiprodigitalagency/",
+    "https://www.youtube.com/@MultiproMovers",
+    "https://www.facebook.com/multiprodigitalagency"
+  ]
+};
+
 
 const inter = Inter({
   variable: "--font-m-sans",
@@ -17,8 +40,9 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Trusted Local SEO Agency for Movers | Multipro Digital",
-  description: "Stop fighting over shared leads. We help UK and USA Moving Companies dominate the Google Map Pack and get exclusive calls.",
+  description: "Stop fighting over shared leads. We help USA Moving Companies dominate the Google Map Pack and get exclusive calls.",
 };
+
 
 export default function RootLayout({
   children,
@@ -35,7 +59,9 @@ export default function RootLayout({
         <meta name="google-site-verification" content="dvYw3SsPD-S8VEQGz5CrbmcTIZI3AkQApXZb3gIRXss" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <JsonLd data={organizationSchema} />
       </head>
+
       <body suppressHydrationWarning className="min-h-full flex flex-col font-sans">
         {/* Google Analytics 4 */}
         <Script

@@ -1,6 +1,54 @@
 import Link from 'next/link';
 import AutoLinker from '@/components/AutoLinker';
+import JsonLd from '@/components/JsonLd';
 import { ArrowRight, Clock, User, ChevronRight, CheckCircle2, MapPin, Search, Star, MessageSquare, Camera, Settings, XCircle, AlertTriangle } from 'lucide-react';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Rank #1 on Google Maps for Moving Companies",
+  "image": "https://www.multiprodigital.com/blog-cover-movers.png",
+  "author": {
+    "@type": "Organization",
+    "name": "Multipro Digital Team",
+    "url": "https://www.multiprodigital.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Multipro Digital",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.multiprodigital.com/logo.png"
+    }
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-04-24",
+  "description": "Learn the exact 7-step system to dominate Google Maps and get more exclusive moving leads without paying for shared lead services."
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long until I see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most movers start getting exclusive calls and seeing Google ranking improvements within 8–12 weeks after we complete your audit and launch your campaign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every moving company's needs and service areas are unique. We create a custom strategy tailored to your specific goals. The best first step is a Free Mover Growth Engine™ Strategy Session."
+      }
+    }
+  ]
+};
+
 
 export const metadata = {
   title: 'How to Rank #1 on Google Maps for Moving Companies | Multipro Digital',
@@ -18,6 +66,9 @@ export default function MarketingTipsPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <JsonLd data={articleSchema} />
+      <JsonLd data={faqSchema} />
+
 
       
       {/* Blog Hero Section */}
@@ -108,8 +159,7 @@ export default function MarketingTipsPage() {
                 </AutoLinker>
 
                 <p className="block mb-8">
-                  The difference between ranking #1 and #11 can mean the difference between a fully booked calendar and scrambling for shared leads. 
-                  The good news? A solid <Link href="/" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors">local SEO for movers</Link> strategy isn’t luck—it’s a system. And once you understand how it works, you can dominate local search and grow your business.
+                  <AutoLinker>The difference between ranking #1 and #11 can mean the difference between a fully booked calendar and scrambling for shared leads. The good news? A solid local SEO for movers strategy isn’t luck—it’s a system. And once you understand how it works, you can dominate local search and grow your business.</AutoLinker>
                 </p>
 
                 <h2 id="ranking-system" className="text-3xl font-serif font-black text-brand-blue mt-16 mb-8 flex items-center gap-3">
@@ -225,7 +275,7 @@ export default function MarketingTipsPage() {
                 </div>
 
                 <p className="block mb-12 text-slate-700">
-                  Ranking #1 on Google Maps takes time, but you don't have to do it alone. The Multipro Digital team is here to help you automate your growth. If you have questions about your specific market, feel free to <Link href="/contact" className="text-brand-blue font-black underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-all duration-300">get in touch</Link> with us today.
+                  <AutoLinker>Ranking #1 on Google Maps takes time, but you don't have to do it alone. The Multipro Digital team is here to help you automate your growth. If you have questions about your specific market, feel free to get in touch with us today.</AutoLinker>
                 </p>
 
                 <div className="text-center py-16 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
