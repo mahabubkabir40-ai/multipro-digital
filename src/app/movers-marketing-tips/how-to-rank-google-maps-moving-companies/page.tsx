@@ -21,8 +21,8 @@ const articleSchema = {
       "url": "https://www.multiprodigital.com/logo.png"
     }
   },
-  "datePublished": "2025-01-15",
-  "dateModified": "2025-04-24",
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-04-25",
   "description": "Learn the exact 7-step system to dominate Google Maps and get more exclusive moving leads without paying for shared lead services."
 };
 
@@ -95,7 +95,7 @@ export default function MarketingTipsPage() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-brand-lime" />
-                <span>Updated for 2025</span>
+                <span>Updated for 2026</span>
               </div>
             </div>
           </div>
