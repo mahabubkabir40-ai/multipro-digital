@@ -16,7 +16,7 @@ const locationSchema = {
   "@type": "LocalBusiness",
   "name": "Multipro Digital - Orlando Movers Marketing",
   "image": "https://www.multiprodigital.com/blog-cover-movers.png",
-  "url": "https://www.multiprodigital.com/locations/orlando",
+  "url": "https://www.multiprodigital.com/locations/orlando-movers-marketing",
   "telephone": "",
   "address": {
     "@type": "PostalAddress",
