@@ -1,5 +1,4 @@
 import { TrendingUp, AlertTriangle } from 'lucide-react';
-import AutoLinker from './AutoLinker';
 
 
 export default function ProblemSolution() {
@@ -19,7 +18,7 @@ export default function ProblemSolution() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 font-sans leading-relaxed">
-            <AutoLinker>At Multipro Digital, we specialize in one thing — helping USA moving companies dominate Google and fill their calendars with real, high-intent leads. No gimmicks. No shared leads.</AutoLinker>
+            At Multipro Digital, we specialize in one thing — helping USA moving companies dominate Google and fill their calendars with real, high-intent leads. No gimmicks. No shared leads.
           </p>
         </div>
 
@@ -43,7 +42,7 @@ export default function ProblemSolution() {
             </h3>
             
             <p className="text-gray-600 font-sans leading-loose text-lg relative z-10">
-              <AutoLinker>Running a moving company isn't easy—especially when your marketing feels like a guessing game. Every day your trucks sit idle is money lost to the competitor down the street who already dominates the Map Pack. You're forced to waste thousands of dollars on expensive, shared leads that have already been called by five other movers, creating a painful cycle of unpredictable, slow months.</AutoLinker>
+              Running a moving company isn't easy—especially when your marketing feels like a guessing game. Every day your trucks sit idle is money lost to the competitor down the street who already dominates the Map Pack. You're forced to waste thousands of dollars on expensive, shared leads that have already been called by five other movers, creating a painful cycle of unpredictable, slow months.
             </p>
           </div>
 
@@ -65,7 +64,7 @@ export default function ProblemSolution() {
               </h3>
               
               <p className="text-blue-100/90 font-sans leading-loose text-lg mb-8">
-                <AutoLinker>We don't just generate 'leads'—we generate revenue. Whether you're a local residential mover or a long-distance specialist, we build systems that target the high-ticket jobs you actually want.</AutoLinker>
+                We don't just generate 'leads'—we generate revenue. Whether you're a local residential mover or a long-distance specialist, we build systems that target the high-ticket jobs you actually want.
               </p>
               
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm border-l-4 border-l-brand-lime">
