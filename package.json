@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "index-bing": "node src/scripts/indexnow.mjs"
+    "index-bing": "node src/scripts/indexnow.mjs",
+    "index-google": "node src/scripts/google-index.mjs"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.1",
