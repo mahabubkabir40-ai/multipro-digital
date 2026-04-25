@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         destination: '/contact',
         permanent: true,
       },
+      {
+        source: '/website-design',
+        destination: '/',
+        permanent: true,
+      },
+
     ];
   },
 };
