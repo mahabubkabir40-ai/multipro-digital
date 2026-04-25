@@ -157,12 +157,17 @@ export default function OrlandoLocationPage() {
                   </li>
                 ))}
               </ul>
-              <Link 
-                href="/contact#audit-form"
-                className="inline-flex items-center gap-2 text-brand-blue font-black hover:text-brand-lime transition-colors group"
-              >
-                See Your Current Ranking <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="pt-6">
+                <Link 
+                  href="/contact#audit-form"
+                  className="relative group overflow-hidden w-full sm:w-fit px-8 py-4 rounded-xl bg-brand-lime text-[#1A365D] font-black text-lg transition-all duration-300 transform hover:scale-[1.05] hover:-rotate-1 active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(154,251,22,0.4)]"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    See Your Current Ranking ⟶
+                  </span>
+                  <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-[800ms] ease-out" />
+                </Link>
+              </div>
             </div>
             <div className="relative">
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-900/5 aspect-[4/5] lg:aspect-auto lg:h-[600px]">
