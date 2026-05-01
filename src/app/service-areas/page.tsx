@@ -64,7 +64,8 @@ export default function LocationsPage() {
               <Link 
                 key={i} 
                 href={`/service-areas/${loc.slug}`}
-
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative bg-white p-8 rounded-3xl border border-slate-200 hover:border-brand-lime transition-all duration-500 hover:shadow-2xl hover:shadow-brand-lime/10"
               >
                 <div className="flex justify-between items-start mb-6">
@@ -116,6 +117,8 @@ export default function LocationsPage() {
           </p>
           <Link 
             href="/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-10 py-5 bg-brand-lime text-[#1A365D] font-black rounded-2xl text-xl hover:scale-105 transition-transform"
           >
             Check Availability ⟶
