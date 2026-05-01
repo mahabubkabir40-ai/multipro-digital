@@ -38,7 +38,7 @@ export default function Hero() {
         
         {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
         {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
-        <div className="absolute inset-0 opacity-60 lg:opacity-30">
+        <div className="absolute inset-0 opacity-60 lg:hidden">
           <Image 
             src="/blog-cover-movers.png" 
             alt="Premium moving truck background" 
