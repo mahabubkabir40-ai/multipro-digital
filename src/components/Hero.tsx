@@ -30,7 +30,7 @@ export default function Hero() {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-50 transform scale-105"
+            className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
           >
             <source src="/moving-truck.mp4" type="video/mp4" />
           </video>
@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900" />
         
         {/* Subtle Tech Blueprint Grid Overlay - Hidden on mobile to save paint time */}
-        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] mix-blend-overlay" />
 
         {/* Animated Glow Orbs - Hidden on mobile to significantly reduce LCP paint lag */}
         <div className="hidden lg:block absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[128px] mix-blend-screen" />
