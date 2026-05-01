@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
           
           <div className="md:col-span-1 flex flex-col items-center md:items-start">
-            <Link href="/" className="inline-block mb-6 group">
+            <Link href="/" target="_blank" rel="noopener noreferrer" className="inline-block mb-6 group">
               <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - SEO and Marketing for Movers" 
@@ -25,11 +25,11 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-serif font-bold text-lg mb-6">Company</h4>
             <ul className="space-y-4">
-              <li><Link href="/about" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">About Us</Link></li>
-              <li><Link href="/service-areas" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Service Areas</Link></li>
+              <li><Link href="/about" target="_blank" rel="noopener noreferrer" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">About Us</Link></li>
+              <li><Link href="/service-areas" target="_blank" rel="noopener noreferrer" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Service Areas</Link></li>
 
-              <li><Link href="/movers-marketing-tips" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Marketing Tips</Link></li>
-              <li><Link href="/contact" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Contact</Link></li>
+              <li><Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Marketing Tips</Link></li>
+              <li><Link href="/contact" target="_blank" rel="noopener noreferrer" className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Contact</Link></li>
             </ul>
           </div>
 
@@ -57,6 +57,8 @@ export default function Footer() {
               
               <Link 
                 href="/contact#audit-form"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block text-brand-lime hover:text-white font-bold text-sm tracking-wide transition-colors border-b-2 border-brand-lime hover:border-white pb-1 w-max"
               >
                 Get Your Free Audit &rarr;
@@ -83,7 +85,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} MultiPro Digital. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link href="/privacy-policy" className="text-blue-200/40 hover:text-brand-lime transition-colors text-xs font-sans">Privacy Policy</Link>
+            <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-200/40 hover:text-brand-lime transition-colors text-xs font-sans">Privacy Policy</Link>
           </div>
         </div>
       </div>

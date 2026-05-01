@@ -3,7 +3,7 @@ import path from 'path';
 import { google } from 'googleapis';
 
 const HOST = 'https://www.multiprodigital.com';
-const KEY_FILE = path.join(process.cwd(), 'google-indexing-key.json');
+const KEY_FILE = path.join(process.cwd(), 'multipro-digital-seo-e15f3f08f650.json');
 
 if (!fs.existsSync(KEY_FILE)) {
   console.error(`❌ Error: ${KEY_FILE} not found!`);

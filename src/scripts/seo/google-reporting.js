@@ -3,7 +3,7 @@ const { BetaAnalyticsDataClient } = require('@google-analytics/data');
 const path = require('path');
 const fs = require('fs');
 
-const KEY_FILE = path.join(process.cwd(), 'google-indexing-key.json');
+const KEY_FILE = path.join(process.cwd(), 'multipro-digital-seo-e15f3f08f650.json');
 
 async function run() {
   try {
