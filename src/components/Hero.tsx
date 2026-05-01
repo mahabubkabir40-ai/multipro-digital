@@ -40,13 +40,12 @@ export default function Hero() {
         {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
         <div className="absolute inset-0 opacity-60 lg:hidden">
           <Image 
-            src="/blog-cover-movers.png" 
+            src="/hero-bg-mobile.webp" 
             alt="Premium moving truck background" 
             fill
             className="object-cover"
             priority
-            sizes="(max-width: 480px) 390px, (max-width: 1024px) 1024px, 100vw"
-            quality={35} // Absolute minimum for mobile LCP speed
+            unoptimized={true} // Bypasses Vercel image processing to eliminate server TTFB latency
           />
         </div>
 
