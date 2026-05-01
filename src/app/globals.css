@@ -34,12 +34,3 @@ body {
   overflow-x: hidden;
 }
 
-.hero-optimize {
-  content-visibility: visible;
-  contain: paint;
-}
-
-.hero-optimize h1 {
-  will-change: transform, opacity;
-  transform: translateZ(0); /* Hardware acceleration hint */
-}

@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-24 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900 hero-optimize">
+    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-24 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
         {/* VIDEO: Gated by JS to save 38MB bandwidth on mobile */}
@@ -30,15 +30,15 @@ export default function Hero() {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
+            className="absolute inset-0 w-full h-full object-cover opacity-50 transform scale-105"
           >
             <source src="/moving-truck.mp4" type="video/mp4" />
           </video>
         )}
         
         {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
-        {/* We use CSS classes instead of JS state for the initial block/hidden to avoid hydration flickering */}
-        <div className={`absolute inset-0 opacity-40 mix-blend-overlay ${mounted && !isMobile ? 'hidden' : 'block'}`}>
+        {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
+        <div className="absolute inset-0 opacity-60 lg:opacity-30">
           <Image 
             src="/blog-cover-movers.png" 
             alt="Premium moving truck background" 
@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900" />
         
         {/* Subtle Tech Blueprint Grid Overlay - Hidden on mobile to save paint time */}
-        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px] mix-blend-overlay" />
+        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:24px_24px]" />
 
         {/* Animated Glow Orbs - Hidden on mobile to significantly reduce LCP paint lag */}
         <div className="hidden lg:block absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[128px] mix-blend-screen" />

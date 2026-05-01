@@ -31,11 +31,13 @@ const organizationSchema = {
 const inter = Inter({
   variable: "--font-m-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-m-serif",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
