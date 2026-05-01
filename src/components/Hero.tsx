@@ -84,6 +84,8 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
             <Link 
               href="/contact#audit-form" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative group overflow-hidden w-full sm:w-auto px-4 sm:px-8 py-4 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-lg transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
