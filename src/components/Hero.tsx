@@ -121,7 +121,6 @@ export default function Hero() {
                       width={48} 
                       height={48} 
                       className="w-full h-full object-cover"
-                      loading="lazy" 
                       quality={40} 
                     />
                   </div>
