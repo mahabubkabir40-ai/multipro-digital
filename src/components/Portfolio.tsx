@@ -155,7 +155,15 @@ export default function Portfolio() {
                     href="/contact#audit-form"
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (typeof window !== 'undefined' && (window as any).gtag) {
+                        (window as any).gtag('event', 'click_audit', {
+                          'event_category': 'CTA',
+                          'event_label': 'Portfolio Card Button'
+                        });
+                      }
+                    }}
                     className="relative group/btn overflow-hidden w-full py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.05] active:scale-90 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                   >

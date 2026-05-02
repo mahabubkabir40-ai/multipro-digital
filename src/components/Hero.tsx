@@ -38,7 +38,7 @@ export default function Hero() {
         
         {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
         {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
-        <div className="absolute inset-0 opacity-60 lg:hidden">
+        <div className="absolute inset-0 lg:hidden">
           <img 
             src="/hero-bg-mobile.webp" 
             alt="Premium moving truck background" 
@@ -85,6 +85,14 @@ export default function Hero() {
               href="/contact#audit-form" 
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'click_audit', {
+                    'event_category': 'CTA',
+                    'event_label': 'Hero Main Button'
+                  });
+                }
+              }}
               className="relative group overflow-hidden w-full sm:w-auto px-4 sm:px-8 py-4 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-lg transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
@@ -96,10 +104,9 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Social Proof Trust Bar - Delayed to clear network for LCP image */}
-          {mounted && (
-            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl animate-in fade-in duration-1000">
-              <div className="flex -space-x-4">
+          {/* Social Proof Trust Bar - Rendered immediately for better LCP metrics */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl">
+            <div className="flex -space-x-4">
                 {[
                   { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Owner" },
                   { src: "/avatars/David-Owner.jpg.webp", alt: "David - Moving Company Owner" },
@@ -129,7 +136,6 @@ export default function Hero() {
                 <p className="text-white text-sm sm:text-base font-bold font-sans tracking-wide">Over 25+ Happy Clients</p>
               </div>
             </div>
-          )}
 
         </div>
       </div>

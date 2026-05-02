@@ -59,6 +59,14 @@ export default function Footer() {
                 href="/contact#audit-form"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    (window as any).gtag('event', 'click_audit', {
+                      'event_category': 'CTA',
+                      'event_label': 'Footer Button'
+                    });
+                  }
+                }}
                 className="inline-block text-brand-lime hover:text-white font-bold text-sm tracking-wide transition-colors border-b-2 border-brand-lime hover:border-white pb-1 w-max"
               >
                 Get Your Free Audit &rarr;

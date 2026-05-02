@@ -50,6 +50,14 @@ export default function Navbar() {
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'click_audit', {
+                    'event_category': 'CTA',
+                    'event_label': 'Navbar Desktop Button'
+                  });
+                }
+              }}
               className="relative group overflow-hidden px-6 py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-sm transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_30px_rgba(154,251,22,0.4)] active:scale-95 active:bg-white select-none whitespace-nowrap"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
@@ -93,7 +101,15 @@ export default function Navbar() {
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                setIsMenuOpen(false);
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'click_audit', {
+                    'event_category': 'CTA',
+                    'event_label': 'Navbar Mobile Button'
+                  });
+                }
+              }}
               className="w-full bg-brand-lime text-[#1A365D] font-black py-4 rounded-xl shadow-xl flex items-center justify-center text-[10px] min-[375px]:text-xs whitespace-nowrap text-nowrap overflow-hidden px-1 transition-all duration-300 active:duration-75 active:scale-95 active:bg-white select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
