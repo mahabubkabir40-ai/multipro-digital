@@ -62,6 +62,7 @@ export default function RootLayout({
         <meta name="msvalidate.01" content="246F3C1A5C4046378DD8057F1C64B4CE" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/hero-bg-mobile.webp" as="image" type="image/webp" fetchPriority="high" />
         <JsonLd data={organizationSchema} />
       </head>
 
@@ -69,9 +70,9 @@ export default function RootLayout({
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZHR9P6KVHT"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

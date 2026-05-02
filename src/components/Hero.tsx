@@ -39,13 +39,12 @@ export default function Hero() {
         {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
         {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
         <div className="absolute inset-0 opacity-60 lg:hidden">
-          <Image 
+          <img 
             src="/hero-bg-mobile.webp" 
             alt="Premium moving truck background" 
-            fill
-            className="object-cover"
-            priority
-            unoptimized={true} // Bypasses Vercel image processing to eliminate server TTFB latency
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="sync"
           />
         </div>
 
