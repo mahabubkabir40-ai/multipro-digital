@@ -60,9 +60,6 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="dvYw3SsPD-S8VEQGz5CrbmcTIZI3AkQApXZb3gIRXss" />
         <meta name="msvalidate.01" content="246F3C1A5C4046378DD8057F1C64B4CE" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" href="/hero-bg-mobile.webp" as="image" type="image/webp" fetchPriority="high" />
         <JsonLd data={organizationSchema} />
       </head>
 

@@ -1,50 +1,25 @@
-'use client'
-
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-
+import HeroVideo from './HeroVideo';
+import HeroCTA from './HeroCTA';
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    setMounted(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
   return (
     <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-24 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
-        {/* VIDEO: Gated by JS to save 38MB bandwidth on mobile */}
-        {mounted && !isMobile && (
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
-          >
-            <source src="/moving-truck.mp4" type="video/mp4" />
-          </video>
-        )}
+        
+        {/* VIDEO: Gated by JS to save bandwidth on mobile */}
+        <HeroVideo />
         
         {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
-        {/* Uses CSS opacity and hardware acceleration instead of expensive mix-blend-overlay */}
         <div className="absolute inset-0 lg:hidden">
-          <img 
+          <Image 
             src="/hero-bg-mobile.webp" 
             alt="Premium moving truck background" 
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-            decoding="sync"
+            fill
+            className="object-cover"
+            priority
+            unoptimized
           />
         </div>
 
@@ -79,29 +54,8 @@ export default function Hero() {
             We help USA Moving Companies dominate the Google Map Pack and get exclusive calls—so you can stop fighting over shared leads forever.
           </p>
 
-          
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
-            <Link 
-              href="/contact#audit-form" 
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'click_audit', {
-                    'event_category': 'CTA',
-                    'event_label': 'Hero Main Button'
-                  });
-                }
-              }}
-              className="relative group overflow-hidden w-full sm:w-auto px-4 sm:px-8 py-4 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-lg transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center select-none touch-manipulation"
-              style={{ WebkitTapHighlightColor: 'transparent' }}
-            >
-              <span className="relative z-10 flex items-center justify-center text-center gap-1.5 text-[#1A365D]">
-                Free Website & GBP Audit 
-                <svg className="w-4 h-4 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </span>
-              <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />
-            </Link>
+            <HeroCTA />
           </div>
 
           {/* Social Proof Trust Bar - Rendered immediately for better LCP metrics */}
