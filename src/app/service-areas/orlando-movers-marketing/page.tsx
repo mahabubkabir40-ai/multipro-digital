@@ -70,7 +70,7 @@ export default function OrlandoLocationPage() {
               <span className="text-brand-lime">Movers Marketing Agency</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100/80 leading-relaxed mb-10 border-l-4 border-brand-lime pl-6">
-              <AutoLinker>We help Orlando moving companies dominate the Google Map Pack and stop fighting over shared leads. If you're a mover in Central Florida, we build the engine that fills your trucks.</AutoLinker>
+              We help Orlando moving companies dominate the Google Map Pack and stop fighting over shared leads. If you're a mover in Central Florida, we build the engine that fills your trucks.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 mb-16">
