@@ -1,6 +1,5 @@
-'use client'
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import AutoLinker from '@/components/AutoLinker';
@@ -36,12 +35,15 @@ const locationSchema = {
   }
 };
 
-export default function OrlandoLocationPage() {
-  const [mounted, setMounted] = useState(false);
+export const metadata: Metadata = {
+  title: "SEO for Movers in Orlando | #1 Movers Marketing Agency",
+  description: "We help Orlando moving companies dominate the Google Map Pack and get exclusive leads. Stop fighting over shared leads in Central Florida.",
+  alternates: {
+    canonical: 'https://www.multiprodigital.com/service-areas/orlando-movers-marketing'
+  }
+};
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+export default function OrlandoLocationPage() {
 
   return (
     <main className="min-h-screen bg-white">
@@ -85,35 +87,33 @@ export default function OrlandoLocationPage() {
               </Link>
             </div>
 
-            {mounted && (
-              <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-[#0f172a]/50 backdrop-blur-sm border border-white/10 w-fit shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
-                <div className="flex -space-x-4">
-                  {[
-                    { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Partner" },
-                    { src: "/avatars/David-Owner.jpg.webp", alt: "David - 7-Figure Moving Business Owner" },
-                    { src: "/avatars/Garret-owner.jpg.webp", alt: "Garret - Professional Mover Marketing Client" },
-                    { src: "/avatars/Mountain%20Movers.png", alt: "Mountain Movers Orlando - Logo" },
-                    { src: "/avatars/Sunshine%20Movers.png", alt: "Sunshine Movers Florida - Logo" }
-                  ].map((avatar, index) => (
-                    <div key={index} className="w-12 h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
-                      <Image 
-                        src={avatar.src} 
-                        alt={avatar.alt} 
-                        width={48} 
-                        height={48} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col items-center sm:items-start">
-                  <div className="flex text-brand-lime gap-1 mb-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+            <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-[#0f172a]/50 backdrop-blur-sm border border-white/10 w-fit shadow-2xl">
+              <div className="flex -space-x-4">
+                {[
+                  { src: "/avatars/Adrian-owner.jpg.webp", alt: "Adrian - Moving Company Partner" },
+                  { src: "/avatars/David-Owner.jpg.webp", alt: "David - 7-Figure Moving Business Owner" },
+                  { src: "/avatars/Garret-owner.jpg.webp", alt: "Garret - Professional Mover Marketing Client" },
+                  { src: "/avatars/Mountain%20Movers.png", alt: "Mountain Movers Orlando - Logo" },
+                  { src: "/avatars/Sunshine%20Movers.png", alt: "Sunshine Movers Florida - Logo" }
+                ].map((avatar, index) => (
+                  <div key={index} className="w-12 h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
+                    <Image 
+                      src={avatar.src} 
+                      alt={avatar.alt} 
+                      width={48} 
+                      height={48} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-white font-bold tracking-wide">Over 25+ Happy Moving Clients</p>
-                </div>
+                ))}
               </div>
-            )}
+              <div className="flex flex-col items-center sm:items-start">
+                <div className="flex text-brand-lime gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                </div>
+                <p className="text-white font-bold tracking-wide">Over 25+ Happy Moving Clients</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
