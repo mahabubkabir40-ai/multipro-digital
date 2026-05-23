@@ -53,6 +53,9 @@ const faqSchema = {
 export const metadata = {
   title: 'How to Rank #1 on Google Maps for Moving Companies | Multipro Digital',
   description: 'Learn the exact 7-step system to dominate Google Maps and get more exclusive moving leads without paying for shared lead services.',
+  alternates: {
+    canonical: 'https://www.multiprodigital.com/movers-marketing-tips/how-to-rank-google-maps-moving-companies',
+  },
 };
 
 export default function MarketingTipsPage() {
