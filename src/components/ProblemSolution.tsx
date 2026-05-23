@@ -18,7 +18,7 @@ export default function ProblemSolution() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 font-sans leading-relaxed">
-            At Multipro Digital, we specialize in one thing — helping USA moving companies dominate Google and fill their calendars with real, high-intent leads. No gimmicks. No shared leads.
+            At Multipro Digital, we specialize in one thing — helping independent moving companies dominate Google and fill their calendars with real, high-intent leads. No gimmicks. No shared leads.
           </p>
         </div>
 

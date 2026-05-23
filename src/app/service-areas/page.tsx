@@ -8,7 +8,7 @@ import { MapPin, ChevronRight, Star, ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Service Areas | Local SEO for Movers | Multipro Digital',
-  description: 'Specialized movers marketing and local SEO services across the USA. See the cities where we help moving companies dominate Google Maps.',
+  description: 'Specialized movers marketing and local SEO services. See the cities where we help moving companies dominate Google Maps.',
 };
 
 const locationsHubSchema = {
@@ -50,7 +50,7 @@ export default function LocationsPage() {
               Our <span className="text-brand-blue/60 italic">Service Areas</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed font-sans border-l-4 border-brand-lime pl-6">
-              <AutoLinker>We provide specialized local SEO for movers across the United States. Our mission is to help moving companies in every major metro area stop paying for shared leads and start owning their local market.</AutoLinker>
+              <AutoLinker>We provide specialized local SEO for movers across our service areas. Our mission is to help moving companies in every major metro area stop paying for shared leads and start owning their local market.</AutoLinker>
             </p>
           </div>
         </div>

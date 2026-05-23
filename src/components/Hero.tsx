@@ -50,7 +50,7 @@ export default function Hero() {
           </h1>
           
           <p className="mt-4 text-base sm:text-lg md:text-2xl text-blue-100 w-full sm:max-w-3xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
-            We help USA Moving Companies dominate the Google Map Pack and get exclusive calls—so you can stop fighting over shared leads forever.
+            We help moving companies dominate the Google Map Pack and get exclusive calls—so you can stop fighting over shared leads forever.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">

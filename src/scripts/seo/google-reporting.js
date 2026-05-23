@@ -39,13 +39,6 @@ async function run() {
           startDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
           endDate: new Date().toISOString().split('T')[0],
           dimensions: ['query'],
-          dimensionFilterGroups: [{
-            filters: [{
-              dimension: 'country',
-              operator: 'equals',
-              expression: 'usa'
-            }]
-          }],
           rowLimit: 10
         }
       });

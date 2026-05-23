@@ -37,7 +37,7 @@ export default function AboutPage() {
               Driven by Results.
             </h1>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium leading-relaxed max-w-2xl mb-10">
-              <AutoLinker>Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping USA moving companies. We partner with American movers to fill their calendars and dominate local search.</AutoLinker>
+              <AutoLinker>Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping independent moving companies. We partner with professional movers to fill their calendars and dominate local search.</AutoLinker>
             </p>
           </div>
         </div>

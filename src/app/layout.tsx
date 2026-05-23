@@ -44,7 +44,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Trusted Local SEO Agency for Movers | Multipro Digital",
-  description: "Stop fighting over shared leads. We help USA Moving Companies dominate the Google Map Pack and get exclusive calls.",
+  description: "Stop fighting over shared leads. We help moving companies dominate the Google Map Pack and get exclusive calls.",
 };
 
 
