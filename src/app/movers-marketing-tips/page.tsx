@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Marketing Tips for Movers | Multipro Digital',
@@ -11,13 +12,14 @@ export default function MarketingTipsIndexPage() {
       id: 'how-to-rank-google-maps',
       title: 'How to Rank #1 on Google Maps for Moving Companies',
       excerpt: "If you're a moving company owner watching competitors fill their top spots on Google Maps while your business sits buried on page 2, you're not alone.",
-      image: '/blog-cover-movers.png',
+      image: '/blog-cover-movers.webp',
       link: '/movers-marketing-tips/how-to-rank-google-maps-moving-companies'
     }
   ];
 
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
+      <link rel="preload" href="/blog-cover-movers.webp" as="image" fetchPriority="high" />
 
       
       {/* Page Header */}
@@ -36,20 +38,32 @@ export default function MarketingTipsIndexPage() {
       <section className="py-16 flex-grow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, index) => (
               <div key={post.id} className="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 {/* Image */}
-                <Link href={post.link} target="_blank" rel="noopener noreferrer" className="aspect-[4/3] block overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={`Educational marketing guide for movers: ${post.title}`} 
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  />
+                <Link href={post.link} target="_blank" rel="noopener noreferrer" prefetch={false} className="aspect-[4/3] block overflow-hidden relative">
+                  {index === 0 ? (
+                    <img 
+                      src={post.image} 
+                      alt={`Educational marketing guide for movers: ${post.title}`} 
+                      fetchPriority="high"
+                      decoding="sync"
+                      className="object-cover w-full h-full absolute inset-0 transform hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <Image 
+                      src={post.image} 
+                      alt={`Educational marketing guide for movers: ${post.title}`} 
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transform hover:scale-105 transition-transform duration-700"
+                    />
+                  )}
                 </Link>
                 
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow">
-                  <Link href={post.link} target="_blank" rel="noopener noreferrer" className="group">
+                  <Link href={post.link} target="_blank" rel="noopener noreferrer" prefetch={false} className="group">
                     <h2 className="text-2xl font-serif font-bold text-[#1A365D] mb-4 group-hover:text-brand-lime transition-colors">
                       {post.title}
                     </h2>
@@ -62,6 +76,7 @@ export default function MarketingTipsIndexPage() {
                     href={post.link}
                     target="_blank" 
                     rel="noopener noreferrer"
+                    prefetch={false}
                     className="mt-auto text-[#1A365D] font-black text-xs uppercase tracking-widest hover:text-brand-lime transition-colors inline-block w-max"
                   >
                     READ MORE &raquo;

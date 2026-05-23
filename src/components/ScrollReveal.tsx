@@ -13,6 +13,10 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Sc
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,8 +47,8 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Sc
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      className={`md:transition-all md:duration-700 md:ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0 md:opacity-0 md:translate-y-12'
       } ${className}`}
     >
       {children}

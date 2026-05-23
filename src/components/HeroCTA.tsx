@@ -8,6 +8,7 @@ export default function HeroCTA() {
       href="/contact#audit-form" 
       target="_blank"
       rel="noopener noreferrer"
+      prefetch={false}
       onClick={() => {
         if (typeof window !== 'undefined' && (window as any).gtag) {
           (window as any).gtag('event', 'click_audit', {

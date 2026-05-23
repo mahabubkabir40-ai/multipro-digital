@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" target="_blank" rel="noopener noreferrer" className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" target="_blank" rel="noopener noreferrer" prefetch={false} className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
               <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - Leading Marketing Agency for Moving Companies" 
@@ -29,16 +29,16 @@ export default function Navbar() {
 
           {/* Navigation Links - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/about" target="_blank" rel="noopener noreferrer" className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="/about" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
               Marketing Tips
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="/contact" target="_blank" rel="noopener noreferrer" className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="/contact" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
@@ -50,6 +50,7 @@ export default function Navbar() {
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
+              prefetch={false}
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'click_audit', {
@@ -92,15 +93,16 @@ export default function Navbar() {
       {/* Mobile menu overlay */}
       <div className={`md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 z-[100] transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
         <div className="px-6 py-10 space-y-8 flex flex-col text-center">
-          <Link href="/about" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">About</Link>
+          <Link href="/about" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">About</Link>
 
-          <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Marketing Tips</Link>
-          <Link href="/contact" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Contact</Link>
+          <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Marketing Tips</Link>
+          <Link href="/contact" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Contact</Link>
           <div className="pt-4 px-2">
             <Link
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
+              prefetch={false}
               onClick={() => {
                 setIsMenuOpen(false);
                 if (typeof window !== 'undefined' && (window as any).gtag) {

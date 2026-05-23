@@ -1,12 +1,21 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Portfolio() {
+  const [mounted, setMounted] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeCardId, setActiveCardId] = useState<number | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <section id="portfolio" className="py-24 bg-slate-900 min-h-[400px]" />;
+  }
 
   const filters = ['All', 'Google Business Profile Ranking', 'Website Ranking'];
 
@@ -155,6 +164,7 @@ export default function Portfolio() {
                     href="/contact#audit-form"
                     target="_blank"
                     rel="noopener noreferrer"
+                    prefetch={false}
                     onClick={(e) => {
                       e.stopPropagation();
                       if (typeof window !== 'undefined' && (window as any).gtag) {

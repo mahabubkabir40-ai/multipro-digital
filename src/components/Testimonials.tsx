@@ -1,6 +1,20 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { Star, Quote, BadgeCheck, Play } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Testimonials() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <section id="testimonials" className="py-24 bg-slate-50 min-h-[300px]" />;
+  }
+
   const testimonials = [
     {
       id: 1,
@@ -74,7 +88,13 @@ export default function Testimonials() {
               
               <div className="flex items-center pt-6 border-t border-gray-100/80 mt-auto">
                 <div className="relative w-16 h-16 rounded-full border-[3px] border-brand-lime mr-5 overflow-hidden flex-shrink-0 group/avatar">
-                  <img src={review.image} alt={`Moving company owner ${review.name} - MultiPro Digital Partner`} className="w-full h-full object-cover transition-transform duration-500 group-hover/avatar:scale-110" />
+                  <Image 
+                    src={review.image} 
+                    alt={`Moving company owner ${review.name} - MultiPro Digital Partner`} 
+                    fill
+                    sizes="64px"
+                    className="object-cover transition-transform duration-500 group-hover/avatar:scale-110" 
+                  />
                 </div>
                 
                 <div>

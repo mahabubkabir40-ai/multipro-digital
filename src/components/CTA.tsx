@@ -1,7 +1,5 @@
-'use client';
-
 import { Star } from 'lucide-react';
-import Link from 'next/link';
+import TrackedLink from './TrackedLink';
 
 export default function CTA() {
   return (
@@ -38,18 +36,11 @@ export default function CTA() {
           
           {/* Centered CTA Button */}
           <div className="flex justify-center">
-            <Link 
+            <TrackedLink 
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'click_audit', {
-                    'event_category': 'CTA',
-                    'event_label': 'Bottom Section Button'
-                  });
-                }
-              }}
+              eventLabel="Bottom Section Button"
               className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
@@ -58,7 +49,7 @@ export default function CTA() {
                 <svg className="w-4 h-4 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />
-            </Link>
+            </TrackedLink>
           </div>
 
           {/* Trust Guarantees */}

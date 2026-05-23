@@ -7,6 +7,18 @@
   --color-brand-blue-light: #1A3E6D;
   --color-brand-lime: #9afb16;
   --color-brand-lime-hover: #8be014;
+  
+  /* System fonts on mobile by default to prevent font woff2 loading latency */
+  --font-sans-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+@media (min-width: 1025px) {
+  :root {
+    /* Google Web Fonts on desktop only */
+    --font-sans-family: var(--font-m-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif-family: var(--font-m-serif), Playfair Display, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
 }
 
 @theme inline {
@@ -16,8 +28,8 @@
   --color-brand-blue-light: var(--color-brand-blue-light);
   --color-brand-lime: var(--color-brand-lime);
   --color-brand-lime-hover: var(--color-brand-lime-hover);
-  --font-sans: var(--font-m-sans);
-  --font-serif: var(--font-m-serif);
+  --font-sans: var(--font-sans-family);
+  --font-serif: var(--font-serif-family);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,4 +45,28 @@ body {
   font-family: var(--font-m-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
+
+/* Optimize rendering of off-screen components */
+.optimized-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Prevent simulated font-load LCP delays on mobile */
+.font-serif-opt {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.font-sans-opt {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .font-serif-opt {
+    font-family: var(--font-m-serif), Playfair Display, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  .font-sans-opt {
+    font-family: var(--font-m-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+
 

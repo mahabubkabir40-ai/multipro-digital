@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 
 export default function FAQ() {
@@ -35,10 +36,12 @@ export default function FAQ() {
           <div className="lg:w-1/2 w-full">
             <div className="sticky top-24 rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/3] group">
               <div className="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition-colors z-10" />
-              <img 
-                src="/faq-results.png" 
+              <Image 
+                src="/faq-results.webp" 
                 alt="Dashboard visualization showing Google Map Pack Top 3 rankings for moving company keywords" 
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
