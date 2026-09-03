@@ -37,11 +37,11 @@ export default function FAQ() {
             <div className="sticky top-24 rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/3] group border border-slate-200">
               <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-brand-lime/30 text-white font-bold text-xs flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
-                Before & After Floor Transformations
+                Local SEO &amp; Inbound Leads Tracker
               </div>
               <Image 
                 src="/faq-results.webp" 
-                alt="Before and after comparison of dirty cracked concrete garage floor transformed into high-gloss flake epoxy showroom floor" 
+                alt="iPad Pro dashboard mockup displaying Google Map Pack rankings and 3-car garage inbound estimate lead notifications for concrete coatings contractors" 
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700"
