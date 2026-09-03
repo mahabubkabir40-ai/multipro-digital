@@ -16,7 +16,7 @@ export default function Navbar() {
             <Link href="/" target="_blank" rel="noopener noreferrer" prefetch={false} className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
               <Image 
                 src="/logo.png" 
-                alt="MultiPro Digital - Leading Marketing Agency for Moving Companies" 
+                alt="MultiPro Digital - Leading Marketing Agency for Epoxy & Concrete Coating Contractors" 
                 width={120}
                 height={64}
                 priority
@@ -63,7 +63,7 @@ export default function Navbar() {
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Free Website & GBP Audit
+                Free Video Audit
                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-active:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />

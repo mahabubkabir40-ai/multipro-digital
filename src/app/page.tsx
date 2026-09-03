@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ProblemSolution from "@/components/ProblemSolution";
+import FloorCalculator from "@/components/FloorCalculator";
 import HowItWorks from "@/components/HowItWorks";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
@@ -16,6 +17,10 @@ export default function Home() {
         
         <ScrollReveal className="optimized-section">
           <ProblemSolution />
+        </ScrollReveal>
+
+        <ScrollReveal className="optimized-section">
+          <FloorCalculator />
         </ScrollReveal>
 
         <ScrollReveal className="optimized-section">

@@ -9,20 +9,20 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How long until I see results?",
-      answer: "Most movers start getting exclusive calls and seeing Google ranking improvements within 8–12 weeks after we complete your audit and launch your campaign."
+      question: "How quickly do we see results?",
+      answer: "Your new high-speed website and instant estimate calculator launch within 7 days. Google Map Pack ranking improvements and local SEO momentum typically scale within 60 to 90 days."
     },
     {
-      question: "How much does it cost?",
-      answer: "Every moving company's needs and service areas are unique, so we don't offer one-size-fits-all pricing. We create a custom strategy tailored to your specific goals. The best first step is to book a 'Free Mover Growth Engine™ Strategy Session' call where we can provide a detailed proposal with no obligation."
+      question: "Do you work with other epoxy contractors in my city?",
+      answer: "No. We operate on strict market territory exclusivity. We partner with only one epoxy/concrete coatings contractor per service area so there is never a conflict of interest."
     },
     {
-      question: "Am I locked into a contract?",
-      answer: "Nope. We believe in earning your business through results, not locking you in. Our plans are month-to-month after the initial setup period."
+      question: "How does the Instant Floor Price Estimator help me?",
+      answer: "Homeowners looking for garage coatings want fast ballpark answers. Our interactive calculator lets them input their space size and finish, then captures their phone number, project address, and photos before booking an on-site sample consultation."
     },
     {
-      question: "Do you work with other industries?",
-      answer: "We work exclusively with moving companies — no shared leads, no guesswork — just exclusive calls from homeowners ready to move."
+      question: "Am I locked into a long-term contract?",
+      answer: "Never. We believe in earning your business through booked garage floors and commercial jobs, not legal lock-ins. All our growth plans are month-to-month after the initial setup period."
     }
   ];
 

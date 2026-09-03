@@ -12,13 +12,13 @@ const organizationSchema = {
   "name": "Multipro Digital",
   "url": "https://www.multiprodigital.com",
   "logo": "https://www.multiprodigital.com/logo.png",
-  "image": "https://www.multiprodigital.com/blog-cover-movers.png",
-  "description": "Multipro Digital is a specialized local SEO and digital marketing agency dedicated exclusively to helping moving companies dominate local search.",
+  "image": "https://www.multiprodigital.com/logo.png",
+  "description": "Multipro Digital is a specialized digital marketing agency helping epoxy and concrete coating contractors dominate local search and capture exclusive high-ticket floor jobs.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
   },
-  "serviceType": "Local SEO for Movers, Moving Leads Generation",
+  "serviceType": "Epoxy Flooring SEO, Concrete Coatings Lead Generation, Web Design for Contractors",
   "sameAs": [
     "https://www.linkedin.com/in/mahabub-kabir/",
     "https://www.instagram.com/multiprodigitalagency/",
@@ -43,8 +43,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Trusted Local SEO Agency for Movers | Multipro Digital",
-  description: "Stop fighting over shared leads. We help moving companies dominate the Google Map Pack and get exclusive calls.",
+  title: "Epoxy Flooring SEO & Marketing Agency | MultiPro Digital",
+  description: "We help epoxy and concrete coating contractors dominate Google Maps, book 3-car garage floors, and scale high-margin commercial jobs with instant price calculators.",
 };
 
 

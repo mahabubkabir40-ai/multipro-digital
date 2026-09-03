@@ -23,14 +23,14 @@ export default function CTA() {
                   <Star key={i} className="w-4 h-4 fill-brand-lime text-brand-lime" />
                 ))}
               </div>
-              <span className="text-sm font-semibold text-blue-100">Trusted by 25+ Moving Companies</span>
+              <span className="text-sm font-semibold text-blue-100">Trusted by 25+ Concrete & Epoxy Pros</span>
             </div>
 
             <h2 className="text-4xl md:text-6xl font-serif font-black text-white mb-6 tracking-tight leading-tight">
-              Ready to Own Your <span className="text-brand-lime">Market?</span>
+              Ready to Own Your <span className="text-brand-lime">Epoxy Market?</span>
             </h2>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium max-w-2xl mx-auto">
-              Don't let competitors steal your top spots. Book your free Website & GBP Audit today to turn Google searches into booked jobs predictably.
+              Stop letting competitors steal your 3-car garage and commercial showroom leads. Book your free 60-Second Video Audit today and claim territory exclusivity in your city.
             </p>
           </div>
           
@@ -45,7 +45,7 @@ export default function CTA() {
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <span className="relative z-10 flex items-center justify-center gap-1.5 px-3">
-                Free Website & GBP Audit
+                Claim Territory & Free Audit
                 <svg className="w-4 h-4 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />

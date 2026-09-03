@@ -12,14 +12,14 @@ export default function Footer() {
             <Link href="/" target="_blank" rel="noopener noreferrer" prefetch={false} className="inline-block mb-6 group">
               <Image 
                 src="/logo.png" 
-                alt="MultiPro Digital - SEO and Marketing for Movers" 
+                alt="MultiPro Digital - SEO and Marketing for Epoxy Contractors" 
                 width={120}
                 height={48}
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90"
               />
             </Link>
             <p className="text-blue-200/60 font-sans text-sm leading-relaxed mb-6 max-w-xs mx-auto md:mx-0">
-              Multipro Digital helps moving companies get more jobs through powerful local SEO and marketing. We make it easy for movers to rank higher, attract more customers, and stay fully booked year-round.
+              Multipro Digital helps epoxy and concrete coating contractors get more high-ticket garage floor jobs through local SEO, Google Map Pack dominance, and high-converting instant estimate calculators.
             </p>
           </div>
 
