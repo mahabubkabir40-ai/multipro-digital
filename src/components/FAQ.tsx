@@ -18,7 +18,7 @@ export default function FAQ() {
     },
     {
       question: "How does the Instant Floor Price Estimator help me?",
-      answer: "Homeowners looking for garage coatings want fast ballpark answers. Our interactive calculator lets them input their space size and finish, then captures their phone number, project address, and photos before booking an on-site sample consultation."
+      answer: "Homeowners looking for garage coatings want a fast ballpark. This homepage demo lets them pick a space size and finish to see an estimate range — then book a free audit or on-site consult so your team can confirm scope, prep, and a firm quote. On your live site, the same estimator routes serious buyers straight to your booking flow."
     },
     {
       question: "Am I locked into a long-term contract?",
@@ -38,7 +38,7 @@ export default function FAQ() {
               <div className="absolute inset-0 bg-brand-blue/20 group-hover:bg-transparent transition-colors z-10" />
               <Image 
                 src="/faq-results.webp" 
-                alt="Dashboard visualization showing Google Map Pack Top 3 rankings for moving company keywords" 
+                alt="Dashboard visualization showing Google Map Pack Top 3 rankings for epoxy and coatings keywords" 
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700"

@@ -33,8 +33,8 @@ export default function FloorCalculator() {
       id: 'flake',
       name: 'Full Broadcast Flake System',
       description: 'Durable multi-layer polyaspartic + decorative vinyl chip blend. Most popular for garages.',
-      pricePerSqFtLow: 6.5,
-      pricePerSqFtHigh: 8.5,
+      pricePerSqFtLow: 8.0,
+      pricePerSqFtHigh: 12.0,
       popular: true,
     },
     {
@@ -68,8 +68,9 @@ export default function FloorCalculator() {
   const prepCostPerSqFtLow = needsPrep ? 1.0 : 0;
   const prepCostPerSqFtHigh = needsPrep ? 1.5 : 0;
 
-  const totalLow = Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtLow + prepCostPerSqFtLow));
-  const totalHigh = Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtHigh + prepCostPerSqFtHigh));
+  const JOB_MINIMUM = 2500;
+  const totalLow = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtLow + prepCostPerSqFtLow)));
+  const totalHigh = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtHigh + prepCostPerSqFtHigh)));
 
   return (
     <section id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden">
@@ -87,7 +88,7 @@ export default function FloorCalculator() {
             The Instant Floor Price Estimator
           </h2>
           <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed font-sans">
-            How we double inbound quote bookings: When homeowners can estimate their floor project in 30 seconds, they stop shopping around and call your team directly.
+            Live DEMO of the Instant Floor Price Estimator homeowners see on a contractor site. When they can ballpark a garage floor in 30 seconds, they stop shopping around and book a consult with your team.
           </p>
         </div>
 
@@ -160,7 +161,7 @@ export default function FloorCalculator() {
           <div className="mb-10 p-5 rounded-2xl bg-slate-900/50 border border-white/10 flex items-center justify-between gap-4">
             <div>
               <div className="font-bold text-white text-sm sm:text-base">Existing Coating Removal or Crack Repairs Required?</div>
-              <div className="text-xs text-blue-200/60 mt-0.5">Heavy diamond diamond-grinding & crack mending prep</div>
+              <div className="text-xs text-blue-200/60 mt-0.5">Heavy diamond grinding & crack mending prep</div>
             </div>
             <button
               type="button"
@@ -207,7 +208,7 @@ export default function FloorCalculator() {
           <div className="mt-8 pt-6 border-t border-white/10 flex items-start gap-3 text-xs sm:text-sm text-blue-200/80 leading-relaxed">
             <Sparkles className="w-5 h-5 text-brand-lime flex-shrink-0 mt-0.5" />
             <p>
-              <strong className="text-white">Why this prints jobs:</strong> High-ticket homeowners hate waiting 3 days for a callback just to find out a ballpark price. When your website provides instant interactive transparency, you capture the address and contact info before they even look at a competitor.
+              <strong className="text-white">Why this prints jobs:</strong> This is a live demo of what homeowners see on your site — an instant ballpark range (with a job minimum applied) so serious buyers stop waiting days for a callback. Want this estimator on your contractor website? Book a free audit below.
             </p>
           </div>
         </div>

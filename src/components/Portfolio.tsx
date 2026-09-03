@@ -22,7 +22,7 @@ export default function Portfolio() {
   const results = [
     {
       id: 1,
-      name: "Ventura Moving Company",
+      name: "Ventura CA — Map Pack #1",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/gbp/Ventura-Moving-Company-ranking-growth.jpg",
       metric: "#1",
@@ -31,7 +31,7 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      name: "Oxnard Moving Company",
+      name: "Oxnard CA — Top 3 Map Pack",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/gbp/Oxnard-Moving-Company-ranking-growth.jpg",
       metric: "Top 3",
@@ -40,7 +40,7 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      name: "California Moving Company",
+      name: "California — Map Pack #2",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/gbp/California-moving-company-ranking-growth.jpg",
       metric: "#2",
@@ -49,7 +49,7 @@ export default function Portfolio() {
     },
     {
       id: 4,
-      name: "Idaho Moving Company",
+      name: "Idaho — Top 5 Organic",
       category: ['All', 'Website Ranking'],
       image: "/portfolio/website/Idaho-Moving-Comapny.jpg",
       metric: "Top 5",
@@ -58,7 +58,7 @@ export default function Portfolio() {
     },
     {
       id: 5,
-      name: "Maestro Moving Company",
+      name: "Maestro — +13 Ranking Spots",
       category: ['All', 'Website Ranking'],
       image: "/portfolio/website/Maestro-Movers-scaled.png",
       metric: "+13",
@@ -67,7 +67,7 @@ export default function Portfolio() {
     },
     {
       id: 6,
-      name: "Ventura Moving Company",
+      name: "Ventura CA — Top 4 Organic",
       category: ['All', 'Website Ranking'],
       image: "/portfolio/website/ventura-movers-company-ranking.png",
       metric: "Top 4",
@@ -91,7 +91,7 @@ export default function Portfolio() {
             How We Scale Epoxy Installers To <span className="text-brand-lime whitespace-nowrap">7-Figures</span>
           </h2>
           <p className="text-lg text-blue-100/70 font-sans leading-relaxed">
-            We don't post vanity metrics. We measure our success in booked garage floors, full grinder schedules, and revenue growth. Explore our recent local market takeovers.
+            These are prior local-SEO Map Pack and organic wins from our proven playbook — the same system we now apply to epoxy and concrete coatings contractors. We measure success in booked garage floors, full grinder schedules, and revenue growth.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ export default function Portfolio() {
                 {/* Image */}
                 <Image 
                   src={result.image} 
-                  alt={`Local SEO and Google Maps ranking case study for ${result.name}`} 
+                  alt={`Local SEO Map Pack case study: ${result.name} — prior win, same system for epoxy/coatings`} 
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={`object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-110' : 'scale-100'}`}

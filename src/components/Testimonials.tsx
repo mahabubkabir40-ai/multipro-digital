@@ -90,7 +90,7 @@ export default function Testimonials() {
                 <div className="relative w-16 h-16 rounded-full border-[3px] border-brand-lime mr-5 overflow-hidden flex-shrink-0 group/avatar">
                   <Image 
                     src={review.image} 
-                    alt={`Moving company owner ${review.name} - MultiPro Digital Partner`} 
+                    alt={`Epoxy & coatings contractor ${review.name} - MultiPro Digital Partner`} 
                     fill
                     sizes="64px"
                     className="object-cover transition-transform duration-500 group-hover/avatar:scale-110" 
