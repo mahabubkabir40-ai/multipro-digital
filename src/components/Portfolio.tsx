@@ -88,10 +88,10 @@ export default function Portfolio() {
             Proven Case Studies
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-white font-black mb-6 leading-tight">
-            How We Scale Movers To <span className="text-brand-lime whitespace-nowrap">7-Figures</span>
+            How We Scale Epoxy Installers To <span className="text-brand-lime whitespace-nowrap">7-Figures</span>
           </h2>
           <p className="text-lg text-blue-100/70 font-sans leading-relaxed">
-            We don't post vanity metrics. We measure our success in booked moves, full schedules, and revenue growth. Explore our recent local market takeovers.
+            We don't post vanity metrics. We measure our success in booked garage floors, full grinder schedules, and revenue growth. Explore our recent local market takeovers.
           </p>
         </div>
 

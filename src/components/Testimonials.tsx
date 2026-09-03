@@ -20,7 +20,7 @@ export default function Testimonials() {
       id: 1,
       name: "Garrett",
       company: "Orlando-FL",
-      text: "Our Google Map Pack ranking soared! Multipro Digital got us into the top 3 spots, leading to a 30%+ increase in inbound estimate requests. Our trucks are consistently busy.",
+      text: "Our Google Map Pack ranking soared! Multipro Digital got us into the top 3 spots, leading to a 35%+ increase in inbound garage floor estimate requests. Our installation calendar is packed.",
       rating: 5,
       image: "/avatars/Garret-owner.jpg.webp",
       isVideo: false
@@ -29,7 +29,7 @@ export default function Testimonials() {
       id: 2,
       name: "Adrian",
       company: "Phoenix-AZ",
-      text: "Finally, I can focus on operations, not chasing marketing. Multipro Digital handles our local SEO, keeping our calendar full and predictable. Huge stress relief!",
+      text: "Finally, I can focus on prep and topcoats, not chasing bad leads. The interactive floor price calculator on our site captures serious homeowners before they call anyone else. Huge game changer!",
       rating: 5,
       image: "/avatars/Adrian-owner.jpg.webp",
       isVideo: false
@@ -38,7 +38,7 @@ export default function Testimonials() {
       id: 3,
       name: "David",
       company: "Plano, TX",
-      text: "They truly understand the moving industry – from peak season to dispatch needs. Multipro Digital isn't just an SEO vendor; they're a partner who gets us.",
+      text: "They truly understand the coatings industry – from flake systems to commercial epoxy bids. Multipro Digital isn't just an SEO vendor; they keep our crews booked every single week.",
       rating: 5,
       image: "/avatars/David-Owner.jpg.webp",
       isVideo: false

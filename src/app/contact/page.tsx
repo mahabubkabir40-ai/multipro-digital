@@ -61,7 +61,7 @@ export default function ContactPage() {
                 Ready to <span className="text-brand-lime block">Dominate Your Local Market?</span>
               </h1>
               <p className="text-lg text-blue-100/70 font-sans leading-relaxed mb-8">
-                We’ll analyze your local market, your revenue goals, and the exact roadmap we use to generate exclusive, high-ticket moving leads. 
+                We’ll analyze your local service territory, your revenue goals, and the exact roadmap we use to generate exclusive, high-ticket garage floor and commercial epoxy leads. 
               </p>
               
               <div className="space-y-6 mb-12">
@@ -94,7 +94,7 @@ export default function ContactPage() {
 
               {/* Social Proof Mini */}
               <div className="pt-8 border-t border-white/10">
-                <p className="text-blue-100/70 font-medium mb-4">Trusted by rapidly growing moving companies nationwide.</p>
+                <p className="text-blue-100/70 font-medium mb-4">Trusted by rapidly growing epoxy & coating contractors nationwide.</p>
                 <div className="flex gap-4">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <svg key={star} className="w-6 h-6 text-brand-lime" fill="currentColor" viewBox="0 0 20 20">
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
             {/* Right Column - Dedicated Google Calendar */}
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 max-w-md mx-auto lg:max-w-none lg:w-full">
-              <h3 className="text-2xl text-white font-serif font-bold mb-6 leading-tight">Get a Proven Roadmap to Rank <span className="text-brand-lime font-sans font-black tracking-tight">#1 &</span> Fill Your Trucks!</h3>
+              <h3 className="text-2xl text-white font-serif font-bold mb-6 leading-tight">Get a Proven Roadmap to Rank <span className="text-brand-lime font-sans font-black tracking-tight">#1 &</span> Keep Your Grinders Busy!</h3>
               <div className="w-full bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(29,164,255,0.15)] h-[600px] border-[4px] border-white/10">
                 <iframe 
                   src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Igc3C-U9tp7AKTpLeRVHI8x0ef-WovC1qnds_oFFQvDuRt3bRTQoFF2qLwI-U2gxKjG8d5O3G?gv=true" 
@@ -131,9 +131,9 @@ export default function ContactPage() {
         
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-8 max-w-2xl mx-auto border-l-4 border-brand-lime pl-6 text-left">
-              <h2 className="text-3xl md:text-4xl font-serif text-[#0b1f38] font-black mb-3">Get Your Free Mover Visibility Audit!</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-[#0b1f38] font-black mb-3">Get Your Free 60-Second Video Audit!</h2>
               <p className="text-slate-600 text-lg">
-                Not ready to talk? No problem. Fill in the form below and I'll record a personalized video showing why competitors are outranking you and how to fix it. 100% Free.
+                Not ready to talk? No problem. Fill in the form below and I'll record a personalized 60-second video showing why competitors are outranking you for epoxy searches and how to fix it. 100% Free.
               </p>
             </div>
            
@@ -168,7 +168,7 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         name="Company"
-                        placeholder="Elite Movers LLC"
+                        placeholder="Apex Garage Floors LLC"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -182,7 +182,7 @@ export default function ContactPage() {
                       <input 
                         type="email" 
                         name="Email"
-                        placeholder="john@elitemovers.com"
+                        placeholder="john@apexgaragefloors.com"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -202,14 +202,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Current Monthly Moves</label>
+                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Current Monthly Floor Projects</label>
                     <div className="relative">
-                      <select name="Monthly Moves" defaultValue="" disabled={isSubmitting} className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 appearance-none focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm">
+                      <select name="Monthly Projects" defaultValue="" disabled={isSubmitting} className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 appearance-none focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm">
                         <option value="" disabled className="text-slate-500">Select an option...</option>
-                        <option value="0-10">0 - 10 Moves</option>
-                        <option value="11-30">11 - 30 Moves</option>
-                        <option value="31-100">31 - 100 Moves</option>
-                        <option value="100+">100+ Moves</option>
+                        <option value="1-3">1 - 3 Floors / month</option>
+                        <option value="4-8">4 - 8 Floors / month</option>
+                        <option value="9-20">9 - 20 Floors / month</option>
+                        <option value="20+">20+ Floors / month (Multi-Crew)</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
