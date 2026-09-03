@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { Calculator, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, HelpCircle } from 'lucide-react';
+import { Calculator, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface SpaceOption {
   id: string;
@@ -63,6 +62,11 @@ export default function FloorCalculator() {
   const [selectedSpace, setSelectedSpace] = useState<SpaceOption>(spaces[1]); // Default 2-Car
   const [selectedSystem, setSelectedSystem] = useState<CoatingSystem>(systems[0]); // Default Full Flake
   const [needsPrep, setNeedsPrep] = useState<boolean>(false);
+  const [firstName, setFirstName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Prep cost: +$1.00 - $1.50/sqft if heavy crack repair/old coating removal needed
   const prepCostPerSqFtLow = needsPrep ? 1.0 : 0;
@@ -71,6 +75,48 @@ export default function FloorCalculator() {
   const JOB_MINIMUM = 2500;
   const totalLow = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtLow + prepCostPerSqFtLow)));
   const totalHigh = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtHigh + prepCostPerSqFtHigh)));
+  const estimateLabel = '$' + totalLow.toLocaleString() + ' - $' + totalHigh.toLocaleString();
+
+  const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitError(null);
+
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length < 10) {
+      setSubmitError('Enter a valid phone number (at least 10 digits).');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: firstName.trim(),
+          'Phone Number': phone.trim(),
+          email: '',
+          _subject: 'New Floor Estimator Lead',
+          space: selectedSpace.name,
+          system: selectedSystem.name,
+          estimate: estimateLabel,
+          prep: needsPrep ? 'yes' : 'no',
+          source: 'homepage-floor-calculator',
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitSuccess(true);
+      } else {
+        setSubmitError(result.error || 'Could not send. Please try again.');
+      }
+    } catch {
+      setSubmitError('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden">
@@ -180,35 +226,76 @@ export default function FloorCalculator() {
 
           {/* Live Estimate Result Display */}
           <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-brand-blue to-slate-950 border border-brand-lime/40 shadow-inner">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
-                  Step 3: View Instant Range
-                </div>
-                <div className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
-                  ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}*
-                </div>
-                <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft • {selectedSystem.name}
-                </div>
-              </div>
-
-              <Link
-                href="/contact#audit-form"
-                prefetch={false}
-                className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center"
-              >
-                <span>Step 4: Lock In Pricing & Book Consult</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+            <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
+              Step 3: View Instant Range
             </div>
+            <div className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
+              {estimateLabel}*
+            </div>
+            <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft - {selectedSystem.name}
+            </div>
+
+            {submitSuccess ? (
+              <div className="mt-6 p-4 rounded-xl bg-brand-lime/15 border border-brand-lime/40 text-brand-lime font-bold text-sm sm:text-base flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                Estimate locked. We&apos;ll text you shortly.
+              </div>
+            ) : (
+              <form onSubmit={handleLeadSubmit} className="mt-6 space-y-3">
+                <div className="text-xs uppercase tracking-widest text-brand-lime font-black">
+                  Step 4: Lock In Pricing &amp; Book Consult
+                </div>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    name="name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="First name (optional)"
+                    autoComplete="given-name"
+                    disabled={isSubmitting}
+                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Phone number *"
+                    autoComplete="tel"
+                    inputMode="tel"
+                    required
+                    disabled={isSubmitting}
+                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                  />
+                </div>
+                {submitError && (
+                  <p className="text-red-400 text-sm font-medium">{submitError}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : (
+                    <>
+                      <span>Lock In Pricing &amp; Book Consult</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
 
           {/* Contractor Explanation Note */}
           <div className="mt-8 pt-6 border-t border-white/10 flex items-start gap-3 text-xs sm:text-sm text-blue-200/80 leading-relaxed">
             <Sparkles className="w-5 h-5 text-brand-lime flex-shrink-0 mt-0.5" />
             <p>
-              <strong className="text-white">Why this prints jobs:</strong> This is a live demo of what homeowners see on your site — an instant ballpark range (with a job minimum applied) so serious buyers stop waiting days for a callback. Want this estimator on your contractor website? Book a free audit below.
+              <strong className="text-white">Why this prints jobs:</strong> This is a live demo of what homeowners do on a contractor site - they pick a size and coating, see an instant ballpark range (with a job minimum applied), and submit their phone number to lock in pricing and book a consult. Want this estimator capturing leads on your website? Book a free audit below.
             </p>
           </div>
         </div>

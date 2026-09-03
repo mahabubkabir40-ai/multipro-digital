@@ -6,7 +6,7 @@ export default function HowItWorks() {
       id: "01",
       title: "The Instant Square-Foot Price Calculator",
       hook: "Stop wasting time giving rough quotes over the phone.",
-      body: "We build an interactive calculator directly into your homepage. Homeowners select their garage size (2-car, 3-car, basement), choose their coating (Full Flake, Metallic, Solid), and see an estimated price range in seconds. On your live site that estimate routes them to book an on-site moisture test — the demo below is the price engine, not a phone-capture form.",
+      body: "We build an interactive calculator directly into your homepage. Homeowners select their garage size (2-car, 3-car, basement), choose their coating (Full Flake, Metallic, Solid), see an estimated price range, and submit their phone number to book an on-site moisture test.",
       icon: <Calculator className="w-8 h-8 text-brand-lime" />,
     },
     {

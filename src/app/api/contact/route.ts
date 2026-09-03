@@ -27,10 +27,16 @@ export async function POST(request: Request) {
         <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
           <p><strong>Name:</strong> ${cleanData.name || 'N/A'}</p>
           <p><strong>Email:</strong> ${cleanData.email || 'N/A'}</p>
+          <p><strong>Phone:</strong> ${cleanData.phonenumber || cleanData.phone || 'N/A'}</p>
           <p><strong>Company:</strong> ${cleanData.company || 'N/A'}</p>
           <p><strong>Website:</strong> ${cleanData.website || 'N/A'}</p>
           <p><strong>Monthly Moves:</strong> ${cleanData.monthlymoves || 'N/A'}</p>
           <p><strong>Challenge:</strong> ${cleanData.biggestchallenge || 'N/A'}</p>
+          <p><strong>Space:</strong> ${cleanData.space || 'N/A'}</p>
+          <p><strong>System:</strong> ${cleanData.system || 'N/A'}</p>
+          <p><strong>Estimate:</strong> ${cleanData.estimate || 'N/A'}</p>
+          <p><strong>Prep:</strong> ${cleanData.prep || 'N/A'}</p>
+          <p><strong>Source:</strong> ${cleanData.source || 'N/A'}</p>
         </div>
         <p style="color: #666; font-size: 12px; margin-top: 30px; text-align: center;">
           Sent from Multipro Digital lead capture system.
@@ -44,7 +50,7 @@ export async function POST(request: Request) {
       to: "mahabubkabir@multiprodigital.com",
       subject: subject,
       html: emailHtml,
-      replyTo: cleanData.email as string,
+      ...(cleanData.email ? { replyTo: String(cleanData.email) } : {}),
     });
 
     if (error) {
