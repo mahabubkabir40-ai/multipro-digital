@@ -45,12 +45,12 @@ export default function Hero() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-[1.1] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
-            Stop Letting Your Crews Sit Idle <br className="hidden md:block" />
-            <span className="text-brand-lime font-black">While Competitors Book All The 3-Car Garages.</span>
+            High-Converting Websites & Local SEO <br className="hidden md:block" />
+            <span className="text-brand-lime font-black">Built Exclusively For Epoxy Contractors.</span>
           </h1>
           
           <p className="mt-4 text-base sm:text-lg md:text-2xl text-blue-100 w-full sm:max-w-3xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
-            We help independent epoxy contractors dominate the Google Map Pack and convert Instagram views into booked floor estimates with instant price calculators.
+            We build sub-1.5s showroom websites and dominate the Google Map Pack so your epoxy business books all the 3-car garage and commercial coating jobs in your city.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">

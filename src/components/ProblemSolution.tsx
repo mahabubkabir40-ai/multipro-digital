@@ -12,13 +12,13 @@ export default function ProblemSolution() {
         {/* Top Intro */}
         <div className="max-w-3xl mb-24 text-center mx-auto">
           <h2 className="text-5xl font-serif text-brand-blue font-black mb-8 leading-tight">
-            We Help Epoxy Contractors <br className="hidden md:block" />
+            Custom Websites & Local SEO <br className="hidden md:block" />
             <span className="text-brand-lime bg-brand-blue px-6 py-2 rounded-xl shadow-[0_10px_30px_rgba(26,54,93,0.3)] inline-block transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 font-sans tracking-tight mt-4">
-              Win Local Search
+              Built For Epoxy Pros
             </span>
           </h2>
           <p className="text-xl text-gray-600 font-sans leading-relaxed">
-            At Multipro Digital, we specialize in one thing — helping independent epoxy and concrete coating contractors dominate Google and book high-ticket 2-car and 3-car garage floors. No shared leads. Guaranteed territory exclusivity.
+            At Multipro Digital, we provide two specialized services for epoxy and concrete coating contractors: lightning-fast showroom websites with instant estimate calculators, and aggressive Local SEO to dominate Google Maps in your exclusive territory.
           </p>
         </div>
 
