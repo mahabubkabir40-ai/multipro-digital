@@ -8,12 +8,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className={`fixed w-full z-[100] transition-all duration-400 border-b border-white/20 ${isMenuOpen ? 'bg-white' : 'bg-white/85 lg:backdrop-blur-xl'}`}>
+    <header className={`fixed w-full z-[100] transition-all duration-300 border-b border-white/10 ${isMenuOpen ? 'bg-slate-950' : 'bg-slate-950/80 backdrop-blur-xl'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" target="_blank" rel="noopener noreferrer" prefetch={false} className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/" prefetch={false} className="flex items-center group py-2" onClick={() => setIsMenuOpen(false)}>
               <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - Leading Marketing Agency for Epoxy & Concrete Coating Contractors" 
@@ -22,29 +22,29 @@ export default function Navbar() {
                 priority
                 className="h-14 md:h-16 w-auto object-contain transition-all duration-500 ease-out 
                            group-hover:scale-[1.08] group-hover:-rotate-3 
-                           filter drop-shadow-sm group-hover:drop-shadow-[0_0_15px_rgba(154,251,22,0.6)]"
+                           filter brightness-0 invert drop-shadow-[0_0_12px_rgba(255,255,255,0.2)] group-hover:drop-shadow-[0_0_20px_rgba(154,251,22,0.8)]"
               />
             </Link>
           </div>
 
           {/* Navigation Links - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#why-it-works" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="#why-it-works" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
               Why It Works
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="#the-system" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="#the-system" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
               The System
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="#proof" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="#proof" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
               Proof
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="#faq" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+            <Link href="#faq" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
               FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
@@ -65,7 +65,7 @@ export default function Navbar() {
                   });
                 }
               }}
-              className="relative group overflow-hidden px-6 py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-sm transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_30px_rgba(154,251,22,0.4)] active:scale-95 active:bg-white select-none whitespace-nowrap"
+              className="relative group overflow-hidden px-6 py-2.5 rounded-xl bg-brand-lime text-slate-950 font-black text-sm transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_30px_rgba(154,251,22,0.5)] active:scale-95 select-none whitespace-nowrap"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
@@ -80,7 +80,7 @@ export default function Navbar() {
           <div className="flex items-center md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-700 hover:text-brand-blue focus:outline-none p-2 transition-transform duration-300 active:scale-90"
+              className="text-slate-300 hover:text-white focus:outline-none p-2 transition-transform duration-300 active:scale-90"
             >
               {isMenuOpen ? (
                 <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,12 +97,12 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 z-[100] transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
+      <div className={`md:hidden absolute top-20 left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 z-[100] transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
         <div className="px-6 py-10 space-y-8 flex flex-col text-center">
-          <Link href="#why-it-works" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Why It Works</Link>
-          <Link href="#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">The System</Link>
-          <Link href="#proof" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Proof</Link>
-          <Link href="#faq" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">FAQ</Link>
+          <Link href="#why-it-works" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Why It Works</Link>
+          <Link href="#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">The System</Link>
+          <Link href="#proof" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Proof</Link>
+          <Link href="#faq" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">FAQ</Link>
           <div className="pt-4 px-2">
             <Link
               href="/contact#audit-form"
@@ -118,10 +118,10 @@ export default function Navbar() {
                   });
                 }
               }}
-              className="w-full bg-brand-lime text-[#1A365D] font-black py-4 rounded-xl shadow-xl flex items-center justify-center text-[10px] min-[375px]:text-xs whitespace-nowrap text-nowrap overflow-hidden px-1 transition-all duration-300 active:duration-75 active:scale-95 active:bg-white select-none touch-manipulation"
+              className="w-full bg-brand-lime text-slate-950 font-black py-4 rounded-xl shadow-xl flex items-center justify-center text-sm font-sans tracking-wide transition-all duration-300 active:duration-75 active:scale-95 select-none touch-manipulation"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
-              Free Website & GBP Audit
+              Free Video Audit →
             </Link>
           </div>
         </div>

@@ -22,57 +22,57 @@ export default function Portfolio() {
   const results = [
     {
       id: 1,
-      name: "Ventura CA — Map Pack #1",
+      name: "Dallas, TX — #1 Map Pack Domination",
       category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/gbp/Ventura-Moving-Company-ranking-growth.jpg",
+      image: "/portfolio/epoxy/geogrid-map.jpg",
       metric: "#1",
       metricLabel: "Map Pack Ranking",
-      timeframe: "in 60 Days"
+      timeframe: "41 Top-1 Geo-Pins"
     },
     {
       id: 2,
-      name: "Oxnard CA — Top 3 Map Pack",
+      name: "Chicago, IL — Epoxy Rank Tracker",
       category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/gbp/Oxnard-Moving-Company-ranking-growth.jpg",
-      metric: "Top 3",
-      metricLabel: "Map Pack Ranking",
-      timeframe: "in 30 Days"
+      image: "/portfolio/epoxy/ranking-dashboard.jpg",
+      metric: "Top 1",
+      metricLabel: "Google Map Pack",
+      timeframe: "+68.4% Conversion Rate"
     },
     {
       id: 3,
-      name: "California — Map Pack #2",
-      category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/gbp/California-moving-company-ranking-growth.jpg",
-      metric: "#2",
-      metricLabel: "Map Pack Ranking",
-      timeframe: "in 30 Days"
+      name: "Orlando, FL — Sub-1.5s Showroom Site",
+      category: ['All', 'Website Ranking'],
+      image: "/portfolio/epoxy/showroom-mockup.jpg",
+      metric: "98/100",
+      metricLabel: "PageSpeed Score",
+      timeframe: "Instant Price Estimator"
     },
     {
       id: 4,
-      name: "Idaho — Top 5 Organic",
-      category: ['All', 'Website Ranking'],
-      image: "/portfolio/website/Idaho-Moving-Comapny.jpg",
-      metric: "Top 5",
-      metricLabel: "Organic Search",
-      timeframe: "in 30 Days"
+      name: "Phoenix, AZ — Commercial Coatings",
+      category: ['All', 'Google Business Profile Ranking'],
+      image: "/portfolio/epoxy/geogrid-map.jpg",
+      metric: "Top 3",
+      metricLabel: "Map Pack Ranking",
+      timeframe: "in 45 Days"
     },
     {
       id: 5,
-      name: "Maestro — +13 Ranking Spots",
+      name: "Denver, CO — 3-Car Garage Pipeline",
       category: ['All', 'Website Ranking'],
-      image: "/portfolio/website/Maestro-Movers-scaled.png",
-      metric: "+13",
-      metricLabel: "Ranking Spots",
-      timeframe: "in 30 Days"
+      image: "/portfolio/epoxy/showroom-mockup.jpg",
+      metric: "+18",
+      metricLabel: "Booked Estimates / mo",
+      timeframe: "in 60 Days"
     },
     {
       id: 6,
-      name: "Ventura CA — Top 4 Organic",
+      name: "Atlanta, GA — Flake & Metallic SEO",
       category: ['All', 'Website Ranking'],
-      image: "/portfolio/website/ventura-movers-company-ranking.png",
-      metric: "Top 4",
+      image: "/portfolio/epoxy/ranking-dashboard.jpg",
+      metric: "#1",
       metricLabel: "Organic Search",
-      timeframe: "in 30 Days"
+      timeframe: "in 60 Days"
     }
   ];
 
