@@ -18,29 +18,29 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Garrett",
+      name: "Liam",
       company: "Orlando-FL",
       text: "Our Google Map Pack ranking soared! Multipro Digital got us into the top 3 spots, leading to a 35%+ increase in inbound garage floor estimate requests. Our installation calendar is packed.",
       rating: 5,
-      image: "/avatars/Garret-owner.jpg.webp",
+      image: "/avatars/epoxy/contractor-1.webp",
       isVideo: false
     },
     {
       id: 2,
-      name: "Adrian",
+      name: "Mateo",
       company: "Phoenix-AZ",
       text: "Finally, I can focus on prep and topcoats, not chasing bad leads. The interactive floor price calculator on our site captures serious homeowners before they call anyone else. Huge game changer!",
       rating: 5,
-      image: "/avatars/Adrian-owner.jpg.webp",
+      image: "/avatars/epoxy/contractor-2.webp",
       isVideo: false
     },
     {
       id: 3,
-      name: "David",
+      name: "Marcus",
       company: "Plano, TX",
       text: "They truly understand the coatings industry – from flake systems to commercial epoxy bids. Multipro Digital isn't just an SEO vendor; they keep our crews booked every single week.",
       rating: 5,
-      image: "/avatars/David-Owner.jpg.webp",
+      image: "/avatars/epoxy/contractor-3.webp",
       isVideo: false
     }
   ];

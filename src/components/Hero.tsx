@@ -61,11 +61,11 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-[#0f172a] border border-white/10 w-full sm:max-w-fit shadow-xl">
             <div className="flex -space-x-4">
                 {[
-                  { src: "/avatars/Adrian-owner-v2.jpg.webp", alt: "Adrian - Epoxy & coatings contractor partner" },
-                  { src: "/avatars/David-Owner-v2.jpg.webp", alt: "David - Epoxy & coatings contractor partner" },
-                  { src: "/avatars/Garret-owner-v2.jpg.webp", alt: "Garret - Epoxy & coatings contractor partner" },
-                  { src: "/avatars/Mountain%20Movers.webp", alt: "MultiPro Digital partner" },
-                  { src: "/avatars/Sunshine%20Movers.webp", alt: "MultiPro Digital partner" }
+                  { src: "/avatars/epoxy/contractor-1.webp", alt: "Liam - Epoxy Flooring Contractor" },
+                  { src: "/avatars/epoxy/contractor-2.webp", alt: "Mateo - Garage Coatings Specialist" },
+                  { src: "/avatars/epoxy/contractor-3.webp", alt: "Marcus - Concrete Coatings Owner" },
+                  { src: "/avatars/epoxy/contractor-4.webp", alt: "Dan - Polyaspartic Installer" },
+                  { src: "/avatars/epoxy/contractor-5.webp", alt: "Sarah - Floor Project Manager" }
                 ].map((avatar, index) => (
                   <div key={index} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-brand-lime bg-slate-800 overflow-hidden relative z-10 transition-transform duration-300 hover:scale-110 hover:z-20">
                     <Image 
@@ -74,7 +74,7 @@ export default function Hero() {
                       width={48} 
                       height={48} 
                       className="w-full h-full object-cover"
-                      quality={40} 
+                      quality={80} 
                     />
                   </div>
                 ))}

@@ -22,14 +22,13 @@ export default function HeroVideo() {
   if (!shouldRender) return null;
 
   return (
-    <video 
-      autoPlay 
-      loop 
-      muted 
-      playsInline 
-      className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity transform scale-105"
-    >
-      <source src="/moving-truck.mp4" type="video/mp4" />
-    </video>
+    <div className="absolute inset-0 w-full h-full">
+      <img 
+        src="/hero-bg-desktop-epoxy.webp" 
+        alt="Luxury high-gloss polyaspartic flake epoxy garage floor showroom" 
+        fetchPriority="high"
+        className="w-full h-full object-cover opacity-60 mix-blend-luminosity transform scale-105"
+      />
+    </div>
   );
 }
