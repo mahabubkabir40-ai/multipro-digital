@@ -29,17 +29,23 @@ export default function Navbar() {
 
           {/* Navigation Links - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/about" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
-              About
+            <Link href="#why-it-works" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+              Why It Works
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
-              Marketing Tips
+            <Link href="#the-system" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+              The System
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
-            <Link href="/contact" target="_blank" rel="noopener noreferrer" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
-              Contact
+
+            <Link href="#proof" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+              Proof
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
+            </Link>
+
+            <Link href="#faq" prefetch={false} className="relative text-sm font-bold text-slate-700 hover:text-[#1A365D] group py-1 transition-colors">
+              FAQ
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
           </nav>
@@ -93,10 +99,10 @@ export default function Navbar() {
       {/* Mobile menu overlay */}
       <div className={`md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 z-[100] transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
         <div className="px-6 py-10 space-y-8 flex flex-col text-center">
-          <Link href="/about" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">About</Link>
-
-          <Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Marketing Tips</Link>
-          <Link href="/contact" target="_blank" rel="noopener noreferrer" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Contact</Link>
+          <Link href="#why-it-works" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Why It Works</Link>
+          <Link href="#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">The System</Link>
+          <Link href="#proof" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">Proof</Link>
+          <Link href="#faq" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-slate-800 hover:text-brand-lime">FAQ</Link>
           <div className="pt-4 px-2">
             <Link
               href="/contact#audit-form"

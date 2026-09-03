@@ -1,69 +1,90 @@
-import { MapPin, Rocket, SearchCode } from 'lucide-react';
-
+import { Calculator, Zap, MapPin } from 'lucide-react';
 
 export default function HowItWorks() {
-  const steps = [
+  const pillars = [
     {
-      id: 1,
-      title: "1. Sub-1.5s Showroom Portfolio",
-      description: "Homeowners browse on their phones while standing in dirty garages. We build high-speed, sub-1.5s showroom galleries featuring seamless before-and-after sliders of cracked concrete vs. mirror flake finishes that convert visitors on the spot.",
-      icon: <SearchCode className="w-8 h-8 text-brand-lime relative z-10 animate-[bounce_3s_ease-in-out_infinite]" />
+      id: "01",
+      title: "The Instant Square-Foot Price Calculator",
+      hook: "Stop wasting time giving rough quotes over the phone.",
+      body: "We build an interactive calculator directly into your homepage. Homeowners select their garage size (2-car, 3-car, basement), choose their coating (Full Flake, Metallic, Solid), see an estimated price range, and submit their phone number to book an on-site moisture test.",
+      icon: <Calculator className="w-8 h-8 text-brand-lime" />,
     },
     {
-      id: 2,
-      title: "2. 24/7 Instant Estimate Engine",
-      description: "While you're operating a diamond grinder, our interactive calculators and automated SMS systems capture the customer's square footage, address, and garage photos instantly—booking qualified site visits without you picking up the phone.",
-      icon: <Rocket className="w-8 h-8 text-brand-lime relative z-10 animate-[bounce_3s_ease-in-out_infinite_0.5s]" />
+      id: "02",
+      title: "Sub-1.5s High-Speed Showroom Portfolio",
+      hook: "Showcase your work without the mobile lag.",
+      body: "Most contractor websites fail Google PageSpeed tests because of heavy, uncompressed photos. We build clean-coded sites that load in under 1.5 seconds, featuring interactive Before/After sliders comparing cracked concrete to mirror-finish floors.",
+      icon: <Zap className="w-8 h-8 text-brand-lime" />,
     },
     {
-      id: 3,
-      title: "3. Google Map Pack Domination",
-      description: "We optimize your Google Business Profile and local authority to rank #1 in the Map Pack for high-intent searches like 'garage floor epoxy [City]' and 'commercial concrete coatings [City]'—locking out competitors in your exclusive territory.",
-      icon: <MapPin className="w-8 h-8 text-brand-lime relative z-10 animate-[bounce_3s_ease-in-out_infinite_1s]" />
-    }
+      id: "03",
+      title: "Google Map Pack Domination (Top 3)",
+      hook: "Own your city's most profitable zip codes.",
+      body: "Over 80% of homeowners looking for garage coatings click the top 3 spots on Google Maps. We optimize your Google Business Profile, build localized city landing pages, and drive high-intent residential and commercial leads straight to your phone.",
+      icon: <MapPin className="w-8 h-8 text-brand-lime" />,
+    },
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
-      {/* Decorative exact visual whitespace */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent" />
-      
+    <section id="the-system" className="py-28 bg-white relative overflow-hidden">
+      {/* Decorative subtle background elements */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-slate-50 to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-brand-lime font-bold tracking-widest uppercase text-sm mb-4">How It Works</h2>
-          <h3 className="text-3xl md:text-5xl font-serif text-[#1A365D] font-black tracking-tight">The Epoxy Growth Engine</h3>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-[#1A365D] font-bold tracking-widest uppercase text-xs mb-4">
+            The 3-Pillar Epoxy Engine
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-4">
+            The Epoxy Inbound Growth Engine™
+          </h2>
+          <p className="text-lg sm:text-xl text-slate-600 font-sans leading-relaxed">
+            How we turn Google searches and social media views into booked on-site estimates on autopilot.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((step) => (
+        {/* 3 Pillars Grid */}
+        <div className="grid lg:grid-cols-3 gap-8">
+          {pillars.map((pillar) => (
             <div 
-              key={step.id} 
-              className="group relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl hover:border-brand-lime/30 hover:-translate-y-2 transition-all duration-300"
+              key={pillar.id}
+              className="bg-slate-900 rounded-3xl p-8 sm:p-10 text-white shadow-2xl border border-white/10 hover:border-brand-lime/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group relative overflow-hidden"
             >
-               {/* Hover Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1A365D]/0 to-[#1A365D]/[0.03] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
-              
-              <div className="relative z-10">
-                <div className="relative w-16 h-16 mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                  {/* Glowing layers behind the icon */}
-                  <div className="absolute inset-0 bg-brand-lime/20 rounded-xl blur-xl group-hover:bg-brand-lime/40 transition-colors duration-500 animate-[pulse_4s_ease-in-out_infinite]" />
-                  <div className="absolute inset-0 bg-[#1A365D] rounded-xl flex items-center justify-center shadow-lg shadow-[#1A365D]/20 z-10 border border-brand-lime/10">
-                    {step.icon}
+              <div className="absolute -right-16 -top-16 w-36 h-36 bg-brand-lime/10 rounded-full blur-2xl group-hover:bg-brand-lime/20 transition-colors" />
+
+              <div>
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {pillar.icon}
                   </div>
+                  <span className="text-2xl font-black text-brand-lime font-mono">
+                    Pillar {pillar.id}
+                  </span>
                 </div>
-                {/* Fixed the title text contrast! Explicitly setting it to dark slate */}
-                <h4 className="text-2xl font-serif font-black text-brand-blue mb-4">
-                  {step.title}
-                </h4>
-                {/* Fixed the description contrast */}
-                <p className="text-slate-600 leading-relaxed font-sans">
-                  {step.description}
+
+                <h3 className="text-2xl font-serif font-black text-white mb-3 leading-snug">
+                  {pillar.title}
+                </h3>
+
+                <p className="text-brand-lime font-bold text-sm mb-4 font-sans tracking-wide">
+                  {pillar.hook}
                 </p>
 
+                <p className="text-blue-100/80 text-base font-sans leading-relaxed">
+                  {pillar.body}
+                </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">
+                <span>MultiPro Inbound System</span>
+                <span className="text-brand-lime font-bold">100% Automated</span>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

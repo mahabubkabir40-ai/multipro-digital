@@ -164,11 +164,36 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Company Name <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Business Name <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
-                        name="Company"
-                        placeholder="Apex Garage Floors LLC"
+                        name="Business Name"
+                        placeholder="Apex Epoxy Coatings"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">City & State <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="text" 
+                        name="City and State"
+                        placeholder="Dallas, TX"
+                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Phone Number <span className="text-[#1da4ff]">*</span></label>
+                      <input 
+                        type="tel" 
+                        name="Phone Number"
+                        placeholder="(555) 000-0000"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -182,18 +207,18 @@ export default function ContactPage() {
                       <input 
                         type="email" 
                         name="Email"
-                        placeholder="john@apexgaragefloors.com"
+                        placeholder="john@apexepoxycoatings.com"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website URL <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website or Instagram URL <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
-                        name="Website"
-                        placeholder="https://yourwebsite.com"
+                        name="Website or Instagram URL"
+                        placeholder="yoursite.com or @yourhandle"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -202,26 +227,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Current Monthly Floor Projects</label>
-                    <div className="relative">
-                      <select name="Monthly Projects" defaultValue="" disabled={isSubmitting} className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 appearance-none focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm">
-                        <option value="" disabled className="text-slate-500">Select an option...</option>
-                        <option value="1-3">1 - 3 Floors / month</option>
-                        <option value="4-8">4 - 8 Floors / month</option>
-                        <option value="9-20">9 - 20 Floors / month</option>
-                        <option value="20+">20+ Floors / month (Multi-Crew)</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Biggest Challenge</label>
+                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Biggest Challenge (Optional)</label>
                     <textarea 
                       name="Biggest Challenge"
-                      rows={3}
+                      rows={2}
+                      placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or slow website"
                       disabled={isSubmitting}
                       className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm resize-none"
                     ></textarea>
@@ -237,19 +247,18 @@ export default function ContactPage() {
                     <button 
                       type="submit"
                       disabled={isSubmitting}
-                      className={`relative group overflow-hidden w-full max-w-sm px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:rotate-0`}
+                      className={`relative group overflow-hidden w-full max-w-md px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-lg transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:rotate-0`}
                       style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
-                      <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+                      <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center">
                         {isSubmitting ? (
                           <>
                             <svg className="animate-spin h-5 w-5 text-[#1A365D]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                            Sending...
+                            Sending Audit Request...
                           </>
                         ) : (
                           <>
-                            Get Your Free Audit
-                            <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            Send Me My Free 60-Second Video Audit →
                           </>
                         )}
                       </span>

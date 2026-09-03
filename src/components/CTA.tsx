@@ -27,29 +27,32 @@ export default function CTA() {
             </div>
 
             <h2 className="text-4xl md:text-6xl font-serif font-black text-white mb-6 tracking-tight leading-tight">
-              Ready to Own Your <span className="text-brand-lime">Epoxy Market?</span>
+              Ready to Lock Out Competitors and <span className="text-brand-lime">Own Your City&apos;s Garage Floors?</span>
             </h2>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium max-w-2xl mx-auto">
-              Stop letting competitors steal your 3-car garage and commercial showroom leads. Book your free 60-Second Video Audit today and claim territory exclusivity in your city.
+              Get a free, no-obligation <strong className="text-white">60-Second Video Audit</strong> of your current website, mobile speed score, and Google Map Pack ranking gaps.
             </p>
           </div>
           
           {/* Centered CTA Button */}
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center justify-center">
             <TrackedLink 
               href="/contact#audit-form"
               target="_blank"
               rel="noopener noreferrer"
               eventLabel="Bottom Section Button"
-              className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation"
+              className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation text-center"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <span className="relative z-10 flex items-center justify-center gap-1.5 px-3">
-                Claim Territory & Free Audit
+                Send Me My Free 60-Second Video Audit →
                 <svg className="w-4 h-4 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>
               <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full group-active:translate-x-full transition-transform duration-[800ms] ease-out" />
             </TrackedLink>
+            <p className="mt-3 text-xs sm:text-sm text-blue-200/80 font-medium font-sans text-center">
+              100% Free • No Pushy Sales Calls • Delivered in 24 Hours
+            </p>
           </div>
 
           {/* Trust Guarantees */}

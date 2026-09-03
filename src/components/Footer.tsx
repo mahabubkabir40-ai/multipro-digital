@@ -18,19 +18,21 @@ export default function Footer() {
                 className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 brightness-0 invert opacity-90"
               />
             </Link>
-            <p className="text-blue-200/60 font-sans text-sm leading-relaxed mb-6 max-w-xs mx-auto md:mx-0">
-              Multipro Digital helps epoxy and concrete coating contractors get more high-ticket garage floor jobs through local SEO, Google Map Pack dominance, and high-converting instant estimate calculators.
+            <p className="text-blue-200/80 font-sans text-sm leading-relaxed mb-6 max-w-xs mx-auto md:mx-0 font-medium">
+              MultiPro Digital — Inbound Booking Engines & Local Search Domination for Epoxy Contractors.
+            </p>
+            <p className="text-brand-lime text-xs font-bold uppercase tracking-wider mb-2">
+              Territories Served: USA & Canada
             </p>
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-white font-serif font-bold text-lg mb-6">Company</h4>
+            <h4 className="text-white font-serif font-bold text-lg mb-6">Navigation</h4>
             <ul className="space-y-4">
-              <li><Link href="/about" target="_blank" rel="noopener noreferrer" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">About Us</Link></li>
-              <li><Link href="/service-areas" target="_blank" rel="noopener noreferrer" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Service Areas</Link></li>
-
-              <li><Link href="/movers-marketing-tips" target="_blank" rel="noopener noreferrer" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Marketing Tips</Link></li>
-              <li><Link href="/contact" target="_blank" rel="noopener noreferrer" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Contact</Link></li>
+              <li><Link href="#why-it-works" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Why It Works</Link></li>
+              <li><Link href="#the-system" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">The System</Link></li>
+              <li><Link href="#proof" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Proof</Link></li>
+              <li><Link href="#faq" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">FAQ</Link></li>
             </ul>
           </div>
 
@@ -44,7 +46,7 @@ export default function Footer() {
                 </Link>
                 <Link href="https://www.instagram.com/multiprodigitalagency/" className="text-blue-200/60 hover:text-brand-lime transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
                   <span className="sr-only">Instagram</span>
-                  <svg className="w-[22px] h-[22px] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069v-2.162zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.947.072s3.668-.014 4.947-.072c4.358-.2 6.78-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.199-4.358-2.618-6.78-6.979-6.98-1.28-.059-1.689-.073-4.947-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </Link>
                 <Link href="https://www.youtube.com/@MultiproMovers" className="text-blue-200/60 hover:text-brand-lime transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
                   <span className="sr-only">YouTube</span>
@@ -84,7 +86,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-brand-lime flex flex-col md:flex-row justify-between items-center">
           <p className="text-blue-200/40 text-xs font-sans mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} MultiPro Digital. All rights reserved.
+            &copy; 2026 MultiPro Digital. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" prefetch={false} className="text-blue-200/40 hover:text-brand-lime transition-colors text-xs font-sans">Privacy Policy</Link>

@@ -82,13 +82,13 @@ export default function FloorCalculator() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
-            <Calculator className="w-4 h-4" /> Live Interactive Demo
+            <Calculator className="w-4 h-4" /> Feature Demo
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tight mb-6">
-            The Instant Floor Price Estimator
+            See How The Instant Floor Estimator Works
           </h2>
           <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed font-sans">
-            Live DEMO of the Instant Floor Price Estimator homeowners see on a contractor site. When they can ballpark a garage floor in 30 seconds, they stop shopping around and book a consult with your team.
+            Try the interactive tool that doubles website conversion rates for coating professionals.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function FloorCalculator() {
           {/* Step 1: Select Space */}
           <div className="mb-10">
             <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
-              Step 1: Select Your Space Size
+              Step 1: Select Area (1-Car / 2-Car / 3-Car Garage / Commercial Shop)
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {spaces.map((space) => {
@@ -124,7 +124,7 @@ export default function FloorCalculator() {
           {/* Step 2: Select Coating Finish */}
           <div className="mb-10">
             <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
-              Step 2: Choose Coating System & Finish
+              Step 2: Select Finish (Signature Full Flake / Luxury Metallic Marble / Solid Color)
             </label>
             <div className="grid sm:grid-cols-2 gap-4">
               {systems.map((system) => {
@@ -183,7 +183,7 @@ export default function FloorCalculator() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
-                  Estimated Project Investment Range
+                  Step 3: View Instant Range
                 </div>
                 <div className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
                   ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}*
@@ -196,9 +196,9 @@ export default function FloorCalculator() {
               <Link
                 href="/contact#audit-form"
                 prefetch={false}
-                className="w-full md:w-auto px-8 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-base sm:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2"
+                className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center"
               >
-                <span>Get This On Your Site</span>
+                <span>Step 4: Lock In Pricing & Book Consult</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

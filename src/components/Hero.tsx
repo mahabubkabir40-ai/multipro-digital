@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-8">
             <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping" />
             <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
-            <span className="text-brand-lime text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for Epoxy & Concrete Coating Contractors</span>
+            <span className="text-brand-lime text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for US Epoxy & Concrete Coating Contractors</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-[1.15] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
@@ -51,7 +51,7 @@ export default function Hero() {
           </h1>
           
           <p className="mt-4 text-base sm:text-lg md:text-2xl text-blue-100 w-full sm:max-w-3xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
-            We help independent epoxy contractors dominate the Google Map Pack and convert Instagram views into booked floor estimates with instant price calculators.
+            We help independent epoxy contractors dominate the Google Map Pack and convert Instagram views into booked floor estimates with custom high-speed websites and instant price calculators.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
@@ -86,7 +86,9 @@ export default function Hero() {
                     <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   ))}
                 </div>
-                <p className="text-white text-sm sm:text-base font-bold font-sans tracking-wide">Over 25+ Epoxy & Coating Contractors Backed</p>
+                <p className="text-white text-sm sm:text-base font-bold font-sans tracking-wide">
+                  &ldquo;Exclusive local leads. No shared Angi or Thumbtack tire-kickers.&rdquo;
+                </p>
               </div>
             </div>
 

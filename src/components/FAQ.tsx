@@ -10,24 +10,24 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How quickly do we see results?",
-      answer: "Your new high-speed website and instant estimate calculator launch within 7 days. Google Map Pack ranking improvements and local SEO momentum typically scale within 60 to 90 days."
+      answer: "Your new high-speed website and instant estimate calculator go live within 7 days. Google Map Pack rankings and inbound organic call volume typically compound within 45 to 90 days."
     },
     {
-      question: "Do you work with other epoxy contractors in my city?",
-      answer: "No. We operate on strict market territory exclusivity. We partner with only one epoxy/concrete coatings contractor per service area so there is never a conflict of interest."
-    },
-    {
-      question: "How does the Instant Floor Price Estimator help me?",
-      answer: "Homeowners looking for garage coatings want a fast ballpark. This homepage demo lets them pick a space size and finish to see an estimate range — then book a free audit or on-site consult so your team can confirm scope, prep, and a firm quote. On your live site, the same estimator routes serious buyers straight to your booking flow."
+      question: "Are leads shared with other contractors in my city?",
+      answer: "Never. Every call, form submission, and calculator estimate generated from your website and Google profile is 100% exclusive to your business."
     },
     {
       question: "Am I locked into a long-term contract?",
-      answer: "Never. We believe in earning your business through booked garage floors and commercial jobs, not legal lock-ins. All our growth plans are month-to-month after the initial setup period."
+      answer: "No. We don't believe in holding contractors hostage. We earn your business month-to-month through real booked jobs and clear ranking reports."
+    },
+    {
+      question: "Do you work with my competitors?",
+      answer: "We maintain strict territory exclusivity. We only partner with one epoxy coating contractor per geographic market. Once you partner with us, we lock out your local competitors."
     }
   ];
 
   return (
-    <section className="py-24 bg-white relative">
+    <section id="faq" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col lg:flex-row gap-16 items-start">
