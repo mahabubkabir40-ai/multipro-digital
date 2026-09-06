@@ -143,7 +143,7 @@ export default function FloorCalculator() {
           {/* Step 1: Select Space */}
           <div className="mb-10">
             <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
-              Step 1: Select Area (1-Car / 2-Car / 3-Car Garage / Commercial Shop)
+              Step 1: Select Garage or Project Size
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {spaces.map((space) => {
@@ -170,7 +170,7 @@ export default function FloorCalculator() {
           {/* Step 2: Select Coating Finish */}
           <div className="mb-10">
             <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
-              Step 2: Select Finish (Signature Full Flake / Luxury Metallic Marble / Solid Color)
+              Step 2: Select Coating System &amp; Finish
             </label>
             <div className="grid sm:grid-cols-2 gap-4">
               {systems.map((system) => {
@@ -203,12 +203,16 @@ export default function FloorCalculator() {
             </div>
           </div>
 
-          {/* Step 3: Concrete Condition Checkbox */}
-          <div className="mb-10 p-5 rounded-2xl bg-slate-900/50 border border-white/10 flex items-center justify-between gap-4">
-            <div>
-              <div className="font-bold text-white text-sm sm:text-base">Existing Coating Removal or Crack Repairs Required?</div>
-              <div className="text-xs text-blue-200/60 mt-0.5">Heavy diamond grinding & crack mending prep</div>
-            </div>
+          {/* Optional Surface Prep */}
+          <div className="mb-10">
+            <label className="block text-xs font-black uppercase tracking-wider text-brand-lime/80 mb-3">
+              Optional Add-On: Surface Prep
+            </label>
+            <div className="p-5 rounded-2xl bg-slate-900/50 border border-white/10 flex items-center justify-between gap-4">
+              <div>
+                <div className="font-bold text-white text-sm sm:text-base">Existing Coating Removal or Crack Repairs Required?</div>
+                <div className="text-xs text-blue-200/60 mt-0.5">Heavy diamond grinding &amp; crack mending prep</div>
+              </div>
             <button
               type="button"
               onClick={() => setNeedsPrep(!needsPrep)}
@@ -222,12 +226,13 @@ export default function FloorCalculator() {
                 }`}
               />
             </button>
+            </div>
           </div>
 
           {/* Live Estimate Result Display */}
           <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-brand-blue to-slate-950 border border-brand-lime/40 shadow-inner">
             <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
-              Step 3: View Instant Range
+              Step 3: Instant Estimated Price Range
             </div>
             <div className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
               {estimateLabel}*
@@ -243,8 +248,13 @@ export default function FloorCalculator() {
               </div>
             ) : (
               <form onSubmit={handleLeadSubmit} className="mt-6 space-y-3">
-                <div className="text-xs uppercase tracking-widest text-brand-lime font-black">
-                  Step 4: Lock In Pricing &amp; Book Consult
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <span className="text-xs uppercase tracking-widest text-brand-lime font-black">
+                    Step 4: Lock In Pricing &amp; Book Consult
+                  </span>
+                  <span className="text-[11px] text-blue-200/70 font-medium">
+                    (Live Demo: See how homeowner leads are captured)
+                  </span>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <input
