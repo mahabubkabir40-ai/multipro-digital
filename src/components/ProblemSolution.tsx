@@ -1,8 +1,15 @@
+'use client';
+
 import React from 'react';
-import Link from 'next/link';
 import { AlertTriangle, PhoneOff, DollarSign, EyeOff } from 'lucide-react';
 
 export default function ProblemSolution() {
+  const scrollToSystem = () => {
+    const target = document.getElementById('the-system');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const painCards = [
     {
       id: 1,
@@ -84,13 +91,14 @@ export default function ProblemSolution() {
                 <span className="font-semibold text-slate-500">
                   Impact: <strong className="font-extrabold text-slate-900">{card.impact}</strong>
                 </span>
-                <Link 
-                  href="#the-system" 
-                  className="font-black text-rose-600 hover:text-[#1A365D] transition-colors flex items-center gap-1 group/btn"
+                <button 
+                  type="button"
+                  onClick={scrollToSystem}
+                  className="font-black text-rose-600 hover:text-[#1A365D] transition-colors flex items-center gap-1 group/btn cursor-pointer select-none"
                 >
                   <span>See The Solution</span>
                   <span className="transition-transform group-hover/btn:translate-y-0.5">↓</span>
-                </Link>
+                </button>
               </div>
             </div>
           ))}

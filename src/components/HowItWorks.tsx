@@ -29,7 +29,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="the-system" className="py-28 bg-white relative overflow-hidden">
+    <section id="the-system" className="py-28 bg-white relative overflow-hidden scroll-mt-24">
       {/* Decorative subtle background elements */}
       <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-slate-50 to-transparent" />
 
