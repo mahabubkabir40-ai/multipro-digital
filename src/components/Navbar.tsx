@@ -28,13 +28,13 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center space-x-7">
-            <Link href="/" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/" prefetch={false} className="relative text-lg font-bold text-slate-200 hover:text-white group py-1 transition-colors">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/about" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
+            <Link href="/about" prefetch={false} className="relative text-lg font-bold text-slate-200 hover:text-white group py-1 transition-colors">
               About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
