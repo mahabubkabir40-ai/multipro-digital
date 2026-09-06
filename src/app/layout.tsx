@@ -20,9 +20,7 @@ const organizationSchema = {
   },
   "serviceType": "Epoxy Flooring SEO, Concrete Coatings Lead Generation, Web Design for Contractors",
   "sameAs": [
-    "https://www.linkedin.com/in/mahabub-kabir/",
     "https://www.instagram.com/multiprodigitalagency/",
-    "https://www.youtube.com/@MultiproMovers",
     "https://www.facebook.com/multiprodigitalagency"
   ]
 };
