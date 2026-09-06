@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-center md:text-left">
           
           <div className="md:col-span-1 flex flex-col items-center md:items-start">
-            <Link href="/" target="_blank" rel="noopener noreferrer" prefetch={false} className="inline-block mb-6 group">
+            <Link href="/" prefetch={false} className="inline-block mb-6 group">
               <Image 
                 src="/logo.png" 
                 alt="MultiPro Digital - SEO and Marketing for Epoxy Contractors" 
@@ -29,11 +29,16 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-serif font-bold text-lg mb-6">Navigation</h4>
             <ul className="space-y-4">
-              <li><Link href="/about" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">About Us</Link></li>
-              <li><Link href="/#why-it-works" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Why It Works</Link></li>
-              <li><Link href="/#the-system" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">The System</Link></li>
-              <li><Link href="/#proof" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">Proof</Link></li>
-              <li><Link href="/#faq" prefetch={false} className="text-blue-200/60 hover:text-brand-lime transition-colors text-sm font-sans">FAQ</Link></li>
+              <li>
+                <Link href="/" prefetch={false} className="text-slate-200 hover:text-brand-lime transition-all duration-200 text-base font-semibold inline-block hover:translate-x-1">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" prefetch={false} className="text-slate-200 hover:text-brand-lime transition-all duration-200 text-base font-semibold inline-block hover:translate-x-1">
+                  About Us
+                </Link>
+              </li>
             </ul>
           </div>
 
