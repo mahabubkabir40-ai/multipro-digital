@@ -20,9 +20,9 @@ export default function HowItWorks() {
     },
     {
       id: "03",
-      title: "Google Map Pack Domination (Top 3)",
-      hook: "Own your city's most profitable zip codes.",
-      body: "Over 80% of homeowners looking for garage coatings click the top 3 spots on Google Maps. We optimize your Google Business Profile, build localized city landing pages, and drive high-intent residential and commercial leads straight to your phone.",
+      title: "Google Map Pack & AI Search Domination",
+      hook: "Own your city's top spots across Google Maps & AI.",
+      body: "Over 80% of homeowners looking for garage coatings click the top 3 spots on Google Maps or consult Google's AI Overview. We optimize your Google Business Profile, build localized city pages, and inject structured schema so Google AI, Siri, and ChatGPT recommend your shop first.",
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
       tag: "100% Done-For-You",
     },

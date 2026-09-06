@@ -25,6 +25,11 @@ export default function ComparisonTable() {
       multipro: '90+ PageSpeed (Sub-1.5s Clean Code)',
     },
     {
+      feature: 'Search & AI Visibility',
+      generic: 'Outdated SEO (Basic keywords on slow WordPress)',
+      multipro: 'Google Maps + AI Overviews & ChatGPT Ready',
+    },
+    {
       feature: 'Territory Lock',
       generic: 'Works with multiple shops in your town',
       multipro: 'Strictly 1 Contractor Per City',
