@@ -33,26 +33,6 @@ export default function Navbar() {
               About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
-
-            <Link href="/#why-it-works" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
-              Why It Works
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link href="/#the-system" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
-              The System
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link href="/#proof" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
-              Proof
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
-            </Link>
-
-            <Link href="/#faq" prefetch={false} className="relative text-sm font-bold text-slate-300 hover:text-white group py-1 transition-colors">
-              FAQ
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
-            </Link>
           </nav>
 
           {/* CTA Button - Desktop */}
@@ -103,10 +83,6 @@ export default function Navbar() {
       <div className={`md:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 z-[100] transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
         <div className="px-6 py-10 space-y-8 flex flex-col text-center">
           <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">About Us</Link>
-          <Link href="/#why-it-works" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Why It Works</Link>
-          <Link href="/#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">The System</Link>
-          <Link href="/#proof" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Proof</Link>
-          <Link href="/#faq" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">FAQ</Link>
           <div className="pt-4 px-2">
             <Link
               href="/free-audit"
