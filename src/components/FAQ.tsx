@@ -13,6 +13,10 @@ export default function FAQ() {
       answer: "Your new high-speed website and instant estimate calculator go live within 7 days. Google Map Pack rankings and inbound organic call volume typically compound within 45 to 90 days."
     },
     {
+      question: "How does MultiPro get us more calls than traditional SEO agencies?",
+      answer: "Traditional agencies build slow WordPress templates and rely on outdated keyword stuffing. We engineer custom, sub-second Next.js web applications wired with structured schema. This gets you ranked not just in the Google Map Pack, but as the #1 recommended answer across Google AI Overviews, Apple Siri, and ChatGPT voice search."
+    },
+    {
       question: "Are leads shared with other contractors in my city?",
       answer: "Never. Every call, form submission, and calculator estimate generated from your website and Google profile is 100% exclusive to your business."
     },
@@ -52,7 +56,7 @@ export default function FAQ() {
           {/* Right Column Accordion */}
           <div className="lg:w-1/2 w-full">
             <h2 className="text-4xl md:text-5xl font-serif text-brand-blue font-bold mb-10">
-              Frequently Asked Questions!
+              Frequently Asked Questions
             </h2>
             
             <div className="space-y-4">
