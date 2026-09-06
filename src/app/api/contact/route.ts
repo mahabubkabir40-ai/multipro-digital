@@ -28,8 +28,9 @@ export async function POST(request: Request) {
           <p><strong>Name:</strong> ${cleanData.name || 'N/A'}</p>
           <p><strong>Email:</strong> ${cleanData.email || 'N/A'}</p>
           <p><strong>Phone:</strong> ${cleanData.phonenumber || cleanData.phone || 'N/A'}</p>
-          <p><strong>Company:</strong> ${cleanData.company || 'N/A'}</p>
-          <p><strong>Website:</strong> ${cleanData.website || 'N/A'}</p>
+          <p><strong>Company:</strong> ${cleanData.company || cleanData.businessname || 'N/A'}</p>
+          <p><strong>City & State:</strong> ${cleanData.cityandstate || 'N/A'}</p>
+          <p><strong>Website:</strong> ${cleanData.website || cleanData.websiteorinstagramurl || 'N/A'}</p>
           <p><strong>Monthly Moves:</strong> ${cleanData.monthlymoves || 'N/A'}</p>
           <p><strong>Challenge:</strong> ${cleanData.biggestchallenge || 'N/A'}</p>
           <p><strong>Space:</strong> ${cleanData.space || 'N/A'}</p>
