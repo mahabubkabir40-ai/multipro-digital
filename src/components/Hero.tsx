@@ -49,10 +49,9 @@ export default function Hero() {
               <span className="text-brand-lime text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for US Epoxy & Concrete Coating Contractors</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-serif font-black text-white leading-[1.15] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
-              Stop Letting Your Crews <br className="hidden sm:block" />
-              <span className="whitespace-nowrap">Sit Idle</span> While Competitors Book <br className="hidden md:block" />
-              <span className="text-brand-lime font-black">All The 3-Car Garages.</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-serif font-black text-white leading-[1.18] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
+              <span className="block">Stop Letting Your Crews Sit Idle</span>
+              <span className="block mt-1 sm:mt-2">While Competitors Book <span className="text-brand-lime font-black">All The 3-Car Garages.</span></span>
             </h1>
             
             <p className="mt-4 text-base sm:text-lg md:text-2xl text-blue-100 w-full sm:max-w-3xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
