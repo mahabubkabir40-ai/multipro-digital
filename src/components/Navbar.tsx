@@ -58,9 +58,7 @@ export default function Navbar() {
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center">
             <Link 
-              href="/contact#audit-form"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-audit"
               prefetch={false}
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -111,9 +109,7 @@ export default function Navbar() {
           <Link href="/#faq" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">FAQ</Link>
           <div className="pt-4 px-2">
             <Link
-              href="/contact#audit-form"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-audit"
               prefetch={false}
               onClick={() => {
                 setIsMenuOpen(false);

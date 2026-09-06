@@ -6,9 +6,7 @@ export default function HeroCTA() {
   return (
     <div className="flex flex-col items-center sm:items-start w-full sm:w-auto">
       <Link 
-        href="/contact#audit-form" 
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/free-audit" 
         prefetch={false}
         onClick={() => {
           if (typeof window !== 'undefined' && (window as any).gtag) {

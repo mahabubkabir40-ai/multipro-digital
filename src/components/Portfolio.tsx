@@ -161,9 +161,7 @@ export default function Portfolio() {
                   </div>
 
                   <Link 
-                    href="/contact#audit-form"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/free-audit"
                     prefetch={false}
                     onClick={(e) => {
                       e.stopPropagation();

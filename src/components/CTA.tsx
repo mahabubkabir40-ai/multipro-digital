@@ -37,9 +37,7 @@ export default function CTA() {
           {/* Centered CTA Button */}
           <div className="flex flex-col items-center justify-center">
             <TrackedLink 
-              href="/contact#audit-form"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-audit"
               eventLabel="Bottom Section Button"
               className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation text-center"
               style={{ WebkitTapHighlightColor: 'transparent' }}

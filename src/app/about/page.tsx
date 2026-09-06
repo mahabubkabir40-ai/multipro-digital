@@ -129,7 +129,7 @@ export default function AboutPage() {
           </p>
           <div className="flex justify-center">
             <Link 
-              href="/contact#audit-form" 
+              href="/free-audit" 
               className="relative group overflow-hidden px-8 sm:px-12 py-5 rounded-2xl bg-brand-lime text-slate-950 font-black text-sm sm:text-lg transition-all duration-300 transform hover:scale-[1.05] hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 flex items-center justify-center gap-2 select-none"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >

@@ -60,9 +60,7 @@ export default function Footer() {
               </div>
               
               <TrackedLink 
-                href="/contact#audit-form"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/free-audit"
                 eventLabel="Footer Button"
                 className="inline-block text-brand-lime hover:text-white font-bold text-sm tracking-wide transition-colors border-b-2 border-brand-lime hover:border-white pb-1 w-max"
               >
