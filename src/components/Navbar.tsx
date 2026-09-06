@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className={`fixed w-full z-[100] transition-all duration-300 border-b border-white/10 ${isMenuOpen ? 'bg-slate-950' : 'bg-slate-950/80 backdrop-blur-xl'}`}>
+    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-slate-950 border-b border-white/10 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -100,7 +100,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`md:hidden absolute top-20 left-0 w-full bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 z-[100] transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
+      <div className={`md:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 z-[100] transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
         <div className="px-6 py-10 space-y-8 flex flex-col text-center">
           <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">About Us</Link>
           <Link href="/#why-it-works" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Why It Works</Link>

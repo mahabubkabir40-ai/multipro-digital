@@ -45,7 +45,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="bg-[#0b1f38] min-h-screen pt-32 pb-24 relative overflow-hidden mt-20">
+      <div className="bg-[#0b1f38] min-h-screen pt-32 pb-24 relative overflow-hidden">
         {/* Background Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(#0f172a 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 

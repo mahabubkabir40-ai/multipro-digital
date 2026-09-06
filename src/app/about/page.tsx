@@ -17,9 +17,9 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="flex-grow pt-20">
+    <main className="flex-grow">
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-[#0a192f]">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0a192f]">
         {/* Premium Dark Gradient Backdrop */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1A365D] via-[#0a192f] to-[#0a192f]" />
         
