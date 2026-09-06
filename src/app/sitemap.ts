@@ -1,67 +1,38 @@
 import type { MetadataRoute } from 'next'
-import fs from 'fs'
-import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.multiprodigital.com'
 
-
-  // Static routes
-  const routes = [
-    '',
-    '/about',
-    '/contact',
-    '/privacy-policy',
-    '/movers-marketing-tips',
-    '/service-areas',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }))
-
-  // Dynamic blog routes
-  const blogDir = path.join(process.cwd(), 'src/app/movers-marketing-tips')
-  let blogRoutes: MetadataRoute.Sitemap = []
-
-  try {
-    const folders = fs.readdirSync(blogDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name)
-
-    blogRoutes = folders.map((slug) => ({
-      url: `${baseUrl}/movers-marketing-tips/${slug}`,
+  return [
+    {
+      url: `${baseUrl}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/free-audit`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.7,
-    }))
-  } catch (error) {
-    console.error('Error reading blog directory for sitemap:', error)
-  }
-
-  // Dynamic location routes
-  const locationDir = path.join(process.cwd(), 'src/app/service-areas')
-  let locationRoutes: MetadataRoute.Sitemap = []
-
-  try {
-    if (fs.existsSync(locationDir)) {
-      const folders = fs.readdirSync(locationDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name)
-
-      locationRoutes = folders.map((slug) => ({
-        url: `${baseUrl}/service-areas/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.9,
-      }))
-    }
-  } catch (error) {
-    console.error('Error reading service-areas directory for sitemap:', error)
-  }
-
-
-  return [...routes, ...blogRoutes, ...locationRoutes]
-
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+  ]
 }

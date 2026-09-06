@@ -8,23 +8,12 @@ const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 const root = process.cwd();
 
-const getDynamicRoutes = (dirPath, prefix) => {
-  const fullPath = path.join(root, dirPath);
-  if (!fs.existsSync(fullPath)) return [];
-  
-  return fs.readdirSync(fullPath, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => `https://${HOST}/${prefix}/${dirent.name}`);
-};
-
 const urls = [
   `https://${HOST}/`,
   `https://${HOST}/about`,
+  `https://${HOST}/free-audit`,
   `https://${HOST}/contact`,
-  `https://${HOST}/service-areas`,
-  `https://${HOST}/movers-marketing-tips`,
-  ...getDynamicRoutes('src/app/movers-marketing-tips', 'movers-marketing-tips'),
-  ...getDynamicRoutes('src/app/service-areas', 'service-areas')
+  `https://${HOST}/privacy-policy`
 ];
 
 console.log('🚀 Preparing to submit URLs to Bing IndexNow:');

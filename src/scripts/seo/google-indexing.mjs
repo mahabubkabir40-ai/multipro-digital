@@ -18,23 +18,12 @@ const jwtClient = new google.auth.JWT({
   scopes: ['https://www.googleapis.com/auth/indexing'],
 });
 
-const getDynamicRoutes = (dirPath, prefix) => {
-  const fullPath = path.join(process.cwd(), dirPath);
-  if (!fs.existsSync(fullPath)) return [];
-  
-  return fs.readdirSync(fullPath, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => `${HOST}/${prefix}/${dirent.name}`);
-};
-
 const urls = [
   `${HOST}/`,
   `${HOST}/about`,
+  `${HOST}/free-audit`,
   `${HOST}/contact`,
-  `${HOST}/service-areas`,
-  `${HOST}/movers-marketing-tips`,
-  ...getDynamicRoutes('src/app/movers-marketing-tips', 'movers-marketing-tips'),
-  ...getDynamicRoutes('src/app/service-areas', 'service-areas')
+  `${HOST}/privacy-policy`
 ];
 
 async function indexUrls() {

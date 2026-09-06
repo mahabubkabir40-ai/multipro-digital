@@ -7,47 +7,14 @@ export async function GET() {
   const HOST = "www.multiprodigital.com";
   const baseUrl = `https://${HOST}`;
   
-  // 1. Start with static routes
+  // 1. Static active routes
   const urlList = [
     `${baseUrl}/`,
     `${baseUrl}/about`,
+    `${baseUrl}/free-audit`,
     `${baseUrl}/contact`,
-    `${baseUrl}/service-areas`,
-    `${baseUrl}/movers-marketing-tips`,
     `${baseUrl}/privacy-policy`,
   ];
-
-  // 2. Dynamically add blog routes
-  try {
-    const blogDir = path.join(process.cwd(), 'src/app/movers-marketing-tips');
-    if (fs.existsSync(blogDir)) {
-      const folders = fs.readdirSync(blogDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name);
-      
-      folders.forEach(slug => {
-        urlList.push(`${baseUrl}/movers-marketing-tips/${slug}`);
-      });
-    }
-  } catch (e) {
-    console.error("Error adding blog routes to IndexNow:", e);
-  }
-
-  // 3. Dynamically add service area routes
-  try {
-    const locationDir = path.join(process.cwd(), 'src/app/service-areas');
-    if (fs.existsSync(locationDir)) {
-      const folders = fs.readdirSync(locationDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name);
-      
-      folders.forEach(slug => {
-        urlList.push(`${baseUrl}/service-areas/${slug}`);
-      });
-    }
-  } catch (e) {
-    console.error("Error adding location routes to IndexNow:", e);
-  }
 
   // 4. Send the Ping to IndexNow
   try {

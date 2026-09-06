@@ -14,7 +14,7 @@ export default function HowItWorks() {
       id: "02",
       title: "Sub-1.5s High-Speed Showroom Portfolio",
       hook: "Showcase your work without the mobile lag.",
-      body: "Most contractor websites fail Google PageSpeed tests because of heavy, uncompressed photos. We build clean-coded sites that load in under 1.5 seconds, featuring interactive Before/After sliders comparing cracked concrete to mirror-finish floors.",
+      body: "Most contractor websites fail Google PageSpeed tests because of heavy, uncompressed photo dumps. We build clean-coded Next.js sites that load in under 1.5 seconds, showcasing crystal-clear garage transformations without the mobile lag that bounces customers.",
       icon: <Zap className="w-8 h-8 text-brand-lime" />,
       tag: "Sub-1.5s Load Speed",
     },
