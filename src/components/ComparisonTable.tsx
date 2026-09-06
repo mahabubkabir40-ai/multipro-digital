@@ -1,5 +1,6 @@
 import React from 'react';
-import { Check, X, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import { Check, X, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function ComparisonTable() {
   const comparisonData = [
@@ -28,6 +29,11 @@ export default function ComparisonTable() {
       generic: 'Works with multiple shops in your town',
       multipro: 'Strictly 1 Contractor Per City',
     },
+    {
+      feature: 'Contract Terms',
+      generic: '6–12 month lock-in contracts',
+      multipro: 'Month-to-Month (No Hostage Retainers)',
+    },
   ];
 
   return (
@@ -40,8 +46,9 @@ export default function ComparisonTable() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-4">
             <ShieldCheck className="w-4 h-4" /> Why Choose MultiPro Digital
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tight mb-4">
-            Generic Agencies vs. MultiPro Digital
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black tracking-tight mb-4 leading-tight">
+            Generic Agencies vs.{' '}
+            <span className="text-brand-lime block sm:inline">MultiPro Digital</span>
           </h2>
           <p className="text-base sm:text-lg text-blue-100/70 font-sans leading-relaxed">
             Stop paying generalists who treat floor coatings like standard home remodeling. We engineer custom growth systems built exclusively for coating pros.
@@ -86,6 +93,21 @@ export default function ComparisonTable() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Call to action below table */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/free-audit"
+            prefetch={false}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(154,251,22,0.4)] group select-none"
+          >
+            <span>Lock In Your City&apos;s Territory</span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <p className="text-xs text-blue-200/60 mt-3 font-sans">
+            🔒 Strictly 1 contractor per city. Check if your territory is still open.
+          </p>
         </div>
       </div>
     </section>
