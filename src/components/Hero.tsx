@@ -55,7 +55,7 @@ export default function Hero() {
             </h1>
             
             <p className="mt-4 text-sm sm:text-base md:text-lg text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
-              We help independent epoxy contractors dominate the Google Map Pack and convert Instagram views into booked floor estimates with custom high-speed websites and instant price calculators.
+              We help independent epoxy contractors dominate the Google Map Pack &amp; AI Overviews, and convert clicks into booked floor estimates with custom high-speed websites and instant price calculators.
             </p>
 
             {/* CTA Button visible on mobile when form is below */}
