@@ -37,28 +37,29 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
           
-          {/* Left column: copy + CTA + trust */}
-          <div className="relative min-w-0">
+          {/* Left column: copy + trust (7 cols on lg, 7 cols on xl) */}
+          <div className="relative min-w-0 lg:col-span-7 pr-0 lg:pr-4">
           
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-6 sm:mb-8">
               <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping" />
               <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
-              <span className="text-brand-lime text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for US Epoxy & Concrete Coating Contractors</span>
+              <span className="text-brand-lime text-[11px] sm:text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for US Epoxy &amp; Concrete Coating Contractors</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-[2.35rem] font-serif font-black text-white leading-[1.25] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-[2.15rem] font-serif font-black text-white leading-[1.25] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
               <span className="block lg:whitespace-nowrap">Stop Letting Your Crews Sit Idle</span>
               <span className="block mt-1 sm:mt-2 lg:whitespace-nowrap">While Competitors Book <span className="text-brand-lime font-black">All The 3-Car Garages.</span></span>
             </h1>
             
-            <p className="mt-4 text-base sm:text-lg md:text-2xl text-blue-100 w-full sm:max-w-3xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
               We help independent epoxy contractors dominate the Google Map Pack and convert Instagram views into booked floor estimates with custom high-speed websites and instant price calculators.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16">
+            {/* CTA Button visible on mobile when form is below */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-10 lg:hidden">
               <HeroCTA />
             </div>
 
@@ -98,8 +99,8 @@ export default function Hero() {
 
           </div>
 
-          {/* Right column: lead form (stacks below on mobile) */}
-          <div className="relative min-w-0 w-full">
+          {/* Right column: lead form (5 cols on desktop) */}
+          <div className="relative min-w-0 w-full lg:col-span-5">
             <HeroLeadForm />
           </div>
 
