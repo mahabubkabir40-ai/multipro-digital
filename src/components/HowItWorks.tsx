@@ -8,6 +8,7 @@ export default function HowItWorks() {
       hook: "Stop wasting time giving rough quotes over the phone.",
       body: "We build an interactive calculator directly into your homepage. Homeowners select their garage size (2-car, 3-car, basement), choose their coating (Full Flake, Metallic, Solid), see an estimated price range, and submit their phone number to book an on-site moisture test.",
       icon: <Calculator className="w-8 h-8 text-brand-lime" />,
+      tag: "100% Automated",
     },
     {
       id: "02",
@@ -15,6 +16,7 @@ export default function HowItWorks() {
       hook: "Showcase your work without the mobile lag.",
       body: "Most contractor websites fail Google PageSpeed tests because of heavy, uncompressed photos. We build clean-coded sites that load in under 1.5 seconds, featuring interactive Before/After sliders comparing cracked concrete to mirror-finish floors.",
       icon: <Zap className="w-8 h-8 text-brand-lime" />,
+      tag: "Sub-1.5s Load Speed",
     },
     {
       id: "03",
@@ -22,6 +24,7 @@ export default function HowItWorks() {
       hook: "Own your city's most profitable zip codes.",
       body: "Over 80% of homeowners looking for garage coatings click the top 3 spots on Google Maps. We optimize your Google Business Profile, build localized city landing pages, and drive high-intent residential and commercial leads straight to your phone.",
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
+      tag: "100% Done-For-You",
     },
   ];
 
@@ -79,7 +82,7 @@ export default function HowItWorks() {
 
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">
                 <span>MultiPro Inbound System</span>
-                <span className="text-brand-lime font-bold">100% Automated</span>
+                <span className="text-brand-lime font-bold">{pillar.tag}</span>
               </div>
             </div>
           ))}
