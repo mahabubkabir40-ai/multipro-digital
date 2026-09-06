@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { AlertTriangle, PhoneOff, DollarSign, EyeOff } from 'lucide-react';
 
 export default function ProblemSolution() {
@@ -10,6 +11,7 @@ export default function ProblemSolution() {
       body: "You waste thousands of dollars buying the same shared leads sent to 4 other contractors in your city. You end up in a race to the bottom on price instead of getting paid what your craftsmanship is worth.",
       icon: <DollarSign className="w-8 h-8 text-rose-500" />,
       tag: "Shared Leads Trap",
+      impact: "Lost Margins",
     },
     {
       id: 2,
@@ -18,6 +20,7 @@ export default function ProblemSolution() {
       body: "When you're grinding concrete or rolling topcoat, you can't answer the phone. Homeowners don't leave voicemails—they hang up and call the next epoxy guy in the Google Map Pack.",
       icon: <PhoneOff className="w-8 h-8 text-amber-500" />,
       tag: "Missed Calls = Lost Revenue",
+      impact: "Lost $3,000+ Jobs",
     },
     {
       id: 3,
@@ -26,6 +29,7 @@ export default function ProblemSolution() {
       body: 'You post clean project reels, and people comment "How much?" but never book an on-site measurement because your website takes 7 seconds to load and has no instant pricing tool.',
       icon: <EyeOff className="w-8 h-8 text-blue-500" />,
       tag: "Zero Conversion Website",
+      impact: "Zero Conversions",
     },
   ];
 
@@ -76,9 +80,17 @@ export default function ProblemSolution() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-400">
-                <span>Pain Point 0{card.id}</span>
-                <span className="text-rose-500 font-extrabold group-hover:translate-x-1 transition-transform">Solvable with MultiPro →</span>
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span className="font-semibold text-slate-500">
+                  Impact: <strong className="font-extrabold text-slate-900">{card.impact}</strong>
+                </span>
+                <Link 
+                  href="#the-system" 
+                  className="font-black text-rose-600 hover:text-[#1A365D] transition-colors flex items-center gap-1 group/btn"
+                >
+                  <span>See The Solution</span>
+                  <span className="transition-transform group-hover/btn:translate-y-0.5">↓</span>
+                </Link>
               </div>
             </div>
           ))}
