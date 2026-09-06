@@ -14,7 +14,7 @@ export default function ProblemSolution() {
     {
       id: 2,
       badge: "Card 2: Missing High-Dollar Jobs on the Grinder",
-      title: "Losing Calls While Operating the Machine",
+      title: "Missing Calls While Running the Grinder",
       body: "When you're grinding concrete or rolling topcoat, you can't answer the phone. Homeowners don't leave voicemails—they hang up and call the next epoxy guy in the Google Map Pack.",
       icon: <PhoneOff className="w-8 h-8 text-amber-500" />,
       tag: "Missed Calls = Lost Revenue",
@@ -46,7 +46,7 @@ export default function ProblemSolution() {
             Does This Sound Familiar?
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 font-sans leading-relaxed">
-            Running an epoxy business is tough enough without marketing that feels like a guessing game.
+            Running an epoxy business is tough enough without paying for shared leads and losing high-ticket 3-car garages.
           </p>
         </div>
 
