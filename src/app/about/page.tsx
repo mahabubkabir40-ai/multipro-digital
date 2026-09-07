@@ -37,7 +37,7 @@ export default function AboutPage() {
               Driven by Real Booked Floors.
             </h1>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium leading-relaxed max-w-2xl mb-10">
-              <AutoLinker>Multipro Digital is a specialized digital growth engine dedicated exclusively to helping independent epoxy and concrete coating contractors. We build high-speed showroom websites and dominate Google Map Packs to keep your installation crews booked with high-ticket 3-car garages.</AutoLinker>
+              <AutoLinker isDark>Multipro Digital is a specialized digital growth engine dedicated exclusively to helping independent epoxy and concrete coating contractors. We build high-speed showroom websites and dominate Google Map Packs to keep your installation crews booked with high-ticket 3-car garages.</AutoLinker>
             </p>
           </div>
         </div>

@@ -6,9 +6,11 @@ import links from '../config/links_dictionary.json';
 interface AutoLinkerProps {
   children: string;
   className?: string;
+  linkClassName?: string;
+  isDark?: boolean;
 }
 
-const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className }) => {
+const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className, linkClassName, isDark = false }) => {
   if (typeof children !== 'string') return <>{children}</>;
 
   // Create a regex from the dictionary keys
@@ -21,6 +23,12 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className }) => {
   let homepageLinked = false;
   let locationLinked = false;
   let externalLinked = false;
+
+  const defaultLinkClass = isDark
+    ? "text-white font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer"
+    : "text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer";
+
+  const resolvedLinkClass = linkClassName || defaultLinkClass;
 
   return (
     <span className={className}>
@@ -55,7 +63,7 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className }) => {
                   href={url} 
                   target="_blank" 
                   rel="noopener noreferrer nofollow"
-                  className="!text-brand-blue font-black !underline !decoration-brand-lime !decoration-2 underline-offset-4 hover:!text-brand-lime transition-colors cursor-pointer"
+                  className={resolvedLinkClass}
                 >
                   {part}
                 </a>
@@ -66,7 +74,7 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className }) => {
               <Link 
                 key={i} 
                 href={url}
-                className="!text-brand-blue font-black !underline !decoration-brand-lime !decoration-2 underline-offset-4 hover:!text-brand-lime transition-colors cursor-pointer"
+                className={resolvedLinkClass}
               >
                 {part}
               </Link>
