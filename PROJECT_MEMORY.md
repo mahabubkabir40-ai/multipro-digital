@@ -24,4 +24,8 @@ Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "
 ## 📝 Ongoing Strategy
 1. **Location Pages**: Future expansion (e.g., Orlando Movers Marketing).
 2. **Blog Optimization**: Wrap paragraph content in `<AutoLinker>` to trigger automated SEO linking.
-3. **High-Visibility Styling**: `text-brand-blue font-black underline decoration-brand-lime`.
+3. **High-Visibility Anchor Styling**:
+   - **Dark Backgrounds**: `text-white font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime`
+   - **Light Backgrounds**: `text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime`
+   - **Utility Classes**: `.anchor-link` and `.anchor-link-dark` defined in `src/app/globals.css`.
+   - **AutoLinker**: Automatically resolves dark/light modes and supports `isDark` and `linkClassName`.

@@ -29,8 +29,8 @@ export default function PrivacyPolicyPage() {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100 prose prose-lg max-w-none text-slate-700 font-sans">
             
             <h2 className="text-2xl font-serif font-black text-[#1A365D] mb-4">Privacy Policy for Multiprodigital</h2>
-            <p>At Multiprodigital, accessible from <Link href="https://www.multiprodigital.com/" className="text-brand-lime hover:underline">https://www.multiprodigital.com/</Link>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Multiprodigital and how we use it.</p>
-            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to <Link href="/contact" className="text-brand-lime hover:underline">contact us</Link>.</p>
+            <p>At Multiprodigital, accessible from <Link href="https://www.multiprodigital.com/" className="text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors">https://www.multiprodigital.com/</Link>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Multiprodigital and how we use it.</p>
+            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to <Link href="/contact" className="text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors">contact us</Link>.</p>
             <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Multiprodigital. This policy is not applicable to any information collected offline or via channels other than this website.</p>
 
             <h2 className="text-2xl font-serif font-black text-[#1A365D] mt-10 mb-4">Consent</h2>

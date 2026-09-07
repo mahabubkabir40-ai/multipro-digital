@@ -24,7 +24,9 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className, linkClassN
   let locationLinked = false;
   let externalLinked = false;
 
-  const defaultLinkClass = isDark
+  const isDarkMode = isDark || Boolean(className && (className.includes('dark') || className.includes('text-white') || className.includes('text-blue-100')));
+
+  const defaultLinkClass = isDarkMode
     ? "text-white font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer"
     : "text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer";
 

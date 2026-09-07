@@ -68,5 +68,31 @@ body {
   }
 }
 
+/* Standardized Site-Wide Anchor Text Styling */
+.anchor-link {
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-brand-lime);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  color: #0b1f38;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.anchor-link:hover {
+  color: var(--color-brand-lime-hover);
+}
 
-
+.anchor-link-dark {
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-brand-lime);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  color: #ffffff;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.anchor-link-dark:hover {
+  color: var(--color-brand-lime);
+}
