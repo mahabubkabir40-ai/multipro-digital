@@ -139,13 +139,13 @@ export default function FloorCalculator() {
         </div>
 
         {/* Calculator Widget Container */}
-        <div className="max-w-4xl mx-auto bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <div className="max-w-4xl mx-auto bg-slate-800/80 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-8 md:p-10 shadow-2xl">
           {/* Step 1: Select Space */}
-          <div className="mb-10">
-            <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
+          <div className="mb-8 sm:mb-10">
+            <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-brand-lime mb-3 sm:mb-4">
               Step 1: Select Garage or Project Size
             </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
               {spaces.map((space) => {
                 const isSelected = selectedSpace.id === space.id;
                 return (
@@ -153,14 +153,14 @@ export default function FloorCalculator() {
                     key={space.id}
                     type="button"
                     onClick={() => setSelectedSpace(space)}
-                    className={`p-4 rounded-2xl border text-left transition-all duration-200 ${
+                    className={`p-3 sm:p-4 rounded-2xl border text-left transition-all duration-200 ${
                       isSelected
                         ? 'border-brand-lime bg-brand-lime/10 shadow-[0_0_20px_rgba(154,251,22,0.2)] ring-2 ring-brand-lime/40'
                         : 'border-white/10 bg-slate-900/60 hover:border-white/30'
                     }`}
                   >
-                    <div className="font-bold text-white text-base sm:text-lg">{space.name}</div>
-                    <div className="text-xs text-blue-200/60 mt-1">{space.subtext}</div>
+                    <div className="font-bold text-white text-sm sm:text-base leading-snug">{space.name}</div>
+                    <div className="text-[11px] sm:text-xs text-blue-200/60 mt-0.5 sm:mt-1">{space.subtext}</div>
                   </button>
                 );
               })}
@@ -168,11 +168,11 @@ export default function FloorCalculator() {
           </div>
 
           {/* Step 2: Select Coating Finish */}
-          <div className="mb-10">
-            <label className="block text-sm font-black uppercase tracking-wider text-brand-lime mb-4">
+          <div className="mb-8 sm:mb-10">
+            <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-brand-lime mb-3 sm:mb-4">
               Step 2: Select Coating System &amp; Finish
             </label>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {systems.map((system) => {
                 const isSelected = selectedSystem.id === system.id;
                 return (
@@ -180,23 +180,27 @@ export default function FloorCalculator() {
                     key={system.id}
                     type="button"
                     onClick={() => setSelectedSystem(system)}
-                    className={`p-5 rounded-2xl border text-left relative transition-all duration-200 ${
+                    className={`p-4 sm:p-5 rounded-2xl border text-left transition-all duration-200 flex flex-col justify-between ${
                       isSelected
                         ? 'border-brand-lime bg-brand-lime/10 shadow-[0_0_20px_rgba(154,251,22,0.2)] ring-2 ring-brand-lime/40'
                         : 'border-white/10 bg-slate-900/60 hover:border-white/30'
                     }`}
                   >
-                    {system.popular && (
-                      <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-brand-lime text-slate-950 font-black text-[10px] uppercase tracking-wider">
-                        Most Popular
-                      </span>
-                    )}
-                    <div className="font-bold text-white text-base sm:text-lg flex items-center gap-2">
-                      {system.name}
+                    <div>
+                      <div className="flex items-start justify-between gap-2 mb-1.5">
+                        <span className="font-bold text-white text-base sm:text-lg leading-snug">
+                          {system.name}
+                        </span>
+                        {system.popular && (
+                          <span className="shrink-0 px-2 py-0.5 rounded-full bg-brand-lime text-slate-950 font-black text-[10px] uppercase tracking-wider mt-0.5">
+                            Most Popular
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-blue-200/70 leading-relaxed">
+                        {system.description}
+                      </p>
                     </div>
-                    <p className="text-xs text-blue-200/70 mt-2 leading-relaxed">
-                      {system.description}
-                    </p>
                   </button>
                 );
               })}
@@ -204,19 +208,19 @@ export default function FloorCalculator() {
           </div>
 
           {/* Optional Surface Prep */}
-          <div className="mb-10">
+          <div className="mb-8 sm:mb-10">
             <label className="block text-xs font-black uppercase tracking-wider text-brand-lime/80 mb-3">
               Optional Add-On: Surface Prep
             </label>
-            <div className="p-5 rounded-2xl bg-slate-900/50 border border-white/10 flex items-center justify-between gap-4">
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/50 border border-white/10 flex items-center justify-between gap-4">
               <div>
-                <div className="font-bold text-white text-sm sm:text-base">Existing Coating Removal or Crack Repairs Required?</div>
-                <div className="text-xs text-blue-200/60 mt-0.5">Heavy diamond grinding &amp; crack mending prep</div>
+                <div className="font-bold text-white text-xs sm:text-base">Existing Coating Removal or Crack Repairs Required?</div>
+                <div className="text-[11px] sm:text-xs text-blue-200/60 mt-0.5">Heavy diamond grinding &amp; crack mending prep</div>
               </div>
             <button
               type="button"
               onClick={() => setNeedsPrep(!needsPrep)}
-              className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300 ${
+              className={`w-14 h-8 flex items-center rounded-full p-1 transition-colors duration-300 shrink-0 ${
                 needsPrep ? 'bg-brand-lime' : 'bg-slate-700'
               }`}
             >
@@ -230,11 +234,11 @@ export default function FloorCalculator() {
           </div>
 
           {/* Live Estimate Result Display */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-brand-blue to-slate-950 border border-brand-lime/40 shadow-inner">
+          <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-brand-blue to-slate-950 border border-brand-lime/40 shadow-inner">
             <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
               Step 3: Instant Estimated Price Range
             </div>
-            <div className="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight">
+            <div className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white tracking-tight">
               {estimateLabel}*
             </div>
             <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
