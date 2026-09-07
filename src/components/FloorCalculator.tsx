@@ -280,7 +280,7 @@ export default function FloorCalculator() {
               <form onSubmit={handleLeadSubmit} className="mt-6 space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <span className="text-xs uppercase tracking-widest text-brand-lime font-black">
-                    Step 4: Lock In Pricing &amp; Book Consult
+                    Step 4: Lock In Pricing &amp; Book On-Site Moisture Test
                   </span>
                   <span className="text-[11px] text-blue-200/70 font-medium">
                     (Live Demo: See how homeowner leads are captured)
@@ -302,12 +302,12 @@ export default function FloorCalculator() {
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Phone number *"
+                    placeholder="Enter your phone number to book on-site moisture test *"
                     autoComplete="tel"
                     inputMode="tel"
                     required
                     disabled={isSubmitting}
-                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70 text-xs sm:text-sm"
                   />
                 </div>
                 {submitError && (
@@ -324,7 +324,7 @@ export default function FloorCalculator() {
                     'Select Options Above to Lock Pricing'
                   ) : (
                     <>
-                      <span>Lock In Pricing &amp; Book Consult</span>
+                      <span>Lock In Pricing &amp; Book On-Site Moisture Test</span>
                       <ArrowRight className="w-5 h-5" />
                     </>
                   )}
