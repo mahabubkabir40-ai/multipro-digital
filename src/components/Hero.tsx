@@ -12,20 +12,20 @@ export default function Hero() {
         {/* VIDEO: Gated by JS to save bandwidth on mobile */}
         <HeroVideo />
         
-        {/* STATIC FALLBACK: Optimized for instant mobile LCP */}
+        {/* STATIC FALLBACK: Optimized for instant mobile LCP with subtle elegant blend */}
         <div className="absolute inset-0 lg:hidden">
           <img 
             src="/hero-bg-mobile-v3.webp" 
             alt="Premium coatings marketing background" 
             fetchPriority="high"
             decoding="sync"
-            className="object-cover absolute inset-0 w-full h-full"
+            className="object-cover absolute inset-0 w-full h-full opacity-20 mix-blend-luminosity"
           />
         </div>
 
-        {/* Navy Overlay — strengthened on the right for form contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-slate-900/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900" />
+        {/* Navy Overlay — smooth and uniform to guarantee 100% text contrast and zero patchy boxes */}
+        <div className="absolute inset-0 bg-slate-950/90 sm:bg-gradient-to-r sm:from-slate-900 sm:via-slate-900/85 sm:to-slate-900/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/80 to-slate-900" />
         <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-slate-950/50 to-transparent pointer-events-none" />
         
         {/* Subtle Tech Blueprint Grid Overlay - Hidden on mobile to save paint time */}
@@ -43,18 +43,21 @@ export default function Hero() {
           <div className="relative min-w-0 lg:col-span-7 pr-0 lg:pr-4">
           
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-6 sm:mb-8">
-              <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-5 sm:mb-8">
+              <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping shrink-0" />
               <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
-              <span className="text-brand-lime text-[11px] sm:text-xs font-bold tracking-widest uppercase font-sans">#1 Inbound Booking Engine for US Epoxy &amp; Concrete Coating Contractors</span>
+              <span className="text-brand-lime text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase font-sans">
+                <span className="sm:hidden">#1 Inbound Engine for US Epoxy Pros</span>
+                <span className="hidden sm:inline">#1 Inbound Booking Engine for US Epoxy &amp; Concrete Coating Contractors</span>
+              </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-[2.15rem] font-serif font-black text-white leading-[1.25] tracking-tight mb-6 sm:mb-8 lg:drop-shadow-lg">
-              <span className="block lg:whitespace-nowrap">Stop Letting Your Crews Sit Idle</span>
-              <span className="block mt-1 sm:mt-2 lg:whitespace-nowrap">While Competitors Book <span className="text-brand-lime font-black">All The 3-Car Garages.</span></span>
+            <h1 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-[2.15rem] font-serif font-black text-white leading-tight sm:leading-[1.25] tracking-tight mb-5 sm:mb-8 lg:drop-shadow-lg text-balance">
+              <span className="block lg:whitespace-nowrap">Stop Letting Your Crews <span className="whitespace-nowrap">Sit Idle</span></span>
+              <span className="block mt-1 sm:mt-2 lg:whitespace-nowrap">While Competitors Book <span className="text-brand-lime font-black whitespace-nowrap">All The 3-Car Garages.</span></span>
             </h1>
             
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-8 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
+            <p className="mt-4 text-sm sm:text-base md:text-lg text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-7 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
               We help independent epoxy contractors dominate the Google Map Pack and become the #1 recommended contractor when homeowners ask Google AI, ChatGPT, or Siri for garage coating quotes—powered by custom high-speed websites and instant price calculators.
             </p>
 

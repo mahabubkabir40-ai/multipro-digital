@@ -12,7 +12,7 @@ type Message = {
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: '1', type: 'bot', text: 'Hi there! 👋 Want to stop fighting for shared moving leads and get exclusive calls?' }
+    { id: '1', type: 'bot', text: 'Hi there! 👋 Looking to book more high-ticket garage floors and dominate Google Maps in your city?' }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,21 +36,21 @@ export default function Chatbot() {
     
     // Pricing Keywords
     if (lowerInput.includes('price') || lowerInput.includes('cost') || lowerInput.includes('how much')) {
-      return "Pricing depends on your target city and fleet size. Most of our clients see a 5x ROI within 90 days! I'll have a strategist send over a custom quote—what's your best email or phone number?";
+      return "Pricing depends on your target city and service area. Most of our epoxy partners book 3-car garage projects within their first 30 days! What's your best email or phone number to send pricing?";
     }
     
     // Time/Results Keywords
     if (lowerInput.includes('long') || lowerInput.includes('time') || lowerInput.includes('when')) {
-      return "We typically start generating exclusive phone calls within 14–21 days of launching your campaign. To check availability in your specific zip code, what's your email or number?";
+      return "Your new high-speed showroom website and instant quote calculator go live in under 7 days, with Google Map Pack rankings compounding in 30–60 days. What's your best phone or email?";
     }
 
     // "How it works"
     if (lowerInput.includes('how') || lowerInput.includes('work') || lowerInput.includes('process')) {
-      return "We build high-converting systems that target high-ticket moves and dominate the Google Map Pack. It's fully automated for you! Where should we send the full breakdown of our process (Email or Phone)?";
+      return "We build sub-1.5s showroom websites, install instant square-foot quote calculators, and dominate the Google Map Pack & AI Overviews for epoxy contractors. Where should we send the full breakdown?";
     }
 
     // Default response (Steer to lead capture)
-    return "That's a great question! I'm adding that to our notes. What's the best email or number to send you a detailed answer along with your free SEO audit?";
+    return "That's a great question! What's the best email or number to send you a detailed answer along with your free 60-second video audit?";
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -117,16 +117,17 @@ export default function Chatbot() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full bg-brand-lime text-brand-blue shadow-[0_0_20px_rgba(154,251,22,0.4)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] transform hover:-translate-y-1 transition-all duration-300 ${isOpen ? 'scale-0' : 'scale-100'}`}
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 p-3.5 sm:p-4 rounded-full bg-brand-lime text-brand-blue shadow-[0_0_20px_rgba(154,251,22,0.4)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] transform hover:-translate-y-1 transition-all duration-300 ${isOpen ? 'scale-0' : 'scale-100'}`}
+        aria-label="Open chat"
       >
-        <MessageCircle className="w-8 h-8" />
+        <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8" />
         <span className="absolute -top-1 -right-1 flex h-4 w-4">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-4 w-4 bg-cyan-500 border border-white"></span>
         </span>
       </button>
 
-      <div className={`fixed bottom-6 right-6 z-50 w-[90vw] sm:w-[400px] h-[600px] max-h-[85vh] bg-slate-900 rounded-3xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 origin-bottom-right flex flex-col ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
+      <div className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[92vw] sm:w-[400px] h-[550px] sm:h-[600px] max-h-[85vh] bg-slate-900 rounded-3xl shadow-2xl border border-white/10 overflow-hidden transition-all duration-500 origin-bottom-right flex flex-col ${isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'}`}>
         {/* Header */}
         <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 p-5 flex justify-between items-center relative">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:10px_10px] mix-blend-overlay" />
@@ -158,8 +159,9 @@ export default function Chatbot() {
           ))}
           {messages.length === 1 && (
             <div className="flex flex-col gap-2 pl-11">
-              <button onClick={() => handleQuickOption('I need exclusive calls')} className="bg-transparent border border-cyan-400/40 text-cyan-400 text-xs font-sans px-4 py-2 rounded-xl text-left hover:bg-cyan-400/10 transition-colors w-fit">I need exclusive calls</button>
-              <button onClick={() => handleQuickOption('Dominate the Map Pack')} className="bg-transparent border border-emerald-400/40 text-emerald-400 text-xs font-sans px-4 py-2 rounded-xl text-left hover:bg-emerald-400/10 transition-colors w-fit">Dominate the Map Pack</button>
+              <button onClick={() => handleQuickOption('Book 3-car garage floors')} className="bg-transparent border border-cyan-400/40 text-cyan-400 text-xs font-sans px-4 py-2 rounded-xl text-left hover:bg-cyan-400/10 transition-colors w-fit">Book 3-car garage floors</button>
+              <button onClick={() => handleQuickOption('Instant quote calculator')} className="bg-transparent border border-emerald-400/40 text-emerald-400 text-xs font-sans px-4 py-2 rounded-xl text-left hover:bg-emerald-400/10 transition-colors w-fit">Instant quote calculator</button>
+              <button onClick={() => handleQuickOption('Dominate the Map Pack')} className="bg-transparent border border-cyan-400/40 text-cyan-400 text-xs font-sans px-4 py-2 rounded-xl text-left hover:bg-cyan-400/10 transition-colors w-fit">Dominate the Map Pack</button>
             </div>
           )}
           <div ref={messagesEndRef} />

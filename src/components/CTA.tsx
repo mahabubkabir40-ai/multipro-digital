@@ -3,7 +3,7 @@ import TrackedLink from './TrackedLink';
 
 export default function CTA() {
   return (
-    <section id="audit" className="relative py-32 overflow-hidden bg-[#0a192f]">
+    <section id="audit" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-[#0a192f]">
       {/* Premium Dark Gradient Backdrop */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1A365D] via-[#0a192f] to-[#0a192f]" />
       
@@ -13,23 +13,23 @@ export default function CTA() {
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Glassmorphism Container */}
-        <div className="relative rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-8 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.3)]">
+        <div className="relative rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 sm:p-10 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.3)]">
           
-          <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             {/* Social Proof Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 mb-6 sm:mb-8">
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Star key={i} className="w-4 h-4 fill-brand-lime text-brand-lime" />
                 ))}
               </div>
-              <span className="text-sm font-semibold text-blue-100">Trusted by 25+ Concrete & Epoxy Pros</span>
+              <span className="text-xs sm:text-sm font-semibold text-blue-100">Trusted by 25+ Concrete &amp; Epoxy Pros</span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-serif font-black text-white mb-6 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black text-white mb-4 sm:mb-6 tracking-tight leading-tight">
               Ready to Lock Out Competitors and <span className="text-brand-lime">Own Your City&apos;s Garage Floors?</span>
             </h2>
-            <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-blue-100/80 font-sans font-medium max-w-2xl mx-auto">
               Get a free, no-obligation <strong className="text-white">60-Second Video Audit</strong> of your current website, mobile speed score, and Google Map Pack ranking gaps.
             </p>
           </div>
@@ -39,10 +39,10 @@ export default function CTA() {
             <TrackedLink 
               href="/free-audit"
               eventLabel="Bottom Section Button"
-              className="relative group overflow-hidden px-6 sm:px-10 py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-base sm:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center whitespace-nowrap select-none touch-manipulation text-center"
+              className="relative group overflow-hidden w-full sm:w-auto px-5 sm:px-10 py-4 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-lg md:text-xl transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_0_40px_rgba(154,251,22,0.6)] active:scale-95 active:shadow-inner active:rotate-1 flex items-center justify-center select-none touch-manipulation text-center"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
-              <span className="relative z-10 flex items-center justify-center gap-2 px-3">
+              <span className="relative z-10 flex items-center justify-center gap-2 px-1 sm:px-3 text-center">
                 Send Me My Free 60-Second Video Audit
                 <svg className="w-4 h-4 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300 group-hover:translate-x-2 group-active:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </span>

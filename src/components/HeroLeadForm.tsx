@@ -63,7 +63,7 @@ export default function HeroLeadForm() {
   const labelClass = 'block text-[#1A365D] text-xs font-bold mb-1';
 
   return (
-    <div className="relative w-full max-w-md mx-auto lg:max-w-none lg:ml-auto">
+    <div id="hero-lead-card" className="relative w-full max-w-md mx-auto lg:max-w-none lg:ml-auto scroll-mt-24">
       <div className="absolute -inset-3 rounded-[2rem] bg-slate-900/40 blur-xl pointer-events-none hidden lg:block" aria-hidden />
       <div className="relative bg-white/95 backdrop-blur-md rounded-3xl border border-brand-lime/30 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-5 sm:p-6">
         {isSuccess ? (

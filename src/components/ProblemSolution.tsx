@@ -41,7 +41,7 @@ export default function ProblemSolution() {
   ];
 
   return (
-    <section id="why-it-works" className="py-28 bg-slate-50 relative overflow-hidden">
+    <section id="why-it-works" className="py-16 sm:py-24 lg:py-28 bg-slate-50 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
@@ -49,24 +49,24 @@ export default function ProblemSolution() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-widest mb-4">
             <AlertTriangle className="w-4 h-4 text-rose-600" /> Real Contractor Problems
           </div>
-          <h2 className="text-4xl sm:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-4 sm:mb-6">
             Does This Sound Familiar?
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 font-sans leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 font-sans leading-relaxed">
             Running an epoxy business is tough enough without paying for shared leads and losing high-ticket 3-car garages.
           </p>
         </div>
 
         {/* 3 Pain Point Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           {painCards.map((card) => (
             <div 
               key={card.id}
-              className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-200/80 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-slate-200/80 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">

@@ -46,17 +46,17 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-16 sm:py-24 lg:py-32 bg-white relative overflow-hidden">
       {/* Dynamic Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1A365D 2px, transparent 2px)', backgroundSize: '40px 40px' }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A365D]/5 text-[#1A365D] font-bold text-xs tracking-widest uppercase mb-6">
+        <div className="text-center mb-12 sm:mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A365D]/5 text-[#1A365D] font-bold text-xs tracking-widest uppercase mb-4 sm:mb-6">
             <Star className="w-4 h-4 text-brand-lime fill-brand-lime" />
             Client Success Stories
           </div>
-          <h3 className="text-5xl md:text-6xl font-serif text-[#1A365D] font-black tracking-tight">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#1A365D] font-black tracking-tight">
             What Our Partners <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-lime to-emerald-500">Are Saying</span>
           </h3>
         </div>
