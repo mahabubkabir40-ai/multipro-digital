@@ -4,8 +4,8 @@ import AutoLinker from '@/components/AutoLinker';
 
 
 export const metadata = {
-  title: 'About Us | Specialized Growth Engine for Epoxy Contractors | Multipro Digital',
-  description: 'Multipro Digital is a specialized inbound marketing and Local SEO agency built exclusively for US epoxy and concrete coating contractors.',
+  title: 'About Us | The Epoxy Inbound Growth Engine™ | MultiPro Digital',
+  description: 'Learn how MultiPro Digital helps US epoxy & concrete coating contractors book high-margin garage floors through instant quote calculators, sub-1.5s showroom websites, and Google Maps & AI search domination.',
 };
 
 export default function AboutPage() {
@@ -37,7 +37,7 @@ export default function AboutPage() {
               Driven by Real Booked Floors.
             </h1>
             <p className="text-lg md:text-xl text-blue-100/80 font-sans font-medium leading-relaxed max-w-2xl mb-10">
-              <AutoLinker isDark>Multipro Digital is a specialized digital growth engine dedicated exclusively to helping independent epoxy and concrete coating contractors. We build high-speed showroom websites and dominate Google Map Packs to keep your installation crews booked with high-ticket 3-car garages.</AutoLinker>
+              <AutoLinker isDark>Multipro Digital is a specialized digital growth engine dedicated exclusively to helping independent epoxy and concrete coating contractors. We build sub-1.5s showroom websites, install instant square-foot quote calculators, and dominate Google Map Packs and AI Search to keep your installation crews booked with high-ticket 3-car garages.</AutoLinker>
             </p>
           </div>
         </div>
@@ -80,38 +80,59 @@ export default function AboutPage() {
               The MultiPro <span className="text-brand-lime">Difference</span>
             </h2>
             <p className="text-slate-600 text-lg">
-              We combine deep coating trade knowledge with clean Next.js engineering to solve the #1 bottleneck for contractors: tire-kickers and slow callbacks.
+              We combine deep coating trade knowledge with clean Next.js engineering and AI search optimization to solve the #1 bottleneck for contractors: tire-kickers and slow callbacks.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4">
-              <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-8 rounded-[2rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-[#0b1f38] mb-3">Instant Floor Estimators</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">Interactive square-foot calculators embedded right on your homepage that pre-qualify serious buyers and capture phone leads while your crews run grinders.</p>
               </div>
-              <h3 className="text-xl font-bold text-[#0b1f38] mb-4">Instant Floor Estimators</h3>
-              <p className="text-slate-600 leading-relaxed">Instead of generic contact forms, we build interactive square-foot pricing tools that pre-qualify serious buyers and capture phone leads while your crews are on job sites.</p>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-brand-lime uppercase tracking-wider">100% Automated</div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
             </div>
 
-            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4">
-              <div className="w-14 h-14 bg-brand-lime/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-7 h-7 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <div className="bg-white p-8 rounded-[2rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-[#0b1f38] mb-3">Sub-1.5s Showrooms</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">Clean-coded Next.js websites that load high-res garage transformations in under 1.5 seconds. Zero mobile lag means zero bounced customers.</p>
               </div>
-              <h3 className="text-xl font-bold text-[#0b1f38] mb-4">Strict Territory Lock</h3>
-              <p className="text-slate-600 leading-relaxed">We work with only <strong>one</strong> epoxy contractor per city or metro market. We will never rank you on the Google Map Pack and then take on your direct competitor down the street.</p>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-amber-600 uppercase tracking-wider">95+ PageSpeed</div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+
+            <div className="bg-white p-8 rounded-[2rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 bg-brand-lime/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-7 h-7 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-[#0b1f38] mb-3">Google Maps &amp; AI Search</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">Deep Google Business Profile optimization and structured schema that gets your shop recommended first by Google AI Overviews, Siri, and ChatGPT.</p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-brand-lime uppercase tracking-wider">AI Search Ready</div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-lime/10 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
             </div>
 
-            <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4">
-              <div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <div className="bg-white p-8 rounded-[2rem] border border-slate-200 relative group overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(154,251,22,0.15)] hover:-translate-y-4 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-[#0b1f38] mb-3">Territory Lock &amp; Zero Shared Leads</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  <AutoLinker>Strictly one epoxy contractor per city. Zero shared Angi or Thumbtack leads. Every call, video audit, and calculator estimate is 100% exclusive to you.</AutoLinker>
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#0b1f38] mb-4">No Shared Leads</h3>
-              <p className="text-slate-600 leading-relaxed">
-                <AutoLinker>Zero shared Angi or Thumbtack leads. Every phone call, video audit request, and floor quote submission goes exclusively to your business phone and email.</AutoLinker>
-              </p>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-emerald-600 uppercase tracking-wider">Market Exclusivity</div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -125,7 +146,7 @@ export default function AboutPage() {
             Ready to Lock Out Competitors in Your City?
           </h2>
           <p className="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto mb-10">
-            Get a free, personalized 60-second video audit showing your Google Map Pack ranking gaps and site speed score.
+            Get a free, personalized 60-second video audit showing your Google Map Pack ranking gaps, AI search visibility, and mobile site speed score.
           </p>
           <div className="flex justify-center">
             <Link 

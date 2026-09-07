@@ -81,7 +81,7 @@ export default function FreeAuditPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-blue-100/80 font-sans leading-relaxed border-l-4 border-brand-lime pl-4 sm:pl-6">
-              We&apos;ll record a personalized 60-second video breaking down your Google Map Pack ranking gaps, your website&apos;s mobile speed score, and why competitors are booking all the 3-car garage projects in your city.
+              We&apos;ll record a personalized 60-second video breaking down your Google Map Pack &amp; AI Search ranking gaps, your website&apos;s mobile speed score, and why competitors are booking all the 3-car garage projects in your city.
             </p>
 
             <div className="space-y-4 pt-4 border-t border-white/10 text-sm sm:text-base text-blue-100/90 font-sans">
@@ -91,15 +91,15 @@ export default function FreeAuditPage() {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Google Map Pack Audit:</strong> Where you rank in your target residential zip codes.</span>
+                  <span><strong>Google Map Pack &amp; AI Search Audit:</strong> Where you rank in Google Maps, AI Overviews, and local voice search.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Mobile Speed Test:</strong> Why slow WordPress sites bounce coating buyers.</span>
+                  <span><strong>Sub-1.5s Mobile Speed Test:</strong> Why slow WordPress sites bounce high-ticket coating buyers.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Pricing Friction Check:</strong> How instant estimators pre-qualify serious homeowners.</span>
+                  <span><strong>Instant Estimator Demo:</strong> How square-foot calculators pre-qualify serious homeowners.</span>
                 </div>
               </div>
             </div>

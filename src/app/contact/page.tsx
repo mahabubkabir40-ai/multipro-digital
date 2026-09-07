@@ -55,13 +55,13 @@ export default function ContactPage() {
             {/* Left Column - Copy & Trust Building */}
             <div className="max-w-xl">
               <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/20 bg-brand-lime/5 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
-                Pick a Time That Works
+                ⚡ 100% Free Consultation • Territory Lock
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif text-white font-black mb-6 leading-tight">
                 Ready to <span className="text-brand-lime block">Dominate Your Local Market?</span>
               </h1>
               <p className="text-lg text-blue-100/70 font-sans leading-relaxed mb-8">
-                We’ll analyze your local service territory, your revenue goals, and the exact roadmap we use to generate exclusive, high-ticket garage floor and commercial epoxy leads. 
+                We’ll analyze your local service territory, your mobile site speed, and the exact roadmap we use to rank #1 in the Google Map Pack and Google AI Overviews—generating exclusive, high-ticket garage floor and commercial epoxy leads on autopilot.
               </p>
               
               <div className="space-y-6 mb-12">
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
             {/* Right Column - Dedicated Google Calendar */}
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 max-w-md mx-auto lg:max-w-none lg:w-full">
-              <h3 className="text-2xl text-white font-serif font-bold mb-6 leading-tight">Get a Proven Roadmap to Rank <span className="text-brand-lime font-sans font-black tracking-tight">#1 &</span> Keep Your Grinders Busy!</h3>
+              <h3 className="text-2xl text-white font-serif font-bold mb-6 leading-tight">Get a Proven Roadmap to Rank <span className="text-brand-lime font-sans font-black tracking-tight">Top 3 on Maps &amp; AI &amp;</span> Keep Your Grinders Busy!</h3>
               <div className="w-full bg-white rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(29,164,255,0.15)] h-[600px] border-[4px] border-white/10">
                 <iframe 
                   src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Igc3C-U9tp7AKTpLeRVHI8x0ef-WovC1qnds_oFFQvDuRt3bRTQoFF2qLwI-U2gxKjG8d5O3G?gv=true" 
@@ -133,7 +133,7 @@ export default function ContactPage() {
             <div className="text-center mb-8 max-w-2xl mx-auto border-l-4 border-brand-lime pl-6 text-left">
               <h2 className="text-3xl md:text-4xl font-serif text-[#0b1f38] font-black mb-3">Get Your Free 60-Second Video Audit!</h2>
               <p className="text-slate-600 text-lg">
-                Not ready to talk? No problem. Fill in the form below and I'll record a personalized 60-second video showing why competitors are outranking you for epoxy searches and how to fix it. 100% Free.
+                Not ready to talk? No problem. Fill in the form below and I'll record a personalized 60-second video showing your Google Map Pack rankings, AI search visibility, mobile load speed, and how to fix it. 100% Free.
               </p>
             </div>
            
@@ -231,7 +231,7 @@ export default function ContactPage() {
                     <textarea 
                       name="Biggest Challenge"
                       rows={2}
-                      placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or slow website"
+                      placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
                       disabled={isSubmitting}
                       className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm resize-none"
                     ></textarea>
