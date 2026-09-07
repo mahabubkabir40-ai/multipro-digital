@@ -274,7 +274,7 @@ export default function FloorCalculator() {
             {submitSuccess ? (
               <div className="mt-6 p-4 rounded-xl bg-brand-lime/15 border border-brand-lime/40 text-brand-lime font-bold text-sm sm:text-base flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                Estimate locked. We&apos;ll text you shortly.
+                Estimate &amp; On-Site Moisture Test Locked! We&apos;ll text you shortly.
               </div>
             ) : (
               <form onSubmit={handleLeadSubmit} className="mt-6 space-y-3">
