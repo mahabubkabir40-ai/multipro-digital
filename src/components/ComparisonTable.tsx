@@ -42,36 +42,88 @@ export default function ComparisonTable() {
   ];
 
   return (
-    <section id="proof" className="py-24 bg-slate-900 relative overflow-hidden text-white">
+    <section id="proof" className="py-16 sm:py-20 md:py-24 bg-slate-900 relative overflow-hidden text-white">
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-4">
             <ShieldCheck className="w-4 h-4" /> Why Choose MultiPro Digital
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black tracking-tight mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-black tracking-tight mb-4 leading-tight">
             Generic Agencies vs.{' '}
             <span className="text-brand-lime block sm:inline">MultiPro Digital</span>
           </h2>
-          <p className="text-base sm:text-lg text-blue-100/70 font-sans leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-blue-100/70 font-sans leading-relaxed">
             Stop paying generalists who treat floor coatings like standard home remodeling. We engineer custom growth systems built exclusively for coating pros.
           </p>
         </div>
 
-        {/* Comparison Table Container */}
-        <div className="overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
-          <table className="w-full text-left border-collapse">
+        {/* Mobile View: High-Converting Stacked Cards (md:hidden) */}
+        <div className="md:hidden space-y-3.5">
+          {comparisonData.map((row, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border border-white/10 bg-slate-950/80 p-4 shadow-xl relative overflow-hidden backdrop-blur-xl"
+            >
+              {/* Feature Header */}
+              <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/10">
+                <h3 className="text-sm font-bold text-white tracking-wide">
+                  {row.feature}
+                </h3>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/5 shrink-0">
+                  0{idx + 1}
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                {/* MultiPro Digital (Highlighted Top Box) */}
+                <div className="p-3 rounded-xl bg-brand-lime/10 border border-brand-lime/30 flex items-start gap-2.5">
+                  <div className="w-5 h-5 rounded-full bg-brand-lime/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3.5 h-3.5 text-brand-lime stroke-[3]" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-black uppercase tracking-wider text-brand-lime mb-0.5">
+                      MultiPro Digital
+                    </div>
+                    <div className="text-sm font-bold text-white leading-snug">
+                      {row.multipro}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Generic Agencies (Subdued Lower Box) */}
+                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2.5">
+                  <div className="w-5 h-5 rounded-full bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <X className="w-3.5 h-3.5 text-rose-500" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-0.5">
+                      Generic Marketing Agencies
+                    </div>
+                    <div className="text-xs text-slate-300 leading-snug">
+                      {row.generic}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop / Tablet View: Traditional 3-Column Table (hidden md:block) */}
+        <div className="hidden md:block overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
+          <table className="w-full text-left border-collapse min-w-[640px]">
             <thead>
               <tr className="border-b border-white/10 bg-white/5">
-                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-white uppercase tracking-wider w-1/3">
                   Feature
                 </th>
-                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-slate-400 uppercase tracking-wider">
+                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-slate-400 uppercase tracking-wider w-1/3">
                   Generic Marketing Agencies
                 </th>
-                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-brand-lime uppercase tracking-wider bg-brand-lime/10 border-l border-r border-brand-lime/20">
+                <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-brand-lime uppercase tracking-wider bg-brand-lime/10 border-l border-r border-brand-lime/20 w-1/3">
                   MultiPro Digital
                 </th>
               </tr>
@@ -82,7 +134,7 @@ export default function ComparisonTable() {
                   <td className="py-5 px-6 sm:px-8 font-bold text-white text-sm sm:text-base">
                     {row.feature}
                   </td>
-                  <td className="py-5 px-6 sm:px-8 text-slate-400 text-sm sm:text-base flex-1">
+                  <td className="py-5 px-6 sm:px-8 text-slate-400 text-sm sm:text-base">
                     <div className="flex items-center gap-2.5">
                       <X className="w-4 h-4 text-rose-500 shrink-0" />
                       <span>{row.generic}</span>
@@ -101,11 +153,11 @@ export default function ComparisonTable() {
         </div>
 
         {/* Call to action below table */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 sm:mt-12 text-center">
           <Link
             href="/free-audit"
             prefetch={false}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(154,251,22,0.4)] group select-none"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(154,251,22,0.4)] group select-none"
           >
             <span>Lock In Your City&apos;s Territory</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
