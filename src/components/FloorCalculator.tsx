@@ -59,8 +59,8 @@ export default function FloorCalculator() {
     },
   ];
 
-  const [selectedSpace, setSelectedSpace] = useState<SpaceOption>(spaces[1]); // Default 2-Car
-  const [selectedSystem, setSelectedSystem] = useState<CoatingSystem>(systems[0]); // Default Full Flake
+  const [selectedSpace, setSelectedSpace] = useState<SpaceOption | null>(null);
+  const [selectedSystem, setSelectedSystem] = useState<CoatingSystem | null>(null);
   const [needsPrep, setNeedsPrep] = useState<boolean>(false);
   const [firstName, setFirstName] = useState('');
   const [phone, setPhone] = useState('');
@@ -73,13 +73,25 @@ export default function FloorCalculator() {
   const prepCostPerSqFtHigh = needsPrep ? 1.5 : 0;
 
   const JOB_MINIMUM = 2500;
-  const totalLow = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtLow + prepCostPerSqFtLow)));
-  const totalHigh = Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtHigh + prepCostPerSqFtHigh)));
-  const estimateLabel = '$' + totalLow.toLocaleString() + ' - $' + totalHigh.toLocaleString();
+  const isReady = selectedSpace !== null && selectedSystem !== null;
+  const totalLow = isReady
+    ? Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtLow + prepCostPerSqFtLow)))
+    : 0;
+  const totalHigh = isReady
+    ? Math.max(JOB_MINIMUM, Math.round(selectedSpace.sqft * (selectedSystem.pricePerSqFtHigh + prepCostPerSqFtHigh)))
+    : 0;
+  const estimateLabel = isReady
+    ? '$' + totalLow.toLocaleString() + ' - $' + totalHigh.toLocaleString()
+    : 'Select options above';
 
   const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitError(null);
+
+    if (!selectedSpace || !selectedSystem) {
+      setSubmitError('Please select both a project size (Step 1) and coating system (Step 2) above.');
+      return;
+    }
 
     const digits = phone.replace(/\D/g, '');
     if (digits.length < 10) {
@@ -147,7 +159,7 @@ export default function FloorCalculator() {
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
               {spaces.map((space) => {
-                const isSelected = selectedSpace.id === space.id;
+                const isSelected = selectedSpace?.id === space.id;
                 return (
                   <button
                     key={space.id}
@@ -174,7 +186,7 @@ export default function FloorCalculator() {
             </label>
             <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {systems.map((system) => {
-                const isSelected = selectedSystem.id === system.id;
+                const isSelected = selectedSystem?.id === system.id;
                 return (
                   <button
                     key={system.id}
@@ -238,12 +250,26 @@ export default function FloorCalculator() {
             <div className="text-xs uppercase tracking-widest text-brand-lime font-black mb-1">
               Step 3: Instant Estimated Price Range
             </div>
-            <div className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white tracking-tight">
-              {estimateLabel}*
-            </div>
-            <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft - {selectedSystem.name}
-            </div>
+            {isReady ? (
+              <>
+                <div className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white tracking-tight">
+                  {estimateLabel}*
+                </div>
+                <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft - {selectedSystem.name}
+                </div>
+              </>
+            ) : (
+              <div className="py-2">
+                <div className="text-xl sm:text-3xl font-serif font-bold text-slate-300">
+                  Select Size &amp; Finish Above
+                </div>
+                <div className="text-xs sm:text-sm text-blue-200/70 mt-1.5 flex items-center gap-1.5">
+                  <span>👈</span>
+                  <span>Click your garage size (Step 1) and coating system (Step 2) to calculate your instant price.</span>
+                </div>
+              </div>
+            )}
 
             {submitSuccess ? (
               <div className="mt-6 p-4 rounded-xl bg-brand-lime/15 border border-brand-lime/40 text-brand-lime font-bold text-sm sm:text-base flex items-center gap-2">
@@ -289,11 +315,13 @@ export default function FloorCalculator() {
                 )}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  disabled={isSubmitting || !isReady}
+                  className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
                     'Sending...'
+                  ) : !isReady ? (
+                    'Select Options Above to Lock Pricing'
                   ) : (
                     <>
                       <span>Lock In Pricing &amp; Book Consult</span>
