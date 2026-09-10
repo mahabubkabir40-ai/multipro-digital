@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Submission Received | MultiPro Digital',
-  description: 'Thank you for requesting your free Mover Visibility Audit. We will be in touch shortly.',
+  description: 'Thank you for requesting your free Epoxy Contractor Visibility Audit. We will be in touch shortly.',
 };
 
 export default function SuccessPage() {

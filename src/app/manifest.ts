@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Multipro Digital | SEO for Movers',
+    name: 'Multipro Digital | Epoxy Growth Systems',
     short_name: 'MultiproDigital',
 
-    description: 'Specialized Local SEO for Moving Companies',
+    description: 'Specialized Growth Systems & Local SEO for Epoxy Coating Contractors',
     start_url: '/',
     display: 'standalone',
     background_color: '#0b1f38',
