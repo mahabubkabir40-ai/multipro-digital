@@ -9,8 +9,15 @@ export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeCardId, setActiveCardId] = useState<number | null>(null);
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   useEffect(() => {
     setMounted(true);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   if (!mounted) {
@@ -25,6 +32,7 @@ export default function Portfolio() {
       name: "Dallas, TX — #1 Map Pack Domination",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/epoxy/geogrid-map.jpg",
+      rawImage: null,
       metric: "#1",
       metricLabel: "Map Pack Ranking",
       timeframe: "41 Top-1 Geo-Pins"
@@ -34,45 +42,50 @@ export default function Portfolio() {
       name: "Chicago, IL — Epoxy Rank Tracker",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/epoxy/ranking-dashboard.jpg",
+      rawImage: null,
       metric: "Top 1",
       metricLabel: "Google Map Pack",
       timeframe: "+68.4% Conversion Rate"
     },
     {
       id: 3,
-      name: "Orlando, FL — Sub-1.5s Showroom Site",
+      name: "Dallas, TX — #1 Google Organic Rankings",
       category: ['All', 'Website Ranking'],
-      image: "/portfolio/epoxy/showroom-mockup.jpg",
-      metric: "98/100",
-      metricLabel: "PageSpeed Score",
-      timeframe: "Instant Price Estimator"
+      image: "/portfolio/epoxy/epoxy-floor-dallas-ranking.png",
+      rawImage: "/portfolio/epoxy/dallas-ranking-original.png",
+      metric: "#1",
+      metricLabel: "epoxy flooring dallas",
+      timeframe: "5 Keywords in Top 5 (DFW)"
     },
     {
       id: 4,
       name: "Phoenix, AZ — Commercial Coatings",
       category: ['All', 'Google Business Profile Ranking'],
       image: "/portfolio/epoxy/geogrid-map.jpg",
+      rawImage: null,
       metric: "Top 3",
       metricLabel: "Map Pack Ranking",
       timeframe: "in 45 Days"
     },
     {
       id: 5,
-      name: "Denver, CO — 3-Car Garage Pipeline",
+      name: "Phoenix, AZ — Top-4 Metro Keyword Climb",
       category: ['All', 'Website Ranking'],
-      image: "/portfolio/epoxy/showroom-mockup.jpg",
-      metric: "+18",
-      metricLabel: "Booked Estimates / mo",
-      timeframe: "in 60 Days"
+      image: "/portfolio/epoxy/epoxy-floor-phoenix-ranking.png",
+      rawImage: "/portfolio/epoxy/phoenix-ranking-original.png",
+      metric: "Top 4",
+      metricLabel: "epoxy floor phoenix",
+      timeframe: "Jumped 8 Spots (from #12)"
     },
     {
       id: 6,
-      name: "Atlanta, GA — Flake & Metallic SEO",
+      name: "Las Vegas, NV — #2 High-Ticket Epoxy SEO",
       category: ['All', 'Website Ranking'],
-      image: "/portfolio/epoxy/ranking-dashboard.jpg",
-      metric: "#1",
-      metricLabel: "Organic Search",
-      timeframe: "in 60 Days"
+      image: "/portfolio/epoxy/epoxy-floor-las-vegas-ranking.png",
+      rawImage: "/portfolio/epoxy/las-vegas-ranking-original.png",
+      metric: "#2",
+      metricLabel: "epoxy floor las vegas",
+      timeframe: "+13 Monthly Organic Traffic"
     }
   ];
 
@@ -132,7 +145,7 @@ export default function Portfolio() {
                   alt={`Local SEO Map Pack case study: ${result.name} — prior win, same system for epoxy/coatings`} 
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className={`object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
+                  className={`object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
                 />
 
                 {/* Hover Reveal Overlays */}
@@ -160,26 +173,45 @@ export default function Portfolio() {
                     <p className="text-white/60 text-xs sm:text-sm font-sans mt-0.5 sm:mt-1">{result.timeframe}</p>
                   </div>
 
-                  <Link 
-                    href="/free-audit"
-                    prefetch={false}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (typeof window !== 'undefined' && (window as any).gtag) {
-                        (window as any).gtag('event', 'click_audit', {
-                          'event_category': 'CTA',
-                          'event_label': 'Portfolio Card Button'
-                        });
-                      }
-                    }}
-                    className="relative group/btn overflow-hidden w-full py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.05] active:scale-90 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Get Results Like This &rarr;
-                    </span>
-                    <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[800ms] ease-out" />
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link 
+                      href="/free-audit"
+                      prefetch={false}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (typeof window !== 'undefined' && (window as any).gtag) {
+                          (window as any).gtag('event', 'click_audit', {
+                            'event_category': 'CTA',
+                            'event_label': 'Portfolio Card Button'
+                          });
+                        }
+                      }}
+                      className="relative group/btn overflow-hidden flex-1 py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.02] active:scale-95 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
+                      style={{ WebkitTapHighlightColor: 'transparent' }}
+                    >
+                      <span className="relative z-10 flex items-center justify-center gap-1.5">
+                        Get Results Like This &rarr;
+                      </span>
+                      <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[800ms] ease-out" />
+                    </Link>
+
+                    {result.rawImage && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImage(result.rawImage);
+                        }}
+                        className="py-2.5 sm:py-3.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                        title="View Original Keyword Ranking Proof"
+                      >
+                        <svg className="w-4 h-4 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                        </svg>
+                        <span className="hidden sm:inline">Proof</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -187,6 +219,54 @@ export default function Portfolio() {
           })}
         </div>
       </div>
+
+      {/* Lightbox Proof Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div 
+            className="relative max-w-5xl w-full bg-slate-900 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-lime block">Verified Client Search Ranking</span>
+                <p className="text-white text-sm font-semibold">Live Google Keyword Positions (Organic SEO Report)</p>
+              </div>
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-lg transition-all"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="bg-white rounded-xl p-2 sm:p-4 overflow-auto max-h-[72vh]">
+              <img 
+                src={selectedImage} 
+                alt="Verified Keyword Ranking Table Proof" 
+                className="w-full h-auto object-contain rounded-lg shadow-sm mx-auto"
+              />
+            </div>
+
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+              <p className="text-slate-400 text-xs">
+                Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords.
+              </p>
+              <Link
+                href="/free-audit"
+                onClick={() => setSelectedImage(null)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider text-center hover:shadow-[0_0_20px_rgba(154,251,22,0.5)] transition-all"
+              >
+                Get Your Territory Analyzed &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
