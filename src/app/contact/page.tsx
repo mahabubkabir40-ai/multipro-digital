@@ -214,11 +214,11 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website or Instagram URL <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website or Google Business Profile <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
-                        name="Website or Instagram URL"
-                        placeholder="yoursite.com or @yourhandle"
+                        name="Website or Google Business Profile"
+                        placeholder="yoursite.com or Google Maps link"
                         className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                         required
                         disabled={isSubmitting}

@@ -30,7 +30,13 @@ export async function POST(request: Request) {
     const email = cleanData.email || '';
     const company = cleanData.businessname || cleanData.company || '';
     const cityState = cleanData.cityandstate || '';
-    const website = cleanData.website || cleanData.websiteorinstagramurl || '';
+    const website = 
+      cleanData.website || 
+      cleanData.websiteorgooglebusinessprofile || 
+      cleanData.websiteorinstagramurl || 
+      cleanData.googlebusinessprofile || 
+      cleanData.gbp || 
+      '';
     const space = cleanData.space || '';
     const system = cleanData.system || '';
     const estimate = cleanData.estimate || '';
@@ -71,10 +77,16 @@ export async function POST(request: Request) {
       items.push({ label: 'City & State', valueHtml: escapeHtml(cityState) });
     }
     if (website) {
-      const url = website.startsWith('http') ? website : `https://${website}`;
+      const isLikelyUrl = website.startsWith('http://') || website.startsWith('https://') || website.includes('.');
+      const formattedHref = (website.startsWith('http://') || website.startsWith('https://'))
+        ? website 
+        : `https://${website}`;
+
       items.push({
-        label: 'Website / IG',
-        valueHtml: `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" style="color: #0b57d0; text-decoration: underline;">${escapeHtml(website)}</a>`
+        label: 'Website / Google Business Profile',
+        valueHtml: isLikelyUrl 
+          ? `<a href="${escapeHtml(formattedHref)}" target="_blank" rel="noopener noreferrer" style="color: #0b57d0; text-decoration: underline; font-weight: 600;">${escapeHtml(website)}</a>`
+          : `<strong>${escapeHtml(website)}</strong>`
       });
     }
     if (space) {

@@ -152,13 +152,14 @@ export default function HeroLeadForm() {
 
               <div>
                 <label htmlFor="hero-web" className={labelClass}>
-                  Website or Instagram <span className="text-slate-400 font-medium">(optional)</span>
+                  Website or Google Business Profile <span className="text-[#1da4ff]">*</span>
                 </label>
                 <input
                   id="hero-web"
                   type="text"
-                  name="Website or Instagram URL"
-                  placeholder="yoursite.com or @handle"
+                  name="Website or Google Business Profile"
+                  placeholder="yoursite.com or Google Maps link"
+                  required
                   disabled={isSubmitting}
                   className={inputClass}
                 />

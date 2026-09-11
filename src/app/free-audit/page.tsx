@@ -210,12 +210,13 @@ export default function FreeAuditPage() {
                     </div>
                     <div>
                       <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Website or Instagram <span className="text-slate-400 font-medium">(optional)</span>
+                        Website or Google Business Profile <span className="text-[#1da4ff]">*</span>
                       </label>
                       <input 
                         type="text" 
-                        name="Website or Instagram URL"
-                        placeholder="yoursite.com or @handle"
+                        name="Website or Google Business Profile"
+                        placeholder="yoursite.com or Google Maps link"
+                        required
                         disabled={isSubmitting}
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
                       />
