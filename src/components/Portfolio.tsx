@@ -145,11 +145,11 @@ export default function Portfolio() {
                   alt={`Local SEO Map Pack case study: ${result.name} — prior win, same system for epoxy/coatings`} 
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className={`object-cover transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
+                  className={`object-cover object-top transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
                 />
 
                 {/* Hover Reveal Overlays */}
-                <div className={`absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
+                <div className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
                 <div className={`absolute inset-0 bg-slate-950/90 transition-opacity duration-500 z-20 backdrop-blur-[2px] ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} />
 
                 {/* Info Hierarchy */}
