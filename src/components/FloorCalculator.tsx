@@ -132,7 +132,7 @@ export default function FloorCalculator() {
   };
 
   return (
-    <section id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden">
+    <section id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden border-t border-white/5">
       {/* Background Ambience */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />

@@ -44,22 +44,22 @@ export default function ProblemSolution() {
   ];
 
   return (
-    <section id="why-it-works" className="py-16 sm:py-24 lg:py-28 bg-slate-50 relative overflow-hidden">
+    <section id="why-it-works" className="py-16 sm:py-24 lg:py-28 bg-slate-950 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-widest mb-4">
-            <AlertTriangle className="w-4 h-4 text-rose-600" /> The Contractor Reality
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 font-bold text-xs uppercase tracking-widest mb-4">
+            <AlertTriangle className="w-4 h-4 text-rose-500" /> The Contractor Reality
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white font-black tracking-tight mb-4 sm:mb-6">
             Tired of Bidding Against Trunk-Slammers &amp; Buying Junk Leads?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 font-sans leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-blue-100/70 font-sans leading-relaxed">
             You invested thousands in grinders, dust extractors, and polyaspartic rigs. You shouldn&apos;t have to race to the bottom on price or waste half your week chasing tire-kickers.
           </p>
         </div>
@@ -69,39 +69,39 @@ export default function ProblemSolution() {
           {painCards.map((card) => (
             <div 
               key={card.id}
-              className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-slate-200/80 hover:border-rose-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group"
+              className="bg-slate-900/90 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-white/10 hover:border-rose-500/40 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.15)] transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group backdrop-blur-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                     {card.icon}
                   </div>
-                  <span className="text-xs font-black uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">
+                  <span className="text-xs font-black uppercase tracking-wider text-rose-400 bg-rose-500/10 border border-rose-500/30 px-3 py-1 rounded-full">
                     {card.tag}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-serif font-black text-slate-900 mb-3 leading-snug group-hover:text-[#1A365D] transition-colors">
+                <h3 className="text-2xl font-serif font-black text-white mb-3 leading-snug group-hover:text-rose-300 transition-colors">
                   {card.title}
                 </h3>
 
-                <p className="text-slate-900 font-bold text-sm sm:text-base mb-2 font-sans leading-snug">
+                <p className="text-slate-100 font-bold text-sm sm:text-base mb-2 font-sans leading-snug">
                   {card.leadText}
                 </p>
 
-                <p className="text-slate-600 text-xs sm:text-sm font-sans leading-relaxed">
+                <p className="text-blue-100/60 text-xs sm:text-sm font-sans leading-relaxed">
                   {card.body}
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="font-semibold text-slate-500">
-                  Impact: <strong className="font-extrabold text-slate-900">{card.impact}</strong>
+              <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs">
+                <span className="font-semibold text-slate-400">
+                  Impact: <strong className="font-extrabold text-rose-400">{card.impact}</strong>
                 </span>
                 <button 
                   type="button"
                   onClick={scrollToSystem}
-                  className="font-black text-rose-600 hover:text-[#1A365D] transition-colors flex items-center gap-1 group/btn cursor-pointer select-none"
+                  className="font-black text-brand-lime hover:text-white transition-colors flex items-center gap-1 group/btn cursor-pointer select-none"
                 >
                   <span>See The Solution</span>
                   <span className="transition-transform group-hover/btn:translate-y-0.5">↓</span>

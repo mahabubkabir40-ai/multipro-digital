@@ -3,7 +3,7 @@ import TrackedLink from './TrackedLink';
 
 export default function CTA() {
   return (
-    <section id="audit" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-[#0a192f]">
+    <section id="audit" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-[#0a192f] border-t border-white/5">
       {/* Premium Dark Gradient Backdrop */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1A365D] via-[#0a192f] to-[#0a192f]" />
       

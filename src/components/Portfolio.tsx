@@ -98,7 +98,7 @@ export default function Portfolio() {
   const filteredResults = results.filter(result => result.category.includes(activeFilter));
 
   return (
-    <section id="portfolio" className="py-24 bg-slate-900 relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-slate-900 relative overflow-hidden border-t border-white/5">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
