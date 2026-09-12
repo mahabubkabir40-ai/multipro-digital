@@ -60,9 +60,59 @@ export default function ComparisonTable() {
           </p>
         </div>
 
-        {/* Single Responsive 3-Column Decision Table (No DOM Duplication) */}
-        <div className="overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
-          <table className="w-full text-left border-collapse min-w-[640px]">
+        {/* Mobile View: Vertical Comparison Cards (Zero Horizontal Scroll) */}
+        <div className="md:hidden space-y-4">
+          {comparisonData.map((row, idx) => (
+            <div 
+              key={idx} 
+              className="rounded-2xl border border-white/10 bg-slate-950/90 p-4 shadow-xl space-y-3"
+            >
+              {/* Feature Title */}
+              <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                <span className="text-xs font-mono font-black text-slate-300 uppercase tracking-wider">
+                  {row.feature}
+                </span>
+                <span className="text-[10px] font-bold text-brand-lime uppercase tracking-widest bg-brand-lime/10 px-2 py-0.5 rounded-full border border-brand-lime/30">
+                  Advantage
+                </span>
+              </div>
+
+              {/* MultiPro Digital (Winner) */}
+              <div className="p-3 rounded-xl bg-brand-lime/[0.08] border border-brand-lime/30 flex items-start gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-brand-lime text-slate-950 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                  <Check className="w-3.5 h-3.5 text-slate-950 stroke-[3]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-wider text-brand-lime">
+                    MultiPro Digital
+                  </div>
+                  <div className="text-white text-xs sm:text-sm font-bold mt-0.5 leading-snug">
+                    {row.multipro}
+                  </div>
+                </div>
+              </div>
+
+              {/* Generic Agencies (Loser) */}
+              <div className="p-3 rounded-xl bg-slate-900/60 border border-white/5 flex items-start gap-2.5">
+                <div className="w-5 h-5 rounded-full bg-rose-500/10 text-rose-500 flex items-center justify-center shrink-0 mt-0.5 border border-rose-500/20">
+                  <X className="w-3.5 h-3.5 text-rose-500 stroke-[2.5]" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    Generic Agencies
+                  </div>
+                  <div className="text-slate-300 text-xs mt-0.5 leading-snug">
+                    {row.generic}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Full 3-Column Decision Table */}
+        <div className="hidden md:block overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
+          <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-white/10 bg-white/5">
                 <th className="py-5 px-6 sm:px-8 text-sm sm:text-base font-bold text-white uppercase tracking-wider w-1/3">
