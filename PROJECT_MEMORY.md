@@ -12,7 +12,7 @@ Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "
 
 ## 📊 Analytics & Reporting (USA Only)
 - **Pulse Check**: USA Date format (MM/DD/YYYY).
-- **Baseline Position**: 11.4 ("moving company marketing agency").
+- **Baseline Focus**: Epoxy flooring & concrete coatings marketing agency.
 - **Reporting Standard**: Only provide Search Console/GA4 data when explicitly requested by user.
 
 ## 🛠️ Technical Stack
@@ -22,7 +22,7 @@ Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "
 - **Security**: Google Cloud JSON key is in `.gitignore` (local only).
 
 ## 📝 Ongoing Strategy
-1. **Location Pages**: Future expansion (e.g., Orlando Movers Marketing).
+1. **Location Pages**: Future expansion for targeted epoxy contractor geos (e.g., Orlando Epoxy Marketing).
 2. **Blog Optimization**: Wrap paragraph content in `<AutoLinker>` to trigger automated SEO linking.
 3. **High-Visibility Anchor Styling**:
    - **Dark Backgrounds**: `text-white font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime`

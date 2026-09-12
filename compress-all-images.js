@@ -30,42 +30,10 @@ const compressImage = async (inputRelativePath, outputRelativePath, resizeOpts =
 
 const run = async () => {
   try {
-    // 1. Mountain Movers avatar logo
-    await compressImage(
-      'public/avatars/Mountain Movers.png',
-      'public/avatars/Mountain Movers.webp',
-      { width: 96, height: 96, fit: 'cover' },
-      80
-    );
-
-    // 2. Sunshine Movers avatar logo
-    await compressImage(
-      'public/avatars/Sunshine Movers.png',
-      'public/avatars/Sunshine Movers.webp',
-      { width: 96, height: 96, fit: 'cover' },
-      80
-    );
-
-    // 3. Blog cover image
-    await compressImage(
-      'public/blog-cover-movers.png',
-      'public/blog-cover-movers.webp',
-      { width: 800 },
-      45
-    );
-
-    // 4. FAQ results image
+    // 1. FAQ results image
     await compressImage(
       'public/faq-results.png',
       'public/faq-results.webp',
-      { width: 800 },
-      75
-    );
-
-    // 5. Orlando Maps Mockup image
-    await compressImage(
-      'public/images/orlando-maps-mockup.png',
-      'public/images/orlando-maps-mockup.webp',
       { width: 800 },
       75
     );

@@ -26,26 +26,6 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/movers-marketing-tips',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/movers-marketing-tips/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/service-areas',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/service-areas/:path*',
-        destination: '/',
-        permanent: true,
-      },
     ];
   },
 };
