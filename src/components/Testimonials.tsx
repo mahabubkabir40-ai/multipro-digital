@@ -19,7 +19,7 @@ export default function Testimonials() {
     {
       id: 1,
       name: "Liam",
-      company: "Orlando-FL",
+      company: "Garage Floor Pros • Orlando, FL",
       text: "Our Google Map Pack ranking soared! Multipro Digital got us into the top 3 spots, leading to a 35%+ increase in inbound garage floor estimate requests. Our installation calendar is packed.",
       rating: 5,
       image: "/avatars/epoxy/contractor-1.webp",
@@ -28,7 +28,7 @@ export default function Testimonials() {
     {
       id: 2,
       name: "Mateo",
-      company: "Phoenix-AZ",
+      company: "Apex Polyaspartic Coatings • Phoenix, AZ",
       text: "Finally, I can focus on prep and topcoats, not chasing bad leads. The interactive floor price calculator on our site captures serious homeowners before they call anyone else. Huge game changer!",
       rating: 5,
       image: "/avatars/epoxy/contractor-2.webp",
@@ -37,7 +37,7 @@ export default function Testimonials() {
     {
       id: 3,
       name: "Marcus",
-      company: "Plano, TX",
+      company: "DFW Epoxy Systems • Plano, TX",
       text: "They truly understand the coatings industry – from flake systems to commercial epoxy bids. Multipro Digital isn't just an SEO vendor; they keep our crews booked every single week.",
       rating: 5,
       image: "/avatars/epoxy/contractor-3.webp",

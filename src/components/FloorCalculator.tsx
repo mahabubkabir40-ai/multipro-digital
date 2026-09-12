@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Calculator, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface SpaceOption {
@@ -272,18 +273,29 @@ export default function FloorCalculator() {
             )}
 
             {submitSuccess ? (
-              <div className="mt-6 p-4 rounded-xl bg-brand-lime/15 border border-brand-lime/40 text-brand-lime font-bold text-sm sm:text-base flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                Estimate &amp; On-Site Moisture Test Locked! We&apos;ll text you shortly.
+              <div className="mt-6 p-5 rounded-2xl bg-brand-lime/15 border border-brand-lime/40 text-brand-lime flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 flex-shrink-0 text-brand-lime" />
+                  <div>
+                    <div className="font-bold text-base text-white">Boom! That&apos;s how fast you capture homeowner leads.</div>
+                    <div className="text-xs text-brand-lime font-medium mt-0.5">On your live site, this instantly notifies you with the homeowner&apos;s phone, garage size, and coating choice.</div>
+                  </div>
+                </div>
+                <Link
+                  href="/free-audit"
+                  className="px-5 py-2.5 rounded-xl bg-brand-lime text-slate-950 font-black text-xs uppercase tracking-wider shrink-0 hover:shadow-[0_0_20px_rgba(154,251,22,0.5)] transition-all"
+                >
+                  Get This On Your Site &rarr;
+                </Link>
               </div>
             ) : (
               <form onSubmit={handleLeadSubmit} className="mt-6 space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                   <span className="text-xs uppercase tracking-widest text-brand-lime font-black">
-                    Step 4: Lock In Pricing &amp; Book On-Site Moisture Test
+                    Step 4: See How Homeowner Leads Are Captured
                   </span>
                   <span className="text-[11px] text-blue-200/70 font-medium">
-                    (Live Demo: See how homeowner leads are captured)
+                    (Interactive Demo: Enter your info to simulate a homeowner quote)
                   </span>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-3">
@@ -292,7 +304,7 @@ export default function FloorCalculator() {
                     name="name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="First name (optional)"
+                    placeholder="Your Name (e.g. John)"
                     autoComplete="given-name"
                     disabled={isSubmitting}
                     className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
@@ -302,7 +314,7 @@ export default function FloorCalculator() {
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Enter your phone number to book on-site moisture test *"
+                    placeholder="Enter your cell to test lead capture *"
                     autoComplete="tel"
                     inputMode="tel"
                     required
@@ -319,12 +331,12 @@ export default function FloorCalculator() {
                   className="w-full md:w-auto px-6 py-4 rounded-xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(154,251,22,0.4)] flex items-center justify-center gap-2 text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isSubmitting ? (
-                    'Sending...'
+                    'Testing Lead Capture...'
                   ) : !isReady ? (
-                    'Select Options Above to Lock Pricing'
+                    'Select Garage Size & Finish Above First'
                   ) : (
                     <>
-                      <span>Lock In Pricing &amp; Book On-Site Moisture Test</span>
+                      <span>Test Lead Capture (Simulate Homeowner Quote)</span>
                       <ArrowRight className="w-5 h-5" />
                     </>
                   )}
@@ -334,11 +346,20 @@ export default function FloorCalculator() {
           </div>
 
           {/* Contractor Explanation Note */}
-          <div className="mt-8 pt-6 border-t border-white/10 flex items-start gap-3 text-xs sm:text-sm text-blue-200/80 leading-relaxed">
-            <Sparkles className="w-5 h-5 text-brand-lime flex-shrink-0 mt-0.5" />
-            <p>
-              <strong className="text-white">Why this prints jobs:</strong> This is a live demo of what homeowners do on a contractor site - they pick a size and coating, see an instant ballpark range (with a job minimum applied), and submit their phone number to lock in pricing and book a consult. Want this estimator capturing leads on your website? Book a free audit below.
-            </p>
+          <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-start gap-3 text-xs sm:text-sm text-blue-200/80 leading-relaxed">
+              <Sparkles className="w-5 h-5 text-brand-lime flex-shrink-0 mt-0.5" />
+              <p>
+                <strong className="text-white">Why this books jobs:</strong> Homeowners calculate an instant ballpark, then submit their phone number to lock in their price and schedule an on-site moisture test. You get their exact garage size and coating choice before you even pick up the phone.
+              </p>
+            </div>
+            <Link
+              href="/free-audit"
+              className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm whitespace-nowrap transition-all shrink-0 flex items-center gap-2"
+            >
+              <span>Get This On Your Website</span>
+              <ArrowRight className="w-4 h-4 text-brand-lime" />
+            </Link>
           </div>
         </div>
       </div>

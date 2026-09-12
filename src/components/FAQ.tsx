@@ -41,7 +41,7 @@ export default function FAQ() {
             <div className="sticky top-24 rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/3] group border border-slate-200">
               <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-brand-lime/30 text-white font-bold text-xs flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
-                Local SEO &amp; Inbound Leads Tracker
+                Live Contractor Lead &amp; Ranking Tracker
               </div>
               <Image 
                 src="/faq-results.webp" 
