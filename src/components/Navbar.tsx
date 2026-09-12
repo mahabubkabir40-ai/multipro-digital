@@ -1,11 +1,23 @@
 'use client';
-
-import { useState } from 'react';
+ 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Lock body scroll when mobile menu is open to prevent page jumping underneath
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-slate-950 border-b border-white/10 shadow-lg">
@@ -96,12 +108,13 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`lg:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 z-[100] transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
-        <div className="px-6 py-8 space-y-6 flex flex-col text-center">
-          <Link href="/" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">Home</Link>
-          <Link href="/#portfolio" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">Proof &amp; Results</Link>
-          <Link href="/#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">The System</Link>
-          <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">About Us</Link>
+      <div className={`lg:hidden fixed top-20 inset-x-0 bottom-0 bg-slate-950/98 backdrop-blur-2xl border-b border-white/10 z-[100] overflow-y-auto shadow-2xl transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4 pointer-events-none'}`}>
+        <div className="px-6 py-10 space-y-6 flex flex-col text-center max-w-sm mx-auto justify-center min-h-[calc(100dvh-5rem)]">
+          <Link href="/" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Home</Link>
+          <Link href="/#portfolio" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Proof &amp; Results</Link>
+          <Link href="/#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">The System</Link>
+          <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">About Us</Link>
+          <Link href="/contact" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Contact</Link>
           <div className="pt-2 px-2">
             <Link
               href="/free-audit"

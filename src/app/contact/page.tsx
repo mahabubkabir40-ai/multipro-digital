@@ -125,120 +125,119 @@ export default function ContactPage() {
       </div>
 
       {/* Free Audit Form Section */}
-      <section id="audit-form" className="bg-slate-100/50 py-24 border-t border-slate-200 relative overflow-hidden">
-        {/* Subtle background glow to make glass pop */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent pointer-events-none" />
+      <section id="audit-form" className="bg-slate-950 py-20 sm:py-24 border-t border-white/10 relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl pointer-events-none" />
         
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-8 max-w-2xl mx-auto border-l-4 border-brand-lime pl-6 text-left">
-              <h2 className="text-3xl md:text-4xl font-serif text-[#0b1f38] font-black mb-3">Get Your Free 60-Second Video Audit!</h2>
-              <p className="text-slate-600 text-lg">
-                Not ready to talk? No problem. Fill in the form below and I'll record a personalized 60-second video showing your Google Map Pack rankings, AI search visibility, mobile load speed, and how to fix it. 100% Free.
+            <div className="mb-8 max-w-2xl mx-auto border-l-4 border-brand-lime pl-4 sm:pl-6 text-left">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-white font-black mb-3">Get Your Free 60-Second Video Audit</h2>
+              <p className="text-blue-100/70 text-sm sm:text-base font-sans">
+                Not ready to talk? No problem. Fill in the form below and we&apos;ll record a personalized 60-second video showing your Google Map Pack rankings, AI search visibility, mobile load speed, and how to fix it. 100% Free.
               </p>
             </div>
            
-           <div className="bg-white/70 backdrop-blur-xl rounded-[1.5rem] p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05),inset_0_1px_1px_rgba(255,255,255,1)] border border-brand-lime/20 relative">
+           <div className="bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 shadow-2xl border border-white/10 relative">
              {isSuccess ? (
-               <div className="py-20 text-center animate-in fade-in zoom-in duration-500">
-                 <div className="w-20 h-20 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
-                   <svg className="w-10 h-10 text-[#1A365D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+               <div className="py-16 text-center animate-in fade-in zoom-in duration-500">
+                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
+                   <svg className="w-8 h-8 sm:w-10 sm:h-10 text-[#1A365D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                  </div>
-                 <h3 className="text-3xl font-serif font-black text-[#0b1f38] mb-4">Request Received!</h3>
-                 <p className="text-slate-600 text-lg">Redirecting you to our success page...</p>
+                 <h3 className="text-2xl sm:text-3xl font-serif font-black text-white mb-3">Request Received!</h3>
+                 <p className="text-blue-100/70 text-base">Redirecting you to our success page...</p>
                </div>
              ) : (
-               <form onSubmit={handleSubmit} className="space-y-5">
+               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Anti-spam honeypot */}
-                  <input type="text" name="_honey" style={{ display: 'none' }} />
+                  <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                   
-                  <div className="grid md:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Name <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Your Name <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
                         name="Name"
                         placeholder="John Doe"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Business Name <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Business Name <span className="text-slate-400 font-normal">(Optional)</span></label>
                       <input 
                         type="text" 
                         name="Business Name"
-                        placeholder="Apex Epoxy Coatings"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                        required
+                        placeholder="e.g. Apex Epoxy Coatings"
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">City & State <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">City &amp; State <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
                         name="City and State"
                         placeholder="Dallas, TX"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Phone Number <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Phone Number <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="tel" 
                         name="Phone Number"
-                        placeholder="(555) 000-0000"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        placeholder="(214) 839-4912"
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-5">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Email Address <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Email Address <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="email" 
                         name="Email"
                         placeholder="john@apexepoxycoatings.com"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
                       />
                     </div>
                     <div>
-                      <label className="block text-slate-900 text-sm font-bold mb-1.5">Website or Google Business Profile <span className="text-[#1da4ff]">*</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Website or Google Business Profile <span className="text-slate-400 font-normal">(Optional)</span></label>
                       <input 
                         type="text" 
                         name="Website or Google Business Profile"
                         placeholder="yoursite.com or Google Maps link"
-                        className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                        required
+                        className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-slate-900 text-sm font-bold mb-1.5">Your Biggest Challenge (Optional)</label>
+                    <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Your Biggest Challenge <span className="text-slate-400 font-normal">(Optional)</span></label>
                     <textarea 
                       name="Biggest Challenge"
                       rows={2}
                       placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
                       disabled={isSubmitting}
-                      className="w-full bg-slate-50/50 border border-slate-200 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm resize-none"
+                      className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm resize-none"
                     ></textarea>
                   </div>
 
                   {error && (
-                    <div className="p-4 rounded-lg bg-red-50 text-red-600 text-sm font-medium border border-red-100 animate-shake">
+                    <div className="p-4 rounded-xl bg-red-500/10 text-rose-400 text-sm font-medium border border-rose-500/20">
                       {error}
                     </div>
                   )}
@@ -247,10 +246,10 @@ export default function ContactPage() {
                     <button 
                       type="submit"
                       disabled={isSubmitting}
-                      className={`relative group overflow-hidden w-full max-w-md px-6 py-4 sm:px-8 sm:py-5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm min-[375px]:text-base sm:text-lg transition-all duration-300 active:duration-75 transform hover:scale-[1.05] hover:-rotate-2 hover:shadow-[0_20px_40px_-10px_rgba(154,251,22,0.6)] active:scale-90 active:bg-white select-none touch-manipulation mx-auto disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:rotate-0`}
+                      className="relative group overflow-hidden w-full max-w-md px-6 py-4 sm:px-8 sm:py-4.5 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-base transition-all duration-300 active:duration-75 transform hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] active:scale-95 select-none touch-manipulation mx-auto disabled:opacity-70 disabled:cursor-not-allowed"
                       style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
-                      <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap text-center">
+                      <span className="relative z-10 flex items-center justify-center gap-2 text-center">
                         {isSubmitting ? (
                           <>
                             <svg className="animate-spin h-5 w-5 text-[#1A365D]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>

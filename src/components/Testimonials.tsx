@@ -12,7 +12,7 @@ export default function Testimonials() {
   }, []);
 
   if (!mounted) {
-    return <section id="testimonials" className="py-24 bg-slate-50 min-h-[300px]" />;
+    return <section id="testimonials" className="py-20 sm:py-28 lg:py-32 bg-slate-950 min-h-[300px]" />;
   }
 
   const testimonials = [
