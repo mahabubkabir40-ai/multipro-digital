@@ -104,13 +104,13 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
-            Proven Case Studies
+            Real Proof From The Field
           </div>
           <h2 className="text-4xl md:text-5xl font-serif text-white font-black mb-6 leading-tight">
-            How We Scale Epoxy Installers To <span className="text-brand-lime whitespace-nowrap">7-Figures</span>
+            Real Map Pack Domination &amp; <span className="text-brand-lime whitespace-nowrap">Keyword Wins</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-blue-100/70 font-sans leading-relaxed">
-            Real ranking data from our proven playbook across major US markets. We measure success in booked 3-car garage floors, full grinder schedules, and revenue growth.
+            No marketing theories. Here is actual Google Map Pack geo-grid data and search rankings that keep installation calendars full across major US cities.
           </p>
         </div>
 

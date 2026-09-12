@@ -47,8 +47,8 @@ export default function Hero() {
               <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping shrink-0" />
               <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
               <span className="text-brand-lime text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase font-sans">
-                <span className="sm:hidden">#1 Inbound Engine for US Epoxy Pros</span>
-                <span className="hidden sm:inline">#1 Inbound Booking Engine for US Epoxy &amp; Concrete Coating Contractors</span>
+                <span className="sm:hidden">Built For Epoxy &amp; Polyaspartic Installers</span>
+                <span className="hidden sm:inline">Built Exclusively For Garage Coatings &amp; Commercial Epoxy Pros</span>
               </span>
             </div>
 
@@ -58,22 +58,22 @@ export default function Hero() {
             </h1>
             
             <p className="mt-4 text-base sm:text-lg md:text-xl text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-6 sm:mb-8 border-l-4 border-brand-lime pl-4 sm:pl-6">
-              We build high-speed websites and dominate the Google Map Pack for epoxy pros — delivering <strong className="text-brand-lime font-black">100% exclusive 2-car and 3-car garage leads</strong> directly to your phone.
+              We rank your shop #1 on Google Maps and build a fast mobile site with an instant sq-ft estimator — so serious homeowners call you directly instead of price-shopping 4 guys on Angi.
             </p>
 
             {/* Quick-Scan Value Chips */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-7 sm:mb-9 max-w-2xl">
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>Zero Shared Angi Leads</span>
+                <span>No Shared Angi Junk</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>#1 Map Pack Domination</span>
+                <span>#1 On Google Maps</span>
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>Instant Floor Estimator</span>
+                <span>Instant Sq-Ft Estimator</span>
               </div>
             </div>
 

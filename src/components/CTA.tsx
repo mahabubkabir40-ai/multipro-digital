@@ -30,7 +30,7 @@ export default function CTA() {
               Ready to Lock Out Competitors and <span className="text-brand-lime">Own Your City&apos;s Garage Floors?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-blue-100/80 font-sans font-medium max-w-2xl mx-auto">
-              Get a free, no-obligation <strong className="text-white">60-Second Video Audit</strong> of your current website, mobile speed score, and Google Map Pack ranking gaps.
+              Get a free, no-obligation <strong className="text-white">60-Second Video Audit</strong> showing your local Google Map Pack gaps, mobile speed score, and why competitors are booking all the 3-car garages.
             </p>
           </div>
           

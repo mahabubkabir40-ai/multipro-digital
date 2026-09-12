@@ -4,27 +4,27 @@ export default function HowItWorks() {
   const pillars = [
     {
       id: "01",
-      title: "Instant Square-Foot Price Estimator",
-      hook: "Stop giving rough quotes over the phone.",
-      body: "Homeowners select their garage size, pick full flake or metallic, and submit their phone number for an on-site moisture test before calling your competitors.",
+      title: "Instant Sq-Ft Price Estimator",
+      hook: "Stop giving rough ballparks over the phone.",
+      body: "Homeowners select their garage size (2-car, 3-car, shop), choose full flake or metallic, and submit their phone number to lock in an on-site moisture test before calling your competitors.",
       icon: <Calculator className="w-8 h-8 text-brand-lime" />,
-      tag: "Lead Capture Machine",
+      tag: "Captures Phone Numbers",
     },
     {
       id: "02",
-      title: "Sub-1.5s High-Speed Showroom",
-      hook: "Showcase flake & metallic floors with zero lag.",
-      body: "Slow WordPress sites bounce over 50% of mobile visitors. We build ultra-fast Next.js showroom sites that load in under 1.5 seconds, turning mobile visitors into booked estimates.",
+      title: "Sub-1.5s Mobile Flake Showroom",
+      hook: "Showcase flake, quartz & metallic work with zero lag.",
+      body: "Homeowners browse floor photos on their phone standing in their garage. If your site takes 6 seconds to load your flake blends, they bounce. Our sites load in under 1.5 seconds.",
       icon: <Zap className="w-8 h-8 text-brand-lime" />,
-      tag: "Sub-1.5s Mobile Speed",
+      tag: "Zero Mobile Lag",
     },
     {
       id: "03",
-      title: "Google Map Pack & AI Domination",
-      hook: "Own your city's top 3 spots on Google Maps & AI.",
-      body: "Over 80% of coatings jobs go to the Google Map Pack top 3. We optimize your Google Business Profile and local geo-signals so you become the #1 recommended call in your metro.",
+      title: "Google Map Pack #1 Domination",
+      hook: "Be the first shop homeowners call on Google Maps.",
+      body: "Over 80% of garage floor jobs go to the top 3 spots on Google Maps. We optimize your Google Business Profile and local geo-pins so your phone rings first in your county.",
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
-      tag: "#1 Local Visibility",
+      tag: "Top 3 Google 3-Pack",
     },
   ];
 
@@ -38,13 +38,13 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-[#1A365D] font-bold tracking-widest uppercase text-xs mb-4">
-            The 3-Pillar Epoxy Engine
+            Built For Coating Installers
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-4">
-            The Epoxy Inbound Growth Engine™
+            How We Keep Your Grinders Spinning &amp; Crews Booked Solid
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-sans leading-relaxed">
-            How we turn Google searches and social media views into booked on-site estimates on autopilot.
+            How we turn local homeowners into signed contracts and booked on-site moisture tests — without buying shared Angi junk.
           </p>
         </div>
 

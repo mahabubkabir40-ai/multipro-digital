@@ -14,32 +14,32 @@ export default function ProblemSolution() {
     {
       id: 1,
       badge: "Card 1: Expensive, Shared Leads",
-      title: "Feeding the Angi & Thumbtack Trap",
-      leadText: "You pay thousands for shared leads sent to 4 competitors.",
-      body: "Homeowners price-shop all 4 contractors at once, forcing you into a race to the bottom on price instead of earning what your craftsmanship is worth.",
+      title: "Feeding The Angi Lead Trap",
+      leadText: "Paying $80+ for a lead that gets blasted to 4 other installers.",
+      body: "The homeowner just wants the cheapest guy with a roller and box-store epoxy. You burn diesel driving out to measure, just to get ghosted on price.",
       icon: <DollarSign className="w-8 h-8 text-rose-500" />,
       tag: "Shared Leads Trap",
-      impact: "Lost Margins & Profit",
+      impact: "Wasted Fuel & Lost Margins",
     },
     {
       id: 2,
       badge: "Card 2: Missing High-Dollar Jobs on the Grinder",
-      title: "Missing Calls While Running the Grinder",
-      leadText: "When rolling epoxy or grinding concrete, you can't pick up.",
-      body: "Homeowners rarely leave voicemails—they hang up and call the next contractor in the Google Map Pack, costing you $3,000+ per lost job.",
+      title: "Earplugs In, Grinder Running",
+      leadText: "You can't answer the phone while pushing a 30-inch planetary grinder.",
+      body: "Homeowners wanting a $4,500 full-flake garage rarely leave voicemails. They hang up, tap the next guy in the Google 3-Pack, and book with him.",
       icon: <PhoneOff className="w-8 h-8 text-amber-500" />,
       tag: "Missed Calls = Lost Jobs",
-      impact: "Lost $3,000+ Jobs",
+      impact: "Lost $4,000+ Garage Jobs",
     },
     {
       id: 3,
       badge: "Card 3: Instagram Views Don't Pay the Bills",
-      title: "Tire-Kickers in Your Social DMs",
-      leadText: "Viral reel views don't translate to booked garage floors.",
-      body: 'People comment "How much?" but never book because your site takes 7 seconds to load on mobile and lacks an instant pricing tool.',
+      title: 'Instagram "How Much?" Tire-Kickers',
+      leadText: "Clean flake transformation reels get fire emojis, not deposits.",
+      body: "Window-shoppers flood your DMs asking for ballparks, but because your site lacks an instant sq-ft estimator, they never commit to an on-site moisture test.",
       icon: <EyeOff className="w-8 h-8 text-blue-500" />,
-      tag: "Zero-Conversion Website",
-      impact: "Zero Inbound Bookings",
+      tag: "Zero-Deposit Traffic",
+      impact: "Hours Wasted in DMs",
     },
   ];
 
@@ -54,13 +54,13 @@ export default function ProblemSolution() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-widest mb-4">
-            <AlertTriangle className="w-4 h-4 text-rose-600" /> Real Contractor Problems
+            <AlertTriangle className="w-4 h-4 text-rose-600" /> The Contractor Reality
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#1A365D] font-black tracking-tight mb-4 sm:mb-6">
-            Does This Sound Familiar?
+            Tired of Bidding Against Trunk-Slammers &amp; Buying Junk Leads?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-slate-600 font-sans leading-relaxed">
-            Running an epoxy business is tough enough without paying for shared leads and losing high-ticket 3-car garages.
+            You invested thousands in grinders, dust extractors, and polyaspartic rigs. You shouldn&apos;t have to race to the bottom on price or waste half your week chasing tire-kickers.
           </p>
         </div>
 

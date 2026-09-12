@@ -5,39 +5,39 @@ import { Check, X, ShieldCheck, ArrowRight } from 'lucide-react';
 export default function ComparisonTable() {
   const comparisonData = [
     {
-      feature: 'Industry Specialization',
-      generic: 'Works with anyone (dentists, plumbers)',
-      multipro: 'Epoxy & Concrete Coatings Only',
+      feature: 'Industry Focus',
+      generic: 'Works with anyone (plumbers, dentists, roofers)',
+      multipro: 'Epoxy, Polyaspartic & Garage Coatings ONLY',
     },
     {
-      feature: 'Lead Exclusivity',
-      generic: 'Sells shared leads to competitors',
-      multipro: '100% Exclusive Inbound Calls',
+      feature: 'Who Gets The Leads?',
+      generic: 'Blasts the same lead to 4 competitors on Angi',
+      multipro: '100% Exclusive To Your Shop (Zero Shared Leads)',
     },
     {
-      feature: 'Instant Floor Calculator',
-      generic: 'Generic contact form',
-      multipro: 'Custom Interactive Pricing Widget',
+      feature: 'Instant Pricing Tool',
+      generic: 'Boring "Contact Us" form homeowners ignore',
+      multipro: 'Interactive Sq-Ft Estimator (Captures Phone #s)',
     },
     {
-      feature: 'Mobile Speed Score',
-      generic: '30–50 PageSpeed (Slow WordPress)',
-      multipro: '90+ PageSpeed (Sub-1.5s Clean Code)',
+      feature: 'Mobile Load Speed',
+      generic: '5–8 second lag on phones (Slow WordPress)',
+      multipro: 'Sub-1.5s instant load (Clean, modern code)',
     },
     {
-      feature: 'Search & AI Visibility',
-      generic: 'Outdated SEO (Basic keywords on slow WordPress)',
-      multipro: 'Google Maps + AI Overviews & ChatGPT Ready',
+      feature: 'Local Google Ranking',
+      generic: 'Outdated SEO & basic keyword fluff',
+      multipro: '#1 Google Map Pack + Siri & AI Search',
     },
     {
-      feature: 'Territory Lock',
-      generic: 'Works with multiple shops in your town',
-      multipro: 'Strictly 1 Contractor Per City',
+      feature: 'Working With Your Competitors?',
+      generic: 'Takes money from anyone down the street',
+      multipro: 'Strictly 1 Coating Installer Per City (Market Locked)',
     },
     {
-      feature: 'Contract Terms',
-      generic: '6–12 month lock-in contracts',
-      multipro: 'Month-to-Month (No Hostage Retainers)',
+      feature: 'Contract Jail',
+      generic: '6–12 month lock-in contracts even if phone is dead',
+      multipro: 'Month-to-Month (We earn your business every 30 days)',
     },
   ];
 
@@ -56,7 +56,7 @@ export default function ComparisonTable() {
             <span className="text-brand-lime block sm:inline">MultiPro Digital</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-blue-100/70 font-sans leading-relaxed">
-            Stop paying generalists who treat floor coatings like standard home remodeling. We engineer custom growth systems built exclusively for coating pros.
+            Stop paying generalist agencies who don&apos;t know the difference between diamond-grinding concrete and mopping a floor. We build exclusively for coating pros.
           </p>
         </div>
 
