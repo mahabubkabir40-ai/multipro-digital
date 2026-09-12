@@ -191,13 +191,13 @@ export default function HeroLeadForm() {
 
               <div>
                 <label htmlFor="hero-city" className={labelClass}>
-                  City, State or Shop Name <span className="text-slate-400 font-normal">(Optional)</span>
+                  City &amp; State <span className="text-slate-400 font-normal">(Optional)</span>
                 </label>
                 <input
                   id="hero-city"
                   type="text"
                   name="City and State"
-                  placeholder="e.g. Dallas, TX or Apex Epoxy"
+                  placeholder="e.g. Dallas, TX"
                   disabled={isSubmitting}
                   className={inputClass}
                 />

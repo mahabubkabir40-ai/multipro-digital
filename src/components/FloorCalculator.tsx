@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Calculator, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -68,6 +69,11 @@ export default function FloorCalculator() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Prep cost: +$1.00 - $1.50/sqft if heavy crack repair/old coating removal needed
   const prepCostPerSqFtLow = needsPrep ? 1.0 : 0;
@@ -374,6 +380,41 @@ export default function FloorCalculator() {
           </div>
         </div>
       </div>
+
+      {/* Sticky Floating Bottom Bar: Active once price is calculated */}
+      {isReady && mounted && typeof document !== 'undefined' && createPortal(
+        <div className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-6 sm:bottom-6 z-40 max-w-lg bg-slate-950/95 backdrop-blur-md border border-brand-lime/60 shadow-[0_12px_40px_rgba(0,0,0,0.85)] rounded-2xl p-2.5 sm:p-4 flex items-center justify-between gap-2 sm:gap-4 animate-in slide-in-from-bottom-5 duration-300">
+          <div className="min-w-0 pr-1">
+            <div className="flex items-center gap-1.5 text-[9px] sm:text-xs font-black uppercase tracking-wider text-brand-lime">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-lime animate-pulse" />
+              <span>Instant Estimate</span>
+            </div>
+            <div className="text-sm sm:text-lg font-mono font-black text-white whitespace-nowrap">
+              {estimateLabel}*
+            </div>
+            <div className="text-[10px] sm:text-[11px] text-blue-200/70 truncate hidden sm:block">
+              {selectedSpace?.name} • {selectedSystem?.name}
+            </div>
+          </div>
+
+          <Link
+            href="/free-audit"
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'click_audit', {
+                  event_category: 'CTA',
+                  event_label: 'Calculator Sticky Bar'
+                });
+              }
+            }}
+            className="px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider hover:bg-white hover:scale-105 active:scale-95 transition-all shrink-0 shadow-[0_0_15px_rgba(154,251,22,0.4)] whitespace-nowrap select-none touch-manipulation flex items-center gap-1"
+          >
+            <span>Get On My Site</span>
+            <span>&rarr;</span>
+          </Link>
+        </div>,
+        document.body
+      )}
     </section>
   );
 }

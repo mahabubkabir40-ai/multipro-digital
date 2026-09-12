@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Calculator, Zap, MapPin } from 'lucide-react';
 
 export default function HowItWorks() {
@@ -9,27 +10,10 @@ export default function HowItWorks() {
       body: "Homeowners select their garage size, choose full flake or metallic, and submit their phone number to lock in an on-site moisture test before calling your competitors.",
       icon: <Calculator className="w-8 h-8 text-brand-lime" />,
       tag: "Captures Phone Numbers",
-      renderPreview: () => (
-        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
-          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
-            <span>INPUT: 3-Car Garage</span>
-            <span className="text-brand-lime font-bold">FULL FLAKE</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-950 border border-brand-lime/30 flex items-center justify-between">
-            <div>
-              <div className="text-[10px] text-slate-400 uppercase font-bold">Instant Estimate</div>
-              <div className="text-lg font-black text-brand-lime font-mono">$5,200 - $7,800</div>
-            </div>
-            <a 
-              href="#estimator" 
-              className="px-3 py-1.5 rounded-lg bg-brand-lime hover:bg-white text-slate-950 text-xs font-black uppercase transition-all shadow-md flex items-center gap-1"
-            >
-              <span>Try Demo</span>
-              <span>↓</span>
-            </a>
-          </div>
-        </div>
-      ),
+      image: "/portfolio/epoxy/pillar-1-estimator.png",
+      imageAlt: "Live interactive floor pricing estimator software preview",
+      actionText: "Try Live Estimator ↓",
+      actionHref: "#estimator"
     },
     {
       id: "02",
@@ -38,24 +22,10 @@ export default function HowItWorks() {
       body: "Homeowners browse floor photos on their phone standing in their garage. If your site takes 6 seconds to load your flake blends, they bounce. Our sites load in under 1.5 seconds.",
       icon: <Zap className="w-8 h-8 text-brand-lime" />,
       tag: "Zero Mobile Lag",
-      renderPreview: () => (
-        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
-          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
-            <span>MOBILE CORE VITALS</span>
-            <span className="text-emerald-400 font-bold">GRADE A+</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-950 border border-emerald-500/30 flex items-center justify-between">
-            <div>
-              <div className="text-[10px] text-slate-400 uppercase font-bold">Load Speed</div>
-              <div className="text-lg font-black text-emerald-400 font-mono">0.8s Instant</div>
-            </div>
-            <div className="flex items-center gap-1 text-xs font-bold text-emerald-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              100/100 Vitals
-            </div>
-          </div>
-        </div>
-      ),
+      image: "/portfolio/epoxy/pillar-2-showroom-speed.png",
+      imageAlt: "Sub-1.5s Mobile Flake Showroom and PageSpeed 98/100 Core Web Vitals audit",
+      actionText: "Audit Your Speed →",
+      actionHref: "/free-audit"
     },
     {
       id: "03",
@@ -64,23 +34,10 @@ export default function HowItWorks() {
       body: "Over 80% of garage floor jobs go to the top 3 spots on Google Maps. We optimize your Google Business Profile and local geo-pins so your phone rings first in your county.",
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
       tag: "Top 3 Google 3-Pack",
-      renderPreview: () => (
-        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
-          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
-            <span>GOOGLE LOCAL 3-PACK</span>
-            <span className="text-brand-lime font-bold">#1 RANKING</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-950 border border-brand-lime/30 flex items-center justify-between">
-            <div>
-              <div className="text-[10px] text-slate-400 uppercase font-bold">Local Phone Calls</div>
-              <div className="text-lg font-black text-white font-serif">#1 in Map Pack</div>
-            </div>
-            <div className="text-xs font-bold text-brand-lime font-mono">
-              ⭐ 4.9 (84 reviews)
-            </div>
-          </div>
-        </div>
-      ),
+      image: "/portfolio/epoxy/geogrid-la-ranking.png",
+      imageAlt: "Local Falcon Google Map Pack Geo-Grid showing #1 clean sweep rankings across metro",
+      actionText: "See Verified Proof →",
+      actionHref: "#portfolio"
     },
   ];
 
@@ -136,8 +93,32 @@ export default function HowItWorks() {
                   {pillar.body}
                 </p>
 
-                {/* Visual Preview Widget */}
-                {pillar.renderPreview()}
+                {/* Real Software Screenshot */}
+                <div className="mt-6 relative rounded-2xl overflow-hidden border border-white/15 bg-slate-900 shadow-xl group/preview">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover/preview:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                  
+                  {/* Quick Action Link */}
+                  <div className="p-3 bg-slate-950/90 border-t border-white/10 flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold text-slate-300">
+                      Live System Proof
+                    </span>
+                    <a
+                      href={pillar.actionHref}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:text-white transition-colors"
+                    >
+                      <span>{pillar.actionText}</span>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">

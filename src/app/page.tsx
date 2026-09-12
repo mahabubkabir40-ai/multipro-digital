@@ -32,9 +32,7 @@ export default function Home() {
       </ScrollReveal>
 
       {/* 4. Undeniable Proof: Real #1 Geo-Grid & Google Ranking Case Studies */}
-      <ScrollReveal className="optimized-section">
-        <Portfolio />
-      </ScrollReveal>
+      <Portfolio />
 
       {/* 5. Interactive Demo: Instant Floor Estimator */}
       <ScrollReveal className="optimized-section">

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -26,6 +27,18 @@ export default function Portfolio() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  // Lock body scroll when modal is active to prevent background scroll jumps on mobile
+  useEffect(() => {
+    if (selectedProof) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProof]);
 
   if (!mounted) {
     return <section id="portfolio" className="py-24 bg-slate-900 min-h-[400px]" />;
@@ -169,30 +182,25 @@ export default function Portfolio() {
                 className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer group/thumb"
                 onClick={() => openProofModal(result)}
               >
-                {/* Image */}
+                {/* Image with priority loading for above-fold cards to eliminate flicker */}
                 <Image 
                   src={result.image} 
                   alt={`Local SEO Map Pack case study: ${result.name} — prior win, same system for epoxy/coatings`} 
                   fill
+                  priority={result.id <= 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={`object-cover object-top transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
                 />
 
-                {/* Instant Enlarge Badge */}
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openProofModal(result);
-                  }}
-                  className="absolute top-3 right-3 z-30 px-3 py-1.5 rounded-full bg-slate-950/85 hover:bg-brand-lime hover:text-slate-950 text-white border border-brand-lime/40 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-lg group/badge"
-                  title="Click to view full-resolution Local Falcon proof"
+                {/* Instant Enlarge Badge — Clean indicator */}
+                <div 
+                  className="absolute top-3 right-3 z-30 px-3 py-1.5 rounded-full bg-slate-950/85 text-white border border-brand-lime/40 text-xs font-bold flex items-center gap-1.5 backdrop-blur-md shadow-lg pointer-events-none"
                 >
-                  <svg className="w-3.5 h-3.5 text-brand-lime group-hover/badge:text-slate-950 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
                   </svg>
-                  <span>Enlarge Proof</span>
-                </button>
+                  <span>Tap To Enlarge</span>
+                </div>
 
                 {/* Hover Reveal Overlays */}
                 <div className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
@@ -208,7 +216,7 @@ export default function Portfolio() {
                   </h3>
                 </div>
 
-                {/* Hover Reveal Content (Metrics & CTA) */}
+                {/* Hover Reveal Content (Metrics & Single Focused CTA) */}
                 <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-30 transition-all duration-500 delay-75 flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-8 opacity-0 pointer-events-none'}`}>
                   
                   <div className="mb-3 sm:mb-4 border-l-[3px] border-brand-lime pl-3 sm:pl-4">
@@ -224,7 +232,8 @@ export default function Portfolio() {
                     )}
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  {/* Single clear CTA — No competing buttons */}
+                  <div>
                     <Link 
                       href="/free-audit"
                       prefetch={false}
@@ -237,7 +246,7 @@ export default function Portfolio() {
                           });
                         }
                       }}
-                      className="relative group/btn overflow-hidden flex-1 py-2.5 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.02] active:scale-95 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
+                      className="relative group/btn overflow-hidden w-full py-3 sm:py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm tracking-wide transition-all duration-300 active:duration-75 transform hover:scale-[1.02] active:scale-95 active:bg-white shadow-[0_4px_14px_rgba(154,251,22,0.3)] hover:shadow-[0_0_30px_rgba(154,251,22,0.6)] flex items-center justify-center gap-2 whitespace-nowrap select-none touch-manipulation"
                       style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-1.5">
@@ -245,23 +254,6 @@ export default function Portfolio() {
                       </span>
                       <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[800ms] ease-out" />
                     </Link>
-
-                    {result.rawImage && (
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openProofModal(result);
-                        }}
-                        className="py-2.5 sm:py-3.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
-                        title="View Original Ranking Proof"
-                      >
-                        <svg className="w-4 h-4 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                        </svg>
-                        <span className="hidden sm:inline">Proof</span>
-                      </button>
-                    )}
                   </div>
                 </div>
               </div>
@@ -271,58 +263,66 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Lightbox Proof Modal */}
-      {selectedProof && (
+      {/* Lightbox Proof Modal — Rendered via React Portal directly onto document.body to guarantee 100% viewport centering and fix mobile offscreen bug */}
+      {selectedProof && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[99999] bg-slate-950/92 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto overscroll-contain animate-in fade-in duration-200"
           onClick={() => setSelectedProof(null)}
+          role="dialog"
+          aria-modal="true"
         >
           <div 
-            className="relative max-w-5xl w-full bg-slate-900 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-2xl overflow-hidden"
+            className="relative max-w-4xl w-full max-h-[92dvh] sm:max-h-[90vh] bg-slate-900 border border-brand-lime/40 rounded-2xl sm:rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] flex flex-col overflow-hidden my-auto animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-lime block">{selectedProof.badge}</span>
-                <p className="text-white text-sm font-semibold">{selectedProof.subtitle}</p>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-white/10 bg-slate-900/95 shrink-0">
+              <div className="pr-3">
+                <span className="text-[11px] sm:text-xs font-black uppercase tracking-widest text-brand-lime block">{selectedProof.badge}</span>
+                <p className="text-white text-xs sm:text-sm font-semibold truncate max-w-[220px] sm:max-w-md">{selectedProof.subtitle}</p>
               </div>
               <button 
                 onClick={() => setSelectedProof(null)}
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-lg transition-all"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-lime hover:text-slate-950 text-white flex items-center justify-center font-bold text-xl transition-all shrink-0 active:scale-95 touch-manipulation"
                 aria-label="Close modal"
               >
                 ✕
               </button>
             </div>
             
-            <div className="bg-white rounded-xl p-2 sm:p-4 overflow-auto max-h-[72vh]">
-              <img 
-                src={selectedProof.image} 
-                alt={`${selectedProof.title} Proof`} 
-                className="w-full h-auto object-contain rounded-lg shadow-sm mx-auto"
-              />
+            {/* Scrollable Modal Content */}
+            <div className="p-3 sm:p-5 overflow-y-auto flex-1 flex flex-col gap-3 overscroll-contain">
+              <div className="bg-slate-950 rounded-xl p-2 sm:p-3 border border-white/10 flex items-center justify-center min-h-[180px]">
+                <img 
+                  src={selectedProof.image} 
+                  alt={`${selectedProof.title} Proof`} 
+                  className="w-full h-auto max-h-[50dvh] sm:max-h-[58vh] object-contain rounded-lg shadow-md mx-auto block"
+                />
+              </div>
+
+              {selectedProof.quote && (
+                <div className="p-3 rounded-xl bg-slate-950 border border-brand-lime/30 text-brand-lime text-xs sm:text-sm font-medium italic">
+                  &ldquo;{selectedProof.quote}&rdquo;
+                </div>
+              )}
             </div>
 
-            {selectedProof.quote && (
-              <div className="mt-3 p-3 rounded-xl bg-slate-950 border border-brand-lime/30 text-brand-lime text-xs sm:text-sm font-medium italic">
-                &ldquo;{selectedProof.quote}&rdquo;
-              </div>
-            )}
-
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-              <p className="text-slate-400 text-xs">
+            {/* Modal Footer */}
+            <div className="p-3 sm:p-5 border-t border-white/10 bg-slate-900/95 shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="text-slate-400 text-xs text-center sm:text-left">
                 {selectedProof.note}
               </p>
               <Link
                 href="/free-audit"
                 onClick={() => setSelectedProof(null)}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider text-center hover:shadow-[0_0_20px_rgba(154,251,22,0.5)] transition-all"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider text-center hover:shadow-[0_0_20px_rgba(154,251,22,0.5)] transition-all shrink-0 select-none touch-manipulation"
               >
                 Get Your Territory Analyzed &rarr;
               </Link>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
