@@ -105,19 +105,36 @@ export default function HeroLeadForm() {
                 />
               </div>
 
-              <div>
-                <label htmlFor="hero-phone" className={labelClass}>
-                  Phone <span className="text-[#1da4ff]">*</span>
-                </label>
-                <input
-                  id="hero-phone"
-                  type="tel"
-                  name="Phone Number"
-                  placeholder="(555) 000-0000"
-                  required
-                  disabled={isSubmitting}
-                  className={inputClass}
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label htmlFor="hero-phone" className={labelClass}>
+                    Phone <span className="text-[#1da4ff]">*</span>
+                  </label>
+                  <input
+                    id="hero-phone"
+                    type="tel"
+                    name="Phone Number"
+                    placeholder="(214) 839-4912"
+                    required
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="hero-city" className={labelClass}>
+                    City &amp; State <span className="text-[#1da4ff]">*</span>
+                  </label>
+                  <input
+                    id="hero-city"
+                    type="text"
+                    name="City and State"
+                    placeholder="Dallas, TX"
+                    required
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
               </div>
 
               <div>
@@ -129,21 +146,6 @@ export default function HeroLeadForm() {
                   type="email"
                   name="Email"
                   placeholder="john@yourcompany.com"
-                  required
-                  disabled={isSubmitting}
-                  className={inputClass}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="hero-city" className={labelClass}>
-                  City &amp; State <span className="text-[#1da4ff]">*</span>
-                </label>
-                <input
-                  id="hero-city"
-                  type="text"
-                  name="City and State"
-                  placeholder="Dallas, TX"
                   required
                   disabled={isSubmitting}
                   className={inputClass}

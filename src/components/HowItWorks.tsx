@@ -6,9 +6,26 @@ export default function HowItWorks() {
       id: "01",
       title: "Instant Sq-Ft Price Estimator",
       hook: "Stop giving rough ballparks over the phone.",
-      body: "Homeowners select their garage size (2-car, 3-car, shop), choose full flake or metallic, and submit their phone number to lock in an on-site moisture test before calling your competitors.",
+      body: "Homeowners select their garage size, choose full flake or metallic, and submit their phone number to lock in an on-site moisture test before calling your competitors.",
       icon: <Calculator className="w-8 h-8 text-brand-lime" />,
       tag: "Captures Phone Numbers",
+      renderPreview: () => (
+        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
+          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
+            <span>INPUT: 3-Car Garage</span>
+            <span className="text-brand-lime font-bold">FULL FLAKE</span>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950 border border-brand-lime/30 flex items-center justify-between">
+            <div>
+              <div className="text-[10px] text-slate-400 uppercase font-bold">Instant Estimate</div>
+              <div className="text-lg font-black text-brand-lime font-mono">$5,200 - $7,800</div>
+            </div>
+            <div className="px-3 py-1.5 rounded-lg bg-brand-lime text-slate-950 text-xs font-black uppercase">
+              Book Test
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       id: "02",
@@ -17,6 +34,24 @@ export default function HowItWorks() {
       body: "Homeowners browse floor photos on their phone standing in their garage. If your site takes 6 seconds to load your flake blends, they bounce. Our sites load in under 1.5 seconds.",
       icon: <Zap className="w-8 h-8 text-brand-lime" />,
       tag: "Zero Mobile Lag",
+      renderPreview: () => (
+        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
+          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
+            <span>MOBILE CORE VITALS</span>
+            <span className="text-emerald-400 font-bold">GRADE A+</span>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950 border border-emerald-500/30 flex items-center justify-between">
+            <div>
+              <div className="text-[10px] text-slate-400 uppercase font-bold">Load Speed</div>
+              <div className="text-lg font-black text-emerald-400 font-mono">0.8s Instant</div>
+            </div>
+            <div className="flex items-center gap-1 text-xs font-bold text-emerald-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              100/100 Vitals
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
       id: "03",
@@ -25,6 +60,23 @@ export default function HowItWorks() {
       body: "Over 80% of garage floor jobs go to the top 3 spots on Google Maps. We optimize your Google Business Profile and local geo-pins so your phone rings first in your county.",
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
       tag: "Top 3 Google 3-Pack",
+      renderPreview: () => (
+        <div className="mt-6 p-4 rounded-2xl bg-slate-900 border border-white/10 shadow-inner">
+          <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono mb-2">
+            <span>GOOGLE LOCAL 3-PACK</span>
+            <span className="text-brand-lime font-bold">#1 RANKING</span>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950 border border-brand-lime/30 flex items-center justify-between">
+            <div>
+              <div className="text-[10px] text-slate-400 uppercase font-bold">Local Phone Calls</div>
+              <div className="text-lg font-black text-white font-serif">#1 in Map Pack</div>
+            </div>
+            <div className="text-xs font-bold text-brand-lime font-mono">
+              ⭐ 4.9 (84 reviews)
+            </div>
+          </div>
+        </div>
+      ),
     },
   ];
 
@@ -79,6 +131,9 @@ export default function HowItWorks() {
                 <p className="text-blue-100/80 text-base font-sans leading-relaxed">
                   {pillar.body}
                 </p>
+
+                {/* Visual Preview Widget */}
+                {pillar.renderPreview()}
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">

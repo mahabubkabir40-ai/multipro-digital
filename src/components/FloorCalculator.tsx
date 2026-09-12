@@ -253,11 +253,22 @@ export default function FloorCalculator() {
             </div>
             {isReady ? (
               <>
-                <div className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white tracking-tight">
-                  {estimateLabel}*
-                </div>
-                <div className="text-xs text-blue-200/60 mt-2 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft - {selectedSystem.name}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                  <div>
+                    <div className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white tracking-tight">
+                      {estimateLabel}*
+                    </div>
+                    <div className="text-xs text-blue-200/60 mt-1.5 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-4 h-4 text-brand-lime" /> Based on {selectedSpace.sqft} sq ft - {selectedSystem.name}
+                    </div>
+                  </div>
+
+                  <Link
+                    href="/free-audit"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_20px_rgba(154,251,22,0.45)] hover:bg-white hover:scale-105 active:scale-95 transition-all shrink-0 select-none"
+                  >
+                    <span>Get This On Your Site &rarr;</span>
+                  </Link>
                 </div>
               </>
             ) : (

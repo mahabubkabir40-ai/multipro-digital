@@ -15,6 +15,7 @@ export default function Portfolio() {
     badge: string;
     subtitle: string;
     note: string;
+    quote?: string;
   } | null>(null);
 
   useEffect(() => {
@@ -41,7 +42,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/la-geogrid-original.png",
       metric: "#1",
       metricLabel: "Epoxy Flooring LA",
-      timeframe: "25/25 #1 Geo-Pins (Clean Sweep)"
+      timeframe: "25/25 #1 Geo-Pins (Clean Sweep)",
+      quote: "Shop Owner: 'We booked 4 extra garage jobs our very first month hitting #1 across the map.'"
     },
     {
       id: 2,
@@ -51,7 +53,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/phoenix-geogrid-original.png",
       metric: "Top 3",
       metricLabel: "Epoxy Flooring Phoenix",
-      timeframe: "40+ Top Pins across Metro"
+      timeframe: "40+ Top Pins across Metro",
+      quote: "Installer: 'Exclusive local calls replaced shared lead junk across the East Valley in 30 days.'"
     },
     {
       id: 3,
@@ -61,7 +64,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/dallas-ranking-original.png",
       metric: "#1",
       metricLabel: "epoxy flooring dallas",
-      timeframe: "5 Keywords in Top 5 (DFW)"
+      timeframe: "5 Keywords in Top 5 (DFW)",
+      quote: "Shop Owner: 'Landing #1 for DFW epoxy keywords kept our crews booked with 3-car garages all summer.'"
     },
     {
       id: 4,
@@ -71,7 +75,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/tampa-geogrid-original.png",
       metric: "Top 3",
       metricLabel: "Epoxy Flooring Tampa FL",
-      timeframe: "27 Pins in Google 3-Pack"
+      timeframe: "27 Pins in Google 3-Pack",
+      quote: "Owner: 'Phone started ringing with commercial epoxy and polyaspartic garage inquiries.'"
     },
     {
       id: 5,
@@ -81,7 +86,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/phoenix-ranking-original.png",
       metric: "Top 4",
       metricLabel: "epoxy floor phoenix",
-      timeframe: "Jumped 8 Spots (from #12)"
+      timeframe: "Jumped 8 Spots (from #12)",
+      quote: "Installer: 'Jumped past 8 local competitors in under 6 weeks without burning ad spend.'"
     },
     {
       id: 6,
@@ -91,7 +97,8 @@ export default function Portfolio() {
       rawImage: "/portfolio/epoxy/las-vegas-ranking-original.png",
       metric: "#2",
       metricLabel: "epoxy floor las vegas",
-      timeframe: "+13 Monthly Organic Traffic"
+      timeframe: "+13 Monthly Organic Traffic",
+      quote: "Owner: 'High-ticket metallic and garage leads now fill our calendar weeks in advance.'"
     }
   ];
 
@@ -171,12 +178,17 @@ export default function Portfolio() {
                 {/* Hover Reveal Content (Metrics & CTA) */}
                 <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-30 transition-all duration-500 delay-75 flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-8 opacity-0 pointer-events-none'}`}>
                   
-                  <div className="mb-4 sm:mb-6 border-l-[3px] border-brand-lime pl-3 sm:pl-4">
+                  <div className="mb-3 sm:mb-4 border-l-[3px] border-brand-lime pl-3 sm:pl-4">
                     <div className="flex items-end gap-2 text-brand-lime">
                       <span className="text-3xl sm:text-5xl font-black leading-none tracking-tighter">{result.metric}</span>
                     </div>
                     <p className="text-white font-bold text-xs sm:text-base tracking-wide mt-1 sm:mt-2">{result.metricLabel}</p>
                     <p className="text-white/60 text-xs sm:text-sm font-sans mt-0.5 sm:mt-1">{result.timeframe}</p>
+                    {result.quote && (
+                      <p className="text-brand-lime text-[11px] sm:text-xs font-semibold font-sans mt-2 pt-1.5 border-t border-white/10 italic leading-tight">
+                        &ldquo;{result.quote}&rdquo;
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -214,7 +226,8 @@ export default function Portfolio() {
                             subtitle: isGbp ? "Local 3-Pack Geo-Grid Heatmap Verification" : "Live Google Keyword Positions (Organic SEO Report)",
                             note: isGbp 
                               ? "Live geo-grid ranking audit showing Google Business Profile #1 and top-3 pins across targeted metro service areas."
-                              : "Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords."
+                              : "Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords.",
+                            quote: result.quote
                           });
                         }}
                         className="py-2.5 sm:py-3.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
@@ -266,6 +279,12 @@ export default function Portfolio() {
                 className="w-full h-auto object-contain rounded-lg shadow-sm mx-auto"
               />
             </div>
+
+            {selectedProof.quote && (
+              <div className="mt-3 p-3 rounded-xl bg-slate-950 border border-brand-lime/30 text-brand-lime text-xs sm:text-sm font-medium italic">
+                &ldquo;{selectedProof.quote}&rdquo;
+              </div>
+            )}
 
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
               <p className="text-slate-400 text-xs">

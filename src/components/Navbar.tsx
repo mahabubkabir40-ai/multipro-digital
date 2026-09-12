@@ -28,13 +28,23 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" prefetch={false} className="relative text-lg font-bold text-slate-200 hover:text-white group py-1 transition-colors">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <Link href="/" prefetch={false} className="relative text-sm xl:text-base font-bold text-slate-200 hover:text-white group py-1 transition-colors">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/about" prefetch={false} className="relative text-lg font-bold text-slate-200 hover:text-white group py-1 transition-colors">
+            <Link href="/#portfolio" prefetch={false} className="relative text-sm xl:text-base font-bold text-slate-200 hover:text-white group py-1 transition-colors">
+              Proof &amp; Results
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
+            </Link>
+
+            <Link href="/#the-system" prefetch={false} className="relative text-sm xl:text-base font-bold text-slate-200 hover:text-white group py-1 transition-colors">
+              The System
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
+            </Link>
+
+            <Link href="/about" prefetch={false} className="relative text-sm xl:text-base font-bold text-slate-200 hover:text-white group py-1 transition-colors">
               About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-lime transition-all duration-300 group-hover:w-full" />
             </Link>
@@ -65,10 +75,11 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-slate-300 hover:text-white focus:outline-none p-2 transition-transform duration-300 active:scale-90"
+              aria-label="Toggle navigation menu"
             >
               {isMenuOpen ? (
                 <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,11 +96,13 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`md:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 z-[100] transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
-        <div className="px-6 py-10 space-y-8 flex flex-col text-center">
-          <Link href="/" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">Home</Link>
-          <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-2xl font-black text-white hover:text-brand-lime transition-colors">About Us</Link>
-          <div className="pt-4 px-2">
+      <div className={`lg:hidden absolute top-20 left-0 w-full bg-slate-950 border-b border-white/10 z-[100] transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'}`}>
+        <div className="px-6 py-8 space-y-6 flex flex-col text-center">
+          <Link href="/" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">Home</Link>
+          <Link href="/#portfolio" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">Proof &amp; Results</Link>
+          <Link href="/#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">The System</Link>
+          <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors">About Us</Link>
+          <div className="pt-2 px-2">
             <Link
               href="/free-audit"
               prefetch={false}

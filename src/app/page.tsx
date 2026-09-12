@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import HeroProofStrip from "@/components/HeroProofStrip";
 import ProblemSolution from "@/components/ProblemSolution";
 import HowItWorks from "@/components/HowItWorks";
 import FloorCalculator from "@/components/FloorCalculator";
@@ -16,6 +17,9 @@ export default function Home() {
       <link rel="preload" href="/hero-bg-mobile-v3.webp" as="image" media="(max-width: 1023px)" fetchPriority="high" />
       {/* 1. Hook & Offer: Hero Section */}
       <Hero />
+
+      {/* 1.5 Immediate Proof: High-Impact Post-Hero Map Pack Strip */}
+      <HeroProofStrip />
         
       {/* 2. Agitation: The Problem (Shared leads, missed calls on grinder) */}
       <ScrollReveal className="optimized-section">

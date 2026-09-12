@@ -96,19 +96,36 @@ export default function ProblemSolution() {
 
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs">
                 <span className="font-semibold text-slate-400">
-                  Impact: <strong className="font-extrabold text-rose-400">{card.impact}</strong>
+                  Cost to your shop:
                 </span>
-                <button 
-                  type="button"
-                  onClick={scrollToSystem}
-                  className="font-black text-brand-lime hover:text-white transition-colors flex items-center gap-1 group/btn cursor-pointer select-none"
-                >
-                  <span>See The Solution</span>
-                  <span className="transition-transform group-hover/btn:translate-y-0.5">↓</span>
-                </button>
+                <span className="font-extrabold text-rose-400 font-mono text-sm">
+                  {card.impact}
+                </span>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Unified Bridge to The System */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-brand-lime/30 shadow-2xl backdrop-blur-xl max-w-3xl mx-auto">
+            <div className="text-left">
+              <div className="text-white font-serif font-bold text-base sm:text-lg">
+                There&apos;s a better way to fill your installation calendar.
+              </div>
+              <div className="text-blue-200/70 text-xs sm:text-sm">
+                Here is the exact 3-pillar system we use to generate exclusive calls and locked-in jobs.
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={scrollToSystem}
+              className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs sm:text-sm uppercase tracking-wider hover:bg-white hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(154,251,22,0.3)] flex items-center justify-center gap-2 shrink-0 cursor-pointer select-none"
+            >
+              <span>See The Inbound System</span>
+              <span>↓</span>
+            </button>
+          </div>
         </div>
 
       </div>

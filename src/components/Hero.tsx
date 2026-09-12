@@ -61,20 +61,31 @@ export default function Hero() {
               We rank your shop #1 on Google Maps and build a fast mobile site with an instant sq-ft estimator — so serious homeowners call you directly instead of price-shopping 4 guys on Angi.
             </p>
 
-            {/* Quick-Scan Value Chips */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-7 sm:mb-9 max-w-2xl">
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+            {/* Quick-Scan Objection Buster Chips */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 max-w-2xl">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>No Shared Angi Junk</span>
+                <span>🔒 Strictly 1 Shop Per City</span>
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>#1 On Google Maps</span>
+                <span>⚡ Month-to-Month (No Contract Jail)</span>
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
-                <span>Instant Sq-Ft Estimator</span>
+                <span>🎯 No Shared Angi Leads</span>
               </div>
+            </div>
+
+            {/* Quick Jump Micro-Link */}
+            <div className="mb-6 flex items-center gap-4">
+              <a 
+                href="#portfolio" 
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-brand-lime hover:text-white transition-colors group"
+              >
+                <span>See Verified Map Pack Geo-Grid Proof</span>
+                <span className="transition-transform group-hover:translate-y-0.5">↓</span>
+              </a>
             </div>
 
             {/* CTA Button visible on mobile when form is below */}
