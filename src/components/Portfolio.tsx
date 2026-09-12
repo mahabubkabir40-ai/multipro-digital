@@ -9,12 +9,18 @@ export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeCardId, setActiveCardId] = useState<number | null>(null);
 
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedProof, setSelectedProof] = useState<{
+    image: string;
+    title: string;
+    badge: string;
+    subtitle: string;
+    note: string;
+  } | null>(null);
 
   useEffect(() => {
     setMounted(true);
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedImage(null);
+      if (e.key === 'Escape') setSelectedProof(null);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -29,23 +35,23 @@ export default function Portfolio() {
   const results = [
     {
       id: 1,
-      name: "Dallas, TX — #1 Map Pack Domination",
+      name: "Los Angeles, CA — #1 Map Pack Domination",
       category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/epoxy/geogrid-map.jpg",
-      rawImage: null,
+      image: "/portfolio/epoxy/geogrid-la-ranking.png",
+      rawImage: "/portfolio/epoxy/la-geogrid-original.png",
       metric: "#1",
-      metricLabel: "Map Pack Ranking",
-      timeframe: "41 Top-1 Geo-Pins"
+      metricLabel: "Epoxy Flooring LA",
+      timeframe: "25/25 #1 Geo-Pins (Clean Sweep)"
     },
     {
       id: 2,
-      name: "Chicago, IL — Epoxy Rank Tracker",
+      name: "Phoenix, AZ — Top 3 Map Pack Cluster",
       category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/epoxy/ranking-dashboard.jpg",
-      rawImage: null,
-      metric: "Top 1",
-      metricLabel: "Google Map Pack",
-      timeframe: "+68.4% Conversion Rate"
+      image: "/portfolio/epoxy/geogrid-phoenix-ranking.png",
+      rawImage: "/portfolio/epoxy/phoenix-geogrid-original.png",
+      metric: "Top 3",
+      metricLabel: "Epoxy Flooring Phoenix",
+      timeframe: "40+ Top Pins across Metro"
     },
     {
       id: 3,
@@ -59,13 +65,13 @@ export default function Portfolio() {
     },
     {
       id: 4,
-      name: "Phoenix, AZ — Commercial Coatings",
+      name: "Tampa, FL — Top 3 Google 3-Pack Domination",
       category: ['All', 'Google Business Profile Ranking'],
-      image: "/portfolio/epoxy/geogrid-map.jpg",
-      rawImage: null,
+      image: "/portfolio/epoxy/geogrid-tampa-ranking.png",
+      rawImage: "/portfolio/epoxy/tampa-geogrid-original.png",
       metric: "Top 3",
-      metricLabel: "Map Pack Ranking",
-      timeframe: "in 45 Days"
+      metricLabel: "Epoxy Flooring Tampa FL",
+      timeframe: "27 Pins in Google 3-Pack"
     },
     {
       id: 5,
@@ -200,10 +206,19 @@ export default function Portfolio() {
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          setSelectedImage(result.rawImage);
+                          const isGbp = result.category.includes('Google Business Profile Ranking');
+                          setSelectedProof({
+                            image: result.rawImage!,
+                            title: result.name,
+                            badge: isGbp ? "Verified Local Map Pack Ranking" : "Verified Client Search Ranking",
+                            subtitle: isGbp ? "Local 3-Pack Geo-Grid Heatmap Verification" : "Live Google Keyword Positions (Organic SEO Report)",
+                            note: isGbp 
+                              ? "Live geo-grid ranking audit showing Google Business Profile #1 and top-3 pins across targeted metro service areas."
+                              : "Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords."
+                          });
                         }}
                         className="py-2.5 sm:py-3.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
-                        title="View Original Keyword Ranking Proof"
+                        title="View Original Ranking Proof"
                       >
                         <svg className="w-4 h-4 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -221,10 +236,10 @@ export default function Portfolio() {
       </div>
 
       {/* Lightbox Proof Modal */}
-      {selectedImage && (
+      {selectedProof && (
         <div 
           className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedProof(null)}
         >
           <div 
             className="relative max-w-5xl w-full bg-slate-900 border border-white/20 rounded-2xl p-4 sm:p-6 shadow-2xl overflow-hidden"
@@ -232,11 +247,11 @@ export default function Portfolio() {
           >
             <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-lime block">Verified Client Search Ranking</span>
-                <p className="text-white text-sm font-semibold">Live Google Keyword Positions (Organic SEO Report)</p>
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-lime block">{selectedProof.badge}</span>
+                <p className="text-white text-sm font-semibold">{selectedProof.subtitle}</p>
               </div>
               <button 
-                onClick={() => setSelectedImage(null)}
+                onClick={() => setSelectedProof(null)}
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-lg transition-all"
                 aria-label="Close modal"
               >
@@ -246,19 +261,19 @@ export default function Portfolio() {
             
             <div className="bg-white rounded-xl p-2 sm:p-4 overflow-auto max-h-[72vh]">
               <img 
-                src={selectedImage} 
-                alt="Verified Keyword Ranking Table Proof" 
+                src={selectedProof.image} 
+                alt={`${selectedProof.title} Proof`} 
                 className="w-full h-auto object-contain rounded-lg shadow-sm mx-auto"
               />
             </div>
 
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
               <p className="text-slate-400 text-xs">
-                Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords.
+                {selectedProof.note}
               </p>
               <Link
                 href="/free-audit"
-                onClick={() => setSelectedImage(null)}
+                onClick={() => setSelectedProof(null)}
                 className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider text-center hover:shadow-[0_0_20px_rgba(154,251,22,0.5)] transition-all"
               >
                 Get Your Territory Analyzed &rarr;
