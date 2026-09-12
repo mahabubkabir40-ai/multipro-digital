@@ -60,60 +60,8 @@ export default function ComparisonTable() {
           </p>
         </div>
 
-        {/* Mobile View: High-Converting Stacked Cards (md:hidden) */}
-        <div className="md:hidden space-y-3.5">
-          {comparisonData.map((row, idx) => (
-            <div
-              key={idx}
-              className="rounded-2xl border border-white/10 bg-slate-950/80 p-4 shadow-xl relative overflow-hidden backdrop-blur-xl"
-            >
-              {/* Feature Header */}
-              <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/10">
-                <h3 className="text-sm font-bold text-white tracking-wide">
-                  {row.feature}
-                </h3>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/5 shrink-0">
-                  0{idx + 1}
-                </span>
-              </div>
-
-              <div className="space-y-2">
-                {/* MultiPro Digital (Highlighted Top Box) */}
-                <div className="p-3 rounded-xl bg-brand-lime/10 border border-brand-lime/30 flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-brand-lime/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5 text-brand-lime stroke-[3]" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-[10px] font-black uppercase tracking-wider text-brand-lime mb-0.5">
-                      MultiPro Digital
-                    </div>
-                    <div className="text-sm font-bold text-white leading-snug">
-                      {row.multipro}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Generic Agencies (Subdued Lower Box) */}
-                <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-rose-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <X className="w-3.5 h-3.5 text-rose-500" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-0.5">
-                      Generic Marketing Agencies
-                    </div>
-                    <div className="text-xs text-slate-300 leading-snug">
-                      {row.generic}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop / Tablet View: Traditional 3-Column Table (hidden md:block) */}
-        <div className="hidden md:block overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
+        {/* Single Responsive 3-Column Decision Table (No DOM Duplication) */}
+        <div className="overflow-x-auto rounded-3xl border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-2xl">
           <table className="w-full text-left border-collapse min-w-[640px]">
             <thead>
               <tr className="border-b border-white/10 bg-white/5">

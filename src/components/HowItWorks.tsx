@@ -20,9 +20,13 @@ export default function HowItWorks() {
               <div className="text-[10px] text-slate-400 uppercase font-bold">Instant Estimate</div>
               <div className="text-lg font-black text-brand-lime font-mono">$5,200 - $7,800</div>
             </div>
-            <div className="px-3 py-1.5 rounded-lg bg-brand-lime text-slate-950 text-xs font-black uppercase">
-              Book Test
-            </div>
+            <a 
+              href="#estimator" 
+              className="px-3 py-1.5 rounded-lg bg-brand-lime hover:bg-white text-slate-950 text-xs font-black uppercase transition-all shadow-md flex items-center gap-1"
+            >
+              <span>Try Demo</span>
+              <span>↓</span>
+            </a>
           </div>
         </div>
       ),

@@ -102,6 +102,21 @@ export default function Portfolio() {
     }
   ];
 
+  const openProofModal = (result: typeof results[0]) => {
+    if (!result.rawImage) return;
+    const isGbp = result.category.includes('Google Business Profile Ranking');
+    setSelectedProof({
+      image: result.rawImage,
+      title: result.name,
+      badge: isGbp ? "Verified Local Map Pack Ranking" : "Verified Client Search Ranking",
+      subtitle: isGbp ? "Local 3-Pack Geo-Grid Heatmap Verification" : "Live Google Keyword Positions (Organic SEO Report)",
+      note: isGbp 
+        ? "Live geo-grid ranking audit showing Google Business Profile #1 and top-3 pins across targeted metro service areas."
+        : "Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords.",
+      quote: result.quote
+    });
+  };
+
   const filteredResults = results.filter(result => result.category.includes(activeFilter));
 
   return (
@@ -145,13 +160,15 @@ export default function Portfolio() {
             return (
             <div 
               key={result.id} 
-              className={`relative rounded-2xl overflow-hidden bg-slate-950 border transition-all duration-500 shadow-2xl select-none touch-manipulation cursor-pointer ${isActive ? 'border-brand-lime/50 shadow-[0_20px_40px_-15px_rgba(154,251,22,0.15)] -translate-y-2' : 'border-white/10'}`}
+              className={`relative rounded-2xl overflow-hidden bg-slate-950 border transition-all duration-500 shadow-2xl select-none touch-manipulation ${isActive ? 'border-brand-lime/50 shadow-[0_20px_40px_-15px_rgba(154,251,22,0.15)] -translate-y-2' : 'border-white/10'}`}
               style={{ WebkitTapHighlightColor: 'transparent' }}
-              onClick={() => setActiveCardId(isActive ? null : result.id)}
               onMouseEnter={() => setActiveCardId(result.id)}
               onMouseLeave={() => setActiveCardId(null)}
             >
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <div 
+                className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer group/thumb"
+                onClick={() => openProofModal(result)}
+              >
                 {/* Image */}
                 <Image 
                   src={result.image} 
@@ -160,6 +177,22 @@ export default function Portfolio() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={`object-cover object-top transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
                 />
+
+                {/* Instant Enlarge Badge */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openProofModal(result);
+                  }}
+                  className="absolute top-3 right-3 z-30 px-3 py-1.5 rounded-full bg-slate-950/85 hover:bg-brand-lime hover:text-slate-950 text-white border border-brand-lime/40 text-xs font-bold transition-all flex items-center gap-1.5 backdrop-blur-md shadow-lg group/badge"
+                  title="Click to view full-resolution Local Falcon proof"
+                >
+                  <svg className="w-3.5 h-3.5 text-brand-lime group-hover/badge:text-slate-950 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                  </svg>
+                  <span>Enlarge Proof</span>
+                </button>
 
                 {/* Hover Reveal Overlays */}
                 <div className={`absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
@@ -218,17 +251,7 @@ export default function Portfolio() {
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          const isGbp = result.category.includes('Google Business Profile Ranking');
-                          setSelectedProof({
-                            image: result.rawImage!,
-                            title: result.name,
-                            badge: isGbp ? "Verified Local Map Pack Ranking" : "Verified Client Search Ranking",
-                            subtitle: isGbp ? "Local 3-Pack Geo-Grid Heatmap Verification" : "Live Google Keyword Positions (Organic SEO Report)",
-                            note: isGbp 
-                              ? "Live geo-grid ranking audit showing Google Business Profile #1 and top-3 pins across targeted metro service areas."
-                              : "Real position tracking data showing page 1 Google rankings for high-ticket epoxy keywords.",
-                            quote: result.quote
-                          });
+                          openProofModal(result);
                         }}
                         className="py-2.5 sm:py-3.5 px-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
                         title="View Original Ranking Proof"

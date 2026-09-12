@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 
@@ -45,13 +45,22 @@ export default function HeroProofStrip() {
             </span>
           </div>
 
-          <a 
-            href="#portfolio"
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-brand-lime transition-colors group"
-          >
-            <span>Inspect Full Proof Heatmaps &amp; Rankings</span>
-            <ArrowRight className="w-4 h-4 text-brand-lime transition-transform group-hover:translate-x-1" />
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a 
+              href="#estimator"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-brand-lime hover:underline transition-all"
+            >
+              <span>⚡ Try Live Floor Estimator</span>
+              <span>↓</span>
+            </a>
+            <a 
+              href="#portfolio"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white hover:text-brand-lime transition-colors group"
+            >
+              <span>Inspect Full Proof Heatmaps</span>
+              <ArrowRight className="w-4 h-4 text-brand-lime transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
