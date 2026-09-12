@@ -14,29 +14,32 @@ export default function ProblemSolution() {
     {
       id: 1,
       badge: "Card 1: Expensive, Shared Leads",
-      title: "Feeding the Angi & Thumbtack Machine",
-      body: "You waste thousands of dollars buying the same shared leads sent to 4 other contractors in your city. You end up in a race to the bottom on price instead of getting paid what your craftsmanship is worth.",
+      title: "Feeding the Angi & Thumbtack Trap",
+      leadText: "You pay thousands for shared leads sent to 4 competitors.",
+      body: "Homeowners price-shop all 4 contractors at once, forcing you into a race to the bottom on price instead of earning what your craftsmanship is worth.",
       icon: <DollarSign className="w-8 h-8 text-rose-500" />,
       tag: "Shared Leads Trap",
-      impact: "Lost Margins",
+      impact: "Lost Margins & Profit",
     },
     {
       id: 2,
       badge: "Card 2: Missing High-Dollar Jobs on the Grinder",
       title: "Missing Calls While Running the Grinder",
-      body: "When you're grinding concrete or rolling topcoat, you can't answer the phone. Homeowners don't leave voicemails—they hang up and call the next epoxy guy in the Google Map Pack.",
+      leadText: "When rolling epoxy or grinding concrete, you can't pick up.",
+      body: "Homeowners rarely leave voicemails—they hang up and call the next contractor in the Google Map Pack, costing you $3,000+ per lost job.",
       icon: <PhoneOff className="w-8 h-8 text-amber-500" />,
-      tag: "Missed Calls = Lost Revenue",
+      tag: "Missed Calls = Lost Jobs",
       impact: "Lost $3,000+ Jobs",
     },
     {
       id: 3,
       badge: "Card 3: Instagram Views Don't Pay the Bills",
-      title: "Tire-Kickers in Your DMs",
-      body: 'You post clean project reels, and people comment "How much?" but never book an on-site measurement because your website takes 7 seconds to load and has no instant pricing tool.',
+      title: "Tire-Kickers in Your Social DMs",
+      leadText: "Viral reel views don't translate to booked garage floors.",
+      body: 'People comment "How much?" but never book because your site takes 7 seconds to load on mobile and lacks an instant pricing tool.',
       icon: <EyeOff className="w-8 h-8 text-blue-500" />,
-      tag: "Zero Conversion Website",
-      impact: "Zero Conversions",
+      tag: "Zero-Conversion Website",
+      impact: "Zero Inbound Bookings",
     },
   ];
 
@@ -78,11 +81,15 @@ export default function ProblemSolution() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-serif font-black text-slate-900 mb-4 leading-snug group-hover:text-[#1A365D] transition-colors">
+                <h3 className="text-2xl font-serif font-black text-slate-900 mb-3 leading-snug group-hover:text-[#1A365D] transition-colors">
                   {card.title}
                 </h3>
 
-                <p className="text-slate-600 text-base font-sans leading-relaxed">
+                <p className="text-slate-900 font-bold text-sm sm:text-base mb-2 font-sans leading-snug">
+                  {card.leadText}
+                </p>
+
+                <p className="text-slate-600 text-xs sm:text-sm font-sans leading-relaxed">
                   {card.body}
                 </p>
               </div>

@@ -109,8 +109,8 @@ export default function Portfolio() {
           <h2 className="text-4xl md:text-5xl font-serif text-white font-black mb-6 leading-tight">
             How We Scale Epoxy Installers To <span className="text-brand-lime whitespace-nowrap">7-Figures</span>
           </h2>
-          <p className="text-lg text-blue-100/70 font-sans leading-relaxed">
-            These are prior local-SEO Map Pack and organic wins from our proven playbook — the same system we now apply to epoxy and concrete coatings contractors. We measure success in booked garage floors, full grinder schedules, and revenue growth.
+          <p className="text-base sm:text-lg md:text-xl text-blue-100/70 font-sans leading-relaxed">
+            Real ranking data from our proven playbook across major US markets. We measure success in booked 3-car garage floors, full grinder schedules, and revenue growth.
           </p>
         </div>
 

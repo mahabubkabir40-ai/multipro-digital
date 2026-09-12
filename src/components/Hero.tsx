@@ -57,9 +57,25 @@ export default function Hero() {
               <span className="block mt-1 sm:mt-2 lg:whitespace-nowrap">While Competitors Book <span className="text-brand-lime font-black whitespace-nowrap">All The 3-Car Garages.</span></span>
             </h1>
             
-            <p className="mt-4 text-sm sm:text-base md:text-lg text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-7 sm:mb-10 border-l-4 border-brand-lime pl-4 sm:pl-6">
-              We help independent epoxy contractors dominate the Google Map Pack and become the #1 recommended contractor when homeowners ask Google AI, ChatGPT, or Siri for garage coating quotes—powered by custom high-speed websites and instant price calculators.
+            <p className="mt-4 text-base sm:text-lg md:text-xl text-blue-100/90 w-full sm:max-w-2xl font-sans leading-relaxed mb-6 sm:mb-8 border-l-4 border-brand-lime pl-4 sm:pl-6">
+              We build high-speed websites and dominate the Google Map Pack for epoxy pros — delivering <strong className="text-brand-lime font-black">100% exclusive 2-car and 3-car garage leads</strong> directly to your phone.
             </p>
+
+            {/* Quick-Scan Value Chips */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-7 sm:mb-9 max-w-2xl">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
+                <span>Zero Shared Angi Leads</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
+                <span>#1 Map Pack Domination</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3 py-2 rounded-xl backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
+                <span>Instant Floor Estimator</span>
+              </div>
+            </div>
 
             {/* CTA Button visible on mobile when form is below */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-10 lg:hidden">

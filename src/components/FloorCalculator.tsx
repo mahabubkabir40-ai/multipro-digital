@@ -140,13 +140,13 @@ export default function FloorCalculator() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
-            <Calculator className="w-4 h-4" /> Feature Demo
+            <Calculator className="w-4 h-4" /> Live Interactive Demo
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-black tracking-tight mb-6">
-            See How The Instant Floor Estimator Works
+            Test The Floor Estimator Built For Your Site
           </h2>
           <p className="text-lg md:text-xl text-blue-100/80 leading-relaxed font-sans">
-            Try the interactive tool that doubles website conversion rates for coating professionals.
+            Try the exact interactive tool that captures serious homeowners with instant estimates before they call your competitors.
           </p>
         </div>
 

@@ -14,45 +14,45 @@ export default function Home() {
   return (
     <main className="flex flex-col flex-1">
       <link rel="preload" href="/hero-bg-mobile-v3.webp" as="image" media="(max-width: 1023px)" fetchPriority="high" />
-      {/* Section 2: Hero Section */}
+      {/* 1. Hook & Offer: Hero Section */}
       <Hero />
         
-      {/* Section 3: The Problem (Agitation) */}
+      {/* 2. Agitation: The Problem (Shared leads, missed calls on grinder) */}
       <ScrollReveal className="optimized-section">
         <ProblemSolution />
       </ScrollReveal>
 
-      {/* Section 4: The Solution (3-Pillar Epoxy Engine) */}
+      {/* 3. The Vehicle: The 3-Pillar Epoxy Inbound Growth Engine */}
       <ScrollReveal className="optimized-section">
         <HowItWorks />
       </ScrollReveal>
 
-      {/* Section 5: Feature Demo Callout (Instant Floor Estimator) */}
-      <ScrollReveal className="optimized-section">
-        <FloorCalculator />
-      </ScrollReveal>
-
-      {/* Section 6: Why Choose MultiPro Digital (Comparison Table) */}
-      <ScrollReveal className="optimized-section">
-        <ComparisonTable />
-      </ScrollReveal>
-
-      {/* Proof: Portfolio & Case Studies */}
+      {/* 4. Undeniable Proof: Real #1 Geo-Grid & Google Ranking Case Studies */}
       <ScrollReveal className="optimized-section">
         <Portfolio />
       </ScrollReveal>
 
-      {/* Proof: Testimonials */}
+      {/* 5. Interactive Demo: Instant Floor Estimator */}
+      <ScrollReveal className="optimized-section">
+        <FloorCalculator />
+      </ScrollReveal>
+
+      {/* 6. Positioning: Why Choose MultiPro Digital vs Generic Agencies */}
+      <ScrollReveal className="optimized-section">
+        <ComparisonTable />
+      </ScrollReveal>
+
+      {/* 7. Social Proof: Client Testimonials */}
       <ScrollReveal className="optimized-section">
         <Testimonials />
       </ScrollReveal>
 
-      {/* Section 7: Frequently Asked Questions */}
+      {/* 8. Risk Reversal: Frequently Asked Questions */}
       <ScrollReveal className="optimized-section">
         <FAQ />
       </ScrollReveal>
 
-      {/* Section 8: Final Call to Action */}
+      {/* 9. Final Close: Free 60-Second Video Audit CTA */}
       <ScrollReveal className="optimized-section">
         <CTA />
       </ScrollReveal>
