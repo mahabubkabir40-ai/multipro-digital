@@ -42,15 +42,7 @@ export default function Hero() {
           {/* Left column: copy + trust (7 cols on lg, 7 cols on xl) */}
           <div className="relative min-w-0 lg:col-span-7 pr-0 lg:pr-4">
           
-            {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-brand-lime/30 bg-brand-lime/10 lg:backdrop-blur-md mb-5 sm:mb-8">
-              <span className="w-2 h-2 rounded-full bg-brand-lime animate-ping shrink-0" />
-              <span className="w-2 h-2 rounded-full bg-brand-lime absolute" />
-              <span className="text-brand-lime text-[10px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase font-sans">
-                <span className="sm:hidden">Built For Epoxy &amp; Polyaspartic Installers</span>
-                <span className="hidden sm:inline">Built Exclusively For Garage Coatings &amp; Commercial Epoxy Pros</span>
-              </span>
-            </div>
+
 
             <h1 className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-[2.15rem] font-serif font-black text-white leading-tight sm:leading-[1.25] tracking-tight mb-5 sm:mb-8 lg:drop-shadow-lg text-balance">
               <span className="block lg:whitespace-nowrap">Stop Letting Your Crews <span className="whitespace-nowrap">Sit Idle</span></span>
