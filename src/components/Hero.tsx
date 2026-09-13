@@ -5,7 +5,7 @@ import HeroLeadForm from './HeroLeadForm';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-24 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-slate-900">
+    <section className="relative min-h-[75vh] md:min-h-[80vh] flex flex-col justify-start lg:justify-center pt-28 pb-20 md:pt-44 xl:pt-48 md:pb-24 overflow-hidden bg-slate-900">
       {/* 10/10 Premium Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
         
