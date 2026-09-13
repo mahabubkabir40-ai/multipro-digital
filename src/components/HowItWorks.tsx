@@ -66,7 +66,7 @@ export default function HowItWorks() {
       icon: <MapPin className="w-8 h-8 text-brand-lime" />,
       tag: "Top 3 Google 3-Pack",
       image: "/portfolio/epoxy/geogrid-la-ranking.png",
-      imageMobile: "/portfolio/epoxy/geogrid-la-ranking.png",
+      imageMobile: "/portfolio/epoxy/geogrid-la-ranking-mobile.png",
       imageAlt: "Local Falcon Google Map Pack Geo-Grid showing #1 clean sweep rankings across metro",
       actionText: "See Verified Proof →",
       actionHref: "#portfolio",
