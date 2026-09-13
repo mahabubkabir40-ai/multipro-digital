@@ -70,7 +70,7 @@ export default function HeroLeadForm() {
   return (
     <div id="hero-lead-card" className="relative w-full max-w-md mx-auto lg:max-w-none lg:ml-auto scroll-mt-24">
       <div className="absolute -inset-3 rounded-[2rem] bg-slate-900/40 blur-xl pointer-events-none hidden lg:block" aria-hidden />
-      <div className="relative bg-white/95 backdrop-blur-md rounded-3xl border border-brand-lime/30 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-5 sm:p-6">
+      <div className="relative bg-white/95 backdrop-blur-md rounded-3xl border border-brand-lime/30 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-4 sm:p-6">
         {isSuccess ? (
           <div className="py-8 text-center animate-in fade-in zoom-in duration-300">
             <div className="w-14 h-14 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-3 shadow-[0_0_24px_rgba(154,251,22,0.45)]">
@@ -189,11 +189,13 @@ export default function HeroLeadForm() {
                 )}
               </button>
 
-              <div className="flex items-center justify-center gap-3 pt-1 text-[11px] text-slate-500 font-medium">
-                <span>🔒 100% Free</span>
-                <span>•</span>
+              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 pt-2 text-[10px] min-[380px]:text-[11px] sm:text-xs text-slate-500 font-medium whitespace-nowrap tracking-tight sm:tracking-normal select-none">
+                <span className="inline-flex items-center gap-1">
+                  <span>🔒</span> 100% Free
+                </span>
+                <span className="text-slate-300">•</span>
                 <span>No Pushy Calls</span>
-                <span>•</span>
+                <span className="text-slate-300">•</span>
                 <span>1 Shop Per Market</span>
               </div>
             </form>
