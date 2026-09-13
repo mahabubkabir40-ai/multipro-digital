@@ -139,7 +139,7 @@ export default function FreeAuditPage() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Your Name <span className="text-[#1da4ff]">*</span>
+                        Name <span className="text-[#1da4ff]">*</span>
                       </label>
                       <input 
                         type="text" 
@@ -152,7 +152,7 @@ export default function FreeAuditPage() {
                     </div>
                     <div>
                       <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Cell Phone Number <span className="text-[#1da4ff]">*</span>
+                        Phone Number <span className="text-[#1da4ff]">*</span>
                       </label>
                       <input 
                         type="tel" 
@@ -168,12 +168,12 @@ export default function FreeAuditPage() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        City &amp; State <span className="text-[#1da4ff]">*</span>
+                        Email <span className="text-[#1da4ff]">*</span>
                       </label>
                       <input 
-                        type="text" 
-                        name="City and State"
-                        placeholder="Dallas, TX"
+                        type="email" 
+                        name="Email"
+                        placeholder="john@apexepoxy.com"
                         required
                         disabled={isSubmitting}
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
@@ -181,7 +181,7 @@ export default function FreeAuditPage() {
                     </div>
                     <div>
                       <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Website or Google Business Profile <span className="text-slate-400 font-normal">(Optional)</span>
+                        Website Or Google Business Profile <span className="text-slate-400 font-normal">(Optional)</span>
                       </label>
                       <input 
                         type="text" 

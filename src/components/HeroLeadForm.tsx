@@ -7,9 +7,6 @@ export default function HeroLeadForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submittedLead, setSubmittedLead] = useState<{ name: string; phone: string } | null>(null);
-  const [extraWebsite, setExtraWebsite] = useState('');
-  const [isAddingWebsite, setIsAddingWebsite] = useState(false);
-  const [websiteAdded, setWebsiteAdded] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,15 +26,15 @@ export default function HeroLeadForm() {
 
     const payload = {
       ...data,
-      _subject: '⚡ New Light-Form Video Audit Request',
-      source: 'homepage-hero-fast',
+      _subject: '⚡ New 60-Second Video Audit Request',
+      source: 'homepage-hero-form',
     };
 
     try {
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'click_audit', {
           event_category: 'CTA',
-          event_label: 'Hero Fast Form',
+          event_label: 'Hero Form',
         });
       }
 
@@ -66,31 +63,6 @@ export default function HeroLeadForm() {
     }
   };
 
-  const handleWebsiteSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!extraWebsite.trim()) return;
-
-    setIsAddingWebsite(true);
-    try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          Name: submittedLead?.name,
-          'Phone Number': submittedLead?.phone,
-          'Website or Google Business Profile': extraWebsite,
-          _subject: `🔗 Website Link Added for ${submittedLead?.name || 'Lead'}`,
-          source: 'hero-step-2-website',
-        }),
-      });
-      setWebsiteAdded(true);
-    } catch (err) {
-      console.error('Failed to add website:', err);
-    } finally {
-      setIsAddingWebsite(false);
-    }
-  };
-
   const inputClass =
     'w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all';
   const labelClass = 'block text-[#1A365D] text-xs font-bold mb-1';
@@ -100,7 +72,7 @@ export default function HeroLeadForm() {
       <div className="absolute -inset-3 rounded-[2rem] bg-slate-900/40 blur-xl pointer-events-none hidden lg:block" aria-hidden />
       <div className="relative bg-white/95 backdrop-blur-md rounded-3xl border border-brand-lime/30 shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-5 sm:p-6">
         {isSuccess ? (
-          <div className="py-6 text-center">
+          <div className="py-8 text-center animate-in fade-in zoom-in duration-300">
             <div className="w-14 h-14 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-3 shadow-[0_0_24px_rgba(154,251,22,0.45)]">
               <svg className="w-7 h-7 text-[#1A365D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
@@ -109,41 +81,9 @@ export default function HeroLeadForm() {
             <h3 className="text-xl font-serif font-black text-[#0b1f38] mb-1">
               You&apos;re On The List, {submittedLead?.name || 'Partner'}!
             </h3>
-            <p className="text-slate-600 text-xs sm:text-sm mb-5">
-              We&apos;re queuing up your territory audit. Our team will send your personal Loom breakdown to your cell within 24 hours.
+            <p className="text-slate-600 text-xs sm:text-sm max-w-xs mx-auto">
+              We&apos;re queuing up your territory audit. Our team will send your personal 60-second Loom breakdown within 24 hours.
             </p>
-
-            {/* Optional Step 2: Website / GBP URL */}
-            {!websiteAdded ? (
-              <form onSubmit={handleWebsiteSubmit} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left">
-                <label className="block text-xs font-bold text-[#1A365D] mb-1.5">
-                  Have a website or Google Maps link? <span className="text-slate-500 font-normal">(Optional)</span>
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={extraWebsite}
-                    onChange={(e) => setExtraWebsite(e.target.value)}
-                    placeholder="yoursite.com or Google Maps URL"
-                    className="flex-1 bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#1da4ff]"
-                  />
-                  <button
-                    type="submit"
-                    disabled={isAddingWebsite || !extraWebsite.trim()}
-                    className="px-4 py-2 bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider rounded-xl hover:bg-slate-900 hover:text-white transition-all disabled:opacity-40"
-                  >
-                    {isAddingWebsite ? 'Adding...' : 'Attach'}
-                  </button>
-                </div>
-                <p className="text-[11px] text-slate-500 mt-1.5">
-                  Optional: Helps us analyze your exact competitors faster.
-                </p>
-              </form>
-            ) : (
-              <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs font-bold text-emerald-700 flex items-center justify-center gap-1.5">
-                <span>✓</span> Website link attached to your audit request!
-              </div>
-            )}
           </div>
         ) : (
           <>
@@ -176,7 +116,7 @@ export default function HeroLeadForm() {
 
               <div>
                 <label htmlFor="hero-phone" className={labelClass}>
-                  Cell Phone Number <span className="text-[#1da4ff]">*</span>
+                  Phone Number <span className="text-[#1da4ff]">*</span>
                 </label>
                 <input
                   id="hero-phone"
@@ -190,14 +130,29 @@ export default function HeroLeadForm() {
               </div>
 
               <div>
-                <label htmlFor="hero-city" className={labelClass}>
-                  City &amp; State <span className="text-slate-400 font-normal">(Optional)</span>
+                <label htmlFor="hero-email" className={labelClass}>
+                  Email <span className="text-[#1da4ff]">*</span>
                 </label>
                 <input
-                  id="hero-city"
+                  id="hero-email"
+                  type="email"
+                  name="Email"
+                  placeholder="john@apexepoxy.com"
+                  required
+                  disabled={isSubmitting}
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="hero-website" className={labelClass}>
+                  Website Or Google Business Profile <span className="text-slate-400 font-normal">(Optional)</span>
+                </label>
+                <input
+                  id="hero-website"
                   type="text"
-                  name="City and State"
-                  placeholder="e.g. Dallas, TX"
+                  name="Website or Google Business Profile"
+                  placeholder="yoursite.com or Google Maps link"
                   disabled={isSubmitting}
                   className={inputClass}
                 />
