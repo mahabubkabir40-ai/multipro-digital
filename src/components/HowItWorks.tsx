@@ -84,9 +84,6 @@ export default function HowItWorks() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-4">
-            Built For Coating Installers
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white font-black tracking-tight mb-4">
             How We Keep Your Grinders Spinning &amp; Crews Booked Solid
           </h2>
