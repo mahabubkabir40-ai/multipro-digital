@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
-import { Calculator, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Calculator, Sparkles, CheckCircle2, ArrowRight, X } from 'lucide-react';
 
 interface SpaceOption {
   id: string;
@@ -70,9 +70,47 @@ export default function FloorCalculator() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [isCalculatorInView, setIsCalculatorInView] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMounted(true);
+
+    if (!sectionRef.current || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsCalculatorInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.visualViewport) return;
+
+    const handleResize = () => {
+      const isKeyboardOpen = window.visualViewport
+        ? window.visualViewport.height < window.innerHeight * 0.75
+        : false;
+      if (isKeyboardOpen) {
+        setIsInputFocused(true);
+      } else {
+        setIsInputFocused(false);
+      }
+    };
+
+    window.visualViewport.addEventListener('resize', handleResize);
+    return () => {
+      window.visualViewport?.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   // Prep cost: +$1.00 - $1.50/sqft if heavy crack repair/old coating removal needed
@@ -138,7 +176,7 @@ export default function FloorCalculator() {
   };
 
   return (
-    <section id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden border-t border-white/5">
+    <section ref={sectionRef} id="estimator" className="py-24 bg-gradient-to-b from-slate-900 via-[#0a192f] to-slate-900 text-white relative overflow-hidden border-t border-white/5">
       {/* Background Ambience */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -321,22 +359,26 @@ export default function FloorCalculator() {
                     name="name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
+                    onFocus={() => setIsInputFocused(true)}
+                    onBlur={() => setIsInputFocused(false)}
                     placeholder="Your Name (e.g. John)"
                     autoComplete="given-name"
                     disabled={isSubmitting}
-                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
                   />
                   <input
                     type="tel"
                     name="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    onFocus={() => setIsInputFocused(true)}
+                    onBlur={() => setIsInputFocused(false)}
                     placeholder="Enter your cell to test lead capture *"
                     autoComplete="tel"
                     inputMode="tel"
                     required
                     disabled={isSubmitting}
-                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3 text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70 text-xs sm:text-sm"
+                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
                   />
                 </div>
                 {submitError && (
@@ -381,37 +423,52 @@ export default function FloorCalculator() {
         </div>
       </div>
 
-      {/* Sticky Floating Bottom Bar: Active once price is calculated */}
-      {isReady && mounted && typeof document !== 'undefined' && createPortal(
+      {/* Sticky Floating Bottom Bar: Active ONLY when scrolled past the calculator and inputs are not focused */}
+      {isReady && mounted && !isCalculatorInView && !isInputFocused && !isDismissed && typeof document !== 'undefined' && createPortal(
         <div className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-6 sm:bottom-6 z-40 max-w-lg bg-slate-950/95 backdrop-blur-md border border-brand-lime/60 shadow-[0_12px_40px_rgba(0,0,0,0.85)] rounded-2xl p-2.5 sm:p-4 flex items-center justify-between gap-2 sm:gap-4 animate-in slide-in-from-bottom-5 duration-300">
           <div className="min-w-0 pr-1">
             <div className="flex items-center gap-1.5 text-[9px] sm:text-xs font-black uppercase tracking-wider text-brand-lime">
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-lime animate-pulse" />
               <span>Instant Estimate</span>
             </div>
-            <div className="text-sm sm:text-lg font-mono font-black text-white whitespace-nowrap">
+            <a 
+              href="#estimator"
+              className="text-sm sm:text-lg font-mono font-black text-white whitespace-nowrap hover:text-brand-lime transition-colors block"
+              title="Click to view full calculator"
+            >
               {estimateLabel}*
-            </div>
+            </a>
             <div className="text-[10px] sm:text-[11px] text-blue-200/70 truncate hidden sm:block">
               {selectedSpace?.name} • {selectedSystem?.name}
             </div>
           </div>
 
-          <Link
-            href="/free-audit"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'click_audit', {
-                  event_category: 'CTA',
-                  event_label: 'Calculator Sticky Bar'
-                });
-              }
-            }}
-            className="px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider hover:bg-white hover:scale-105 active:scale-95 transition-all shrink-0 shadow-[0_0_15px_rgba(154,251,22,0.4)] whitespace-nowrap select-none touch-manipulation flex items-center gap-1"
-          >
-            <span>Get On My Site</span>
-            <span>&rarr;</span>
-          </Link>
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <Link
+              href="/free-audit"
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).gtag) {
+                  (window as any).gtag('event', 'click_audit', {
+                    event_category: 'CTA',
+                    event_label: 'Calculator Sticky Bar'
+                  });
+                }
+              }}
+              className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-brand-lime text-[#1A365D] font-black text-xs uppercase tracking-wider hover:bg-white hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(154,251,22,0.4)] whitespace-nowrap select-none touch-manipulation flex items-center gap-1"
+            >
+              <span>Get On My Site</span>
+              <span>&rarr;</span>
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsDismissed(true)}
+              className="text-slate-400 hover:text-white p-1 sm:p-1.5 rounded-lg hover:bg-white/10 transition-colors"
+              aria-label="Close estimate bar"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
         </div>,
         document.body
       )}
