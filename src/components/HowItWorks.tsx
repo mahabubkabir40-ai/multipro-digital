@@ -137,7 +137,6 @@ export default function HowItWorks() {
                       fill
                       sizes="(max-width: 640px) 100vw, 33vw"
                       className="object-contain p-1 transition-transform duration-300 group-hover/preview:scale-[1.02]"
-                      priority={pillar.id === "01"}
                     />
                   </div>
 

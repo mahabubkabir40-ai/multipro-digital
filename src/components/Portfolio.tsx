@@ -187,7 +187,6 @@ export default function Portfolio() {
                   src={result.image} 
                   alt={`Local SEO Map Pack case study: ${result.name} — prior win, same system for epoxy/coatings`} 
                   fill
-                  priority={result.id <= 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={`object-cover object-top transform transition-transform duration-700 ease-out ${isActive ? 'scale-105' : 'scale-100'}`}
                 />
