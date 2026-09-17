@@ -42,8 +42,8 @@ export default function GoogleAnalyticsDeferred() {
       window.addEventListener(event, initGA, { passive: true });
     });
 
-    // Timeout fallback: 3.5s on mobile viewport, 2s on desktop
-    const delay = window.innerWidth < 768 ? 3500 : 2000;
+    // Timeout fallback: 7s on mobile viewport, 4s on desktop (runs immediately on any user touch/scroll/click)
+    const delay = window.innerWidth < 768 ? 7000 : 4000;
     const timer = setTimeout(initGA, delay);
 
     return () => {

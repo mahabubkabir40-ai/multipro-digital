@@ -14,7 +14,6 @@ import ScrollReveal from "@/components/ScrollReveal";
 export default function Home() {
   return (
     <main className="flex flex-col flex-1">
-      <link rel="preload" href="/hero-bg-mobile-v3.webp" as="image" media="(max-width: 1023px)" fetchPriority="high" />
       {/* 1. Hook & Offer: Hero Section */}
       <Hero />
 
