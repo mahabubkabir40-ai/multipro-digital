@@ -9,6 +9,7 @@ export default function FreeAuditPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [mountedTime] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,9 +19,12 @@ export default function FreeAuditPage() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    if (data._honey) {
+    if (data._honey || data._hp_company_website) {
       setIsSuccess(true);
       setIsSubmitting(false);
+      setTimeout(() => {
+        router.push('/success');
+      }, 1200);
       return;
     }
 
@@ -37,6 +41,7 @@ export default function FreeAuditPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          _ts: mountedTime,
           _subject: 'New Free Video Audit Request',
           source: 'free-audit-page',
         }),
@@ -134,7 +139,10 @@ export default function FreeAuditPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+                  {/* Anti-spam honeypots & timing */}
+                  <input type="hidden" name="_ts" value={mountedTime} />
+                  <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+                  <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>

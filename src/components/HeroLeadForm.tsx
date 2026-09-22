@@ -7,6 +7,7 @@ export default function HeroLeadForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submittedLead, setSubmittedLead] = useState<{ name: string; phone: string } | null>(null);
+  const [mountedTime] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ export default function HeroLeadForm() {
     const data = Object.fromEntries(formData.entries());
 
     // Honeypot — silently succeed for bots
-    if (data._honey) {
+    if (data._honey || data._hp_company_website) {
       setIsSuccess(true);
       setIsSubmitting(false);
       return;
@@ -26,6 +27,7 @@ export default function HeroLeadForm() {
 
     const payload = {
       ...data,
+      _ts: mountedTime,
       _subject: '⚡ New 60-Second Video Audit Request',
       source: 'homepage-hero-form',
     };
@@ -97,7 +99,10 @@ export default function HeroLeadForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3">
-              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              {/* Anti-spam honeypots & timing */}
+              <input type="hidden" name="_ts" value={mountedTime} />
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+              <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
 
               <div>
                 <label htmlFor="hero-name" className={labelClass}>

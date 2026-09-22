@@ -9,6 +9,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [mountedTime] = useState(() => Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,11 +19,25 @@ export default function ContactPage() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    // Client-side honeypot drop
+    if (data._honey || data._hp_company_website) {
+      setIsSuccess(true);
+      setIsSubmitting(false);
+      setTimeout(() => {
+        router.push('/success');
+      }, 1500);
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          _ts: mountedTime,
+          source: 'contact-page-audit-form',
+        }),
       });
 
       const result = await response.json();
@@ -148,11 +163,13 @@ export default function ContactPage() {
                  <p className="text-blue-100/70 text-base">Redirecting you to our success page...</p>
                </div>
              ) : (
-               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                  {/* Anti-spam honeypot */}
-                  <input type="text" name="_honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-                  
-                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                   {/* Anti-spam honeypots & timing */}
+                   <input type="hidden" name="_ts" value={mountedTime} />
+                   <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+                   <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+                   
+                   <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                     <div>
                       <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Your Name <span className="text-[#1da4ff]">*</span></label>
                       <input 

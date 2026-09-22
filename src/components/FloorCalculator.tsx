@@ -153,6 +153,9 @@ export default function FloorCalculator() {
           name: firstName.trim(),
           'Phone Number': phone.trim(),
           email: '',
+          _ts: Date.now() - 5000, // legitimate user configured calculator steps before submitting
+          _honey: '',
+          _hp_company_website: '',
           _subject: 'New Floor Estimator Lead',
           space: selectedSpace.name,
           system: selectedSystem.name,

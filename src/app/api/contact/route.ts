@@ -10,11 +10,125 @@ function escapeHtml(str: string): string {
     .replace(/'/g, '&#039;');
 }
 
+function isGibberishString(text: string): boolean {
+  if (!text || typeof text !== 'string') return false;
+  const clean = text.trim();
+  if (clean.length < 5) return false;
+
+  const words = clean.split(/\s+/);
+  for (const word of words) {
+    // 6 or more consecutive consonants (e.g. wnavlpbhs, bbNYmGC, Jxkmulyx)
+    if (/[bcdfghjklmnpqrstvwxyz]{6,}/i.test(word)) {
+      return true;
+    }
+    // 3 or more random mid-word uppercase transitions (e.g. imoJOjuqrdaoQbbNYmGCUEV)
+    const midCaps = (word.slice(1).match(/[A-Z]/g) || []).length;
+    if (word.length >= 10 && midCaps >= 3 && !/^(LLC|INC|CORP|USA)$/i.test(word)) {
+      return true;
+    }
+  }
+
+  // Single word with no spaces that is abnormally long (> 18 characters)
+  if (words.length === 1 && clean.length > 18) {
+    return true;
+  }
+
+  return false;
+}
+
+function isSpamEmail(email: string): boolean {
+  if (!email || typeof email !== 'string') return false;
+  const lower = email.toLowerCase().trim();
+  
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lower)) {
+    return true;
+  }
+
+  // Detect Gmail dot-trick abuse: e.g. l.u.s.ug.iza.hay6.40@gmail.com
+  const [localPart, domain] = lower.split('@');
+  if (localPart) {
+    const dotSegments = localPart.split('.');
+    const singleLetterSegments = dotSegments.filter(seg => seg.length <= 1);
+    if (singleLetterSegments.length >= 3) {
+      return true;
+    }
+  }
+
+  // Gibberish domain name (e.g. kihhuwxj.com)
+  if (domain) {
+    const domainName = domain.split('.')[0];
+    if (domainName && /[bcdfghjklmnpqrstvwxyz]{6,}/i.test(domainName)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function isInvalidPhone(phone: string): boolean {
+  if (!phone || typeof phone !== 'string') return false;
+  const digits = phone.replace(/\D/g, '');
+  
+  if (digits.length < 10) return true;
+
+  // Check for dummy repeated sequences: 0000000000, 1111111111, 1234567890, etc.
+  if (/^(\d)\1{9,}$/.test(digits)) return true;
+  if (digits.startsWith('123456789') || digits.startsWith('012345678')) return true;
+
+  // NANP US 10-digit: area code cannot start with 0 or 1
+  if (digits.length === 10 && (digits[0] === '0' || digits[0] === '1')) {
+    return true;
+  }
+
+  return false;
+}
+
 export async function POST(request: Request) {
   try {
+    const formData = await request.json();
+
+    // 1. Server-Side Honeypot Check
+    const isHoneypotTriggered = Boolean(
+      formData._honey ||
+      formData._hp_company_website ||
+      formData.website_url_check ||
+      formData.fax_number ||
+      formData._gotcha
+    );
+
+    if (isHoneypotTriggered) {
+      console.warn('[SPAM BLOCKED] Honeypot triggered:', {
+        _honey: formData._honey,
+        _hp: formData._hp_company_website,
+      });
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    // 2. Submission Speed Check (< 2.5s is automated bot submission)
+    if (formData._ts) {
+      const submitTime = Number(formData._ts);
+      const elapsedMs = Date.now() - submitTime;
+      if (elapsedMs > 0 && elapsedMs < 2500) {
+        console.warn(`[SPAM BLOCKED] Bot submitted too quickly (${elapsedMs}ms)`);
+        return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+      }
+    }
+
+    // 3. Origin & Referer Verification in Production
+    const origin = request.headers.get('origin') || '';
+    const referer = request.headers.get('referer') || '';
+    if (process.env.NODE_ENV === 'production' && origin) {
+      const isAllowed = 
+        origin.includes('multiprodigital.com') || 
+        referer.includes('multiprodigital.com');
+      if (!isAllowed) {
+        console.warn('[SPAM BLOCKED] Unauthorized origin/referer:', origin);
+        return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+      }
+    }
+
     // Initialize Resend inside the request handler to prevent build-time crashes
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const formData = await request.json();
 
     // Clean and normalize the incoming keys
     const cleanData: Record<string, any> = {};
@@ -42,6 +156,41 @@ export async function POST(request: Request) {
     const estimate = cleanData.estimate || '';
     const prep = cleanData.prep || '';
     const source = cleanData.source || 'Website Lead';
+
+    // 4. Heuristic Gibberish & Bot Pattern Checks
+    if (isGibberishString(name)) {
+      console.warn('[SPAM BLOCKED] Gibberish name detected:', name);
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    if (company && isGibberishString(company)) {
+      console.warn('[SPAM BLOCKED] Gibberish company name detected:', company);
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    if (cityState && isGibberishString(cityState)) {
+      console.warn('[SPAM BLOCKED] Gibberish city/state detected:', cityState);
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    if (email && isSpamEmail(email)) {
+      console.warn('[SPAM BLOCKED] Spam email pattern detected:', email);
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    if (phone && isInvalidPhone(phone)) {
+      console.warn('[SPAM BLOCKED] Invalid/fake phone number detected:', phone);
+      return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+    }
+
+    if (website) {
+      const cleanUrl = website.replace(/^https?:\/\//i, '').replace(/^www\./i, '');
+      const domainPart = cleanUrl.split('/')[0].split('?')[0];
+      if (domainPart && isGibberishString(domainPart)) {
+        console.warn('[SPAM BLOCKED] Gibberish website domain detected:', website);
+        return NextResponse.json({ success: true, message: 'Lead sent successfully' });
+      }
+    }
 
     // Determine subject line
     let defaultSubject = '⚡ New Epoxy Lead Captured!';
