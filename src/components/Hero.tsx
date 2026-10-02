@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import HeroVideo from './HeroVideo';
 import HeroCTA from './HeroCTA';
@@ -47,10 +48,14 @@ export default function Hero() {
 
             {/* Quick-Scan Objection Buster Chips */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 max-w-2xl">
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm">
+              <Link
+                href="/locations"
+                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 hover:border-brand-lime/60 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm transition-all hover:text-brand-lime group"
+              >
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
                 <span>🔒 Strictly 1 Shop Per City</span>
-              </div>
+                <span className="text-brand-lime group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+              </Link>
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-800/80 border border-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-brand-lime shrink-0 shadow-[0_0_8px_rgba(154,251,22,0.8)]" />
                 <span>⚡ Month-to-Month (No Contract Jail)</span>

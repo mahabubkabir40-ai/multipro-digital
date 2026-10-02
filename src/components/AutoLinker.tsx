@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import links from '../config/links_dictionary.json';
@@ -13,21 +12,21 @@ interface AutoLinkerProps {
 const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className, linkClassName, isDark = false }) => {
   if (typeof children !== 'string') return <>{children}</>;
 
-  // Create a regex from the dictionary keys
+  // Create a regex from the dictionary keys (sorted longest first to match full phrases)
   const keywords = Object.keys(links).sort((a, b) => b.length - a.length);
   const regex = new RegExp(`(${keywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
 
   const parts = children.split(regex);
   
-  // Track links per instance
-  let homepageLinked = false;
-  let locationLinked = false;
-  let externalLinked = false;
+  // Track links per component instance
+  const linkedUrls = new Set<string>();
+  let internalLinkCount = 0;
+  let externalLinkCount = 0;
 
   const isDarkMode = isDark || Boolean(className && (className.includes('dark') || className.includes('text-white') || className.includes('text-blue-100')));
 
   const defaultLinkClass = isDarkMode
-    ? "text-white font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer"
+    ? "text-brand-lime font-bold underline decoration-brand-lime/50 decoration-1 underline-offset-4 hover:decoration-brand-lime hover:text-white transition-colors cursor-pointer"
     : "text-[#0b1f38] font-bold underline decoration-brand-lime decoration-2 underline-offset-4 hover:text-brand-lime transition-colors cursor-pointer";
 
   const resolvedLinkClass = linkClassName || defaultLinkClass;
@@ -39,22 +38,21 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className, linkClassN
         const keywordMatch = keywords.find(k => k.toLowerCase() === lowerPart);
 
         if (keywordMatch) {
-          const url = (links as any)[keywordMatch];
+          const url = (links as Record<string, string>)[keywordMatch];
           const isExternal = url.startsWith('http');
-          const isHomepage = url === '/';
-          const isSecondary = url.includes('/locations/') || url === '/about' || url === '/contact'; // Locations, About, or Contact
 
-          // Apply the "3-Link Rule"
+          // Strict limit: Max 2 internal links, max 1 external link per block, never link the exact same URL twice
           let shouldLink = false;
-          if (isHomepage && !homepageLinked) {
-            shouldLink = true;
-            homepageLinked = true;
-          } else if (isSecondary && !locationLinked) {
-            shouldLink = true;
-            locationLinked = true; // Still using this variable name for the secondary slot
-          } else if (isExternal && !externalLinked) {
-            shouldLink = true;
-            externalLinked = true;
+          if (!linkedUrls.has(url)) {
+            if (isExternal && externalLinkCount < 1) {
+              shouldLink = true;
+              externalLinkCount++;
+              linkedUrls.add(url);
+            } else if (!isExternal && internalLinkCount < 2) {
+              shouldLink = true;
+              internalLinkCount++;
+              linkedUrls.add(url);
+            }
           }
 
           if (shouldLink) {
@@ -64,7 +62,7 @@ const AutoLinker: React.FC<AutoLinkerProps> = ({ children, className, linkClassN
                   key={i} 
                   href={url} 
                   target="_blank" 
-                  rel="noopener noreferrer nofollow"
+                  rel="noopener noreferrer"
                   className={resolvedLinkClass}
                 >
                   {part}

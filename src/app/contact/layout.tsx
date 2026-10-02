@@ -1,8 +1,18 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Book a Strategy Call | MultiPro Digital',
-  description: 'Book a 1-on-1 strategy call with MultiPro Digital to analyze your local epoxy market, lock your city territory, and scale your high-margin garage floor bookings.',
+  title: 'Contact MultiPro Digital | Epoxy Contractor Growth Partner',
+  description: 'Get in touch with MultiPro Digital. Lock out your local city territory, review your Google Map Pack rankings, and stop wasting money on shared contractor leads.',
+  alternates: {
+    canonical: 'https://www.multiprodigital.com/contact',
+  },
+  openGraph: {
+    title: 'Contact MultiPro Digital | Epoxy Contractor Growth Partner',
+    description: 'Get in touch with MultiPro Digital. Lock out your local city territory, review your Google Map Pack rankings, and stop wasting money on shared contractor leads.',
+    url: 'https://www.multiprodigital.com/contact',
+    siteName: 'MultiPro Digital',
+    type: 'website',
+  },
 };
 
 export default function ContactLayout({

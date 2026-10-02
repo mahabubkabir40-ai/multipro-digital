@@ -4,6 +4,10 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Submission Received | MultiPro Digital',
   description: 'Thank you for requesting your free Epoxy Contractor Visibility Audit. We will be in touch shortly.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function SuccessPage() {

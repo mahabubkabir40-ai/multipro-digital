@@ -4,8 +4,18 @@ import AutoLinker from '@/components/AutoLinker';
 
 
 export const metadata = {
-  title: 'About Us | The Epoxy Inbound Growth Engine™ | MultiPro Digital',
-  description: 'Learn how MultiPro Digital helps US epoxy & concrete coating contractors book high-margin garage floors through instant quote calculators, sub-1.5s showroom websites, and Google Maps & AI search domination.',
+  title: 'About MultiPro Digital | Epoxy Contractor Marketing Agency',
+  description: 'We build exclusively for epoxy & concrete coating contractors. Custom Next.js websites, instant price estimators, and Google Maps ranking systems that book floors.',
+  alternates: {
+    canonical: 'https://www.multiprodigital.com/about',
+  },
+  openGraph: {
+    title: 'About MultiPro Digital | Epoxy Contractor Marketing Agency',
+    description: 'We build exclusively for epoxy & concrete coating contractors. Custom Next.js websites, instant price estimators, and Google Maps ranking systems that book floors.',
+    url: 'https://www.multiprodigital.com/about',
+    siteName: 'MultiPro Digital',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {
@@ -130,9 +140,15 @@ export default function AboutPage() {
                   <svg className="w-6 h-6 sm:w-7 sm:h-7 text-brand-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Territory Lock &amp; Exclusive Leads</h3>
-                <p className="text-blue-100/70 text-xs sm:text-sm leading-relaxed font-sans">
+                <p className="text-blue-100/70 text-xs sm:text-sm leading-relaxed font-sans mb-3">
                   <AutoLinker isDark>Strictly one epoxy contractor per city. Zero shared Angi or Thumbtack leads. Every call, video audit, and calculator estimate is 100% exclusive to you.</AutoLinker>
                 </p>
+                <Link
+                  href="/locations"
+                  className="inline-flex items-center gap-1.5 text-xs text-brand-lime font-bold hover:underline"
+                >
+                  View Open Territory Markets →
+                </Link>
               </div>
               <div className="mt-6 pt-4 border-t border-white/10 text-[10px] sm:text-xs font-bold text-brand-lime uppercase tracking-wider">Market Exclusivity</div>
             </div>

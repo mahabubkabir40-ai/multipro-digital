@@ -5,23 +5,62 @@ import { LOCATIONS } from '@/config/locations';
 
 export const metadata: Metadata = {
   title: 'Exclusive Territories & Service Areas | MultiPro Digital',
-  description: 'View active and available territory lockouts for epoxy and concrete coating contractors across the US. Strictly one partner per metro market.',
+  description: 'View active territory lockouts for epoxy and concrete coating contractors across major US markets. We partner with strictly one coating crew per metro area.',
   alternates: {
     canonical: 'https://www.multiprodigital.com/locations',
+  },
+  openGraph: {
+    title: 'Exclusive Territories & Service Areas | MultiPro Digital',
+    description: 'View active territory lockouts for epoxy and concrete coating contractors across major US markets. We partner with strictly one coating crew per metro area.',
+    url: 'https://www.multiprodigital.com/locations',
+    siteName: 'MultiPro Digital',
+    type: 'website',
   },
 };
 
 export default function LocationsHubPage() {
   const locationList = Object.values(LOCATIONS);
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.multiprodigital.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Territories & Locations',
+        item: 'https://www.multiprodigital.com/locations',
+      },
+    ],
+  };
+
   return (
     <div className="bg-[#0b1f38] min-h-screen pt-36 md:pt-44 pb-24 relative overflow-hidden text-white">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Background Ambience Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="mb-8 flex items-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
+          <Link href="/" className="hover:text-brand-lime transition-colors">Home</Link>
+          <span>/</span>
+          <span className="text-white font-medium">Territories &amp; Locations</span>
+        </nav>
+
         {/* Header */}
         <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-12">
           <div className="inline-block px-3 py-1 rounded-full bg-brand-lime/10 text-brand-lime font-bold text-xs uppercase tracking-widest mb-3">

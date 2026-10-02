@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Star } from 'lucide-react';
 import TrackedLink from './TrackedLink';
 
@@ -50,6 +51,12 @@ export default function CTA() {
             </TrackedLink>
             <p className="mt-3 text-xs sm:text-sm text-blue-200/80 font-medium font-sans text-center">
               100% Free • No Pushy Sales Calls • Delivered in 24 Hours
+            </p>
+            <p className="mt-2 text-xs text-blue-200/60 font-medium font-sans text-center">
+              Looking to check your market first?{' '}
+              <Link href="/locations" className="text-brand-lime underline hover:text-white transition-colors font-semibold">
+                Explore open territory lockouts →
+              </Link>
             </p>
           </div>
 

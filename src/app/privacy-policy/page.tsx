@@ -1,8 +1,11 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Privacy Policy | Multipro Digital',
-  description: 'Privacy Policy for Multipro Digital. Learn how we collect, use, and protect your information.',
+  title: 'Privacy Policy | MultiPro Digital Epoxy Marketing',
+  description: 'Review the privacy policy for MultiPro Digital. Learn how we collect, protect, and handle data for concrete coating contractors and website visitors.',
+  alternates: {
+    canonical: 'https://www.multiprodigital.com/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

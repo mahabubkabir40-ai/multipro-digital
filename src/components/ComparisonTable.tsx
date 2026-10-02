@@ -161,7 +161,10 @@ export default function ComparisonTable() {
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Link>
           <p className="text-xs text-blue-200/60 mt-3 font-sans">
-            🔒 Strictly 1 contractor per city. Check if your territory is still open.
+            🔒 Strictly 1 contractor per city.{' '}
+            <Link href="/locations" className="text-brand-lime underline hover:text-white transition-colors font-medium">
+              Check if your territory is still open →
+            </Link>
           </p>
         </div>
       </div>

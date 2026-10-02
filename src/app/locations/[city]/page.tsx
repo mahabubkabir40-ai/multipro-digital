@@ -214,6 +214,18 @@ export default async function LocationPage({ params }: PageProps) {
                 <strong className="text-white block mb-1">Recommended System Specification:</strong>
                 <p className="text-brand-lime font-medium">{location.climateAndSlabProfile.coatingRecommendation}</p>
               </div>
+
+              <div className="pt-3 border-t border-slate-800 text-xs text-slate-400">
+                <span>Industry Technical Reference: </span>
+                <a
+                  href={location.climateAndSlabProfile.externalAuthorityUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-lime hover:underline font-semibold"
+                >
+                  {location.climateAndSlabProfile.externalAuthorityName} ↗
+                </a>
+              </div>
             </div>
           </div>
 
@@ -286,6 +298,24 @@ export default async function LocationPage({ params }: PageProps) {
           >
             Claim {location.city} Territory Above ↑
           </a>
+
+          {/* Nearby Territory Internal Links */}
+          <div className="mt-8 pt-8 border-t border-slate-800 text-center">
+            <span className="block text-xs uppercase tracking-wider text-slate-400 font-mono mb-3">
+              Explore Nearby Territory Lockouts:
+            </span>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              {location.nearbyMarkets.map((nearby) => (
+                <Link
+                  key={nearby.slug}
+                  href={`/locations/${nearby.slug}`}
+                  className="text-xs sm:text-sm bg-[#06101e] border border-slate-700/60 hover:border-brand-lime text-slate-200 hover:text-white px-3.5 py-1.5 rounded-lg transition-colors font-medium"
+                >
+                  {nearby.name} →
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Back Link to Hub */}

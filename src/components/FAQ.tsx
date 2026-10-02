@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 
@@ -10,24 +11,36 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How quickly until my phone starts ringing?",
-      answer: "Your custom site and instant sq-ft estimator go live within 7 days. Google Map Pack rankings and direct inbound calls from homeowners typically build serious momentum within 30 to 60 days."
+      answer: (
+        <>
+          Your custom site and <a href="#estimator" className="text-brand-lime font-semibold underline decoration-brand-lime/40 hover:text-white transition-colors">instant sq-ft estimator</a> go live within 7 days. Google Map Pack rankings and direct inbound calls from homeowners typically build serious momentum within 30 to 60 days.
+        </>
+      ),
     },
     {
       question: "Why does MultiPro get more calls than traditional marketing agencies?",
-      answer: "Most agencies don't know the difference between diamond-grinding concrete and mopping a floor. They build slow WordPress templates that take 8 seconds to load on mobile. We build custom, ultra-fast sites designed specifically to showcase flake, quartz, and metallic floors — wired to rank #1 on Google Maps and capture homeowner phone numbers."
+      answer: (
+        <>
+          Most agencies don&apos;t know the difference between <a href="https://www.icri.org" target="_blank" rel="noopener noreferrer" className="text-brand-lime font-semibold underline decoration-brand-lime/40 hover:text-white transition-colors">diamond-grinding concrete</a> and mopping a floor. They build slow WordPress templates that take 8 seconds to load on mobile. We build custom, ultra-fast sites designed specifically to showcase flake, quartz, and metallic floors — wired to rank #1 on Google Maps and capture homeowner phone numbers.
+        </>
+      ),
     },
     {
       question: "Are leads shared with other contractors in my city?",
-      answer: "Never. Every phone call, quote request, and calculator estimate goes directly and exclusively to your phone. Zero shared Angi or Thumbtack leads."
+      answer: "Never. Every phone call, quote request, and calculator estimate goes directly and exclusively to your phone. Zero shared Angi or Thumbtack leads.",
     },
     {
       question: "Am I locked into a long-term contract?",
-      answer: "No. We don't believe in holding contractors hostage. We earn your business month-to-month by keeping your grinders running and showing clear ranking proof."
+      answer: "No. We don't believe in holding contractors hostage. We earn your business month-to-month by keeping your grinders running and showing clear ranking proof.",
     },
     {
       question: "Will you work with my local competitors down the street?",
-      answer: "Never. We enforce strict territory lockouts — strictly one coatings contractor per geographic market. Once you partner with us, we lock out your competitors completely."
-    }
+      answer: (
+        <>
+          Never. We enforce <Link href="/locations" className="text-brand-lime font-semibold underline decoration-brand-lime/40 hover:text-white transition-colors">strict territory lockouts</Link> — strictly one coatings contractor per geographic market. Once you partner with us, we lock out your competitors completely.
+        </>
+      ),
+    },
   ];
 
   return (

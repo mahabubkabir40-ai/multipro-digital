@@ -42,8 +42,35 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.multiprodigital.com"),
-  title: "Epoxy Flooring SEO & Marketing Agency | MultiPro Digital",
-  description: "We help epoxy and concrete coating contractors dominate Google Maps, book 3-car garage floors, and scale high-margin commercial jobs with instant price calculators.",
+  title: {
+    default: "Epoxy Flooring SEO & Contractor Websites | MultiPro Digital",
+    template: "%s",
+  },
+  description: "Dominate Google Maps, stop splitting shared leads, and book high-margin 3-car garage jobs. Custom Next.js websites and instant quote calculators for epoxy shops.",
+  alternates: {
+    canonical: "https://www.multiprodigital.com",
+  },
+  openGraph: {
+    title: "Epoxy Flooring SEO & Contractor Websites | MultiPro Digital",
+    description: "Dominate Google Maps, stop splitting shared leads, and book high-margin 3-car garage jobs. Custom Next.js websites and instant quote calculators for epoxy shops.",
+    url: "https://www.multiprodigital.com",
+    siteName: "MultiPro Digital",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 425,
+        alt: "MultiPro Digital - Epoxy Flooring Marketing and Websites",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Epoxy Flooring SEO & Contractor Websites | MultiPro Digital",
+    description: "Dominate Google Maps, stop splitting shared leads, and book high-margin 3-car garage jobs. Custom Next.js websites and instant quote calculators for epoxy shops.",
+    images: ["/logo.png"],
+  },
 };
 
 

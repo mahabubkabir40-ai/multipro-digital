@@ -14,10 +14,13 @@ export interface LocationData {
   garageType: string;
   sqftRate: string;
   suburbs: string[];
+  nearbyMarkets: { name: string; slug: string }[];
   climateAndSlabProfile: {
     slabChallenge: string;
     prepRequirement: string;
     coatingRecommendation: string;
+    externalAuthorityName: string;
+    externalAuthorityUrl: string;
   };
   marketPainPoints: string[];
   growthPillars: {
@@ -33,8 +36,8 @@ export const LOCATIONS: Record<string, LocationData> = {
     state: 'TX',
     stateFullName: 'Texas',
     region: 'North Texas',
-    metaTitle: 'Epoxy Contractor Marketing in Dallas–Fort Worth, TX | MultiPro Digital',
-    metaDescription: 'Exclusive 1-shop territory lockout for Dallas–Fort Worth epoxy & garage coating contractors. Dominate Google Maps, stop buying shared leads, and book high-margin 3-car garages.',
+    metaTitle: 'Epoxy Contractor Marketing in Dallas–Fort Worth | MultiPro',
+    metaDescription: 'Exclusive 1-shop lockout for DFW epoxy contractors. Dominate Google Maps, stop buying shared leads, and book high-margin 3-car garages across North Texas.',
     headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Dallas–Fort Worth',
     subheadline: 'Stop splitting $95 Angi leads with four other shops while your grinder sits in the trailer. We help one premier Dallas–Fort Worth coating contractor own the top 3 spots on Google Maps and capture exclusive 3-car garage inquiries.',
     territoryStatus: 'OPEN',
@@ -43,10 +46,17 @@ export const LOCATIONS: Record<string, LocationData> = {
     garageType: 'High-density 3-car & 4-car custom garages',
     sqftRate: '$5.50 – $7.50 / sq ft',
     suburbs: ['Plano', 'Frisco', 'McKinney', 'Southlake', 'Allen', 'Prosper', 'Highland Park', 'Arlington', 'Fort Worth', 'Rockwall'],
+    nearbyMarkets: [
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
+      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
+    ],
     climateAndSlabProfile: {
       slabChallenge: 'North Texas expansive black clay soil causes chronic foundation slab shifting, hairline settling cracks, and spalling along stem walls.',
-      prepRequirement: 'Rigid diamond grinding to CSP 2–3 profile, full polyurea crack mending, and moisture vapor testing before primer rollout.',
+      prepRequirement: 'Rigid diamond grinding to CSP 2–3 profile per ICRI technical guidelines, full polyurea crack mending, and moisture vapor testing before primer rollout.',
       coatingRecommendation: 'Deep-penetrating 100% solids epoxy moisture-barrier basecoat with full broadcast flake and dual-component aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
     },
     marketPainPoints: [
       'Overpaying for shared Angi and HomeAdvisor leads where 4 other contractors fight in a race to the bottom.',
@@ -77,7 +87,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     stateFullName: 'Texas',
     region: 'Gulf Coast Texas',
     metaTitle: 'Epoxy Contractor Marketing in Houston, TX | MultiPro Digital',
-    metaDescription: 'Exclusive 1-shop territory lockout for Houston epoxy & concrete coating contractors. Own Google Maps, filter out cheap price shoppers, and capture exclusive garage jobs.',
+    metaDescription: 'Exclusive 1-shop lockout for Houston epoxy & concrete coating shops. Own Google Maps in Katy & The Woodlands and book premium moisture-barrier garage floors.',
     headline: 'Own the Top 3 Google Maps Spots & Lock Out Competing Coating Shops in Houston',
     subheadline: 'Stop fighting four other contractors for the same recycled phone number across Harris and Montgomery County. We partner with one elite Houston epoxy contractor to lock out the local market.',
     territoryStatus: 'OPEN',
@@ -86,10 +96,17 @@ export const LOCATIONS: Record<string, LocationData> = {
     garageType: 'Suburban 2-car & 3-car detached garages & workshops',
     sqftRate: '$5.25 – $7.25 / sq ft',
     suburbs: ['The Woodlands', 'Katy', 'Cypress', 'Sugar Land', 'Pearland', 'Spring', 'Memorial', 'Friendswood', 'Conroe'],
+    nearbyMarkets: [
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
+      { name: 'Tampa–St. Pete, FL', slug: 'tampa-epoxy-contractor-marketing' },
+    ],
     climateAndSlabProfile: {
       slabChallenge: 'Subtropical Gulf Coast humidity and shallow coastal water tables create severe hydrostatic head pressure and moisture vapor transmission (MVT) through garage slabs.',
-      prepRequirement: 'Heavy shot-blasting or planetary diamond grinding, mandatory moisture calcium chloride testing, and full oil-stain decontaminating.',
+      prepRequirement: 'Heavy planetary diamond grinding, mandatory ASTM F1869 calcium chloride moisture testing, and deep-pore degreasing.',
       coatingRecommendation: 'Moisture-blocking epoxy vapor barrier rated up to 15 lbs MVT, followed by full vinyl flake broadcast and high-solids polyaspartic protective clear coat.',
+      externalAuthorityName: 'ASTM F1869 Moisture Test Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
     },
     marketPainPoints: [
       'Burning hours sitting on I-10 or the Grand Parkway to give free quotes to homeowners who ghost after hearing real epoxy costs.',
@@ -120,7 +137,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     stateFullName: 'Arizona',
     region: 'Valley of the Sun',
     metaTitle: 'Epoxy Contractor Marketing in Phoenix, AZ | MultiPro Digital',
-    metaDescription: 'Exclusive 1-contractor territory lockout for Phoenix epoxy & concrete coating shops. Rank #1 on Google Maps, eliminate tire-kickers, and book premium garage floors.',
+    metaDescription: 'Exclusive territory lockout for Phoenix epoxy shops. Rank #1 on Google Maps in Scottsdale & Gilbert, filter out cheap callers, and book luxury garage floors.',
     headline: 'Rank #1 on Google Maps & Lock Out Competing Coating Crews in Phoenix',
     subheadline: 'Phoenix is a year-round concrete coating powerhouse, but competing with low-ball DIY roll-on kits kills your margins. We lock out the Phoenix market for one premier coating business.',
     territoryStatus: 'OPEN',
@@ -129,10 +146,17 @@ export const LOCATIONS: Record<string, LocationData> = {
     garageType: 'Expansive 3-car & RV-height garage bays',
     sqftRate: '$5.50 – $7.75 / sq ft',
     suburbs: ['Scottsdale', 'Gilbert', 'Chandler', 'Mesa', 'Peoria', 'Glendale', 'Paradise Valley', 'Queen Creek', 'Cave Creek'],
+    nearbyMarkets: [
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+    ],
     climateAndSlabProfile: {
       slabChallenge: 'Searing desert sun and 115°F summer garage slab temperatures accelerate flash-cure times, while thermal expansion causes severe transverse slab cracking.',
-      prepRequirement: 'Aggressive mechanical diamond grinding to expose open capillaries, full flexible polyurea crack routing and repair, and rapid chemical pot-life management.',
+      prepRequirement: 'Aggressive mechanical diamond grinding to open capillary pores, full flexible polyurea crack routing, and pot-life management per AMPP coating standards.',
       coatingRecommendation: 'UV-stable, hot-tire resistant aliphatic polyaspartic topcoat with 100% UV inhibitors to protect against relentless Arizona sunlight and heat transfer.',
+      externalAuthorityName: 'AMPP Concrete Protection Standards',
+      externalAuthorityUrl: 'https://www.ampp.org',
     },
     marketPainPoints: [
       'Low-ball painters telling homeowners they can roll garage floors for $1,200 with big-box store paint kits.',
@@ -162,8 +186,8 @@ export const LOCATIONS: Record<string, LocationData> = {
     state: 'FL',
     stateFullName: 'Florida',
     region: 'Central Florida Gulf Coast',
-    metaTitle: 'Epoxy Contractor Marketing in Tampa–St. Pete, FL | MultiPro Digital',
-    metaDescription: 'Exclusive 1-shop territory lockout for Tampa–St. Petersburg epoxy & garage coating contractors. Dominate Google Maps and capture exclusive high-ticket coating jobs.',
+    metaTitle: 'Epoxy Contractor Marketing in Tampa–St. Pete | MultiPro',
+    metaDescription: 'Exclusive territory lockout for Tampa–St. Petersburg epoxy contractors. Dominate Google Maps in Clearwater & Lakewood Ranch without paying for shared leads.',
     headline: 'Lock Out the Tampa–St. Petersburg Market & Dominate Local Search',
     subheadline: 'Florida homeowners are spending thousands upgrading their garages and lanais. Stop paying for shared leads that 4 other companies are calling at the same minute. We partner with strictly one Tampa coating contractor.',
     territoryStatus: 'OPEN',
@@ -172,10 +196,17 @@ export const LOCATIONS: Record<string, LocationData> = {
     garageType: 'Residential 2-car & 3-car garages plus pool decks & lanais',
     sqftRate: '$5.50 – $7.50 / sq ft',
     suburbs: ['Clearwater', 'St. Petersburg', 'Brandon', 'Wesley Chapel', 'Riverview', 'Lakewood Ranch', 'Sarasota', 'Palm Harbor'],
+    nearbyMarkets: [
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
+    ],
     climateAndSlabProfile: {
       slabChallenge: 'Sandy coastal ground and sea-level water tables create intense hydrostatic pressure and efflorescence that blow unprimed epoxy clean off the concrete.',
-      prepRequirement: 'Diamond profiling with heavy dust extraction, comprehensive slab moisture moisture testing, and deep concrete degreasing.',
+      prepRequirement: 'Diamond profiling with heavy dust extraction, comprehensive slab moisture testing per ASTM F2170, and deep concrete degreasing.',
       coatingRecommendation: 'Deep-penetrating moisture-stop epoxy primer rated for high vapor emissions, topped with 100% full broadcast vinyl flake and chemical-resistant polyaspartic.',
+      externalAuthorityName: 'ASTM F2170 Relative Humidity Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
     },
     marketPainPoints: [
       'Homeowners shopping around with 5 contractors because shared lead brokers sold their number to everyone in Hillsborough and Pinellas county.',
@@ -206,7 +237,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     stateFullName: 'Texas',
     region: 'Central Texas Hill Country',
     metaTitle: 'Epoxy Contractor Marketing in Austin, TX | MultiPro Digital',
-    metaDescription: 'Exclusive 1-contractor territory lockout for Austin epoxy & concrete coating contractors. Own Google Maps and book high-margin 3-car garage and metallic floors.',
+    metaDescription: 'Exclusive 1-contractor lockout for Austin epoxy shops. Own Google Maps in Round Rock & Lakeway, book luxury metallic floors, and filter cheap price shoppers.',
     headline: 'Own Google Maps & Lock Out Competing Epoxy Shops Across Austin',
     subheadline: 'Austin has some of the highest-value garage spaces in the country, with affluent homeowners wanting luxury flake and metallic finishes. We partner with strictly one Austin contractor to lock out the local market.',
     territoryStatus: 'OPEN',
@@ -215,10 +246,17 @@ export const LOCATIONS: Record<string, LocationData> = {
     garageType: 'Modern 3-car & 4-car garages, home gyms & metallic workshops',
     sqftRate: '$6.00 – $8.50 / sq ft',
     suburbs: ['Round Rock', 'Georgetown', 'Lakeway', 'Westlake Hills', 'Cedar Park', 'Bee Cave', 'Dripping Springs', 'Buda'],
+    nearbyMarkets: [
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
+    ],
     climateAndSlabProfile: {
       slabChallenge: 'Hill Country limestone bedrock and shifting karst formations cause uneven slab settlement, stress fractures, and varying concrete hardness (soft chalky patches to hard aggregate).',
-      prepRequirement: 'Segmented diamond tooling calibrated to local aggregate hardness, structural crack stitching, and precision joint cleanout.',
+      prepRequirement: 'Segmented diamond tooling calibrated to local aggregate hardness, structural crack stitching, and precision joint cleanout per ICRI guidelines.',
       coatingRecommendation: 'High-build industrial epoxy basecoat with full flake broadcast or marbled metallic pigment, sealed with high-solids polyaspartic topcoat.',
+      externalAuthorityName: 'ICRI Concrete Repair Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
     },
     marketPainPoints: [
       'Affluent tech-sector homeowners in Westlake and Lakeway with zero patience for slow, unprofessional contractor websites.',
