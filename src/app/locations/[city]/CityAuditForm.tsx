@@ -45,6 +45,7 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          'City & State': data['City & State'] || defaultCity,
           _ts: mountedTime,
           _subject: `⚡ Territory Audit Request: ${data['Business Name'] || data.Name} (${defaultCity})`,
           source: `location-hero-${defaultCity.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
@@ -134,7 +135,7 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-city"
             type="text"
             name="City & State"
-            defaultValue={defaultCity}
+            placeholder={defaultCity ? `e.g. ${defaultCity}` : 'e.g. Dallas, TX'}
             required
             disabled={isSubmitting}
             className={inputClass}
