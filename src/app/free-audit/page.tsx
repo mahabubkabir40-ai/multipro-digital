@@ -81,8 +81,8 @@ export default function FreeAuditPage() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white leading-tight">
             Get Your Free 60-Second Video Audit
           </h1>
-          <p className="mt-3 sm:mt-4 text-slate-300 font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
-            Not ready to talk? No problem. Fill in the form below and we&apos;ll record a personalized 60-second video showing your Google Map Pack rankings, AI search visibility, mobile load speed, and how to fix it. 100% Free.
+          <p className="mt-3 sm:mt-4 text-slate-300 font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl">
+            Fill in your shop details below. We&apos;ll record a personalized 60-second video breaking down your Google website rankings, Google Map Pack visibility, mobile load speed, and why competitors are getting called first for high-ticket garage jobs in your city. 100% Free.
           </p>
         </div>
 
