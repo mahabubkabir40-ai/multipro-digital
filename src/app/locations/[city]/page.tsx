@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { LOCATIONS, ALL_LOCATION_SLUGS } from '@/config/locations';
 import Portfolio from '@/components/Portfolio';
 import CityAuditForm from './CityAuditForm';
+import CityFaqAccordion from './CityFaqAccordion';
 
 interface PageProps {
   params: Promise<{
@@ -131,6 +132,18 @@ export default async function LocationPage({ params }: PageProps) {
           'Instant Garage Floor Estimator Software',
           'Sub-1.5s High-Speed Showroom Websites',
         ],
+      },
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        mainEntity: location.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.answer,
+          },
+        })),
       },
     ],
   };
@@ -331,6 +344,11 @@ export default async function LocationPage({ params }: PageProps) {
       {/* Undeniable Proof Section: Real Map Pack Domination & Keyword Wins */}
       <div className="my-16">
         <Portfolio />
+      </div>
+
+      {/* Regional FAQ Section */}
+      <div className="my-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <CityFaqAccordion city={location.city} faqs={location.faqs} />
       </div>
 
       {/* Closing CTA & Back Link Container */}

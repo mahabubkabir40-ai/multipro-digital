@@ -27,6 +27,10 @@ export interface LocationData {
     title: string;
     description: string;
   }[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export const LOCATIONS: Record<string, LocationData> = {
@@ -76,6 +80,24 @@ export const LOCATIONS: Record<string, LocationData> = {
       {
         title: 'Sub-1.5s High-Speed Showroom Portfolio',
         description: 'Loads crystal-clear full broadcast flake and metallic transformations instantly on any iPhone, ensuring affluent homeowners never bounce to a competitor.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Will MultiPro work with any other epoxy coating shop in DFW?',
+        answer: 'Never. We enforce a strict 1-contractor territory lockout across Dallas, Tarrant, Collin, and Denton counties. Once you partner with us, your competitors in Plano, Frisco, Fort Worth, and Southlake are completely locked out.',
+      },
+      {
+        question: 'How does your system stop DFW contractors from burning fuel on cheap tire-kickers?',
+        answer: 'Our instant sq-ft price estimator lets homeowners in high-wealth suburbs enter their 3-car garage dimensions and view realistic commercial pricing ($5.50–$7.50/sq ft) upfront. You never burn diesel sitting in I-35 or 635 traffic to quote someone expecting a $300 Home Depot paint kit.',
+      },
+      {
+        question: 'Why is localized prep messaging critical for Dallas–Fort Worth concrete slabs?',
+        answer: 'North Texas expansive black clay causes chronic foundation movement and hairline settling cracks along stem walls. We position your shop around ICRI CSP 2–3 mechanical diamond grinding and polyurea crack repair, easily commanding $5,200 to $7,800 tickets over painters who roll over unground concrete.',
+      },
+      {
+        question: 'How fast does territory lockout and ranking momentum take effect in DFW?',
+        answer: 'Territory lockout is immediate upon partnership. Your custom site and instant estimator launch within 7 days, and Google Map Pack rankings build strong momentum within 30 to 60 days.',
       },
     ],
   },
@@ -128,6 +150,24 @@ export const LOCATIONS: Record<string, LocationData> = {
         description: 'Shows crisp garage transformations in under 1.5 seconds so mobile shoppers see your clean stem walls and flake coverage with zero lag.',
       },
     ],
+    faqs: [
+      {
+        question: 'Will you take on multiple coating contractors in the Houston metro?',
+        answer: 'Strictly one shop. We lock out the entire Houston metro—including Harris, Montgomery, and Fort Bend counties. We will never split leads or take on a second crew in The Woodlands, Katy, Cypress, or Pearland.',
+      },
+      {
+        question: 'How does your marketing address Houston’s severe slab moisture issues?',
+        answer: 'Subtropical Gulf Coast humidity and shallow water tables create extreme moisture vapor transmission (MVT). We market your crew as concrete experts who perform ASTM F1869 calcium chloride moisture testing and install 15-lb vapor barrier primers, winning $5,000–$7,500 jobs over fly-by-night crews whose coatings blister and peel.',
+      },
+      {
+        question: 'Can your system capture high-margin 3-car garage jobs in The Woodlands and Katy?',
+        answer: 'Yes. We optimize your Google Business Profile and local geo-pins to capture direct calls in affluent master-planned communities where homeowners invest in premium full flake and metallic garage finishes.',
+      },
+      {
+        question: 'Do Houston leads get shared with Angi or Thumbtack competitors?',
+        answer: 'Never. Every phone call, calculator estimate, and moisture-test request goes directly and exclusively to your shop’s phone.',
+      },
+    ],
   },
 
   'phoenix-epoxy-contractor-marketing': {
@@ -176,6 +216,24 @@ export const LOCATIONS: Record<string, LocationData> = {
       {
         title: 'Sub-1.5s Showroom Speed for Luxury Floors',
         description: 'Displays brilliant high-gloss metallic and full flake garages with instant mobile loading speed on all smartphones.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is the Phoenix market strictly exclusive to one coating business?',
+        answer: 'Yes. Strictly one coating contractor for the entire Valley of the Sun, including Scottsdale, Gilbert, Chandler, Mesa, and Paradise Valley.',
+      },
+      {
+        question: 'How do we stand out against Phoenix painters rolling cheap 1-day kits?',
+        answer: 'We educate affluent Valley homeowners through your sub-1.5s mobile showroom and instant pricing tool on the vast difference between commercial diamond profiling with aliphatic polyaspartics versus cheap DIY roll-on kits that hot-tire pickup in 115°F heat.',
+      },
+      {
+        question: 'How does your marketing handle Phoenix’s extreme summer slab temperatures?',
+        answer: 'We highlight your AMPP-compliant prep standards, pot-life management, and UV-stable polyaspartic formulations designed specifically to withstand relentless Arizona sun and thermal slab expansion.',
+      },
+      {
+        question: 'What typical garage sizes and ticket values do you target across Phoenix?',
+        answer: 'We focus heavily on expansive 3-car garages, RV-height bays, and custom workshops throughout Scottsdale, Queen Creek, and Gilbert, driving average project tickets between $5,000 and $8,200.',
       },
     ],
   },
@@ -228,6 +286,24 @@ export const LOCATIONS: Record<string, LocationData> = {
         description: 'Displays full flake floor transformations and stem wall details smoothly and instantly on mobile phones with zero lag.',
       },
     ],
+    faqs: [
+      {
+        question: 'Are Tampa Bay garage and lanai leads exclusive to our shop?',
+        answer: '100% exclusive. Zero shared leads. When a homeowner in Clearwater, St. Petersburg, or Lakewood Ranch requests a quote, it rings your cell phone only.',
+      },
+      {
+        question: 'How does your site position our shop against coastal Florida slab moisture?',
+        answer: 'Tampa’s sandy ground and sea-level water table create intense hydrostatic pressure and efflorescence. We position your crew around ASTM F2170 relative humidity testing and deep-penetrating moisture-stop primers so homeowners trust your warranty over cheap roll-and-go painters.',
+      },
+      {
+        question: 'Can the system capture pool decks and lanais in addition to garages?',
+        answer: 'Yes. Our instant estimator and showroom galleries feature exterior pool decks, lanais, and patios alongside residential 2-car and 3-car garage floors.',
+      },
+      {
+        question: 'What suburbs in the Tampa Bay area are included in the territory lockout?',
+        answer: 'We lock out Clearwater, St. Petersburg, Lakewood Ranch, Sarasota, Brandon, Riverview, Palm Harbor, and Wesley Chapel.',
+      },
+    ],
   },
 
   'austin-epoxy-contractor-marketing': {
@@ -276,6 +352,24 @@ export const LOCATIONS: Record<string, LocationData> = {
       {
         title: 'Lightning-Fast Mobile Showroom',
         description: 'Sub-1.5s loading speed displays your cleanest metallic and full-flake garage transformations instantly on high-resolution iPhones.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Austin strictly locked out for one concrete coating contractor?',
+        answer: 'Yes. Strictly one partner across Travis, Williamson, and Hays counties. Once locked, we reject all competing coating shops in Austin, Round Rock, and Lakeway.',
+      },
+      {
+        question: 'How do you capture high-ticket 3-car garage and metallic jobs in Austin?',
+        answer: 'Tech-sector homeowners in Westlake Hills and Lakeway demand speed and modern design. Our sub-1.5s site displays crystal-clear metallic samples and lets homeowners calculate estimates in seconds without waiting for awkward callback games.',
+      },
+      {
+        question: 'Why do Austin slabs require localized concrete prep messaging?',
+        answer: 'Hill Country limestone bedrock causes uneven slab settlement and varying concrete hardness. We position your crew around ICRI structural crack stitching and segmented diamond tooling, justifying premium $6.00 to $8.50/sq ft rates.',
+      },
+      {
+        question: 'Do I have to sign a long-term contract to lock out Austin?',
+        answer: 'No. We operate strictly month-to-month. We protect your territory and earn your business every 30 days through ranking proof and filled calendars.',
       },
     ],
   },
