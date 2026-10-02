@@ -3,41 +3,47 @@ import { ALL_LOCATION_SLUGS } from '@/config/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.multiprodigital.com';
+  const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 1.0,
+      images: [`${baseUrl}/logo.png`],
     },
     {
       url: `${baseUrl}/free-audit`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
+      images: [`${baseUrl}/logo.png`],
     },
     {
       url: `${baseUrl}/locations`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
+      images: [`${baseUrl}/logo.png`],
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
+      images: [`${baseUrl}/logo.png`],
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
+      images: [`${baseUrl}/logo.png`],
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
@@ -45,9 +51,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationRoutes: MetadataRoute.Sitemap = ALL_LOCATION_SLUGS.map((slug) => ({
     url: `${baseUrl}/locations/${slug}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: 'weekly',
     priority: 0.85,
+    images: [`${baseUrl}/logo.png`],
   }));
 
   return [...staticRoutes, ...locationRoutes];

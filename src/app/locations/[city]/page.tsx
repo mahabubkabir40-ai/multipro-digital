@@ -51,6 +51,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: location.metaTitle,
+      description: location.metaDescription,
+      images: ['/logo.png'],
+    },
   };
 }
 
@@ -62,26 +68,70 @@ export default async function LocationPage({ params }: PageProps) {
     notFound();
   }
 
+  const pageUrl = `https://www.multiprodigital.com/locations/${location.slug}`;
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: `MultiPro Digital - ${location.city} Epoxy Marketing`,
-    description: location.metaDescription,
-    url: `https://www.multiprodigital.com/locations/${location.slug}`,
-    telephone: '+1-888-530-5080',
-    areaServed: {
-      '@type': 'City',
-      name: location.city,
-      containedInPlace: {
-        '@type': 'State',
-        name: location.stateFullName,
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.multiprodigital.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Territories & Locations',
+            item: 'https://www.multiprodigital.com/locations',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: `${location.city}, ${location.state}`,
+            item: pageUrl,
+          },
+        ],
       },
-    },
-    serviceType: [
-      'Epoxy Flooring Contractor Marketing',
-      'Google Maps 3-Pack Optimization for Concrete Coating Shops',
-      'Instant Garage Floor Estimator Software',
-      'Sub-1.5s High-Speed Showroom Websites',
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: location.metaTitle,
+        description: location.metaDescription,
+        isPartOf: {
+          '@id': 'https://www.multiprodigital.com/#website',
+        },
+        breadcrumb: {
+          '@id': `${pageUrl}#breadcrumb`,
+        },
+      },
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${pageUrl}#service`,
+        name: `MultiPro Digital - ${location.city} Epoxy Marketing`,
+        description: location.metaDescription,
+        url: pageUrl,
+        telephone: '+1-888-530-5080',
+        areaServed: {
+          '@type': 'City',
+          name: location.city,
+          containedInPlace: {
+            '@type': 'State',
+            name: location.stateFullName,
+          },
+        },
+        serviceType: [
+          'Epoxy Flooring Contractor Marketing',
+          'Google Maps 3-Pack Optimization for Concrete Coating Shops',
+          'Instant Garage Floor Estimator Software',
+          'Sub-1.5s High-Speed Showroom Websites',
+        ],
+      },
     ],
   };
 

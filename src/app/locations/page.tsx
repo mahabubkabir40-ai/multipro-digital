@@ -15,27 +15,59 @@ export const metadata: Metadata = {
     url: 'https://www.multiprodigital.com/locations',
     siteName: 'MultiPro Digital',
     type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 425,
+        alt: 'MultiPro Digital - Contractor Territories and Locations',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Exclusive Territories & Service Areas | MultiPro Digital',
+    description: 'View active territory lockouts for epoxy and concrete coating contractors across major US markets. We partner with strictly one coating crew per metro area.',
+    images: ['/logo.png'],
   },
 };
 
 export default function LocationsHubPage() {
   const locationList = Object.values(LOCATIONS);
 
-  const breadcrumbSchema = {
+  const hubSchema = {
     '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
+    '@graph': [
       {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://www.multiprodigital.com',
+        '@type': 'BreadcrumbList',
+        '@id': 'https://www.multiprodigital.com/locations#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.multiprodigital.com',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Territories & Locations',
+            item: 'https://www.multiprodigital.com/locations',
+          },
+        ],
       },
       {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Territories & Locations',
-        item: 'https://www.multiprodigital.com/locations',
+        '@type': 'CollectionPage',
+        '@id': 'https://www.multiprodigital.com/locations#webpage',
+        url: 'https://www.multiprodigital.com/locations',
+        name: 'Exclusive Territories & Service Areas | MultiPro Digital',
+        description: 'Directory of available and locked market territories for concrete coating contractors across the United States.',
+        isPartOf: {
+          '@id': 'https://www.multiprodigital.com/#website',
+        },
+        breadcrumb: {
+          '@id': 'https://www.multiprodigital.com/locations#breadcrumb',
+        },
       },
     ],
   };
@@ -45,7 +77,7 @@ export default function LocationsHubPage() {
       {/* Schema Injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hubSchema) }}
       />
 
       {/* Background Ambience Glows */}

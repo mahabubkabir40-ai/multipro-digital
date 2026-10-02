@@ -69,6 +69,13 @@ export default function ContactPage() {
             
             {/* Left Column - Copy & Trust Building */}
             <div className="max-w-xl">
+              {/* Breadcrumb Navigation */}
+              <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
+                <Link href="/" className="hover:text-brand-lime transition-colors">Home</Link>
+                <span>/</span>
+                <span className="text-white font-medium">Contact</span>
+              </nav>
+
               <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/20 bg-brand-lime/5 text-brand-lime font-bold tracking-widest uppercase text-xs mb-6">
                 ⚡ 100% Free Consultation • Territory Lock
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function FreeAuditPage() {
@@ -76,6 +77,13 @@ export default function FreeAuditPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
+          <Link href="/" className="hover:text-brand-lime transition-colors">Home</Link>
+          <span>/</span>
+          <span className="text-white font-medium">Free Video Audit</span>
+        </nav>
+
         {/* Header with Lime Accent Bar */}
         <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-8 sm:mb-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white leading-tight">

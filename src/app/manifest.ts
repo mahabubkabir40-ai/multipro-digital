@@ -1,11 +1,10 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Multipro Digital | Epoxy Growth Systems',
-    short_name: 'MultiproDigital',
-
-    description: 'Specialized Growth Systems & Local SEO for Epoxy Coating Contractors',
+    name: 'MultiPro Digital | Epoxy Flooring SEO & Contractor Websites',
+    short_name: 'MultiPro Digital',
+    description: 'Specialized SEO, Google Map Pack rankings, and high-performance websites for epoxy and concrete coating contractors.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0b1f38',
@@ -17,5 +16,5 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/png',
       },
     ],
-  }
+  };
 }

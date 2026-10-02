@@ -8,14 +8,45 @@ export const metadata = {
   },
 };
 
+const privacySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.multiprodigital.com',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Privacy Policy',
+      item: 'https://www.multiprodigital.com/privacy-policy',
+    },
+  ],
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-slate-950 flex flex-col">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+      />
 
       {/* Page Header */}
       <section className="pt-36 md:pt-48 pb-16 bg-[#0b1f38] relative overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1A365D] via-[#0b1f38] to-[#0b1f38] opacity-60" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="mb-6 flex items-center justify-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
+            <Link href="/" className="hover:text-brand-lime transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white font-medium">Privacy Policy</span>
+          </nav>
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white mb-4">
             Privacy Policy
           </h1>

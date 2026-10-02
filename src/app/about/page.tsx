@@ -15,7 +15,58 @@ export const metadata = {
     url: 'https://www.multiprodigital.com/about',
     siteName: 'MultiPro Digital',
     type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 425,
+        alt: 'MultiPro Digital - Epoxy Contractor Marketing Agency',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About MultiPro Digital | Epoxy Contractor Marketing Agency',
+    description: 'We build exclusively for epoxy & concrete coating contractors. Custom Next.js websites, instant price estimators, and Google Maps ranking systems that book floors.',
+    images: ['/logo.png'],
+  },
+};
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.multiprodigital.com/about#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://www.multiprodigital.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'About Us',
+          item: 'https://www.multiprodigital.com/about',
+        },
+      ],
+    },
+    {
+      '@type': 'AboutPage',
+      '@id': 'https://www.multiprodigital.com/about#webpage',
+      url: 'https://www.multiprodigital.com/about',
+      name: 'About MultiPro Digital | Epoxy Contractor Marketing Agency',
+      description: 'Learn how MultiPro Digital helps independent epoxy & concrete coating contractors book high-margin 3-car garage floors.',
+      isPartOf: {
+        '@id': 'https://www.multiprodigital.com/#website',
+      },
+      breadcrumb: {
+        '@id': 'https://www.multiprodigital.com/about#breadcrumb',
+      },
+    },
+  ],
 };
 
 export default function AboutPage() {
@@ -28,6 +79,12 @@ export default function AboutPage() {
 
   return (
     <main className="flex-grow">
+      {/* Schema Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="relative pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden bg-[#0a192f]">
         {/* Premium Dark Gradient Backdrop */}
@@ -38,6 +95,13 @@ export default function AboutPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="mb-8 flex items-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
+            <Link href="/" className="hover:text-brand-lime transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white font-medium">About Us</span>
+          </nav>
+
           <div className="max-w-3xl">
             <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs mb-8">
               Our Vision
