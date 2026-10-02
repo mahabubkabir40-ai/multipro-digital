@@ -252,29 +252,6 @@ export default function FreeAuditPage() {
           )}
         </div>
 
-        {/* BOTTOM SECTION: Secondary Direct Strategy Call Option */}
-        <div className="mt-20 pt-16 border-t border-white/10">
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-serif text-white font-bold mb-3">
-              Prefer To Speak Directly on a 15-Minute Strategy Call?
-            </h2>
-            <p className="text-blue-100/70 text-sm sm:text-base">
-              If you need immediate territory lockout or want to review your market numbers live, you can book directly into our calendar below.
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl overflow-hidden shadow-2xl h-[580px] border-[4px] border-white/10">
-            <iframe 
-              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3Igc3C-U9tp7AKTpLeRVHI8x0ef-WovC1qnds_oFFQvDuRt3bRTQoFF2qLwI-U2gxKjG8d5O3G?gv=true" 
-              style={{ border: 0 }} 
-              width="100%" 
-              height="100%" 
-              title="Google Calendar Booking"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
       </div>
     </div>
   );
