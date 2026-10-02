@@ -97,8 +97,8 @@ export default async function LocationPage({ params }: PageProps) {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Top Content Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero Section Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center space-x-2 text-xs sm:text-sm text-blue-200/60 font-sans">
@@ -109,72 +109,89 @@ export default async function LocationPage({ params }: PageProps) {
           <span className="text-white font-medium">{location.city}, {location.state}</span>
         </nav>
 
-        {/* Territory Status Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-lime/40 bg-brand-lime/10 text-brand-lime font-bold tracking-wider uppercase text-xs mb-6 shadow-sm">
-          <span className="w-2.5 h-2.5 rounded-full bg-brand-lime animate-pulse" />
-          <span>{location.city} Territory: {location.territoryStatus} • Strictly 1 Shop Locked Out</span>
-        </div>
+        {/* 2-COLUMN HERO SECTION: Story & Local Context on Left, Audit Form on Right */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-20">
+          
+          {/* Left Column: Narrative, Suburbs & Local Snapshot */}
+          <div className="lg:col-span-7">
+            {/* Territory Status Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-lime/40 bg-brand-lime/10 text-brand-lime font-bold tracking-wider uppercase text-xs mb-6 shadow-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-brand-lime animate-pulse" />
+              <span>{location.city} Territory: {location.territoryStatus} • Strictly 1 Shop Locked Out</span>
+            </div>
 
-        {/* Hero Section */}
-        <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black text-white leading-tight">
-            {location.headline}
-          </h1>
-          <p className="mt-4 text-slate-300 font-sans text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl">
-            {location.subheadline}
-          </p>
-        </div>
+            {/* Headline & Subheadline */}
+            <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white leading-tight">
+                {location.headline}
+              </h1>
+              <p className="mt-4 text-slate-300 font-sans text-base sm:text-lg leading-relaxed">
+                {location.subheadline}
+              </p>
+            </div>
 
-        {/* Local Market Snapshot Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-4 sm:p-5 text-center">
-            <span className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1">Average Ticket</span>
-            <span className="text-lg sm:text-2xl font-black text-brand-lime">{location.avgTicket}</span>
-            <span className="block text-[11px] text-slate-400 mt-1">Full Broadcast Flake</span>
+            {/* Local Market Snapshot Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+              <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
+                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Average Ticket</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime">{location.avgTicket}</span>
+              </div>
+              <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
+                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Sq-Ft Rate</span>
+                <span className="text-base sm:text-lg font-black text-white">{location.sqftRate}</span>
+              </div>
+              <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
+                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Focus Project</span>
+                <span className="text-xs sm:text-sm font-bold text-white line-clamp-1">3-Car Garages</span>
+              </div>
+              <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
+                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Territory</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime">1 Shop Only</span>
+              </div>
+            </div>
+
+            {/* Suburbs We Lock Out (Clean badges, no pin emoji) */}
+            <div className="bg-[#0c182b]/70 border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-md">
+              <h2 className="text-xs uppercase tracking-widest font-black text-brand-lime mb-3">
+                Suburbs &amp; Service Communities We Lock Out In {location.city}:
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {location.suburbs.map((suburb) => (
+                  <span
+                    key={suburb}
+                    className="bg-[#06101e] border border-slate-700/60 text-slate-200 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg"
+                  >
+                    {suburb}
+                  </span>
+                ))}
+              </div>
+              <p className="text-xs text-slate-400 mt-3 font-sans">
+                When homeowners across these communities search Google Maps for commercial coatings, our system ensures your business appears in the top 3.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-4 sm:p-5 text-center">
-            <span className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1">Sq-Ft Rate Range</span>
-            <span className="text-lg sm:text-2xl font-black text-white">{location.sqftRate}</span>
-            <span className="block text-[11px] text-slate-400 mt-1">{location.region} Market</span>
+          {/* Right Column: Hero Form Card */}
+          <div id="hero-claim-form" className="lg:col-span-5 w-full scroll-mt-28">
+            <div className="bg-[#0c182b] rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-2xl border border-slate-700/60 text-white">
+              <div className="border-l-4 border-brand-lime pl-3.5 mb-5">
+                <h2 className="text-lg sm:text-xl font-serif font-black text-white leading-tight">
+                  Claim the {location.city} Territory
+                </h2>
+                <p className="mt-1 text-slate-300 font-sans text-xs leading-relaxed">
+                  Fill in your shop details below. We&apos;ll record a personalized 60-second video audit showing your Google Map Pack rankings, website speed, and how to dominate {location.city}. 100% Free.
+                </p>
+              </div>
+
+              <CityAuditForm defaultCity={`${location.city}, ${location.state}`} />
+            </div>
           </div>
 
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-4 sm:p-5 text-center">
-            <span className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1">Typical Project</span>
-            <span className="text-sm sm:text-base font-bold text-white line-clamp-1 sm:line-clamp-none">{location.garageType}</span>
-            <span className="block text-[11px] text-slate-400 mt-1">Residential &amp; Commercial</span>
-          </div>
-
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-4 sm:p-5 text-center">
-            <span className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1">Territory Policy</span>
-            <span className="text-lg sm:text-2xl font-black text-brand-lime">1 Shop Only</span>
-            <span className="block text-[11px] text-slate-400 mt-1">Zero Competitor Sharing</span>
-          </div>
-        </div>
-
-        {/* Local High-Wealth Suburbs We Target (No location symbol) */}
-        <div className="bg-[#0c182b]/70 border border-slate-800 rounded-2xl p-6 sm:p-8 mb-16">
-          <h2 className="text-xs uppercase tracking-widest font-black text-brand-lime mb-3">
-            Suburbs &amp; Service Communities We Lock Out In {location.city}:
-          </h2>
-          <div className="flex flex-wrap gap-2 sm:gap-2.5">
-            {location.suburbs.map((suburb) => (
-              <span
-                key={suburb}
-                className="bg-[#06101e] border border-slate-700/60 text-slate-200 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg"
-              >
-                {suburb}
-              </span>
-            ))}
-          </div>
-          <p className="text-xs text-slate-400 mt-4">
-            When homeowners across these communities search Google Maps for commercial polyaspartic coatings or flake garage floors, our system ensures your business appears in the top 3.
-          </p>
         </div>
 
         {/* Regional Concrete & Slab Profile */}
-        <div className="grid md:grid-cols-2 gap-8 items-start mb-16">
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-3xl p-6 sm:p-8">
+        <div className="grid md:grid-cols-2 gap-8 items-start mb-20">
+          <div className="bg-[#0c182b] border border-slate-700/60 rounded-3xl p-6 sm:p-8 shadow-xl">
             <div className="inline-block px-3 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
               Regional Slab &amp; Climate Profile
             </div>
@@ -200,7 +217,7 @@ export default async function LocationPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="bg-[#0c182b] border border-slate-700/60 rounded-3xl p-6 sm:p-8">
+          <div className="bg-[#0c182b] border border-slate-700/60 rounded-3xl p-6 sm:p-8 shadow-xl">
             <div className="inline-block px-3 py-1 rounded-md bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-4">
               Local Market Friction
             </div>
@@ -232,14 +249,14 @@ export default async function LocationPage({ params }: PageProps) {
 
           <div className="grid md:grid-cols-3 gap-6">
             {location.growthPillars.map((pillar, idx) => (
-              <div key={idx} className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-6 relative">
+              <div key={idx} className="bg-[#0c182b] border border-slate-700/60 rounded-2xl p-6 relative shadow-lg">
                 <span className="text-4xl font-black text-brand-lime/20 absolute top-4 right-4">
                   0{idx + 1}
                 </span>
                 <h3 className="text-lg font-serif font-black text-white mb-2 pr-8">
                   {pillar.title}
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed font-sans">
                   {pillar.description}
                 </p>
               </div>
@@ -254,23 +271,25 @@ export default async function LocationPage({ params }: PageProps) {
         <Portfolio />
       </div>
 
-      {/* Bottom Claim Territory Form Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-[#0c182b] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl border border-slate-700/60">
-          <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black text-white leading-tight">
-              Claim the {location.city} Territory Before Your Competitor Does
-            </h2>
-            <p className="mt-2 text-slate-300 font-sans text-sm sm:text-base max-w-2xl">
-              Fill in your shop details below. We&apos;ll record a personalized 60-second video showing your current Google Map Pack rankings, website speed score, and the exact fixes to dominate {location.city}. 100% Free.
-            </p>
-          </div>
-
-          <CityAuditForm defaultCity={`${location.city}, ${location.state}`} />
+      {/* Closing CTA & Back Link Container */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
+        <div className="bg-[#0c182b] rounded-3xl p-8 sm:p-12 text-center border border-slate-700/60 shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black text-white mb-3">
+            Ready to Lock Out Your Competitors in {location.city}?
+          </h2>
+          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-sans">
+            We partner with strictly one epoxy coating contractor in {location.city}. Check your territory and claim your free audit before another shop locks it down.
+          </p>
+          <a
+            href="#hero-claim-form"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base hover:brightness-105 transition-all shadow-xl select-none"
+          >
+            Claim {location.city} Territory Above ↑
+          </a>
         </div>
 
         {/* Back Link to Hub */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Link
             href="/locations"
             className="inline-flex items-center gap-2 text-sm text-brand-lime hover:text-white font-bold transition-colors"

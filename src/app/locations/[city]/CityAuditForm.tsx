@@ -47,7 +47,7 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
           ...data,
           _ts: mountedTime,
           _subject: `⚡ Territory Audit Request: ${data['Business Name'] || data.Name} (${defaultCity})`,
-          source: `location-page-${defaultCity.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+          source: `location-hero-${defaultCity.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
         }),
       });
 
@@ -69,31 +69,31 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
   };
 
   const inputClass =
-    'w-full bg-[#06101e] border border-slate-700/70 rounded-xl px-4 py-3 sm:py-3.5 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:bg-[#071324] focus:border-[#1da4ff] focus:ring-2 focus:ring-[#1da4ff]/30 transition-all shadow-inner';
-  const labelClass = 'block text-white text-xs sm:text-sm font-bold mb-2';
+    'w-full bg-[#06101e] border border-slate-700/70 rounded-xl px-3.5 py-2.5 sm:py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:bg-[#071324] focus:border-[#1da4ff] focus:ring-2 focus:ring-[#1da4ff]/30 transition-all shadow-inner';
+  const labelClass = 'block text-white text-xs sm:text-sm font-bold mb-1.5';
 
   if (isSuccess) {
     return (
-      <div className="py-16 text-center animate-in fade-in zoom-in duration-500">
-        <div className="w-16 h-16 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
-          <svg className="w-8 h-8 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="py-12 text-center animate-in fade-in zoom-in duration-500">
+        <div className="w-14 h-14 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-3 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
+          <svg className="w-7 h-7 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-serif font-black text-white mb-2">Territory Request Received!</h3>
-        <p className="text-slate-300 text-sm">Redirecting to your confirmation page...</p>
+        <h3 className="text-xl font-serif font-black text-white mb-1.5">Territory Request Received!</h3>
+        <p className="text-slate-300 text-xs sm:text-sm">Redirecting to your confirmation page...</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       {/* Anti-spam honeypots & timing */}
       <input type="hidden" name="_ts" value={mountedTime} />
       <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
       <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         {/* Your Name */}
         <div>
           <label htmlFor="loc-name" className={labelClass}>
@@ -113,13 +113,13 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         {/* Business Name */}
         <div>
           <label htmlFor="loc-business" className={labelClass}>
-            Business Name <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+            Business Name <span className="text-slate-400 font-normal text-xs">(Optional)</span>
           </label>
           <input
             id="loc-business"
             type="text"
             name="Business Name"
-            placeholder="e.g. Apex Epoxy Coatings"
+            placeholder="e.g. Apex Coatings"
             disabled={isSubmitting}
             className={inputClass}
           />
@@ -166,7 +166,7 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-email"
             type="email"
             name="Email"
-            placeholder="john@apexepoxycoatings.com"
+            placeholder="john@apexepoxy.com"
             required
             disabled={isSubmitting}
             className={inputClass}
@@ -176,13 +176,13 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         {/* Website or Google Business Profile */}
         <div>
           <label htmlFor="loc-website" className={labelClass}>
-            Website or Google Business Profile <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+            Website / GBP <span className="text-slate-400 font-normal text-xs">(Optional)</span>
           </label>
           <input
             id="loc-website"
             type="text"
             name="Website or Google Business Profile"
-            placeholder="yoursite.com or Google Maps link"
+            placeholder="yoursite.com or Maps link"
             disabled={isSubmitting}
             className={inputClass}
           />
@@ -191,13 +191,13 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         {/* Your Biggest Challenge */}
         <div className="sm:col-span-2">
           <label htmlFor="loc-challenge" className={labelClass}>
-            Your Biggest Challenge in {defaultCity || 'Your Market'} <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+            Your Biggest Challenge <span className="text-slate-400 font-normal text-xs">(Optional)</span>
           </label>
           <input
             id="loc-challenge"
             type="text"
             name="Your Biggest Challenge"
-            placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
+            placeholder="e.g. Need more 3-car garages, tired of shared Angi leads"
             disabled={isSubmitting}
             className={inputClass}
           />
@@ -205,17 +205,17 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
       </div>
 
       {error && (
-        <div className="p-3.5 rounded-xl bg-red-950/80 text-red-300 text-xs sm:text-sm font-medium border border-red-800/80">
+        <div className="p-3 rounded-xl bg-red-950/80 text-red-300 text-xs font-medium border border-red-800/80">
           {error}
         </div>
       )}
 
       {/* Submit Button */}
-      <div className="sm:col-span-2 pt-3 sm:pt-4 flex justify-center">
+      <div className="pt-2">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="relative group overflow-hidden px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base tracking-wide transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(154,251,22,0.6)] active:scale-95 select-none touch-manipulation disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
+          className="relative group overflow-hidden w-full py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base tracking-wide transition-all duration-300 transform hover:scale-[1.01] hover:shadow-[0_0_35px_rgba(154,251,22,0.6)] active:scale-95 select-none touch-manipulation disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
@@ -235,6 +235,14 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-[800ms] ease-out" />
           )}
         </button>
+      </div>
+
+      <div className="flex items-center justify-center gap-2 pt-1 text-[11px] text-slate-400">
+        <span>🔒 100% Free Video</span>
+        <span>•</span>
+        <span>No Sales Calls</span>
+        <span>•</span>
+        <span>Strictly 1 Partner</span>
       </div>
     </form>
   );
