@@ -84,20 +84,24 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: 'Will MultiPro work with any other epoxy coating shop in DFW?',
-        answer: 'Never. We enforce a strict 1-contractor territory lockout across Dallas, Tarrant, Collin, and Denton counties. Once you partner with us, your competitors in Plano, Frisco, Fort Worth, and Southlake are completely locked out.',
+        question: "I've been burned by SEO agencies that took $1,500/month and delivered zero garage jobs. How is MultiPro different?",
+        answer: "Most marketing agencies are generalists who have never set foot on a job site. They build slow WordPress templates, write generic blogs about 'interior painting', and don't know the difference between an ICRI CSP 2 diamond grind and a $300 big-box epoxy kit. MultiPro works exclusively with concrete coating contractors. We build sub-1.5s mobile showrooms with live garage pricing calculators, optimize your Google Business Profile specifically for high-intent searches like 'garage floor epoxy Dallas' and 'polyaspartic coating Fort Worth', and enforce a strict 1-contractor lockout so we never work with your local competitors.",
       },
       {
-        question: 'How does your system stop DFW contractors from burning fuel on cheap tire-kickers?',
-        answer: 'Our instant sq-ft price estimator lets homeowners in high-wealth suburbs enter their 3-car garage dimensions and view realistic commercial pricing ($5.50–$7.50/sq ft) upfront. You never burn diesel sitting in I-35 or 635 traffic to quote someone expecting a $300 Home Depot paint kit.',
+        question: "Are the phone calls and estimates 100% exclusive to my shop, or do you resell them across DFW like Angi?",
+        answer: "100% exclusive to your business. Angi, Thumbtack, and HomeAdvisor sell the exact same shared lead to 4 or 5 hungry contractors at $90 a pop, forcing you into an immediate race to the bottom. With MultiPro, every phone call, website quote, and moisture-test request goes directly and exclusively to your cell phone. We do not operate a shared lead pool, and we strictly lock out your entire DFW metro territory to one shop.",
       },
       {
-        question: 'Why is localized prep messaging critical for Dallas–Fort Worth concrete slabs?',
-        answer: 'North Texas expansive black clay causes chronic foundation movement and hairline settling cracks along stem walls. We position your shop around ICRI CSP 2–3 mechanical diamond grinding and polyurea crack repair, easily commanding $5,200 to $7,800 tickets over painters who roll over unground concrete.',
+        question: "How do you stop cheap tire-kickers from wasting my time so I don't burn diesel driving 45 minutes to Frisco or Southlake for a $400 quote?",
+        answer: "Through our built-in instant garage floor pricing estimator. Before homeowners in Frisco, Plano, or Southlake submit their contact info, they enter their garage dimensions (2-car, 3-car, custom sq ft) and see realistic ballpark pricing ($5.50–$7.50/sq ft). This immediately filters out low-ball price shoppers who thought a 3-car garage was $400, ensuring you only spend fuel quoting pre-qualified homeowners ready to invest in commercial diamond grinding and polyaspartic coatings.",
       },
       {
-        question: 'How fast does territory lockout and ranking momentum take effect in DFW?',
-        answer: 'Territory lockout is immediate upon partnership. Your custom site and instant estimator launch within 7 days, and Google Map Pack rankings build strong momentum within 30 to 60 days.',
+        question: "How long does it realistically take to get into the Google Maps 3-Pack and start booking jobs in Dallas–Fort Worth?",
+        answer: "We don't make fake overnight promises. Google Maps 3-Pack optimization typically shows strong geo-grid movement and call volume increases within 45 to 90 days as local citations, geotagged project photos, localized schema, and review velocity compound. However, your custom high-speed showroom website and instant pricing estimator launch within 7 days, immediately converting your existing referrals, truck wraps, and direct traffic at a much higher rate.",
+      },
+      {
+        question: "Do you lock me into a long-term contract, and do I own my Google Business Profile and website if I ever cancel?",
+        answer: "No contracts, and you own 100% of your assets. We work strictly month-to-month. If we aren't helping you book profitable 3-car garages and dominating the DFW Map Pack, you shouldn't have to keep paying us. You retain full ownership of your domain, Google Business Profile, and brand at all times.",
       },
     ],
   },
@@ -152,20 +156,24 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: 'Will you take on multiple coating contractors in the Houston metro?',
-        answer: 'Strictly one shop. We lock out the entire Houston metro—including Harris, Montgomery, and Fort Bend counties. We will never split leads or take on a second crew in The Woodlands, Katy, Cypress, or Pearland.',
+        question: "I've paid marketing agencies before who gave me shared leads and generic clicks. What makes MultiPro different for a Houston epoxy shop?",
+        answer: "General agencies don't understand the Houston market or concrete coatings. They run ads to slow templates that freeze on mobile and don't address why Houston slabs fail. We build sub-1.5s mobile showrooms engineered around commercial prep, educate homeowners on ASTM F1869 moisture vapor barriers to command premium $6,000+ tickets over fly-by-night painters, and back your business with strict 1-contractor territory exclusivity across Harris, Montgomery, and Fort Bend counties.",
       },
       {
-        question: 'How does your marketing address Houston’s severe slab moisture issues?',
-        answer: 'Subtropical Gulf Coast humidity and shallow water tables create extreme moisture vapor transmission (MVT). We market your crew as concrete experts who perform ASTM F1869 calcium chloride moisture testing and install 15-lb vapor barrier primers, winning $5,000–$7,500 jobs over fly-by-night crews whose coatings blister and peel.',
+        question: "Will you work with my competitors in The Woodlands, Katy, or Cypress if I lock out Houston?",
+        answer: "Never. We enforce a strict 1-contractor territory lockout for the entire Greater Houston metro. Once you partner with us, we turn away all other coating contractors in Houston, The Woodlands, Katy, Cypress, Sugar Land, and Pearland. We will never split leads or help your competitor outrank you.",
       },
       {
-        question: 'Can your system capture high-margin 3-car garage jobs in The Woodlands and Katy?',
-        answer: 'Yes. We optimize your Google Business Profile and local geo-pins to capture direct calls in affluent master-planned communities where homeowners invest in premium full flake and metallic garage finishes.',
+        question: "How do you filter out price-shoppers so I don't burn 2 hours sitting on I-10 or the Grand Parkway giving free quotes?",
+        answer: "Our instant online garage floor pricing estimator pre-qualifies homeowners upfront. Houston homeowners select their garage size, condition, and coating system (full flake broadcast, metallic, or commercial) and see real sq-ft pricing ($5.50–$7.50/sq ft) before they request an on-site visit. You stop burning hours in Houston traffic to quote tire-kickers with $800 budgets.",
       },
       {
-        question: 'Do Houston leads get shared with Angi or Thumbtack competitors?',
-        answer: 'Never. Every phone call, calculator estimate, and moisture-test request goes directly and exclusively to your shop’s phone.',
+        question: "How long does it realistically take to get into the Google Maps 3-Pack in Houston?",
+        answer: "Moving into the top 3 on Google Maps across competitive Houston suburbs typically takes 45 to 90 days of consistent local citations, geo-tagged slab prep uploads, and review velocity optimization. However, your high-speed custom website and instant pricing calculator go live within 7 days to start capturing high-intent homeowners immediately.",
+      },
+      {
+        question: "Do I have to sign a 6 or 12-month contract, and what do you need from my crew while we're grinding floors?",
+        answer: "We operate strictly month-to-month with zero long-term contract lock-ins. And we know you're on the grinder 10 hours a day, not at a computer. All we need from your crew is 2 or 3 quick photos or short clips of your surface prep and finished floors sent via text after each job. We handle all geo-tagging, SEO metadata, case study writing, and technical optimization.",
       },
     ],
   },
@@ -220,20 +228,24 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: 'Is the Phoenix market strictly exclusive to one coating business?',
-        answer: 'Yes. Strictly one coating contractor for the entire Valley of the Sun, including Scottsdale, Gilbert, Chandler, Mesa, and Paradise Valley.',
+        question: "I've tried SEO and Google Ads agencies that wasted thousands on tire-kickers. How do you actually get me profitable garage jobs in Phoenix?",
+        answer: "Cheap marketing agencies target generic keywords that bring in calls from people wanting a $900 DIY paint job that peels in 30 days under 115°F desert heat. MultiPro optimizes specifically for high-intent searches like 'polyaspartic garage floor coating Phoenix' and 'commercial epoxy contractor Scottsdale'. Combined with our sub-1.5s mobile showroom and upfront pricing calculator, we attract affluent homeowners in Scottsdale, Gilbert, and Paradise Valley who understand why commercial diamond profiling and UV-stable polyaspartics cost $5,000 to $8,500+.",
       },
       {
-        question: 'How do we stand out against Phoenix painters rolling cheap 1-day kits?',
-        answer: 'We educate affluent Valley homeowners through your sub-1.5s mobile showroom and instant pricing tool on the vast difference between commercial diamond profiling with aliphatic polyaspartics versus cheap DIY roll-on kits that hot-tire pickup in 115°F heat.',
+        question: "Will you work with any other coating crew in Phoenix, Scottsdale, or Gilbert?",
+        answer: "Strictly one shop. We lock out the entire Valley of the Sun—including Phoenix, Scottsdale, Gilbert, Chandler, Mesa, and Peoria. We will never partner with a second coating contractor in your territory or sell your leads to someone else.",
       },
       {
-        question: 'How does your marketing handle Phoenix’s extreme summer slab temperatures?',
-        answer: 'We highlight your AMPP-compliant prep standards, pot-life management, and UV-stable polyaspartic formulations designed specifically to withstand relentless Arizona sun and thermal slab expansion.',
+        question: "How do you stop homeowners from comparing my professional quote to low-ball painters rolling $1,200 DIY kits?",
+        answer: "We position your business as a concrete specialist, not a painter. Your website and pricing estimator directly explain the physics of mechanical diamond grinding (CSP profile) and pot-life management versus cheap DIY roll-on kits that hot-tire pickup. By the time a Valley homeowner calls you, they already know cheap paint fails and are ready to pay for commercial-grade coating systems.",
       },
       {
-        question: 'What typical garage sizes and ticket values do you target across Phoenix?',
-        answer: 'We focus heavily on expansive 3-car garages, RV-height bays, and custom workshops throughout Scottsdale, Queen Creek, and Gilbert, driving average project tickets between $5,000 and $8,200.',
+        question: "How long does it realistically take to rank in the Google Maps 3-Pack across Phoenix?",
+        answer: "Google Maps 3-Pack rankings typically build significant momentum within 45 to 90 days as local citations, geo-tagged project uploads, and review authority compound. However, your custom high-speed showroom website and instant pricing calculator launch within 7 days, giving you an immediate conversion engine for your business.",
+      },
+      {
+        question: "Do I own my Google Business Profile and website, and can I cancel anytime?",
+        answer: "You own 100% of your Google Business Profile, website domain, and brand assets at all times. We never hold your assets hostage, and we work strictly month-to-month with zero long-term contracts. If we don't deliver, you can walk away anytime.",
       },
     ],
   },
@@ -288,20 +300,24 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: 'Are Tampa Bay garage and lanai leads exclusive to our shop?',
-        answer: '100% exclusive. Zero shared leads. When a homeowner in Clearwater, St. Petersburg, or Lakewood Ranch requests a quote, it rings your cell phone only.',
+        question: "Most marketing agencies don't know the difference between epoxy and pool deck paint. How do your team and websites understand our trade?",
+        answer: "MultiPro works exclusively with concrete coating contractors. We know about Florida coastal salt efflorescence, hydrostatic moisture vapor transmission from shallow water tables, and why 100% solids epoxy basecoats paired with aliphatic polyaspartic topcoats are mandatory. We never write generic 'painter' content or use fake stock photos; we build high-speed showcases of your real prep and full-broadcast flake jobs.",
       },
       {
-        question: 'How does your site position our shop against coastal Florida slab moisture?',
-        answer: 'Tampa’s sandy ground and sea-level water table create intense hydrostatic pressure and efflorescence. We position your crew around ASTM F2170 relative humidity testing and deep-penetrating moisture-stop primers so homeowners trust your warranty over cheap roll-and-go painters.',
+        question: "Are the phone calls and estimates 100% exclusive to my shop, or shared like Angi and Thumbtack?",
+        answer: "100% exclusive to your business. Angi and Thumbtack sell the same customer to 4 other contractors in Tampa Bay at $90 a pop, forcing you to slash your prices. Every call, quote request, and moisture-test inquiry generated through MultiPro rings directly on your shop's phone. Zero shared leads, ever.",
       },
       {
-        question: 'Can the system capture pool decks and lanais in addition to garages?',
-        answer: 'Yes. Our instant estimator and showroom galleries feature exterior pool decks, lanais, and patios alongside residential 2-car and 3-car garage floors.',
+        question: "How do you filter out cheap callers so we only quote high-ticket garage floors and lanais in Clearwater and Lakewood Ranch?",
+        answer: "Homeowners in affluent communities like Lakewood Ranch, Clearwater Beach, and South Tampa use our built-in pricing estimator to calculate real square-foot rates ($5.50–$7.50/sq ft) for 2-car, 3-car, and lanai spaces before calling. This eliminates price-shoppers with $500 expectations and delivers pre-qualified homeowners ready to pay for professional diamond grinding and moisture barriers.",
       },
       {
-        question: 'What suburbs in the Tampa Bay area are included in the territory lockout?',
-        answer: 'We lock out Clearwater, St. Petersburg, Lakewood Ranch, Sarasota, Brandon, Riverview, Palm Harbor, and Wesley Chapel.',
+        question: "How long does it realistically take to rank in the Google Maps 3-Pack across Tampa–St. Pete?",
+        answer: "Ranking in the top 3 on Google Maps across Pinellas, Hillsborough, and Manatee counties typically takes 45 to 90 days of consistent local citations, geo-tagged project updates, and review velocity. Meanwhile, your custom high-speed website and instant pricing calculator launch within 7 days to start converting traffic immediately.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and what does your team need from me each week?",
+        answer: "Zero long-term contracts—we work strictly month-to-month. And because you're busy running grinding crews, our workflow requires virtually none of your time: just text us 2 or 3 photos of your prep work and finished floors each week, and we handle all geo-tagging, case studies, metadata, and local SEO.",
       },
     ],
   },
@@ -356,20 +372,24 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        question: 'Is Austin strictly locked out for one concrete coating contractor?',
-        answer: 'Yes. Strictly one partner across Travis, Williamson, and Hays counties. Once locked, we reject all competing coating shops in Austin, Round Rock, and Lakeway.',
+        question: "I've worked with SEO agencies before that promised page 1 rankings but brought zero booked jobs. How is MultiPro different?",
+        answer: "General SEO agencies chase vanity keyword rankings that bring zero real customers. MultiPro specializes exclusively in concrete coatings. We optimize your Google Business Profile for high-ticket buying keywords like 'garage floor epoxy Austin' and 'polyaspartic coating Round Rock', pair it with an instant pricing estimator that pre-qualifies buyers, and build sub-1.5s mobile showrooms that impress tech-sector homeowners in Westlake and Lakeway.",
       },
       {
-        question: 'How do you capture high-ticket 3-car garage and metallic jobs in Austin?',
-        answer: 'Tech-sector homeowners in Westlake Hills and Lakeway demand speed and modern design. Our sub-1.5s site displays crystal-clear metallic samples and lets homeowners calculate estimates in seconds without waiting for awkward callback games.',
+        question: "Is the Austin territory strictly locked out for one concrete coating contractor?",
+        answer: "Yes. Strictly one contractor for the entire Austin metro, including Travis, Williamson, and Hays counties. Once you partner with us, we lock out your competitors in Austin, Round Rock, Georgetown, and Lakeway. We never work with two competing shops in the same market.",
       },
       {
-        question: 'Why do Austin slabs require localized concrete prep messaging?',
-        answer: 'Hill Country limestone bedrock causes uneven slab settlement and varying concrete hardness. We position your crew around ICRI structural crack stitching and segmented diamond tooling, justifying premium $6.00 to $8.50/sq ft rates.',
+        question: "How does your system capture high-ticket 3-car garage and metallic floors in affluent areas like Westlake Hills and Lakeway?",
+        answer: "Affluent Austin homeowners have high standards and zero patience for slow contractor websites. Our sub-1.5s mobile showroom displays crystal-clear metallic samples and full broadcast flake transformations instantly on iPhones, while our built-in estimator allows homeowners to calculate realistic estimates ($5,500–$8,500+) in seconds without waiting for awkward callback games.",
       },
       {
-        question: 'Do I have to sign a long-term contract to lock out Austin?',
-        answer: 'No. We operate strictly month-to-month. We protect your territory and earn your business every 30 days through ranking proof and filled calendars.',
+        question: "How long does it realistically take to get into the Google 3-Pack for epoxy flooring in Austin?",
+        answer: "Moving into the top 3 on Google Maps across Austin and the Hill Country typically takes 45 to 90 days as local citations, structural prep case studies, and customer review velocity build up. Your high-speed custom website and instant pricing estimator go live within 7 days, giving you immediate conversion power.",
+      },
+      {
+        question: "Do I have to sign a 6 or 12-month contract, and do I own my website and Google Business Profile?",
+        answer: "You own 100% of your Google Business Profile, website domain, and brand assets at all times. We operate strictly on a month-to-month basis with zero long-term contract lock-ins. If we aren't filling your calendar with profitable coating jobs, you can cancel anytime.",
       },
     ],
   },
