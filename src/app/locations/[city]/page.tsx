@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { LOCATIONS, ALL_LOCATION_SLUGS } from '@/config/locations';
+import Portfolio from '@/components/Portfolio';
 import CityAuditForm from './CityAuditForm';
 
 interface PageProps {
@@ -96,6 +97,7 @@ export default async function LocationPage({ params }: PageProps) {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[160px] pointer-events-none" />
 
+      {/* Top Content Container */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Breadcrumb Navigation */}
@@ -150,7 +152,7 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Local High-Wealth Suburbs We Target */}
+        {/* Local High-Wealth Suburbs We Target (No location symbol) */}
         <div className="bg-[#0c182b]/70 border border-slate-800 rounded-2xl p-6 sm:p-8 mb-16">
           <h2 className="text-xs uppercase tracking-widest font-black text-brand-lime mb-3">
             Suburbs &amp; Service Communities We Lock Out In {location.city}:
@@ -161,7 +163,7 @@ export default async function LocationPage({ params }: PageProps) {
                 key={suburb}
                 className="bg-[#06101e] border border-slate-700/60 text-slate-200 text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-lg"
               >
-                📍 {suburb}
+                {suburb}
               </span>
             ))}
           </div>
@@ -245,7 +247,15 @@ export default async function LocationPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* City-Specific Video Audit Claim Form */}
+      </div>
+
+      {/* Undeniable Proof Section: Real Map Pack Domination & Keyword Wins */}
+      <div className="my-16">
+        <Portfolio />
+      </div>
+
+      {/* Bottom Claim Territory Form Container */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-[#0c182b] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl border border-slate-700/60">
           <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black text-white leading-tight">
@@ -268,8 +278,8 @@ export default async function LocationPage({ params }: PageProps) {
             ← View All Available Territory Markets
           </Link>
         </div>
-
       </div>
+
     </div>
   );
 }
