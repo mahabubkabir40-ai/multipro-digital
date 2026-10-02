@@ -35,8 +35,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/locations" prefetch={false} className="text-slate-200 hover:text-brand-lime transition-all duration-200 text-base font-semibold inline-block hover:translate-x-1">
+                  Territories &amp; Locations
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" prefetch={false} className="text-slate-200 hover:text-brand-lime transition-all duration-200 text-base font-semibold inline-block hover:translate-x-1">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" prefetch={false} className="text-slate-200 hover:text-brand-lime transition-all duration-200 text-base font-semibold inline-block hover:translate-x-1">
+                  Contact
                 </Link>
               </li>
             </ul>

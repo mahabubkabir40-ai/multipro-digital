@@ -41,6 +41,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.multiprodigital.com"),
   title: "Epoxy Flooring SEO & Marketing Agency | MultiPro Digital",
   description: "We help epoxy and concrete coating contractors dominate Google Maps, book 3-car garage floors, and scale high-margin commercial jobs with instant price calculators.",
 };
