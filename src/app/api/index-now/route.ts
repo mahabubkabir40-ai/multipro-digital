@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { ALL_LOCATION_SLUGS } from '@/config/locations';
 
 export async function GET() {
   const KEY = "78d38865f1e1499da689269788f28712";
@@ -8,15 +7,21 @@ export async function GET() {
   const baseUrl = `https://${HOST}`;
   
   // 1. Static active routes
-  const urlList = [
+  const staticRoutes = [
     `${baseUrl}/`,
-    `${baseUrl}/about`,
     `${baseUrl}/free-audit`,
+    `${baseUrl}/locations`,
+    `${baseUrl}/about`,
     `${baseUrl}/contact`,
     `${baseUrl}/privacy-policy`,
   ];
 
-  // 4. Send the Ping to IndexNow
+  // 2. Dynamic location routes
+  const locationRoutes = ALL_LOCATION_SLUGS.map((slug) => `${baseUrl}/locations/${slug}`);
+
+  const urlList = [...staticRoutes, ...locationRoutes];
+
+  // 3. Send the Ping to IndexNow
   try {
     const response = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
@@ -25,8 +30,8 @@ export async function GET() {
         host: HOST,
         key: KEY,
         keyLocation: `${baseUrl}/${KEY}.txt`,
-        urlList: urlList
-      })
+        urlList: urlList,
+      }),
     });
 
     if (response.ok) {
