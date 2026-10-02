@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function FreeAuditPage() {
@@ -19,6 +18,7 @@ export default function FreeAuditPage() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    // Silent honeypot drop for automated bots
     if (data._honey || data._hp_company_website) {
       setIsSuccess(true);
       setIsSubmitting(false);
@@ -64,172 +64,196 @@ export default function FreeAuditPage() {
     }
   };
 
+  const inputClass =
+    'w-full bg-[#06101e] border border-slate-700/70 rounded-xl px-4 py-3 sm:py-3.5 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:bg-[#071324] focus:border-[#1da4ff] focus:ring-2 focus:ring-[#1da4ff]/30 transition-all shadow-inner';
+  const labelClass = 'block text-white text-xs sm:text-sm font-bold mb-2';
+
   return (
     <div className="bg-[#0b1f38] min-h-screen pt-36 md:pt-44 pb-24 relative overflow-hidden">
-      {/* Subtle Background Glows */}
+      {/* Background Ambience Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-lime/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* TOP SECTION: The Audit Form Right Up Front */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* Left Column: What you get */}
-          <div className="lg:col-span-6 space-y-6 text-white">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold tracking-widest uppercase text-xs">
-              ⚡ 100% Free • Delivered in 24 Hours
-            </div>
+        {/* Header with Lime Accent Bar */}
+        <div className="border-l-4 border-brand-lime pl-4 sm:pl-6 mb-8 sm:mb-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white leading-tight">
+            Get Your Free 60-Second Video Audit
+          </h1>
+          <p className="mt-3 sm:mt-4 text-slate-300 font-sans text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
+            Not ready to talk? No problem. Fill in the form below and we&apos;ll record a personalized 60-second video showing your Google Map Pack rankings, AI search visibility, mobile load speed, and how to fix it. 100% Free.
+          </p>
+        </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-white leading-tight">
-              Get Your Free 60-Second <span className="text-brand-lime block">Epoxy Video Audit</span>
-            </h1>
-
-            <p className="text-base sm:text-lg text-blue-100/80 font-sans leading-relaxed border-l-4 border-brand-lime pl-4 sm:pl-6">
-              We&apos;ll record a personalized 60-second video breaking down your Google Map Pack &amp; AI Search ranking gaps, your website&apos;s mobile speed score, and why competitors are booking all the 3-car garage projects in your city.
-            </p>
-
-            <div className="space-y-4 pt-4 border-t border-white/10 text-sm sm:text-base text-blue-100/90 font-sans">
-              <h3 className="text-xs uppercase tracking-widest font-black text-brand-lime">
-                In Your Custom 60-Second Video:
-              </h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Google Map Pack &amp; AI Search Audit:</strong> Where you rank in Google Maps, AI Overviews, and local voice search.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Sub-1.5s Mobile Speed Test:</strong> Why slow WordPress sites bounce high-ticket coating buyers.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-brand-lime/20 text-brand-lime flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-                  <span><strong>Instant Estimator Demo:</strong> How square-foot calculators pre-qualify serious homeowners.</span>
-                </div>
+        {/* Form Container Card */}
+        <div className="bg-[#0c182b] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl border border-slate-700/60 text-white">
+          {isSuccess ? (
+            <div className="py-16 text-center animate-in fade-in zoom-in duration-500">
+              <div className="w-16 h-16 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
+                <svg className="w-8 h-8 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                </svg>
               </div>
+              <h3 className="text-2xl font-serif font-black text-white mb-2">Request Received!</h3>
+              <p className="text-slate-300 text-sm">Redirecting to your confirmation page...</p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+              {/* Anti-spam honeypots & timing verification */}
+              <input type="hidden" name="_ts" value={mountedTime} />
+              <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+              <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
 
-            {/* Guarantees */}
-            <div className="pt-4 border-t border-white/10">
-              <p className="text-blue-200/70 text-xs sm:text-sm font-sans flex items-center gap-2">
-                🔒 Strictly 1 contractor per city territory. No pushy sales calls.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column: Clean Form Card */}
-          <div className="lg:col-span-6 w-full max-w-xl mx-auto lg:max-w-none">
-            <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-brand-lime/30 text-slate-900">
-              <div className="mb-6 border-l-4 border-brand-lime pl-4">
-                <h2 className="text-xl sm:text-2xl font-serif font-black text-[#0b1f38] leading-snug">
-                  Where Should We Send Your Video?
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 font-sans mt-1">
-                  Takes 30 seconds to request. 100% free with zero obligation.
-                </p>
-              </div>
-
-              {isSuccess ? (
-                <div className="py-16 text-center animate-in fade-in zoom-in duration-500">
-                  <div className="w-16 h-16 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_30px_rgba(154,251,22,0.4)]">
-                    <svg className="w-8 h-8 text-[#1A365D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-                  </div>
-                  <h3 className="text-2xl font-serif font-black text-[#0b1f38] mb-2">Request Received!</h3>
-                  <p className="text-slate-600 text-sm">Redirecting to your confirmation page...</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Anti-spam honeypots & timing */}
-                  <input type="hidden" name="_ts" value={mountedTime} />
-                  <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
-                  <input type="text" name="_hp_company_website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Name <span className="text-[#1da4ff]">*</span>
-                      </label>
-                      <input 
-                        type="text" 
-                        name="Name"
-                        placeholder="John Doe"
-                        required
-                        disabled={isSubmitting}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Phone Number <span className="text-[#1da4ff]">*</span>
-                      </label>
-                      <input 
-                        type="tel" 
-                        name="Phone Number"
-                        placeholder="(214) 839-4912"
-                        required
-                        disabled={isSubmitting}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Email <span className="text-[#1da4ff]">*</span>
-                      </label>
-                      <input 
-                        type="email" 
-                        name="Email"
-                        placeholder="john@apexepoxy.com"
-                        required
-                        disabled={isSubmitting}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-slate-900 text-xs font-bold mb-1.5">
-                        Website Or Google Business Profile <span className="text-[#1da4ff]">*</span>
-                      </label>
-                      <input 
-                        type="text" 
-                        name="Website or Google Business Profile"
-                        placeholder="yoursite.com or Google Maps link"
-                        required
-                        disabled={isSubmitting}
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-[#1da4ff] focus:ring-4 focus:ring-[#1da4ff]/10 transition-all shadow-sm"
-                      />
-                    </div>
-                  </div>
-
-                  {error && (
-                    <div className="p-3 rounded-lg bg-red-50 text-red-600 text-xs font-medium border border-red-100">
-                      {error}
-                    </div>
-                  )}
-
-                  <button 
-                    type="submit"
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                {/* Your Name */}
+                <div>
+                  <label htmlFor="audit-name" className={labelClass}>
+                    Your Name <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
+                  </label>
+                  <input
+                    id="audit-name"
+                    type="text"
+                    name="Name"
+                    placeholder="John Doe"
+                    required
                     disabled={isSubmitting}
-                    className="relative group overflow-hidden w-full py-4 rounded-2xl bg-brand-lime text-[#1A365D] font-black text-sm sm:text-base transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(154,251,22,0.6)] active:scale-95 select-none touch-manipulation disabled:opacity-70 disabled:cursor-not-allowed"
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
-                  >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      {isSubmitting ? 'Sending Request...' : 'Send Me My Free 60-Second Video Audit →'}
-                    </span>
-                    {!isSubmitting && (
-                      <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-[800ms] ease-out" />
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
+                    className={inputClass}
+                  />
+                </div>
 
+                {/* Business Name */}
+                <div>
+                  <label htmlFor="audit-business" className={labelClass}>
+                    Business Name <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+                  </label>
+                  <input
+                    id="audit-business"
+                    type="text"
+                    name="Business Name"
+                    placeholder="e.g. Apex Epoxy Coatings"
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* City & State */}
+                <div>
+                  <label htmlFor="audit-city" className={labelClass}>
+                    City &amp; State <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
+                  </label>
+                  <input
+                    id="audit-city"
+                    type="text"
+                    name="City & State"
+                    placeholder="Dallas, TX"
+                    required
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                  <label htmlFor="audit-phone" className={labelClass}>
+                    Phone Number <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
+                  </label>
+                  <input
+                    id="audit-phone"
+                    type="tel"
+                    name="Phone Number"
+                    placeholder="(214) 839-4912"
+                    required
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* Email Address */}
+                <div>
+                  <label htmlFor="audit-email" className={labelClass}>
+                    Email Address <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
+                  </label>
+                  <input
+                    id="audit-email"
+                    type="email"
+                    name="Email"
+                    placeholder="john@apexepoxycoatings.com"
+                    required
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* Website or Google Business Profile */}
+                <div>
+                  <label htmlFor="audit-website" className={labelClass}>
+                    Website or Google Business Profile <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+                  </label>
+                  <input
+                    id="audit-website"
+                    type="text"
+                    name="Website or Google Business Profile"
+                    placeholder="yoursite.com or Google Maps link"
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+
+                {/* Your Biggest Challenge */}
+                <div className="sm:col-span-2">
+                  <label htmlFor="audit-challenge" className={labelClass}>
+                    Your Biggest Challenge <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+                  </label>
+                  <input
+                    id="audit-challenge"
+                    type="text"
+                    name="Your Biggest Challenge"
+                    placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
+                    disabled={isSubmitting}
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              {error && (
+                <div className="p-3.5 rounded-xl bg-red-950/80 text-red-300 text-xs sm:text-sm font-medium border border-red-800/80">
+                  {error}
+                </div>
+              )}
+
+              {/* Submit Button */}
+              <div className="sm:col-span-2 pt-3 sm:pt-4 flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="relative group overflow-hidden px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-brand-lime text-slate-950 font-black text-sm sm:text-base tracking-wide transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(154,251,22,0.6)] active:scale-95 select-none touch-manipulation disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
+                  style={{ WebkitTapHighlightColor: 'transparent' }}
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5 text-slate-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        Sending Request...
+                      </>
+                    ) : (
+                      'Send Me My Free 60-Second Video Audit →'
+                    )}
+                  </span>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-white/40 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-[800ms] ease-out" />
+                  )}
+                </button>
+              </div>
+            </form>
+          )}
         </div>
 
         {/* BOTTOM SECTION: Secondary Direct Strategy Call Option */}
-        <div className="mt-24 pt-16 border-t border-white/10">
+        <div className="mt-20 pt-16 border-t border-white/10">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-serif text-white font-bold mb-3">
               Prefer To Speak Directly on a 15-Minute Strategy Call?

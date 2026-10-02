@@ -155,6 +155,12 @@ export async function POST(request: Request) {
     const system = cleanData.system || '';
     const estimate = cleanData.estimate || '';
     const prep = cleanData.prep || '';
+    const challenge = 
+      cleanData.yourbiggestchallenge || 
+      cleanData.biggestchallenge || 
+      cleanData.challenge || 
+      cleanData.message || 
+      '';
     const source = cleanData.source || 'Website Lead';
 
     // 4. Heuristic Gibberish & Bot Pattern Checks
@@ -253,6 +259,9 @@ export async function POST(request: Request) {
     if (prep) {
       const prepText = prep.toLowerCase() === 'yes' ? 'Yes (Moisture Barrier / Repairs Recommended)' : 'Standard Surface Prep';
       items.push({ label: 'Moisture Barrier / Prep', valueHtml: escapeHtml(prepText) });
+    }
+    if (challenge) {
+      items.push({ label: 'Biggest Challenge', valueHtml: escapeHtml(challenge) });
     }
     if (source) {
       items.push({
