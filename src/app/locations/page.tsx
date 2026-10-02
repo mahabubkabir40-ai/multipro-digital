@@ -63,15 +63,15 @@ export default function LocationsHubPage() {
 
                 <div className="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300 mb-6 font-sans">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Avg Project Ticket:</span>
-                    <strong className="text-white font-bold">{loc.avgTicket}</strong>
+                    <span className="text-slate-300 font-medium">Avg Project Ticket:</span>
+                    <strong className="text-brand-lime font-bold">{loc.avgTicket}</strong>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Sq-Ft Market Rate:</span>
-                    <strong className="text-white font-bold">{loc.sqftRate}</strong>
+                    <span className="text-slate-300 font-medium">Sq-Ft Market Rate:</span>
+                    <strong className="text-brand-lime font-bold">{loc.sqftRate}</strong>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Target Garage bays:</span>
+                    <span className="text-slate-300 font-medium">Target Garage bays:</span>
                     <strong className="text-brand-lime font-bold">3-Car &amp; 4-Car</strong>
                   </div>
                 </div>

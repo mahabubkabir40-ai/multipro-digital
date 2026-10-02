@@ -130,23 +130,23 @@ export default async function LocationPage({ params }: PageProps) {
               </p>
             </div>
 
-            {/* Local Market Snapshot Cards */}
+            {/* Local Market Snapshot Cards (Style 1: Unified Brand Lime) */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
               <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
-                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Average Ticket</span>
-                <span className="text-base sm:text-lg font-black text-brand-lime">{location.avgTicket}</span>
+                <span className="block text-[11px] font-mono uppercase text-slate-300 font-bold mb-1 tracking-wider">Average Ticket</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime leading-tight">{location.avgTicket}</span>
               </div>
               <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
-                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Sq-Ft Rate</span>
-                <span className="text-base sm:text-lg font-black text-white">{location.sqftRate}</span>
+                <span className="block text-[11px] font-mono uppercase text-slate-300 font-bold mb-1 tracking-wider">Sq-Ft Rate</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime leading-tight">{location.sqftRate}</span>
               </div>
               <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
-                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Focus Project</span>
-                <span className="text-xs sm:text-sm font-bold text-white line-clamp-1">3-Car Garages</span>
+                <span className="block text-[11px] font-mono uppercase text-slate-300 font-bold mb-1 tracking-wider">Focus Project</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime leading-tight">3-Car Garages</span>
               </div>
               <div className="bg-[#0c182b] border border-slate-700/60 rounded-xl p-3 sm:p-4 text-center shadow-lg">
-                <span className="block text-[11px] font-mono uppercase text-slate-400 mb-0.5">Territory</span>
-                <span className="text-base sm:text-lg font-black text-brand-lime">1 Shop Only</span>
+                <span className="block text-[11px] font-mono uppercase text-slate-300 font-bold mb-1 tracking-wider">Territory</span>
+                <span className="text-base sm:text-lg font-black text-brand-lime leading-tight">1 Shop Only</span>
               </div>
             </div>
 
