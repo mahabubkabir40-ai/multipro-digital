@@ -51,13 +51,13 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-1 bg-brand-lime rounded-full transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/#the-system" prefetch={false} className="relative text-base xl:text-lg font-bold text-slate-200 hover:text-white group py-2 tracking-wide transition-colors">
-              The System
+            <Link href="/about" prefetch={false} className="relative text-base xl:text-lg font-bold text-slate-200 hover:text-white group py-2 tracking-wide transition-colors">
+              About Us
               <span className="absolute bottom-0 left-0 w-0 h-1 bg-brand-lime rounded-full transition-all duration-300 group-hover:w-full" />
             </Link>
 
-            <Link href="/about" prefetch={false} className="relative text-base xl:text-lg font-bold text-slate-200 hover:text-white group py-2 tracking-wide transition-colors">
-              About Us
+            <Link href="/contact" prefetch={false} className="relative text-base xl:text-lg font-bold text-slate-200 hover:text-white group py-2 tracking-wide transition-colors">
+              Contact
               <span className="absolute bottom-0 left-0 w-0 h-1 bg-brand-lime rounded-full transition-all duration-300 group-hover:w-full" />
             </Link>
           </nav>
@@ -112,7 +112,6 @@ export default function Navbar() {
         <div className="px-6 py-10 space-y-6 flex flex-col text-center max-w-sm mx-auto justify-center min-h-[calc(100dvh-6rem)]">
           <Link href="/" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Home</Link>
           <Link href="/#portfolio" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Proof &amp; Results</Link>
-          <Link href="/#the-system" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">The System</Link>
           <Link href="/about" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">About Us</Link>
           <Link href="/contact" prefetch={false} onClick={() => setIsMenuOpen(false)} className="text-xl font-bold text-white hover:text-brand-lime transition-colors py-1">Contact</Link>
           <div className="pt-2 px-2">
