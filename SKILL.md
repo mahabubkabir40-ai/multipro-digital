@@ -56,12 +56,24 @@ MultiPro employs a strict hierarchical directory structure to maximize topical r
 ```text
 /                                               -> Homepage (Brand Authority, Estimator, Portfolio Proof, Trade FAQ)
 /locations/                                     -> Territory Lockout Directory Hub (Live status across all metros)
-/locations/{city-slug}/                         -> Hyper-Local Territory Lockout Page (e.g., /locations/dallas-epoxy-contractor-marketing)
+/locations/{city}-epoxy-contractor-marketing/   -> Hyper-Local Territory Lockout Page (e.g., /locations/tampa-epoxy-contractor-marketing)
 /free-audit/                                    -> Dedicated 60-Second Video Audit Funnel
 /about/                                         -> Company Story, Anti-Agency Philosophy & Trade Ethics
 /contact/                                       -> Direct Contact & Support Channel
 /success/                                       -> High-Converting Form Submission Confirmation
 ```
+
+> [!IMPORTANT]
+> **Strict URL Slug Pattern (MANDATORY & UNBREAKABLE):**
+> Every single location page MUST strictly adhere to this exact slug format:
+> `https://www.multiprodigital.com/locations/{city}-epoxy-contractor-marketing`
+> * Live Example: `https://www.multiprodigital.com/locations/tampa-epoxy-contractor-marketing`
+> * Live Example: `https://www.multiprodigital.com/locations/dallas-epoxy-contractor-marketing`
+> * Live Example: `https://www.multiprodigital.com/locations/houston-epoxy-contractor-marketing`
+> * Live Example: `https://www.multiprodigital.com/locations/phoenix-epoxy-contractor-marketing`
+> * Live Example: `https://www.multiprodigital.com/locations/austin-epoxy-contractor-marketing`
+> 
+> **Never change or abbreviate this pattern** (do NOT use `/locations/{city}` or `/locations/{city}-epoxy`). All internal linking meshes, canonical tags, sitemap entries, and IndexNow API submissions rely on this exact URL structure.
 
 ### The "3-Link Rule" & Internal Mesh Standards:
 * **Parent-to-Child:** The `/locations` directory links down to all active territory city pages.
@@ -179,6 +191,7 @@ To prevent Google’s algorithmic "Doorway Page" spam filters while maintaining 
 
 ### Mandatory Checklist for Adding Any New City Page:
 1. **Define Location Data in `src/config/locations.ts`:**
+   * **Mandatory Slug Format:** `{city}-epoxy-contractor-marketing` (e.g., `tampa-epoxy-contractor-marketing`, `orlando-epoxy-contractor-marketing`, `san-antonio-epoxy-contractor-marketing`). Never deviate from or alter this pattern.
    * Real slab physics (caliche bedrock, expansive clay, salt efflorescence, freeze-thaw spalling).
    * Affluent 3-car garage suburbs (e.g., Frisco, The Woodlands, Scottsdale, Lakewood Ranch, Westlake Hills).
    * Exact price bands (average ticket $5,200–$8,500; sq-ft rate $5.50–$7.50).
