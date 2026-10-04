@@ -51,9 +51,9 @@ export const LOCATIONS: Record<string, LocationData> = {
     sqftRate: '$5.50 – $7.50 / sq ft',
     suburbs: ['Plano', 'Frisco', 'McKinney', 'Southlake', 'Allen', 'Prosper', 'Highland Park', 'Arlington', 'Fort Worth', 'Rockwall'],
     nearbyMarkets: [
-      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'San Antonio, TX', slug: 'san-antonio-epoxy-contractor-marketing' },
       { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
-      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
     ],
     climateAndSlabProfile: {
       slabChallenge: 'North Texas expansive black clay soil causes chronic foundation slab shifting, hairline settling cracks, and spalling along stem walls.',
