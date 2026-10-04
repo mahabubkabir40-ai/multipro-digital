@@ -123,9 +123,9 @@ export const LOCATIONS: Record<string, LocationData> = {
     sqftRate: '$5.25 – $7.25 / sq ft',
     suburbs: ['The Woodlands', 'Katy', 'Cypress', 'Sugar Land', 'Pearland', 'Spring', 'Memorial', 'Friendswood', 'Conroe'],
     nearbyMarkets: [
-      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'San Antonio, TX', slug: 'san-antonio-epoxy-contractor-marketing' },
       { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
-      { name: 'Tampa–St. Pete, FL', slug: 'tampa-epoxy-contractor-marketing' },
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
     ],
     climateAndSlabProfile: {
       slabChallenge: 'Subtropical Gulf Coast humidity and shallow coastal water tables create severe hydrostatic head pressure and moisture vapor transmission (MVT) through garage slabs.',
@@ -339,9 +339,9 @@ export const LOCATIONS: Record<string, LocationData> = {
     sqftRate: '$6.00 – $8.50 / sq ft',
     suburbs: ['Round Rock', 'Georgetown', 'Lakeway', 'Westlake Hills', 'Cedar Park', 'Bee Cave', 'Dripping Springs', 'Buda'],
     nearbyMarkets: [
+      { name: 'San Antonio, TX', slug: 'san-antonio-epoxy-contractor-marketing' },
       { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
       { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
-      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
     ],
     climateAndSlabProfile: {
       slabChallenge: 'Hill Country limestone bedrock and shifting karst formations cause uneven slab settlement, stress fractures, and varying concrete hardness (soft chalky patches to hard aggregate).',
@@ -390,6 +390,78 @@ export const LOCATIONS: Record<string, LocationData> = {
       {
         question: "Do I have to sign a 6 or 12-month contract, and do I own my website and Google Business Profile?",
         answer: "You own 100% of your Google Business Profile, website domain, and brand assets at all times. We operate strictly on a month-to-month basis with zero long-term contract lock-ins. If we aren't filling your calendar with profitable coating jobs, you can cancel anytime.",
+      },
+    ],
+  },
+
+  'san-antonio-epoxy-contractor-marketing': {
+    slug: 'san-antonio-epoxy-contractor-marketing',
+    city: 'San Antonio',
+    state: 'TX',
+    stateFullName: 'Texas',
+    region: 'South-Central Texas Hill Country',
+    metaTitle: 'Epoxy Contractor Marketing in San Antonio, TX | MultiPro',
+    metaDescription: 'Exclusive 1-shop lockout for San Antonio epoxy contractors. Own Google Maps in Boerne & Stone Oak, stop buying shared leads, and book high-margin garage floors.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in San Antonio',
+    subheadline: 'Stop sharing $95 Angi leads with four other contractors while your grinder sits in the trailer. We help strictly one San Antonio concrete coating business dominate the Google 3-Pack and capture exclusive 3-car garage inquiries.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,000 – $7,500',
+    garageType: 'High-growth 3-car & 4-car custom garages, workshop stem walls',
+    sqftRate: '$5.50 – $7.50 / sq ft',
+    suburbs: ['Boerne', 'New Braunfels', 'Stone Oak', 'Alamo Heights', 'Helotes', 'Bulverde', 'Shavano Park', 'Fair Oaks Ranch', 'Schertz', 'Cibolo'],
+    nearbyMarkets: [
+      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'San Antonio slabs sit on shifting Edwards Plateau limestone, chalky caliche, and expansive black clays. Severe seasonal droughts and flash rain cause foundational heaving, spalling along expansion joints, and active hairline settlement cracks.',
+      prepRequirement: 'Heavy mechanical diamond grinding to CSP 2–3 profile per ICRI guidelines, structural polyurea crack stitching, and deep moisture barrier rollout before flake broadcast.',
+      coatingRecommendation: 'Moisture-mitigating 100% solids epoxy primer basecoat, full broadcast vinyl flake, and hot-tire resistant dual-component polyaspartic topcoat.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Angi and Thumbtack selling the exact same lead to 4 other San Antonio coating shops, starting an immediate race to the bottom.',
+      'Contractors burning diesel driving 45 minutes up I-10 to Boerne or I-35 to New Braunfels only to quote homeowners expecting a $300 DIY paint job.',
+      'Shops with top-tier planetary grinders and dust extractors stuck on page 2 of Google Maps while painters with roll-on kits rank in the top 3.',
+      'Hot-tire pickup and peeling coatings from low-ball contractors who skip mechanical diamond grinding, giving the coating trade a bad name locally.',
+    ],
+    growthPillars: [
+      {
+        title: 'Greater San Antonio Google 3-Pack Lockout',
+        description: 'Puts your shop directly into the top 3 spots on Google Maps across high-wealth corridors like Boerne, Stone Oak, and Alamo Heights when homeowners search for garage floor epoxy.',
+      },
+      {
+        title: 'Instant 3-Car Garage Floor Estimator',
+        description: 'Pre-qualifies serious Bexar and Comal County homeowners with real square-foot ballpark pricing upfront, filtering out tire-kickers before you drive out for moisture tests.',
+      },
+      {
+        title: 'Sub-1.5s Mobile Flake Showroom',
+        description: 'Loads high-resolution full broadcast flake and stem wall photos instantly on iPhones with zero lag, ensuring high-income Hill Country buyers never bounce.',
+      },
+    ],
+    faqs: [
+      {
+        question: "I've paid SEO agencies before that charged $1,500/month and delivered zero garage jobs. How is MultiPro different in San Antonio?",
+        answer: "Most marketing agencies are generalists who don't know the coating trade. They build slow WordPress templates, write generic blogs about 'interior painting', and don't know the difference between an ICRI CSP 2 diamond grind and a $300 big-box paint kit. MultiPro works exclusively with concrete coating contractors. We build sub-1.5s mobile showrooms with live pricing calculators, optimize your Google Business Profile specifically for high-intent searches like 'garage floor epoxy San Antonio' and 'polyaspartic coating Boerne', and enforce a strict 1-contractor lockout so we never work with your local competitors.",
+      },
+      {
+        question: "Are San Antonio phone calls and estimates exclusive to my shop, or shared like Angi and Thumbtack?",
+        answer: "100% exclusive to your business. Angi and Thumbtack sell the exact same shared lead to 4 or 5 hungry contractors at $90 a pop, forcing you into an immediate race to the bottom. With MultiPro, every phone call, website quote, and moisture-test inquiry goes directly and exclusively to your shop's phone. Zero shared leads, ever.",
+      },
+      {
+        question: "How do you stop cheap tire-kickers so I don't burn diesel driving 40 minutes up to Boerne or New Braunfels for a $400 quote?",
+        answer: "Through our built-in instant garage floor pricing estimator. Before homeowners in Stone Oak, Boerne, or Alamo Heights submit their contact info, they enter their garage dimensions (2-car, 3-car, custom sq ft) and see realistic commercial pricing ($5.50–$7.50/sq ft). This immediately filters out low-ball price shoppers who thought a 3-car garage was $400, ensuring you only spend fuel quoting pre-qualified homeowners ready to invest in commercial diamond grinding and polyaspartic coatings.",
+      },
+      {
+        question: "How long does it realistically take to rank in the Google Maps 3-Pack across San Antonio?",
+        answer: "Google Maps 3-Pack optimization typically shows strong geo-grid movement and call volume increases within 45 to 90 days as local citations, geotagged project photos, localized schema, and review velocity compound. However, your custom high-speed showroom website and instant pricing estimator launch within 7 days, immediately converting your existing referrals, truck wraps, and direct traffic at a much higher rate.",
+      },
+      {
+        question: "Do I have to sign a 6 or 12-month contract, and do I own my Google Business Profile and website if I ever cancel?",
+        answer: "No contracts, and you own 100% of your assets. We work strictly month-to-month. If we aren't helping you book profitable 3-car garages and dominating the San Antonio Map Pack, you shouldn't have to keep paying us. You retain full ownership of your domain, Google Business Profile, and brand at all times.",
       },
     ],
   },
