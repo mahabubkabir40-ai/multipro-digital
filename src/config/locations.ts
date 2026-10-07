@@ -195,9 +195,9 @@ export const LOCATIONS: Record<string, LocationData> = {
     sqftRate: '$5.50 – $7.75 / sq ft',
     suburbs: ['Scottsdale', 'Gilbert', 'Chandler', 'Mesa', 'Peoria', 'Glendale', 'Paradise Valley', 'Queen Creek', 'Cave Creek'],
     nearbyMarkets: [
+      { name: 'Las Vegas, NV', slug: 'las-vegas-epoxy-contractor-marketing' },
       { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
-      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
-      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+      { name: 'San Antonio, TX', slug: 'san-antonio-epoxy-contractor-marketing' },
     ],
     climateAndSlabProfile: {
       slabChallenge: 'Searing desert sun and 115°F summer garage slab temperatures accelerate flash-cure times, while thermal expansion causes severe transverse slab cracking.',
@@ -267,9 +267,9 @@ export const LOCATIONS: Record<string, LocationData> = {
     sqftRate: '$5.50 – $7.50 / sq ft',
     suburbs: ['Clearwater', 'St. Petersburg', 'Brandon', 'Wesley Chapel', 'Riverview', 'Lakewood Ranch', 'Sarasota', 'Palm Harbor'],
     nearbyMarkets: [
+      { name: 'Orlando, FL', slug: 'orlando-epoxy-contractor-marketing' },
+      { name: 'Atlanta, GA', slug: 'atlanta-epoxy-contractor-marketing' },
       { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
-      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
-      { name: 'Austin, TX', slug: 'austin-epoxy-contractor-marketing' },
     ],
     climateAndSlabProfile: {
       slabChallenge: 'Sandy coastal ground and sea-level water tables create intense hydrostatic pressure and efflorescence that blow unprimed epoxy clean off the concrete.',
@@ -462,6 +462,222 @@ export const LOCATIONS: Record<string, LocationData> = {
       {
         question: "Do I have to sign a 6 or 12-month contract, and do I own my Google Business Profile and website if I ever cancel?",
         answer: "No contracts, and you own 100% of your assets. We work strictly month-to-month. If we aren't helping you book profitable 3-car garages and dominating the San Antonio Map Pack, you shouldn't have to keep paying us. You retain full ownership of your domain, Google Business Profile, and brand at all times.",
+      },
+    ],
+  },
+
+  'orlando-epoxy-contractor-marketing': {
+    slug: 'orlando-epoxy-contractor-marketing',
+    city: 'Orlando',
+    state: 'FL',
+    stateFullName: 'Florida',
+    region: 'Central Florida I-4 Corridor',
+    metaTitle: 'Epoxy Contractor Marketing in Orlando, FL | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Orlando epoxy contractors. Own Google Maps in Windermere & Lake Nona, stop buying shared leads, and book high-margin garage floors.',
+    headline: 'Lock Out Competing Epoxy Crews & Own Google Maps in Orlando',
+    subheadline: 'Stop burning cash on $90 shared Angi leads with four other contractors while your planetary grinder sits in the trailer. We help strictly one Orlando coating business dominate the Google 3-Pack and capture exclusive 3-car garage, lanai, and pool deck projects.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,200 – $7,800',
+    garageType: 'Residential 3-car garages, screened lanais & luxury pool decks',
+    sqftRate: '$5.50 – $7.75 / sq ft',
+    suburbs: ['Windermere', 'Lake Nona', 'Winter Park', 'Winter Garden', 'Dr. Phillips', 'Celebration', 'Baldwin Park', 'Clermont', 'Lake Mary', 'Oviedo'],
+    nearbyMarkets: [
+      { name: 'Tampa–St. Pete, FL', slug: 'tampa-epoxy-contractor-marketing' },
+      { name: 'Atlanta, GA', slug: 'atlanta-epoxy-contractor-marketing' },
+      { name: 'Houston, TX', slug: 'houston-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Central Florida high sandy water tables and sub-tropical humidity create severe hydrostatic vapor pressure beneath garage and lanai slabs. Unmitigated moisture blows standard epoxies off concrete within 12 months.',
+      prepRequirement: 'Heavy mechanical diamond grinding to CSP 2–3 profile, mandatory ASTM F2170 relative humidity or calcium chloride testing, and deep-pore degreasing along stem walls.',
+      coatingRecommendation: 'Moisture-vapor-blocking 100% solids epoxy primer basecoat rated to 15 lbs MVT, full broadcast vinyl flake, and UV-stable aliphatic polyaspartic topcoat for pool decks and garage bays.',
+      externalAuthorityName: 'ASTM F2170 Concrete Moisture Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
+    },
+    marketPainPoints: [
+      'Angi and HomeAdvisor reselling the same Orlando homeowner to 5 different coating crews, triggering an instant price war.',
+      'Contractors sitting on I-4 or 408 traffic for an hour to quote homeowners in Lake Nona who expected a $300 big-box store DIY paint job.',
+      'Shops with industrial 3-head grinders buried on page 2 of Google Maps while painters rolling cheap 1-day kits rank in the top 3.',
+      'Exterior pool deck and lanai coatings bubbling and delaminating because competitors skip proper moisture testing and CSP mechanical profiling.',
+    ],
+    growthPillars: [
+      {
+        title: 'Central Florida Google 3-Pack Lockout',
+        description: 'Secures your shop directly into the top 3 spots on Google Maps across high-wealth master-planned communities like Windermere, Lake Nona, and Winter Park when homeowners search for garage and lanai floor coatings.',
+      },
+      {
+        title: 'Instant Garage & Lanai Price Estimator',
+        description: 'Pre-qualifies serious Orange and Seminole County homeowners with live square-foot pricing upfront ($5.50–$7.75/sq ft), eliminating tire-kickers before you drive out for moisture tests.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Showroom Portfolio',
+        description: 'Loads high-resolution full broadcast flake, quartz, and pool deck transformations instantly on iPhones with zero lag, ensuring high-income buyers never bounce.',
+      },
+    ],
+    faqs: [
+      {
+        question: "I've worked with SEO agencies before that charged $1,500/month and delivered zero garage jobs. How is MultiPro different in Orlando?",
+        answer: "Most marketing agencies are generalists who don't know the coating trade. They build slow WordPress templates, write generic blogs about 'interior painting', and don't understand ASTM F2170 moisture testing or ICRI CSP mechanical grinding. MultiPro works exclusively with concrete coating contractors. We build sub-1.5s mobile showrooms with live garage and lanai pricing calculators, optimize your Google Business Profile specifically for high-intent searches like 'garage floor epoxy Orlando' and 'polyaspartic lanai coating Winter Park', and enforce a strict 1-contractor lockout so we never work with your local competitors.",
+      },
+      {
+        question: "Are Orlando phone calls and estimates exclusive to my shop, or shared like Angi and Thumbtack?",
+        answer: "100% exclusive to your business. Angi, Thumbtack, and HomeAdvisor sell the exact same shared lead to 4 or 5 hungry contractors at $90 a pop, forcing you into an immediate race to the bottom. With MultiPro, every phone call, website quote, and moisture-test inquiry goes directly and exclusively to your shop's phone. Zero shared leads, ever.",
+      },
+      {
+        question: "Can the system capture high-ticket pool decks and screened lanais in addition to garages?",
+        answer: "Yes. Central Florida homeowners invest heavily in outdoor living spaces. Our instant estimator and showroom galleries feature exterior pool decks, lanais, and patios alongside residential 2-car and 3-car garage floors, capturing $6,000–$9,000 dual-surface projects.",
+      },
+      {
+        question: "How long does it realistically take to rank in the Google Maps 3-Pack across Orlando?",
+        answer: "Google Maps 3-Pack optimization typically shows strong geo-grid movement and call volume increases within 45 to 90 days as local citations, geotagged project photos, localized schema, and review velocity compound. However, your custom high-speed showroom website and instant pricing estimator launch within 7 days, immediately converting your existing referrals, truck wraps, and direct traffic at a much higher rate.",
+      },
+      {
+        question: "Do I have to sign a 6 or 12-month contract, and do I own my Google Business Profile and website if I ever cancel?",
+        answer: "No contracts, and you own 100% of your assets. We work strictly month-to-month. If we aren't helping you book profitable 3-car garages and dominating the Orlando Map Pack, you shouldn't have to keep paying us. You retain full ownership of your domain, Google Business Profile, and brand at all times.",
+      },
+    ],
+  },
+
+  'las-vegas-epoxy-contractor-marketing': {
+    slug: 'las-vegas-epoxy-contractor-marketing',
+    city: 'Las Vegas',
+    state: 'NV',
+    stateFullName: 'Nevada',
+    region: 'Southern Nevada Mojave Desert',
+    metaTitle: 'Epoxy Contractor Marketing in Las Vegas, NV | MultiPro',
+    metaDescription: 'Exclusive 1-shop lockout for Las Vegas epoxy contractors. Own Google Maps in Summerlin & Henderson, stop buying shared leads, and book luxury custom garages.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Crews in Las Vegas',
+    subheadline: 'Stop sharing $90 Angi leads with four other shops while low-ball painters roll out cheap DIY kits that fail in the desert heat. We help strictly one premier Las Vegas coating contractor own the Google 3-Pack and capture exclusive 3-car garage and RV-bay inquiries.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,500 – $8,500+',
+    garageType: 'Luxury 3-car garages, workshop stem walls & toy-hauler RV bays',
+    sqftRate: '$5.50 – $8.00 / sq ft',
+    suburbs: ['Summerlin', 'Henderson', 'Southern Highlands', 'MacDonald Highlands', 'Skye Canyon', 'Green Valley', 'Centennial Hills', 'Seven Hills', 'Lake Las Vegas', 'Boulder City'],
+    nearbyMarkets: [
+      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+      { name: 'San Antonio, TX', slug: 'san-antonio-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Southern Nevada slabs sit over caliche rock hardpan and dense alkaline dust. Searing summer temperatures exceeding 110°F accelerate flash-cure times, while severe thermal expansion causes slab stress cracks and hot-tire pickup.',
+      prepRequirement: 'Aggressive diamond grinding with segmented tooling to profile hard caliche concrete to CSP 2–3, rigid vacuum dust extraction, flexible polyurea crack repair, and strict pot-life climate management.',
+      coatingRecommendation: 'Deep-penetrating 100% solids epoxy moisture primer, full broadcast decorative flake, and high-solids aliphatic polyaspartic clear topcoat with 100% UV stability.',
+      externalAuthorityName: 'AMPP Concrete Protection Standards',
+      externalAuthorityUrl: 'https://www.ampp.org',
+    },
+    marketPainPoints: [
+      'Painters telling homeowners they can roll an epoxy garage for $1,200, only for the coating to blister and hot-tire pickup within 60 days under 110°F heat.',
+      'Paying Angi and Thumbtack $90 for shared leads where 4 other contractors fight in a desperate race to the bottom.',
+      'Contractors with $30,000 trailers and planetary grinders buried on page 2 of Google Maps below unlicensed handymen.',
+      'Affluent homeowners in Summerlin and MacDonald Highlands demanding luxury metallic showrooms and custom garages but encountering slow, broken contractor websites.',
+    ],
+    growthPillars: [
+      {
+        title: 'Valley-Wide Google Maps 3-Pack Authority',
+        description: 'Puts your shop directly into the top 3 spots on Google Maps when high-income homeowners across Summerlin, Henderson, and Southern Highlands search for garage floor epoxy.',
+      },
+      {
+        title: 'Interactive 3-Car & RV Garage Estimator',
+        description: 'Pre-qualifies serious Clark County buyers with real sq-ft pricing upfront ($5,500–$8,500+), eliminating tire-kickers before you drive across the valley.',
+      },
+      {
+        title: 'Sub-1.5s High-Gloss Showroom Portfolio',
+        description: 'Displays crystal-clear high-gloss metallic and full flake transformations instantly on iPhones with zero lag, ensuring luxury homeowners never bounce to a competitor.',
+      },
+    ],
+    faqs: [
+      {
+        question: "I've tried SEO and Google Ads agencies that wasted thousands on tire-kickers. How do you get real garage jobs in Las Vegas?",
+        answer: "Cheap agencies target generic keywords that attract people wanting a $800 DIY paint job that peels in 30 days under 115°F desert heat. MultiPro optimizes specifically for high-intent searches like 'polyaspartic garage floor coating Las Vegas' and 'commercial epoxy contractor Henderson'. Combined with our sub-1.5s mobile showroom and upfront pricing calculator, we attract affluent homeowners in Summerlin, Southern Highlands, and MacDonald Highlands who understand why commercial diamond grinding and UV-stable polyaspartics cost $5,500 to $8,500+.",
+      },
+      {
+        question: "Will you work with any other coating crew in Las Vegas, Summerlin, or Henderson?",
+        answer: "Strictly one shop. We enforce a total territory lockout across the entire Las Vegas Valley—including Summerlin, Henderson, North Las Vegas, and Boulder City. We will never partner with a competing contractor in your market or resell your leads.",
+      },
+      {
+        question: "How do you stop cheap price-shoppers from comparing my professional quote to $1,200 DIY painter kits?",
+        answer: "We position your business as a concrete specialist, not a painter. Your website and pricing estimator directly explain the physics of mechanical diamond grinding (CSP 2–3 profile) over hard caliche and pot-life management versus cheap DIY roll-on kits that hot-tire pickup. By the time a homeowner calls you, they already know cheap paint fails and are ready to invest in commercial-grade systems.",
+      },
+      {
+        question: "How long does it realistically take to rank in the Google Maps 3-Pack across Las Vegas?",
+        answer: "Google Maps 3-Pack optimization typically shows strong geo-grid movement and call volume increases within 45 to 90 days as local citations, geotagged project photos, localized schema, and review velocity compound. However, your custom high-speed showroom website and instant pricing estimator launch within 7 days, giving you an immediate conversion engine for your business.",
+      },
+      {
+        question: "Do I own my Google Business Profile and website, and can I cancel anytime?",
+        answer: "You own 100% of your Google Business Profile, website domain, and brand assets at all times. We never hold your assets hostage, and we work strictly month-to-month with zero long-term contracts. If we don't deliver, you can walk away anytime.",
+      },
+    ],
+  },
+
+  'atlanta-epoxy-contractor-marketing': {
+    slug: 'atlanta-epoxy-contractor-marketing',
+    city: 'Atlanta',
+    state: 'GA',
+    stateFullName: 'Georgia',
+    region: 'Metro Atlanta & North Georgia',
+    metaTitle: 'Epoxy Contractor Marketing in Atlanta, GA | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Atlanta epoxy contractors. Own Google Maps in Alpharetta & Milton, stop buying shared leads, and book high-margin garage floors.',
+    headline: 'Lock Out Competing Epoxy Crews & Own Google Maps Across Metro Atlanta',
+    subheadline: 'Stop sharing $95 Angi leads with four other shops while your grinder sits in the trailer. We help strictly one premier Atlanta concrete coating contractor dominate the Google 3-Pack and capture exclusive 3-car garage, basement, and commercial inquiries.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,500 – $8,200',
+    garageType: 'High-wealth 3-car & 4-car garages, finished basements & workshops',
+    sqftRate: '$5.50 – $8.00 / sq ft',
+    suburbs: ['Alpharetta', 'Milton', 'Johns Creek', 'Buckhead', 'Roswell', 'Peachtree City', 'Sandy Springs', 'Suwanee', 'Duluth', 'Brookhaven'],
+    nearbyMarkets: [
+      { name: 'Orlando, FL', slug: 'orlando-epoxy-contractor-marketing' },
+      { name: 'Tampa–St. Pete, FL', slug: 'tampa-epoxy-contractor-marketing' },
+      { name: 'Dallas–Fort Worth, TX', slug: 'dallas-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Metro Atlanta slabs are poured over highly expansive Georgia red clay soil. Chronic moisture expansion and contraction cause foundational slab shifting, stem wall settlement, and heavy control joint shrinkage cracks.',
+      prepRequirement: 'Heavy mechanical planetary diamond grinding to ICRI CSP 2–3 profile, structural elastomeric polyurea crack mending, and deep vapor barrier priming before basecoat application.',
+      coatingRecommendation: 'Moisture-mitigating 100% solids epoxy basecoat, full broadcast vinyl flake, and dual-component aliphatic polyaspartic clear topcoat for hot-tire pickup resistance.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Angi and Thumbtack charging $90+ per lead and sending it to 5 contractors across Fulton and Gwinnett counties simultaneously.',
+      'Burning 2 hours in I-285 perimeter traffic to quote a homeowner who thought coating a 3-car garage was $500.',
+      'Skilled owner-operators with heavy 3-head grinders losing high-ticket Alpharetta and Buckhead jobs to franchised operations with better Google rankings.',
+      'Homeowners who hired cheap painters to roll water-based epoxy dealing with peeling and hot-tire pickup within 6 months.',
+    ],
+    growthPillars: [
+      {
+        title: 'North Metro Google Maps 3-Pack Lockout',
+        description: 'Positions your business directly into the top 3 on Google Maps across high-income suburbs like Alpharetta, Milton, and Johns Creek when homeowners search for garage floor epoxy.',
+      },
+      {
+        title: 'Instant 3-Car Garage & Basement Estimator',
+        description: 'Pre-qualifies serious North Georgia homeowners with real square-foot ballpark pricing upfront ($5.50–$8.20/sq ft), eliminating tire-kickers before you drive out.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Showroom Portfolio',
+        description: 'Displays your clean flake stem walls and metallic basement finishes in under 1.5 seconds on iPhones with zero lag, ensuring affluent buyers never bounce.',
+      },
+    ],
+    faqs: [
+      {
+        question: "I've been burned by SEO agencies that took $1,500/month and delivered zero garage jobs. How is MultiPro different in Atlanta?",
+        answer: "Most marketing agencies are generalists who have never set foot on a job site. They build slow WordPress templates, write generic blogs about 'interior painting', and don't know the difference between an ICRI CSP 2 diamond grind and a $300 big-box epoxy kit. MultiPro works exclusively with concrete coating contractors. We build sub-1.5s mobile showrooms with live garage pricing calculators, optimize your Google Business Profile specifically for high-intent searches like 'garage floor epoxy Alpharetta' and 'polyaspartic coating Atlanta', and enforce a strict 1-contractor lockout so we never work with your local competitors.",
+      },
+      {
+        question: "Are Atlanta phone calls and estimates 100% exclusive to my shop, or shared like Angi and Thumbtack?",
+        answer: "100% exclusive to your business. Angi, Thumbtack, and HomeAdvisor sell the exact same shared lead to 4 or 5 hungry contractors at $90 a pop, forcing you into an immediate race to the bottom. With MultiPro, every phone call, website quote, and moisture-test inquiry goes directly and exclusively to your shop's phone. Zero shared leads, ever.",
+      },
+      {
+        question: "How do you stop cheap tire-kickers from wasting my time so I don't burn gas sitting in I-285 traffic for a $400 quote?",
+        answer: "Through our built-in instant garage floor pricing estimator. Before homeowners in Alpharetta, Milton, or Buckhead submit their contact info, they enter their garage dimensions (2-car, 3-car, custom sq ft) and see realistic commercial pricing ($5.50–$8.00/sq ft). This immediately filters out low-ball price shoppers who thought a 3-car garage was $400, ensuring you only spend fuel quoting pre-qualified homeowners ready to invest in commercial diamond grinding and polyaspartic coatings.",
+      },
+      {
+        question: "Can the system capture finished basements and commercial shops in addition to garages?",
+        answer: "Yes. Metro Atlanta has a massive volume of finished basements and workshops. Our instant estimator and showroom galleries feature residential basements, commercial warehouses, and retail spaces alongside 2-car and 3-car garages, driving average project tickets above $7,000.",
+      },
+      {
+        question: "Do I have to sign a 6 or 12-month contract, and do I own my Google Business Profile and website if I ever cancel?",
+        answer: "No contracts, and you own 100% of your assets. We work strictly month-to-month. If we aren't helping you book profitable 3-car garages and dominating the Atlanta Map Pack, you shouldn't have to keep paying us. You retain full ownership of your domain, Google Business Profile, and brand at all times.",
       },
     ],
   },
