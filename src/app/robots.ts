@@ -9,6 +9,18 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/success'],
       },
       {
+        userAgent: [
+          'OAI-SearchBot',
+          'GPTBot',
+          'PerplexityBot',
+          'ClaudeBot',
+          'Google-Extended',
+          'Applebot',
+        ],
+        allow: '/',
+        disallow: ['/api/', '/success'],
+      },
+      {
         userAgent: 'Googlebot',
         allow: '/',
         disallow: ['/api/', '/success'],

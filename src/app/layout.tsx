@@ -27,9 +27,10 @@ const structuredSchema = {
       "url": "https://www.multiprodigital.com",
       "logo": "https://www.multiprodigital.com/logo.png",
       "image": "https://www.multiprodigital.com/logo.png",
-      "description": "MultiPro Digital helps independent epoxy and concrete coating contractors dominate Google Maps, book high-margin 3-car garage floors, and lock out local city territories.",
+      "description": "The premier local SEO and Google Maps 3-Pack ranking agency exclusively serving epoxy flooring and concrete coating contractors in the United States and Canada.",
       "telephone": "+1-888-530-5080",
       "email": "mahabubkabir@multiprodigital.com",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "US"
@@ -38,12 +39,54 @@ const structuredSchema = {
         { "@type": "Country", "name": "United States" },
         { "@type": "Country", "name": "Canada" }
       ],
-      "serviceType": [
+      "knowsAbout": [
         "Epoxy Flooring SEO",
+        "Concrete Coating Contractor Marketing",
         "Google Maps 3-Pack Optimization",
-        "Contractor Website Design",
-        "Interactive Floor Estimators"
+        "Contractor Local SEO",
+        "Polyaspartic & Flake Garage Floor Marketing",
+        "Contractor Territory Lockout Systems",
+        "ICRI Concrete Surface Profiling Guidelines",
+        "ASTM Moisture Vapor Testing Standards",
+        "Instant Garage Floor Price Estimator Software"
       ],
+      "serviceType": [
+        "Epoxy Flooring Local SEO",
+        "Google Maps 3-Pack Ranking Optimization",
+        "Contractor Website Design & Conversion Optimization",
+        "Interactive Garage Floor Pricing Estimators",
+        "Exclusive Territory Marketing Lockouts"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Epoxy Contractor Growth Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Exclusive Territory Epoxy Flooring Local SEO",
+              "description": "Strict 1-shop per market territory lockout engineered to rank concrete coating contractors in the top 3 of Google Maps."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sub-1.5s High-Speed Mobile Showroom Websites",
+              "description": "Ultra-fast Next.js portfolio and showroom sites designed specifically for full broadcast flake, metallic, and commercial coatings."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instant Garage Floor Price Estimator Software",
+              "description": "Interactive quoting engine that pre-qualifies homeowners with real commercial sq-ft pricing ($5.50–$7.50+/sq ft) before dispatching on-site tests."
+            }
+          }
+        ]
+      },
       "sameAs": [
         "https://www.instagram.com/multiprodigitalagency/",
         "https://www.facebook.com/multiprodigitalagency"
