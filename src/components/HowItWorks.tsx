@@ -21,6 +21,209 @@ interface Pillar {
   modalNote: string;
 }
 
+function PillarMiniEstimator({ onInspectPreview }: { onInspectPreview: () => void }) {
+  const [size, setSize] = useState<'1-car' | '2-car' | '3-car' | 'commercial'>('3-car');
+  const [finish, setFinish] = useState<'flake' | 'metallic' | 'solid'>('flake');
+
+  const sizes = [
+    { id: '1-car', name: '1-Car', sub: '~250 sq ft', sqft: 250 },
+    { id: '2-car', name: '2-Car', sub: '~450 sq ft', sqft: 450 },
+    { id: '3-car', name: '3-Car', sub: '~650 sq ft', sqft: 650 },
+    { id: 'commercial', name: 'Commercial', sub: '1,000+ sq ft', sqft: 1000 },
+  ] as const;
+
+  const finishes = [
+    { id: 'flake', name: 'Full Flake', low: 8.0, high: 12.0, tag: 'Most Popular' },
+    { id: 'metallic', name: 'Metallic', low: 9.0, high: 12.5, tag: 'Showroom' },
+    { id: 'solid', name: 'Solid Color', low: 5.5, high: 7.0, tag: 'Clean & Fast' },
+  ] as const;
+
+  const currentSize = sizes.find((s) => s.id === size)!;
+  const currentFinish = finishes.find((f) => f.id === finish)!;
+
+  const totalLow = Math.max(2500, Math.round(currentSize.sqft * currentFinish.low));
+  const totalHigh = Math.max(2500, Math.round(currentSize.sqft * currentFinish.high));
+
+  const formattedLow = '$' + totalLow.toLocaleString();
+  const formattedHigh = '$' + totalHigh.toLocaleString();
+
+  return (
+    <div 
+      className="mt-6 relative rounded-2xl overflow-hidden border border-white/15 bg-slate-950 shadow-2xl transition-all duration-300 hover:border-brand-lime/50"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Top Browser Header Mockup */}
+      <div className="px-3.5 py-2.5 bg-slate-900/90 border-b border-white/10 flex items-center justify-between text-xs">
+        <div className="flex items-center gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+          <span className="ml-2 font-mono text-[10px] sm:text-xs text-slate-400 truncate max-w-[140px] sm:max-w-none">
+            app.multiprodigital.com/demo/estimator
+          </span>
+        </div>
+        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-brand-lime/10 border border-brand-lime/30 text-brand-lime text-[10px] font-bold">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
+          <span>LIVE DEMO</span>
+        </div>
+      </div>
+
+      {/* Main Interactive Controls */}
+      <div className="p-3.5 sm:p-5 text-left flex flex-col gap-3.5 bg-slate-950/95">
+        <div className="flex items-center justify-between pb-2 border-b border-white/10">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-brand-lime" />
+            <span className="text-xs sm:text-sm font-bold text-white tracking-tight">Instant Sq-Ft Estimator</span>
+          </div>
+          <span className="text-[10px] font-mono text-brand-lime font-bold bg-brand-lime/10 px-2 py-0.5 rounded border border-brand-lime/20">
+            Captures Phone #
+          </span>
+        </div>
+
+        {/* Step 1: Size Selector */}
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[11px] font-black uppercase tracking-wider text-brand-lime">
+              Step 1: Size
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              {currentSize.name} {currentSize.id !== 'commercial' ? 'Garage' : ''} ({currentSize.sub})
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+            {sizes.map((s) => {
+              const active = size === s.id;
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSize(s.id);
+                  }}
+                  className={`p-2 rounded-xl text-left sm:text-center transition-all border ${
+                    active
+                      ? 'border-brand-lime bg-brand-lime/20 text-white font-bold ring-1 ring-brand-lime/50 shadow-[0_0_12px_rgba(154,251,22,0.2)]'
+                      : 'border-white/10 bg-slate-900/80 text-slate-300 hover:border-white/30 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className="text-[11px] sm:text-xs font-bold leading-tight">{s.name}</div>
+                  <div className="text-[9px] text-slate-400 mt-0.5">{s.sub}</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Step 2: Finish Selector */}
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[11px] font-black uppercase tracking-wider text-brand-lime">
+              Step 2: Finish
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              {currentFinish.name} ({currentFinish.tag})
+            </span>
+          </div>
+          <div className="grid grid-cols-3 gap-1.5">
+            {finishes.map((f) => {
+              const active = finish === f.id;
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFinish(f.id);
+                  }}
+                  className={`p-2 rounded-xl text-center transition-all border ${
+                    active
+                      ? 'border-brand-lime bg-brand-lime/20 text-white font-bold ring-1 ring-brand-lime/50 shadow-[0_0_12px_rgba(154,251,22,0.2)]'
+                      : 'border-white/10 bg-slate-900/80 text-slate-300 hover:border-white/30 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className="text-[11px] sm:text-xs font-bold leading-tight">{f.name}</div>
+                  <div className="text-[9px] text-brand-lime font-medium mt-0.5">{f.tag}</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Step 3: Dynamic Price Display */}
+        <div className="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-slate-900 via-slate-900/90 to-brand-blue/30 border border-brand-lime/30 shadow-inner">
+          <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-brand-lime font-mono font-bold mb-1">
+            <span>Step 3: Instant Estimated Price</span>
+            <span className="text-slate-400 font-mono text-[9px]">~{currentSize.sqft} sq ft</span>
+          </div>
+          <div className="text-2xl sm:text-3xl font-serif font-black text-white tracking-tight">
+            {formattedLow} - {formattedHigh}*
+          </div>
+          <div className="text-[11px] text-blue-200/70 mt-1 flex items-center gap-1.5">
+            <span className="text-brand-lime font-bold">✓</span>
+            <span>Full Broadcast Polyaspartic • 1-Day Install</span>
+          </div>
+        </div>
+
+        {/* Step 4: Homeowner Lock-in Action */}
+        <div>
+          <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-1.5 flex items-center justify-between">
+            <span>Step 4: Lock In Price &amp; On-Site Moisture Test</span>
+            <span className="text-brand-lime text-[10px] font-mono">+ Instant Alert</span>
+          </div>
+          <div className="flex gap-2">
+            <div className="flex-1 bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-slate-300 font-mono flex items-center truncate">
+              <span className="mr-1.5">📞</span>
+              <span>(214) 839-4912</span>
+            </div>
+            <a
+              href="#estimator"
+              className="px-3 sm:px-4 py-2 rounded-xl bg-brand-lime text-slate-950 font-black text-xs uppercase tracking-wider hover:bg-white hover:scale-105 active:scale-95 transition-all flex items-center gap-1 shrink-0 shadow-[0_0_15px_rgba(154,251,22,0.35)]"
+            >
+              <span>Lock In Price →</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Conversion Metrics */}
+        <div className="grid grid-cols-3 gap-1.5 pt-2 border-t border-white/10 text-center">
+          <div className="p-1.5 rounded-lg bg-white/5">
+            <span className="text-brand-lime font-bold text-xs sm:text-sm block font-mono">24.8%</span>
+            <span className="text-[9px] text-slate-400">Lead Conv.</span>
+          </div>
+          <div className="p-1.5 rounded-lg bg-white/5">
+            <span className="text-brand-lime font-bold text-xs sm:text-sm block font-mono">100%</span>
+            <span className="text-[9px] text-slate-400">Direct Calls</span>
+          </div>
+          <div className="p-1.5 rounded-lg bg-white/5">
+            <span className="text-brand-lime font-bold text-xs sm:text-sm block font-mono">$5,000+</span>
+            <span className="text-[9px] text-slate-400">Avg Job Size</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Strip */}
+      <div className="p-3 bg-slate-950 border-t border-white/10 flex items-center justify-between">
+        <button
+          type="button"
+          onClick={onInspectPreview}
+          className="text-[11px] font-mono font-bold text-slate-300 flex items-center gap-1.5 hover:text-brand-lime transition-colors"
+          title="Click to view full screenshot graphic"
+        >
+          <ZoomIn className="w-3.5 h-3.5 text-brand-lime shrink-0" />
+          <span>Inspect Graphic</span>
+        </button>
+        <a
+          href="#estimator"
+          className="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:text-white transition-colors"
+        >
+          <span>Try Full 4-Step Estimator ↓</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function HowItWorks() {
   const [selectedPreview, setSelectedPreview] = useState<Pillar | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -123,56 +326,60 @@ export default function HowItWorks() {
                   {pillar.body}
                 </p>
 
-                {/* Real Software Screenshot with Mobile-Optimized High-Contrast View */}
-                <div 
-                  onClick={() => setSelectedPreview(pillar)}
-                  className="mt-6 relative rounded-2xl overflow-hidden border border-white/15 bg-slate-950 shadow-2xl group/preview cursor-pointer transition-all duration-300 hover:border-brand-lime/60 hover:shadow-[0_0_25px_rgba(154,251,22,0.2)]"
-                  title="Click to view full high-res preview"
-                >
-                  {/* MOBILE VIEW (Screens < 640px): Dedicated high-contrast mobile view */}
-                  <div className="relative aspect-[4/3] block sm:hidden w-full overflow-hidden bg-slate-950">
-                    <Image
-                      src={pillar.imageMobile}
-                      alt={pillar.imageAlt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                      className="object-contain p-1 transition-transform duration-300 group-hover/preview:scale-[1.02]"
-                    />
-                  </div>
+                {/* Pillar 01 is an Interactive Live Mini-Estimator; Pillars 02 & 03 retain inspectable previews */}
+                {pillar.id === "01" ? (
+                  <PillarMiniEstimator onInspectPreview={() => setSelectedPreview(pillar)} />
+                ) : (
+                  <div 
+                    onClick={() => setSelectedPreview(pillar)}
+                    className="mt-6 relative rounded-2xl overflow-hidden border border-white/15 bg-slate-950 shadow-2xl group/preview cursor-pointer transition-all duration-300 hover:border-brand-lime/60 hover:shadow-[0_0_25px_rgba(154,251,22,0.2)]"
+                    title="Click to view full high-res preview"
+                  >
+                    {/* MOBILE VIEW (Screens < 640px): Dedicated high-contrast mobile view */}
+                    <div className="relative aspect-[4/3] block sm:hidden w-full overflow-hidden bg-slate-950">
+                      <Image
+                        src={pillar.imageMobile}
+                        alt={pillar.imageAlt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-contain p-1 transition-transform duration-300 group-hover/preview:scale-[1.02]"
+                      />
+                    </div>
 
-                  {/* DESKTOP VIEW (Screens >= 640px): Full tight-cropped browser window */}
-                  <div className="relative aspect-[16/9] hidden sm:block w-full overflow-hidden bg-slate-950">
-                    <Image
-                      src={pillar.image}
-                      alt={pillar.imageAlt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-contain p-1 transition-transform duration-500 group-hover/preview:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3.5 py-2 rounded-xl bg-slate-900/95 text-white text-xs font-bold border border-brand-lime/50 flex items-center gap-1.5 shadow-2xl">
-                        <ZoomIn className="w-3.5 h-3.5 text-brand-lime" />
-                        Click to Inspect Full View
+                    {/* DESKTOP VIEW (Screens >= 640px): Full tight-cropped browser window */}
+                    <div className="relative aspect-[16/9] hidden sm:block w-full overflow-hidden bg-slate-950">
+                      <Image
+                        src={pillar.image}
+                        alt={pillar.imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-contain p-1 transition-transform duration-500 group-hover/preview:scale-[1.03]"
+                      />
+                      <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover/preview:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="px-3.5 py-2 rounded-xl bg-slate-900/95 text-white text-xs font-bold border border-brand-lime/50 flex items-center gap-1.5 shadow-2xl">
+                          <ZoomIn className="w-3.5 h-3.5 text-brand-lime" />
+                          Click to Inspect Full View
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Quick Action Link Footer */}
+                    <div className="p-3 bg-slate-950 border-t border-white/10 flex items-center justify-between">
+                      <span className="text-[11px] font-mono font-bold text-slate-300 flex items-center gap-1.5 group-hover/preview:text-brand-lime transition-colors">
+                        <ZoomIn className="w-3.5 h-3.5 text-brand-lime shrink-0" />
+                        <span className="sm:hidden">Tap to Enlarge</span>
+                        <span className="hidden sm:inline">Inspect Preview</span>
                       </span>
+                      <a
+                        href={pillar.actionHref}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:text-white transition-colors"
+                      >
+                        <span>{pillar.actionText}</span>
+                      </a>
                     </div>
                   </div>
-                  
-                  {/* Quick Action Link Footer */}
-                  <div className="p-3 bg-slate-950 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[11px] font-mono font-bold text-slate-300 flex items-center gap-1.5 group-hover/preview:text-brand-lime transition-colors">
-                      <ZoomIn className="w-3.5 h-3.5 text-brand-lime shrink-0" />
-                      <span className="sm:hidden">Tap to Enlarge</span>
-                      <span className="hidden sm:inline">Inspect Preview</span>
-                    </span>
-                    <a
-                      href={pillar.actionHref}
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-brand-lime hover:text-white transition-colors"
-                    >
-                      <span>{pillar.actionText}</span>
-                    </a>
-                  </div>
-                </div>
+                )}
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">
