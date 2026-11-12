@@ -21,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [`${baseUrl}/logo.png`],
     },
     {
+      url: `${baseUrl}/estimator`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      images: [`${baseUrl}/portfolio/epoxy/pillar-1-estimator.png`],
+    },
+    {
       url: `${baseUrl}/locations`,
       lastModified: now,
       changeFrequency: 'weekly',
