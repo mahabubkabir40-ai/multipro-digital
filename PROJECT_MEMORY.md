@@ -1,5 +1,5 @@
 # 🧠 Multipro Digital: Project Master Memory
-**Last Updated**: 2026-04-24
+**Last Updated**: 2026-11-16
 
 ## 🎯 Primary Goal
 Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "3-Link Rule" enforcement.
@@ -20,6 +20,17 @@ Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "
 - **Data Script**: `node src/scripts/check-google.js` (USA Filtered).
 - **Analytics**: GA4 integrated via `src/app/layout.tsx`.
 - **Security**: Google Cloud JSON key is in `.gitignore` (local only).
+
+## 📬 Email Open & Click Tracking
+First-party routes on `www.multiprodigital.com`. The visitor gets an immediate response. `after()` then forwards the hit (GET, following redirects) to the Apps Script exec URL. Override that URL with the `TRACKING_ENDPOINT` env var; the default lives in `src/lib/email-tracking.ts`.
+
+- **Click**: `https://www.multiprodigital.com/go?id=<token>&u=<urlencoded url>`
+  - `302` to `u` only when `u` is `http` or `https` and the host is exactly `multiprodigital.com` or `www.multiprodigital.com`.
+  - Any other `u` redirects to `https://www.multiprodigital.com`. A missing `id` still redirects.
+- **Open pixel**: `https://www.multiprodigital.com/o?id=<token>`
+  - 43-byte transparent 1×1 GIF. `Content-Type: image/gif`. `Cache-Control: no-store, no-cache, must-revalidate, private`.
+- Both routes are dynamic (`force-dynamic`), send `X-Robots-Tag: noindex, nofollow`, are omitted from `src/app/sitemap.ts`, and are disallowed in `src/app/robots.ts` (`/o`, and `/go$` so `/google-business-profile` stays crawlable).
+- Forwarded query: `t=o` or `t=c`, `id`, `u` on clicks (the URL actually redirected to), plus `ua` and `ip` from `User-Agent` and `x-forwarded-for` / `x-real-ip`. Apps Script `doGet` currently ignores `ua` and `ip`.
 
 ## 📝 Ongoing Strategy
 1. **Location Pages**: Future expansion for targeted epoxy contractor geos (e.g., Orlando Epoxy Marketing).
