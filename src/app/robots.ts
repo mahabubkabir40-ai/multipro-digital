@@ -1,12 +1,15 @@
 import type { MetadataRoute } from 'next';
 
+// `/go$` is end-anchored so the legacy `/google-business-profile` redirect stays crawlable.
+const DISALLOW = ['/api/', '/success', '/go$', '/o'];
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
       {
         userAgent: [
@@ -18,22 +21,22 @@ export default function robots(): MetadataRoute.Robots {
           'Applebot',
         ],
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
       {
         userAgent: 'Googlebot-Image',
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
       {
         userAgent: 'Bingbot',
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
     ],
     sitemap: 'https://www.multiprodigital.com/sitemap.xml',
