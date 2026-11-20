@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/email-tracking.test.mjs",
     "index": "node src/scripts/seo/google-indexing.mjs",
     "index-bing": "node src/scripts/seo/bing-indexing.mjs",
     "index-google": "node src/scripts/seo/google-indexing.mjs",
