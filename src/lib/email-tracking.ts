@@ -25,6 +25,13 @@ export const TRACKING_ROBOTS_TAG = 'noindex, nofollow';
 
 const ALLOWED_HOSTS = new Set(['multiprodigital.com', 'www.multiprodigital.com']);
 
+/**
+ * Audit-video emails. The redirect Location must match this exactly.
+ * Query strings are allowed; other Drive paths, hosts, and schemes are not.
+ */
+const DRIVE_FILE_TARGET =
+  /^https:\/\/drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/(view|preview)(\?.*)?$/;
+
 /** Standard transparent 1×1 GIF89a (43 bytes). */
 export const TRANSPARENT_GIF = Uint8Array.of(
   0x47, 0x49, 0x46, 0x38, 0x39, 0x61, 0x01, 0x00, 0x01, 0x00, 0x80, 0x00, 0x00,
@@ -42,7 +49,8 @@ export type TrackingEvent = {
 };
 
 /**
- * http(s) URLs whose host is exactly multiprodigital.com or www.multiprodigital.com.
+ * http(s) URLs whose host is exactly multiprodigital.com or www.multiprodigital.com,
+ * plus Google Drive file URLs matching DRIVE_FILE_TARGET.
  * Anything else, including other schemes and lookalike hosts, uses the site root.
  */
 export function safeClickTarget(raw: string | null | undefined): string {
@@ -60,12 +68,27 @@ export function safeClickTarget(raw: string | null | undefined): string {
   }
 
   const host = url.hostname.toLowerCase().replace(/\.$/, '');
-  if (!ALLOWED_HOSTS.has(host)) return TRACKING_FALLBACK_URL;
+  if (ALLOWED_HOSTS.has(host)) {
+    url.username = '';
+    url.password = '';
+    url.hostname = host;
+    return url.href;
+  }
 
-  url.username = '';
-  url.password = '';
-  url.hostname = host;
-  return url.href;
+  if (isAllowedDriveFileTarget(url)) return url.href;
+
+  return TRACKING_FALLBACK_URL;
+}
+
+function isAllowedDriveFileTarget(url: URL): boolean {
+  return (
+    url.protocol === 'https:' &&
+    url.hostname === 'drive.google.com' &&
+    url.username === '' &&
+    url.password === '' &&
+    url.port === '' &&
+    DRIVE_FILE_TARGET.test(url.href)
+  );
 }
 
 export function clientIp(headers: Headers): string {

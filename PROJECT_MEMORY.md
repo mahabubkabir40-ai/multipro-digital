@@ -1,5 +1,5 @@
 # 🧠 Multipro Digital: Project Master Memory
-**Last Updated**: 2026-11-16
+**Last Updated**: 2026-11-20
 
 ## 🎯 Primary Goal
 Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "3-Link Rule" enforcement.
@@ -25,8 +25,9 @@ Scale agency revenue to $1,000 through automated site-wide SEO maintenance and "
 First-party routes on `www.multiprodigital.com`. The visitor gets an immediate response. `after()` then forwards the hit (GET, following redirects) to the Apps Script exec URL. Override that URL with the `TRACKING_ENDPOINT` env var; the default lives in `src/lib/email-tracking.ts`.
 
 - **Click**: `https://www.multiprodigital.com/go?id=<token>&u=<urlencoded url>`
-  - `302` to `u` only when `u` is `http` or `https` and the host is exactly `multiprodigital.com` or `www.multiprodigital.com`.
-  - Any other `u` redirects to `https://www.multiprodigital.com`. A missing `id` still redirects.
+  - `302` to `u` when `u` is `http` or `https` and the host is exactly `multiprodigital.com` or `www.multiprodigital.com`.
+  - Also `302` to `u` when it is an `https` Google Drive file URL matching `^https://drive\.google\.com/file/d/[A-Za-z0-9_-]+/(view|preview)(\?.*)?$` (`view` or `preview`, optional query). Used by audit-video emails. No interstitial.
+  - Any other `u` redirects to `https://www.multiprodigital.com`. A missing `id` still redirects. `/o` is unchanged.
 - **Open pixel**: `https://www.multiprodigital.com/o?id=<token>`
   - 43-byte transparent 1×1 GIF. `Content-Type: image/gif`. `Cache-Control: no-store, no-cache, must-revalidate, private`.
 - Both routes are dynamic (`force-dynamic`), send `X-Robots-Tag: noindex, nofollow`, are omitted from `src/app/sitemap.ts`, and are disallowed in `src/app/robots.ts` (`/o`, and `/go$` so `/google-business-profile` stays crawlable).
