@@ -109,7 +109,7 @@ export default function ContactPage() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs sm:text-sm text-blue-200/50 font-bold uppercase tracking-wider">Average Response Time</p>
-                    <span className="text-base sm:text-lg text-white font-medium block mt-1">Under 2 hours</span>
+                    <span className="text-base sm:text-lg text-white font-medium block mt-1">Under 24 hours</span>
                   </div>
                 </div>
               </div>
