@@ -188,7 +188,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Business Name <span className="text-slate-400 font-normal">(Optional)</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Business Name</label>
                       <input 
                         type="text" 
                         name="Business Name"
@@ -233,11 +233,12 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Website or Google Business Profile <span className="text-slate-400 font-normal">(Optional)</span></label>
+                      <label className="block text-white text-xs sm:text-sm font-bold mb-1.5">Website or Google Business Profile <span className="text-[#1da4ff]">*</span></label>
                       <input 
                         type="text" 
                         name="Website or Google Business Profile"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
+                        required
                         disabled={isSubmitting}
                       />
                     </div>

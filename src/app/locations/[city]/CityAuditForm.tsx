@@ -113,7 +113,7 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         {/* Business Name */}
         <div>
           <label htmlFor="loc-business" className={labelClass}>
-            Business Name <span className="text-slate-400 font-normal text-xs">(Optional)</span>
+            Business Name
           </label>
           <input
             id="loc-business"
@@ -172,12 +172,13 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
         {/* Website or Google Business Profile */}
         <div>
           <label htmlFor="loc-website" className={labelClass}>
-            Website / GBP <span className="text-slate-400 font-normal text-xs">(Optional)</span>
+            Website / GBP <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
           </label>
           <input
             id="loc-website"
             type="text"
             name="Website or Google Business Profile"
+            required
             disabled={isSubmitting}
             className={inputClass}
           />

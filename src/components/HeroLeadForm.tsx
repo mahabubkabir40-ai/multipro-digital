@@ -122,7 +122,7 @@ export default function HeroLeadForm() {
                 {/* Business Name */}
                 <div>
                   <label htmlFor="hero-business" className={labelClass}>
-                    Business Name <span className="text-slate-400 font-normal text-xs">(Optional)</span>
+                    Business Name
                   </label>
                   <input
                     id="hero-business"
@@ -181,12 +181,13 @@ export default function HeroLeadForm() {
                 {/* Website or Google Business Profile */}
                 <div>
                   <label htmlFor="hero-website" className={labelClass}>
-                    Website / GBP <span className="text-slate-400 font-normal text-xs">(Optional)</span>
+                    Website / GBP <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
                   </label>
                   <input
                     id="hero-website"
                     type="text"
                     name="Website or Google Business Profile"
+                    required
                     disabled={isSubmitting}
                     className={inputClass}
                   />

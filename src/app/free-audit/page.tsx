@@ -132,7 +132,7 @@ export default function FreeAuditPage() {
                 {/* Business Name */}
                 <div>
                   <label htmlFor="audit-business" className={labelClass}>
-                    Business Name <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+                    Business Name
                   </label>
                   <input
                     id="audit-business"
@@ -191,12 +191,13 @@ export default function FreeAuditPage() {
                 {/* Website or Google Business Profile */}
                 <div>
                   <label htmlFor="audit-website" className={labelClass}>
-                    Website or Google Business Profile <span className="text-slate-400 font-normal text-xs sm:text-sm ml-1">(Optional)</span>
+                    Website or Google Business Profile <span className="text-[#1da4ff] font-bold ml-0.5">*</span>
                   </label>
                   <input
                     id="audit-website"
                     type="text"
                     name="Website or Google Business Profile"
+                    required
                     disabled={isSubmitting}
                     className={inputClass}
                   />
