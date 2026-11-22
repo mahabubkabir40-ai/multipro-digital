@@ -123,7 +123,6 @@ export default function FreeAuditPage() {
                     id="audit-name"
                     type="text"
                     name="Name"
-                    placeholder="John Doe"
                     required
                     disabled={isSubmitting}
                     className={inputClass}
@@ -139,7 +138,6 @@ export default function FreeAuditPage() {
                     id="audit-business"
                     type="text"
                     name="Business Name"
-                    placeholder="e.g. Apex Epoxy Coatings"
                     disabled={isSubmitting}
                     className={inputClass}
                   />
@@ -154,7 +152,6 @@ export default function FreeAuditPage() {
                     id="audit-city"
                     type="text"
                     name="City & State"
-                    placeholder="Dallas, TX"
                     required
                     disabled={isSubmitting}
                     className={inputClass}
@@ -170,7 +167,6 @@ export default function FreeAuditPage() {
                     id="audit-phone"
                     type="tel"
                     name="Phone Number"
-                    placeholder="(214) 839-4912"
                     required
                     disabled={isSubmitting}
                     className={inputClass}
@@ -186,7 +182,6 @@ export default function FreeAuditPage() {
                     id="audit-email"
                     type="email"
                     name="Email"
-                    placeholder="john@apexepoxycoatings.com"
                     required
                     disabled={isSubmitting}
                     className={inputClass}
@@ -202,7 +197,6 @@ export default function FreeAuditPage() {
                     id="audit-website"
                     type="text"
                     name="Website or Google Business Profile"
-                    placeholder="yoursite.com or Google Maps link"
                     disabled={isSubmitting}
                     className={inputClass}
                   />
@@ -217,7 +211,6 @@ export default function FreeAuditPage() {
                     id="audit-challenge"
                     type="text"
                     name="Your Biggest Challenge"
-                    placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
                     disabled={isSubmitting}
                     className={inputClass}
                   />

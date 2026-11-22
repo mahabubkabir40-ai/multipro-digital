@@ -182,7 +182,6 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         name="Name"
-                        placeholder="John Doe"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -193,7 +192,6 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         name="Business Name"
-                        placeholder="e.g. Apex Epoxy Coatings"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         disabled={isSubmitting}
                       />
@@ -206,7 +204,6 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         name="City and State"
-                        placeholder="Dallas, TX"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -217,7 +214,6 @@ export default function ContactPage() {
                       <input 
                         type="tel" 
                         name="Phone Number"
-                        placeholder="(214) 839-4912"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -231,7 +227,6 @@ export default function ContactPage() {
                       <input 
                         type="email" 
                         name="Email"
-                        placeholder="john@apexepoxycoatings.com"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         required
                         disabled={isSubmitting}
@@ -242,7 +237,6 @@ export default function ContactPage() {
                       <input 
                         type="text" 
                         name="Website or Google Business Profile"
-                        placeholder="yoursite.com or Google Maps link"
                         className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm"
                         disabled={isSubmitting}
                       />
@@ -254,7 +248,6 @@ export default function ContactPage() {
                     <textarea 
                       name="Biggest Challenge"
                       rows={2}
-                      placeholder="e.g. Need more 3-car garages, tired of shared Angi leads, or need an instant quote calculator"
                       disabled={isSubmitting}
                       className="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/20 transition-all text-sm shadow-sm resize-none"
                     ></textarea>

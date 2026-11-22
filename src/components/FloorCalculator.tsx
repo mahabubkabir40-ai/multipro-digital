@@ -357,32 +357,42 @@ export default function FloorCalculator() {
                   </span>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-3">
-                  <input
-                    type="text"
-                    name="name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    onFocus={() => setIsInputFocused(true)}
-                    onBlur={() => setIsInputFocused(false)}
-                    placeholder="Your Name (e.g. John)"
-                    autoComplete="given-name"
-                    disabled={isSubmitting}
-                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
-                  />
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    onFocus={() => setIsInputFocused(true)}
-                    onBlur={() => setIsInputFocused(false)}
-                    placeholder="Enter your cell to test lead capture *"
-                    autoComplete="tel"
-                    inputMode="tel"
-                    required
-                    disabled={isSubmitting}
-                    className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white placeholder-blue-200/40 focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
-                  />
+                  <div>
+                    <label htmlFor="calc-name" className="block text-xs font-bold text-blue-100/90 mb-1.5">
+                      Your Name
+                    </label>
+                    <input
+                      id="calc-name"
+                      type="text"
+                      name="name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      onFocus={() => setIsInputFocused(true)}
+                      onBlur={() => setIsInputFocused(false)}
+                      autoComplete="given-name"
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="calc-phone" className="block text-xs font-bold text-blue-100/90 mb-1.5">
+                      Phone Number <span className="text-brand-lime">*</span>
+                    </label>
+                    <input
+                      id="calc-phone"
+                      type="tel"
+                      name="phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      onFocus={() => setIsInputFocused(true)}
+                      onBlur={() => setIsInputFocused(false)}
+                      autoComplete="tel"
+                      inputMode="tel"
+                      required
+                      disabled={isSubmitting}
+                      className="w-full rounded-xl bg-slate-900 border border-white/15 px-4 py-3.5 text-base text-white focus:outline-none focus:border-brand-lime focus:ring-2 focus:ring-brand-lime/30 disabled:opacity-70"
+                    />
+                  </div>
                 </div>
                 {submitError && (
                   <p className="text-red-400 text-sm font-medium">{submitError}</p>

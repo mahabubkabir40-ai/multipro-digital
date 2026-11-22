@@ -112,7 +112,6 @@ export default function HeroLeadForm() {
                   id="hero-name"
                   type="text"
                   name="Name"
-                  placeholder="John Doe"
                   required
                   disabled={isSubmitting}
                   className={inputClass}
@@ -127,7 +126,6 @@ export default function HeroLeadForm() {
                   id="hero-phone"
                   type="tel"
                   name="Phone Number"
-                  placeholder="(214) 839-4912"
                   required
                   disabled={isSubmitting}
                   className={inputClass}
@@ -142,7 +140,6 @@ export default function HeroLeadForm() {
                   id="hero-email"
                   type="email"
                   name="Email"
-                  placeholder="john@apexepoxy.com"
                   required
                   disabled={isSubmitting}
                   className={inputClass}
@@ -157,7 +154,6 @@ export default function HeroLeadForm() {
                   id="hero-website"
                   type="text"
                   name="Website or Google Business Profile"
-                  placeholder="yoursite.com or Google Maps link"
                   required
                   disabled={isSubmitting}
                   className={inputClass}

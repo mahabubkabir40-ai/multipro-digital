@@ -104,7 +104,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-name"
             type="text"
             name="Name"
-            placeholder="John Doe"
             required
             disabled={isSubmitting}
             className={inputClass}
@@ -120,7 +119,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-business"
             type="text"
             name="Business Name"
-            placeholder="e.g. Apex Coatings"
             disabled={isSubmitting}
             className={inputClass}
           />
@@ -135,7 +133,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-city"
             type="text"
             name="City & State"
-            placeholder={defaultCity ? `e.g. ${defaultCity}` : 'e.g. Dallas, TX'}
             required
             disabled={isSubmitting}
             className={inputClass}
@@ -151,7 +148,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-phone"
             type="tel"
             name="Phone Number"
-            placeholder="(214) 839-4912"
             required
             disabled={isSubmitting}
             className={inputClass}
@@ -167,7 +163,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-email"
             type="email"
             name="Email"
-            placeholder="john@apexepoxy.com"
             required
             disabled={isSubmitting}
             className={inputClass}
@@ -183,7 +178,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-website"
             type="text"
             name="Website or Google Business Profile"
-            placeholder="yoursite.com or Maps link"
             disabled={isSubmitting}
             className={inputClass}
           />
@@ -198,7 +192,6 @@ export default function CityAuditForm({ defaultCity = '' }: Props) {
             id="loc-challenge"
             type="text"
             name="Your Biggest Challenge"
-            placeholder="e.g. Need more 3-car garages, tired of shared Angi leads"
             disabled={isSubmitting}
             className={inputClass}
           />
