@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -51,20 +51,39 @@ export default function FAQ() {
     },
   ];
 
+  const guarantees = [
+    "100% exclusive calls & quotes — zero shared Angi leads",
+    "Strict 1-contractor territory lockout per metro area",
+    "Month-to-month partnership — you own 100% of your assets",
+  ];
+
   return (
-    <section id="faq" className="py-20 sm:py-28 bg-slate-900 relative overflow-hidden border-t border-white/5">
+    <section id="faq" className="py-20 sm:py-28 bg-slate-900 relative overflow-x-clip border-t border-white/5">
       {/* Background Ambience */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-lime/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
-          {/* Left Column Image */}
-          <div className="lg:w-1/2 w-full">
-            <div className="sticky top-24 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] relative aspect-[4/3] group border border-white/15">
-              <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-brand-lime/30 text-white font-bold text-xs flex items-center gap-2">
+          {/* Left Column: Header + Live Dashboard Preview + Risk-Reversal Action Card */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28 flex flex-col gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold text-xs tracking-widest uppercase mb-4">
+                Clear Answers
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-serif text-white font-black leading-[1.12] tracking-tight mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-blue-100/75 text-sm sm:text-base font-sans leading-relaxed">
+                Straight answers for epoxy &amp; polyaspartic shop owners tired of slow agencies, long-term lock-ins, and shared lead brokers.
+              </p>
+            </div>
+
+            {/* Live Dashboard Visual */}
+            <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.45)] relative aspect-[16/10] group border border-white/15 bg-slate-950">
+              <div className="absolute top-3.5 left-3.5 z-20 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-brand-lime/35 text-white font-bold text-[11px] flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
                 Live Contractor Lead &amp; Ranking Tracker
               </div>
@@ -72,48 +91,109 @@ export default function FAQ() {
                 src="/faq-results.webp" 
                 alt="iPad Pro dashboard mockup displaying Google Map Pack rankings and 3-car garage inbound estimate lead notifications for concrete coatings contractors" 
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/80 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Territory & Direct Audit Conversion Card (Eliminates Empty Left Void) */}
+            <div className="rounded-2xl bg-slate-950/85 border border-white/10 p-6 shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="w-9 h-9 rounded-xl bg-brand-lime/15 border border-brand-lime/30 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-brand-lime" />
+                </div>
+                <div>
+                  <h3 className="text-white font-serif font-bold text-base leading-snug">
+                    Still have a question about your city?
+                  </h3>
+                  <p className="text-slate-400 text-xs font-sans">
+                    Check territory availability before a competitor locks it.
+                  </p>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 my-5">
+                {guarantees.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-blue-100/85 font-sans leading-snug">
+                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/free-audit"
+                className="w-full py-3.5 px-5 rounded-xl bg-brand-lime hover:bg-white text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(154,251,22,0.25)] hover:shadow-[0_0_32px_rgba(154,251,22,0.45)]"
+              >
+                <span>Get Your Free 60s Video Audit</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 
-          {/* Right Column Accordion */}
-          <div className="lg:w-1/2 w-full">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold text-xs tracking-widest uppercase mb-4">
-              Clear Answers
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white font-black mb-8 sm:mb-10">
-              Frequently Asked Questions
-            </h2>
-            
-            <div className="space-y-3 sm:space-y-4">
-              {faqs.map((faq, index) => (
-                <div 
-                  key={index} 
-                  className={`border rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-slate-950/90 border-brand-lime/50 shadow-[0_10px_30px_rgba(154,251,22,0.1)]' : 'bg-slate-950/50 border-white/10 hover:border-white/20'}`}
-                >
-                  <button
-                    className="w-full px-5 sm:px-8 py-4 sm:py-6 text-left flex justify-between items-center focus:outline-none gap-3 group"
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  >
-                    <span className="text-base sm:text-lg font-bold font-serif text-white pr-2 group-hover:text-brand-lime transition-colors">
-                      {faq.question}
-                    </span>
-                    <ChevronDown 
-                      className={`w-5 h-5 sm:w-6 sm:h-6 text-brand-lime transition-transform duration-300 flex-shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  
+          {/* Right Column: Refined Numbered Accordion */}
+          <div className="lg:col-span-7 w-full">
+            <div className="space-y-3.5">
+              {faqs.map((faq, index) => {
+                const isOpen = openIndex === index;
+                const num = String(index + 1).padStart(2, '0');
+                return (
                   <div 
-                    className={`px-5 sm:px-8 transition-all duration-300 overflow-hidden ${openIndex === index ? 'pb-5 sm:pb-6 opacity-100 max-h-96' : 'max-h-0 opacity-0'}`}
+                    key={index} 
+                    className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? 'bg-slate-950/95 border-brand-lime/50 shadow-[0_12px_35px_rgba(154,251,22,0.1)]'
+                        : 'bg-slate-950/55 border-white/10 hover:border-white/25 hover:bg-slate-950/75'
+                    }`}
                   >
-                    <p className="text-sm sm:text-base text-blue-100/80 font-sans leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <button
+                      type="button"
+                      aria-expanded={isOpen}
+                      className="w-full px-5 sm:px-7 py-5 text-left flex items-start justify-between focus:outline-none gap-4 group"
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                    >
+                      <div className="flex items-start gap-3.5 sm:gap-4 pr-2">
+                        <span className={`font-mono text-xs font-black px-2 py-1 rounded-md mt-0.5 shrink-0 transition-colors ${
+                          isOpen
+                            ? 'bg-brand-lime text-slate-950'
+                            : 'bg-white/5 text-brand-lime/80 border border-white/10 group-hover:border-brand-lime/40'
+                        }`}>
+                          {num}
+                        </span>
+                        <span className={`text-base sm:text-lg font-bold font-serif leading-snug transition-colors ${
+                          isOpen ? 'text-white' : 'text-slate-100 group-hover:text-brand-lime'
+                        }`}>
+                          {faq.question}
+                        </span>
+                      </div>
+                      <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-all duration-300 border ${
+                        isOpen
+                          ? 'bg-brand-lime/15 border-brand-lime/40 text-brand-lime rotate-180'
+                          : 'bg-white/5 border-white/10 text-slate-400 group-hover:text-brand-lime group-hover:border-brand-lime/30'
+                      }`}>
+                        <ChevronDown className="w-4 h-4" />
+                      </span>
+                    </button>
+                    
+                    <div 
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 sm:px-7 pb-6 pl-[3.75rem] sm:pl-[4.75rem]">
+                          <div className="pt-3 border-t border-white/10">
+                            <p className="text-sm sm:text-[15px] text-blue-100/80 font-sans leading-relaxed">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
