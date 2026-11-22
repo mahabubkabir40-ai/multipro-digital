@@ -65,26 +65,26 @@ export default function FAQ() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-x-12 lg:gap-y-6 items-start">
           
-          {/* Left Column: Header + Live Dashboard Preview + Risk-Reversal Action Card */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 flex flex-col gap-6">
-            <div>
+          {/* Top-Left (Desktop) / First (Mobile): Header + Live Dashboard Preview */}
+          <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-6">
+            <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-lime/30 bg-brand-lime/10 text-brand-lime font-bold text-xs tracking-widest uppercase mb-4">
                 Clear Answers
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-serif text-white font-black leading-[1.12] tracking-tight mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] font-serif text-white font-black leading-[1.12] tracking-tight mb-3 sm:mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-blue-100/75 text-sm sm:text-base font-sans leading-relaxed">
+              <p className="text-blue-100/75 text-sm sm:text-base font-sans leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Straight answers for epoxy &amp; polyaspartic shop owners tired of slow agencies, long-term lock-ins, and shared lead brokers.
               </p>
             </div>
 
             {/* Live Dashboard Visual */}
             <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.45)] relative aspect-[16/10] group border border-white/15 bg-slate-950">
-              <div className="absolute top-3.5 left-3.5 z-20 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-brand-lime/35 text-white font-bold text-[11px] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse" />
+              <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 z-20 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-brand-lime/35 text-white font-bold text-[10px] sm:text-[11px] flex items-center gap-1.5 sm:gap-2">
+                <span className="w-2 h-2 rounded-full bg-brand-lime animate-pulse shrink-0" />
                 Live Contractor Lead &amp; Ranking Tracker
               </div>
               <Image 
@@ -96,45 +96,11 @@ export default function FAQ() {
               />
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/80 to-transparent pointer-events-none" />
             </div>
-
-            {/* Territory & Direct Audit Conversion Card (Eliminates Empty Left Void) */}
-            <div className="rounded-2xl bg-slate-950/85 border border-white/10 p-6 shadow-2xl backdrop-blur-xl">
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="w-9 h-9 rounded-xl bg-brand-lime/15 border border-brand-lime/30 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-brand-lime" />
-                </div>
-                <div>
-                  <h3 className="text-white font-serif font-bold text-base leading-snug">
-                    Still have a question about your city?
-                  </h3>
-                  <p className="text-slate-400 text-xs font-sans">
-                    Check territory availability before a competitor locks it.
-                  </p>
-                </div>
-              </div>
-
-              <ul className="space-y-2.5 my-5">
-                {guarantees.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-blue-100/85 font-sans leading-snug">
-                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="/free-audit"
-                className="w-full py-3.5 px-5 rounded-xl bg-brand-lime hover:bg-white text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(154,251,22,0.25)] hover:shadow-[0_0_32px_rgba(154,251,22,0.45)]"
-              >
-                <span>Get Your Free 60s Video Audit</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
           </div>
 
-          {/* Right Column: Refined Numbered Accordion */}
-          <div className="lg:col-span-7 w-full">
-            <div className="space-y-3.5">
+          {/* Right Column (Desktop, spans both left rows) / Middle (Mobile): Refined Numbered Accordion */}
+          <div className="lg:col-span-7 lg:row-span-2 w-full">
+            <div className="space-y-3 sm:space-y-3.5">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 const num = String(index + 1).padStart(2, '0');
@@ -150,24 +116,24 @@ export default function FAQ() {
                     <button
                       type="button"
                       aria-expanded={isOpen}
-                      className="w-full px-5 sm:px-7 py-5 text-left flex items-start justify-between focus:outline-none gap-4 group"
+                      className="w-full px-4 sm:px-7 py-4 sm:py-5 text-left flex items-start justify-between focus:outline-none gap-3 sm:gap-4 group touch-manipulation"
                       onClick={() => setOpenIndex(isOpen ? null : index)}
                     >
-                      <div className="flex items-start gap-3.5 sm:gap-4 pr-2">
-                        <span className={`font-mono text-xs font-black px-2 py-1 rounded-md mt-0.5 shrink-0 transition-colors ${
+                      <div className="flex items-start gap-3 sm:gap-4 pr-1">
+                        <span className={`font-mono text-[11px] sm:text-xs font-black px-2 py-1 rounded-md mt-0.5 shrink-0 transition-colors ${
                           isOpen
                             ? 'bg-brand-lime text-slate-950'
                             : 'bg-white/5 text-brand-lime/80 border border-white/10 group-hover:border-brand-lime/40'
                         }`}>
                           {num}
                         </span>
-                        <span className={`text-base sm:text-lg font-bold font-serif leading-snug transition-colors ${
+                        <span className={`text-[15px] sm:text-lg font-bold font-serif leading-snug transition-colors ${
                           isOpen ? 'text-white' : 'text-slate-100 group-hover:text-brand-lime'
                         }`}>
                           {faq.question}
                         </span>
                       </div>
-                      <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-all duration-300 border ${
+                      <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 transition-all duration-300 border ${
                         isOpen
                           ? 'bg-brand-lime/15 border-brand-lime/40 text-brand-lime rotate-180'
                           : 'bg-white/5 border-white/10 text-slate-400 group-hover:text-brand-lime group-hover:border-brand-lime/30'
@@ -182,7 +148,7 @@ export default function FAQ() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-5 sm:px-7 pb-6 pl-[3.75rem] sm:pl-[4.75rem]">
+                        <div className="px-4 sm:px-7 sm:pl-[4.75rem] pb-5 sm:pb-6">
                           <div className="pt-3 border-t border-white/10">
                             <p className="text-sm sm:text-[15px] text-blue-100/80 font-sans leading-relaxed">
                               {faq.answer}
@@ -194,6 +160,42 @@ export default function FAQ() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Bottom-Left (Desktop, fills gap under image) / Last (Mobile, right after reading FAQs): Conversion Card */}
+          <div className="lg:col-span-5">
+            <div className="rounded-2xl bg-slate-950/85 border border-white/10 p-5 sm:p-6 shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="w-9 h-9 rounded-xl bg-brand-lime/15 border border-brand-lime/30 flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-brand-lime" />
+                </div>
+                <div>
+                  <h3 className="text-white font-serif font-bold text-base leading-snug">
+                    Still have a question about your city?
+                  </h3>
+                  <p className="text-slate-400 text-xs font-sans">
+                    Check territory availability before a competitor locks it.
+                  </p>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5 my-4 sm:my-5">
+                {guarantees.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-blue-100/85 font-sans leading-snug">
+                    <CheckCircle2 className="w-4 h-4 text-brand-lime shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/free-audit"
+                className="w-full py-3.5 px-5 rounded-xl bg-brand-lime hover:bg-white text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_0_24px_rgba(154,251,22,0.25)] hover:shadow-[0_0_32px_rgba(154,251,22,0.45)] active:scale-[0.98] touch-manipulation"
+              >
+                <span>Get Your Free 60s Video Audit</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
             </div>
           </div>
 

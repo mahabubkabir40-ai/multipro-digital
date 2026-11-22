@@ -187,9 +187,9 @@ export default function HowItWorks() {
               </div>
 
               {/* Card Bottom Meta Strip */}
-              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-blue-200/60">
+              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between gap-2 text-xs font-semibold text-blue-200/60">
                 <span>MultiPro Inbound System</span>
-                <span className="text-brand-lime font-bold">{pillar.tag}</span>
+                <span className="text-brand-lime font-bold text-right">{pillar.tag}</span>
               </div>
             </div>
           ))}
