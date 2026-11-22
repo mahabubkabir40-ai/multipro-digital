@@ -89,7 +89,7 @@ const structuredSchema = {
       },
       "sameAs": [
         "https://www.instagram.com/multiprodigitalagency/",
-        "https://www.facebook.com/multiprodigitalagency"
+        "https://www.linkedin.com/in/mahabub-kabir/"
       ]
     }
   ]
