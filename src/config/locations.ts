@@ -2812,6 +2812,716 @@ export const LOCATIONS: Record<string, LocationData> = {
       },
     ],
   },
+  'los-angeles-epoxy-contractor-marketing': {
+    slug: 'los-angeles-epoxy-contractor-marketing',
+    city: 'Los Angeles',
+    state: 'CA',
+    stateFullName: 'California',
+    region: 'Greater Los Angeles & Basin',
+    metaTitle: 'Epoxy Contractor Marketing in Los Angeles, CA | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Los Angeles epoxy contractors. Own Google Maps in Pasadena & Calabasas, stop buying shared inquiries, and book luxury garage floors.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Los Angeles',
+    subheadline: 'Stop splitting $95 Angi inquiries with four other shops while your planetary grinder sits in the trailer. We help strictly one Los Angeles concrete coating contractor own the top 3 spots on Google Maps and book exclusive 3-car collector garage projects.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$6,200 – $9,800',
+    garageType: 'Collector 3-car garages, luxury metallic showrooms & hillside motorcourts',
+    sqftRate: '$6.50 – $9.50 / sq ft',
+    suburbs: ['Pasadena', 'Calabasas', 'Manhattan Beach', 'Beverly Hills', 'Encino', 'Sherman Oaks', 'Santa Monica', 'Glendale', 'La Cañada Flintridge', 'Palos Verdes Estates'],
+    nearbyMarkets: [
+      { name: 'San Diego, CA', slug: 'san-diego-epoxy-contractor-marketing' },
+      { name: 'San Jose, CA', slug: 'san-jose-epoxy-contractor-marketing' },
+      { name: 'Sacramento, CA', slug: 'sacramento-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Seismic micro-fracturing across SoCal fault zones, expansive adobe clay subgrades causing differential slab heave, and coastal marine-layer salt moisture vapor transmission near beach cities.',
+      prepRequirement: 'Planetary diamond grinding to ICRI CSP 2–3 profile with HEPA dust containment, polyurea crack mending across seismic hairlines, and mandatory ASTM F1869 calcium chloride testing before priming.',
+      coatingRecommendation: 'Zero-VOC compliant 100% solids epoxy moisture vapor barrier, full broadcast vinyl flake or designer metallic system, and UV-stable aliphatic polyaspartic topcoat engineered against hot-tire pickup.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Shared quote brokers reselling the same Pasadena and Calabasas homeowner phone numbers to five competing shops at once.',
+      'Burning two hours on the 405 or 101 freeway only to quote a homeowner who expected a $400 hardware-store paint kit.',
+      'Luxury collector-car owners in Beverly Hills and Manhattan Beach bouncing from slow, outdated contractor websites on mobile.',
+      'Unlicensed painters rolling thin big-box coatings over unground coastal slabs that delaminate within six months.',
+    ],
+    growthPillars: [
+      {
+        title: 'LA Basin & Valley Google 3-Pack Lockout',
+        description: 'Secures your coating shop in the top 3 spots on Google Maps across affluent pockets like Pasadena, Calabasas, and Manhattan Beach when homeowners search for garage floor epoxy.',
+      },
+      {
+        title: 'Instant Collector Garage Price Estimator',
+        description: 'Pre-qualifies serious Los Angeles homeowners with live square-foot pricing upfront ($6.50–$9.50/sq ft), filtering out low-budget callers before you sit in freeway traffic.',
+      },
+      {
+        title: 'Sub-1.5s Luxury Showroom Portfolio',
+        description: 'Loads crystal-clear full broadcast flake, stem walls, and metallic transformations instantaneously on iPhones with zero lag so high-net-worth buyers never bounce.',
+      },
+    ],
+    faqs: [
+      {
+        question: "I've been burned by marketing agencies that charged $2,000/month and delivered zero garage jobs. How is MultiPro different in Los Angeles?",
+        answer: "General agencies have never run a planetary grinder or dealt with California VOC compliance. They build slow WordPress sites and target vague terms that bring in low-budget paint shoppers. MultiPro works exclusively with concrete coating contractors. We build sub-1.5s mobile showrooms highlighting ICRI CSP 2–3 diamond grinding, ASTM F1869 moisture vapor barriers, and aliphatic polyaspartic topcoats, backed by a strict 1-contractor territory lockout.",
+      },
+      {
+        question: "Are Los Angeles phone calls and estimate requests 100% exclusive to my shop?",
+        answer: "Yes, 100% exclusive. Unlike Angi or Thumbtack that resell the same homeowner to four or five competing shops across LA County, every call and instant estimator submission rings directly and exclusively on your phone. We never work with another coating contractor in your locked territory.",
+      },
+      {
+        question: "How do you stop tire-kickers from making me drive across the 405 or 101 for a $400 quote?",
+        answer: "Our built-in instant garage floor pricing estimator displays realistic commercial square-foot ranges ($6.50–$9.50/sq ft) before a homeowner books an on-site moisture test. Low-ball shoppers drop out immediately, leaving only pre-qualified homeowners in Pasadena, Calabasas, and the Westside ready for real commercial preparation.",
+      },
+      {
+        question: "How long does it take to climb into the Google Maps 3-Pack in Los Angeles?",
+        answer: "Your custom sub-1.5s showroom website and instant pricing estimator go live within 7 days. Meaningful Google Maps 3-Pack movement across high-value LA suburbs typically builds within 45 to 90 days as geotagged slab-prep case studies, local citations, and review velocity compound.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and do I keep full ownership of my Google Business Profile?",
+        answer: "Zero long-term contracts—we work strictly month-to-month. You retain 100% ownership of your domain, Google Business Profile, and brand assets at every stage.",
+      },
+    ],
+  },
+  'baltimore-epoxy-contractor-marketing': {
+    slug: 'baltimore-epoxy-contractor-marketing',
+    city: 'Baltimore',
+    state: 'MD',
+    stateFullName: 'Maryland',
+    region: 'Central Maryland & Chesapeake Corridor',
+    metaTitle: 'Epoxy Contractor Marketing in Baltimore, MD | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Baltimore epoxy contractors. Own Google Maps in Towson & Ellicott City, stop buying shared inquiries, and book high-ticket garage floors.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in Baltimore',
+    subheadline: 'Stop fighting four other crews over recycled Angi phone numbers across Baltimore and Howard County. We partner with strictly one premier Maryland concrete coating contractor to dominate the Google 3-Pack and capture exclusive 3-car garage projects.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,400 – $8,100',
+    garageType: 'Suburban 2-car & 3-car garages, walkout basements & Chesapeake workshops',
+    sqftRate: '$5.50 – $7.75 / sq ft',
+    suburbs: ['Towson', 'Ellicott City', 'Columbia', 'Severna Park', 'Annapolis', 'Bel Air', 'Timonium', 'Hunt Valley', 'Owings Mills', 'Clarksville'],
+    nearbyMarkets: [
+      { name: 'Philadelphia, PA', slug: 'philadelphia-epoxy-contractor-marketing' },
+      { name: 'Richmond, VA', slug: 'richmond-epoxy-contractor-marketing' },
+      { name: 'Pittsburgh, PA', slug: 'pittsburgh-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Chesapeake Bay humidity combined with Mid-Atlantic freeze-thaw cycles and winter road de-icing salts causes severe concrete pitting, spalling along apron joints, and high hydrostatic vapor emissions.',
+      prepRequirement: 'Deep mechanical diamond grinding to ICRI CSP 2–3 to strip salt-contaminated laitance, rigid polyurea crack mending, and ASTM F2170 relative humidity testing.',
+      coatingRecommendation: 'High-build moisture vapor barrier 100% solids epoxy primer, full broadcast vinyl flake coverage including stem walls, and chemical-resistant aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ASTM F2170 Concrete Moisture Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling Towson and Ellicott City homeowners to five contractors, triggering immediate price undercutting.',
+      'Winter road salt tracked into garages causing cheap DIY roll-on paints to blister and peel along tire tracks.',
+      'Quality coating crews buried on page 2 of Google Maps while national franchises capture high-margin Howard County jobs.',
+      'Wasting hours driving along I-95 and I-695 to quote homeowners expecting a $350 weekend paint kit.',
+    ],
+    growthPillars: [
+      {
+        title: 'Greater Baltimore Google 3-Pack Lockout',
+        description: 'Positions your shop in the top 3 spots on Google Maps across affluent enclaves like Towson, Ellicott City, Severna Park, and Hunt Valley.',
+      },
+      {
+        title: 'Instant Garage & Basement Price Estimator',
+        description: 'Pre-qualifies Maryland homeowners with live square-foot pricing upfront ($5.50–$7.75/sq ft), filtering out tire-kickers before you schedule an on-site moisture test.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Showroom Portfolio',
+        description: 'Loads full broadcast flake, stem wall finishes, and basement coating projects instantaneously on mobile devices with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Baltimore coating shop stand out from cheap painters and franchises?",
+        answer: "Most agencies don't understand Maryland's freeze-thaw road-salt pitting or Chesapeake moisture vapor pressure. We build your digital authority around real trade standards—ICRI CSP 2–3 diamond grinding, ASTM F2170 moisture testing, polyurea crack mending, and salt-resistant aliphatic polyaspartic topcoats—so Ellicott City and Annapolis homeowners gladly pay $5,400–$8,100+ for permanent protection.",
+      },
+      {
+        question: "Are Baltimore phone calls and quote requests 100% exclusive to my crew?",
+        answer: "Yes, strictly 100% exclusive. We never sell shared inquiries like Angi or Thumbtack. Every phone call and instant estimator submission goes directly to your shop, and we lock out the entire Greater Baltimore territory for your business alone.",
+      },
+      {
+        question: "How do you stop cheap price shoppers from wasting my driving time on the Beltway?",
+        answer: "Our instant garage floor pricing estimator shows homeowners realistic commercial square-foot rates ($5.50–$7.75/sq ft) before they request an appointment. Homeowners looking for a $400 paint job self-select out before your truck ever leaves the shop.",
+      },
+      {
+        question: "How long before we see Google Maps 3-Pack movement across Baltimore and Anne Arundel counties?",
+        answer: "Your custom high-speed showroom website and pricing estimator go live in 7 days. Google Maps 3-Pack movement typically builds strongly within 45 to 90 days as localized citations, geotagged project uploads, and review signals compound.",
+      },
+      {
+        question: "Do I own my website and Google Business Profile, and are there long-term contracts?",
+        answer: "Zero contracts—we operate month-to-month. You maintain 100% ownership of your Google Business Profile, website domain, and brand assets at all times.",
+      },
+    ],
+  },
+  'richmond-epoxy-contractor-marketing': {
+    slug: 'richmond-epoxy-contractor-marketing',
+    city: 'Richmond',
+    state: 'VA',
+    stateFullName: 'Virginia',
+    region: 'Central Virginia & James River Valley',
+    metaTitle: 'Epoxy Contractor Marketing in Richmond, VA | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Richmond epoxy contractors. Dominate Google Maps in Short Pump & Midlothian, stop buying shared inquiries, and book 3-car garages.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Richmond',
+    subheadline: 'Stop splitting $95 shared inquiries with four other shops while your grinder sits in the trailer. We help strictly one Central Virginia coating contractor own the Google 3-Pack and capture exclusive 3-car garage jobs in Short Pump and Midlothian.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,200 – $7,600',
+    garageType: 'Suburban 2-car & 3-car garages, detached workshops & patio slabs',
+    sqftRate: '$5.50 – $7.50 / sq ft',
+    suburbs: ['Short Pump', 'Midlothian', 'Glen Allen', 'Moseley', 'Goochland', 'Mechanicsville', 'Chesterfield', 'Henrico', 'Bon Air', 'Powhatan'],
+    nearbyMarkets: [
+      { name: 'Raleigh–Durham, NC', slug: 'raleigh-epoxy-contractor-marketing' },
+      { name: 'Baltimore, MD', slug: 'baltimore-epoxy-contractor-marketing' },
+      { name: 'Charlotte, NC', slug: 'charlotte-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Central Virginia Triassic basin expansive clay undergoes extreme shrink-swell cycles, creating structural slab cracking alongside humid James River Valley summer moisture vapor pressure.',
+      prepRequirement: 'Heavy planetary diamond grinding to ICRI CSP 2–3 profile, structural polyurea crack stitching along control joints, and ASTM F1869 calcium chloride vapor testing.',
+      coatingRecommendation: 'Deep-penetrating 100% solids moisture vapor barrier epoxy basecoat, full broadcast vinyl flake, and UV-stable aliphatic polyaspartic topcoat resistant to hot-tire pickup.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Shared directory brokers selling the same Short Pump and Midlothian homeowner phone numbers to four competing crews.',
+      'Expansive clay slab settlement cracks ruining cheap single-coat coatings rolled by general handymen.',
+      'Driving 40 minutes across Henrico and Chesterfield counties to quote homeowners expecting a $300 paint kit.',
+      'Experienced concrete coating shops stuck below rank #5 on Google Maps while inferior competitors capture local calls.',
+    ],
+    growthPillars: [
+      {
+        title: 'West End & Southside Google 3-Pack Lockout',
+        description: 'Puts your shop into the top 3 spots on Google Maps across Short Pump, Glen Allen, Midlothian, and Moseley when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car Garage Price Estimator',
+        description: 'Pre-qualifies Central Virginia homeowners with live commercial square-foot pricing ($5.50–$7.50/sq ft) upfront before you book an on-site moisture test.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Showcases crisp full broadcast flake and clean stem wall transformations instantly on any iPhone without slow image lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does MultiPro outperform generic SEO agencies for a Richmond epoxy contractor?",
+        answer: "Generic agencies write filler content and ignore concrete physics. We highlight why Central Virginia's shrink-swell Triassic clay and river-valley humidity demand ICRI CSP 2–3 diamond grinding, polyurea crack mending, and ASTM F1869 moisture vapor barriers—positioning your shop for $5,200–$7,600+ installations under a strict 1-contractor territory lockout.",
+      },
+      {
+        question: "Are Richmond inquiries and phone calls 100% exclusive to my business?",
+        answer: "100% exclusive. We never operate a shared inquiry marketplace like Angi or Thumbtack. Every call and instant estimator submission goes directly to your phone, and we turn away every competing shop in Greater Richmond.",
+      },
+      {
+        question: "How do you prevent tire-kickers in Henrico or Chesterfield from wasting my estimating schedule?",
+        answer: "Our interactive garage floor estimator presents realistic $5.50–$7.50/sq ft pricing ranges upfront. Homeowners expecting a cheap $400 hardware-store coating disqualify themselves immediately before booking an on-site evaluation.",
+      },
+      {
+        question: "How long does it take to rank in the Richmond Google Maps 3-Pack?",
+        answer: "Your custom showroom site and instant pricing calculator launch within 7 days. Google Maps 3-Pack rankings across Short Pump, Midlothian, and Greater Richmond typically gain strong top-3 traction within 45 to 90 days.",
+      },
+      {
+        question: "Do you lock me into annual contracts or hold my Google Business Profile?",
+        answer: "Never. We operate strictly month-to-month, and you keep 100% ownership of your domain, Google Business Profile, and media assets.",
+      },
+    ],
+  },
+  'greenville-epoxy-contractor-marketing': {
+    slug: 'greenville-epoxy-contractor-marketing',
+    city: 'Greenville',
+    state: 'SC',
+    stateFullName: 'South Carolina',
+    region: 'Upstate South Carolina Corridor',
+    metaTitle: 'Epoxy Contractor Marketing in Greenville, SC | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Greenville epoxy contractors. Own Google Maps in Five Forks & Simpsonville, stop buying shared inquiries, and book 3-car garages.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in Greenville',
+    subheadline: 'Stop sharing $90 Angi inquiries with four other Upstate crews while your diamond grinder sits idle. We partner with strictly one Greenville coating contractor to own the top 3 Google Maps spots across Spartanburg and Greenville counties.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,100 – $7,500',
+    garageType: 'New-construction 3-car garages, screened porches & Upstate workshops',
+    sqftRate: '$5.50 – $7.50 / sq ft',
+    suburbs: ['Five Forks', 'Simpsonville', 'Greer', 'Mauldin', 'Travelers Rest', 'Easley', 'Fountain Inn', 'Taylors', 'Spartanburg', 'Clemson'],
+    nearbyMarkets: [
+      { name: 'Charlotte, NC', slug: 'charlotte-epoxy-contractor-marketing' },
+      { name: 'Atlanta, GA', slug: 'atlanta-epoxy-contractor-marketing' },
+      { name: 'Charleston, SC', slug: 'charleston-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Upstate red Piedmont clay soil shifting combined with heavy summer humidity and hot-tire thermal stress causes unprimed slabs to outgas, blister, and peel.',
+      prepRequirement: 'Mechanical diamond grinding to ICRI CSP 2–3 profile, structural polyurea crack mending, and calcium chloride testing per ASTM F1869 prior to primer application.',
+      coatingRecommendation: 'Moisture-blocking 100% solids epoxy vapor barrier basecoat, full broadcast vinyl flake across floors and stem walls, and UV-stable aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'AMPP Concrete Protection Standards',
+      externalAuthorityUrl: 'https://www.ampp.org',
+    },
+    marketPainPoints: [
+      'Angi and HomeAdvisor selling the exact same Five Forks and Simpsonville inquiry to five local competitors.',
+      'Builders leaving dense trowel-burnished new slabs that cause cheap roll-on paint kits to peel within months.',
+      'Spending hours driving I-85 and Woodruff Road to quote homeowners who only wanted a $350 DIY kit.',
+      'Top-craftsmanship shops buried below national franchises on Greenville Google Maps.',
+    ],
+    growthPillars: [
+      {
+        title: 'Upstate SC Google 3-Pack Lockout',
+        description: 'Secures your business in the top 3 Google Maps results across Five Forks, Simpsonville, Greer, and Travelers Rest when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant Upstate Garage Price Estimator',
+        description: 'Pre-qualifies Upstate homeowners with real square-foot pricing ($5.50–$7.50/sq ft) upfront, weeding out price-shoppers before you schedule moisture testing.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Showroom Portfolio',
+        description: 'Displays crisp full broadcast flake, stem walls, and porch coating transformations instantly on mobile phones with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Greenville contractor outrank franchises without buying shared inquiries?",
+        answer: "We build a hyper-local authority system tailored to Upstate concrete—highlighting ICRI CSP 2–3 mechanical diamond grinding of dense builder slabs, ASTM F1869 moisture vapor barriers, and aliphatic polyaspartic pot-life management. Paired with strict 1-shop territory lockout across Greenville and Spartanburg, every inbound call goes exclusively to you.",
+      },
+      {
+        question: "Will you partner with another epoxy shop in Simpsonville, Greer, or Spartanburg?",
+        answer: "Never. Our territory lockout guarantees we work with strictly one coating contractor for the entire Greenville–Upstate market.",
+      },
+      {
+        question: "How do you stop cheap callers from wasting my afternoons on Woodruff Road or I-85?",
+        answer: "Our instant online estimator gives homeowners realistic $5.50–$7.50/sq ft ranges for 2-car and 3-car garages before they submit their info. Anyone looking for a $400 paint job drops off automatically.",
+      },
+      {
+        question: "How long does it take to see Google Maps 3-Pack movement in Greenville?",
+        answer: "Your custom sub-1.5s showroom site and pricing calculator launch in 7 days. Google Maps 3-Pack authority across Five Forks, Greer, and Simpsonville typically compounds into top-3 visibility within 45 to 90 days.",
+      },
+      {
+        question: "Am I locked into a contract, and do I own my Google Business Profile?",
+        answer: "No long-term contracts—we work strictly month-to-month, and you retain 100% ownership of your Google Business Profile, domain, and brand assets.",
+      },
+    ],
+  },
+  'knoxville-epoxy-contractor-marketing': {
+    slug: 'knoxville-epoxy-contractor-marketing',
+    city: 'Knoxville',
+    state: 'TN',
+    stateFullName: 'Tennessee',
+    region: 'East Tennessee Valley',
+    metaTitle: 'Epoxy Contractor Marketing in Knoxville, TN | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Knoxville epoxy contractors. Own Google Maps in Farragut & Hardin Valley, stop buying shared inquiries, and book 3-car garages.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Knoxville',
+    subheadline: 'Stop fighting four other crews for the same recycled Angi inquiry across Knox and Blount counties. We partner with strictly one East Tennessee concrete coating shop to own the Google 3-Pack and book exclusive 3-car lake-country garages.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,200 – $7,900',
+    garageType: 'Lake-community 3-car & 4-car estate garages, boat bays & workshops',
+    sqftRate: '$5.50 – $7.75 / sq ft',
+    suburbs: ['Farragut', 'Hardin Valley', 'Maryville', 'Oak Ridge', 'Tellico Village', 'Lenoir City', 'Bearden', 'Powell', 'Karns', 'Alcoa'],
+    nearbyMarkets: [
+      { name: 'Nashville, TN', slug: 'nashville-epoxy-contractor-marketing' },
+      { name: 'Louisville, KY', slug: 'louisville-epoxy-contractor-marketing' },
+      { name: 'Charlotte, NC', slug: 'charlotte-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'East Tennessee karst limestone topography and red clay soils cause settling fractures, while Tennessee River and lakefront humidity drives heavy hydrostatic moisture vapor transmission through garage slabs.',
+      prepRequirement: 'Aggressive planetary diamond grinding to ICRI CSP 2–3 profile, structural polyurea crack stitching, and ASTM F2170 relative humidity or calcium chloride testing.',
+      coatingRecommendation: 'Deep-penetrating 100% solids moisture vapor barrier epoxy primer, full broadcast vinyl flake across bays and stem walls, and UV-stable aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry platforms reselling Farragut and Tellico Village homeowners to multiple contractors at once.',
+      'River-valley humidity and sweating slab syndrome ruining unprimed paint jobs installed by weekend handymen.',
+      'Burning diesel driving out to Lenoir City or Maryville only to quote someone expecting a $300 big-box paint kit.',
+      'Experienced East Tennessee coating crews buried on page 2 of Google Maps behind franchise ads.',
+    ],
+    growthPillars: [
+      {
+        title: 'East Tennessee Google 3-Pack Lockout',
+        description: 'Puts your shop directly into the top 3 spots on Google Maps across Farragut, Hardin Valley, Maryville, and Tellico Village when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car & Boat Bay Price Estimator',
+        description: 'Pre-qualifies East Tennessee homeowners with live commercial pricing ($5.50–$7.75/sq ft) upfront before you drive out for moisture testing.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Showroom Portfolio',
+        description: 'Loads crystal-clear full broadcast flake and metallic garage transformations instantly on iPhones with zero mobile lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Knoxville coating contractor capture affluent Farragut and Tellico Village garages?",
+        answer: "Out-of-state relocators building custom 3-car and boat-bay garages in Farragut and Tellico Village expect commercial craftsmanship and instant digital responsiveness. Our sub-1.5s mobile showroom highlights ICRI CSP 2–3 diamond grinding, polyurea crack mending, and ASTM F2170 moisture vapor barriers, anchoring premium $5,200–$7,900+ pricing.",
+      },
+      {
+        question: "Are phone calls and estimate requests 100% exclusive across Greater Knoxville?",
+        answer: "Yes, strictly 100% exclusive. We never resell homeowner inquiries like Angi or HomeAdvisor. Every call rings exclusively on your phone, and we lock out all competing coating shops in East Tennessee.",
+      },
+      {
+        question: "How do you stop cheap tire-kickers from wasting my time driving to Maryville or Oak Ridge?",
+        answer: "Our built-in instant estimator displays realistic $5.50–$7.75/sq ft pricing before homeowners submit their contact details, filtering out $400 paint shoppers automatically.",
+      },
+      {
+        question: "How long before we see Google Maps 3-Pack movement in Knoxville?",
+        answer: "Your custom website and instant estimator go live within 7 days. Strong Google Maps 3-Pack rankings across Knox, Loudon, and Blount counties typically build within 45 to 90 days.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and do I own my digital assets?",
+        answer: "Never. We operate strictly month-to-month, and you retain 100% ownership of your Google Business Profile, domain, and project media.",
+      },
+    ],
+  },
+  'omaha-epoxy-contractor-marketing': {
+    slug: 'omaha-epoxy-contractor-marketing',
+    city: 'Omaha',
+    state: 'NE',
+    stateFullName: 'Nebraska',
+    region: 'Greater Omaha & Elkhorn Valley',
+    metaTitle: 'Epoxy Contractor Marketing in Omaha, NE | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Omaha epoxy contractors. Own Google Maps in Elkhorn & West Omaha, stop buying shared inquiries, and book 3-car garages.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in Omaha',
+    subheadline: 'Stop splitting $90 shared inquiries with four other crews while your grinder sits in the trailer. We help strictly one Omaha concrete coating contractor own the Google 3-Pack and capture exclusive 3-car garage inquiries across Douglas and Sarpy counties.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,100 – $7,600',
+    garageType: 'Oversized Midwest 3-car & 4-car suburban garages & heated workshops',
+    sqftRate: '$5.50 – $7.50 / sq ft',
+    suburbs: ['Elkhorn', 'West Omaha', 'Papillion', 'Gretna', 'La Vista', 'Bennington', 'Bellevue', 'Millard', 'Chalco', 'Ralston'],
+    nearbyMarkets: [
+      { name: 'Kansas City, MO/KS', slug: 'kansas-city-epoxy-contractor-marketing' },
+      { name: 'Minneapolis–St. Paul, MN', slug: 'minneapolis-epoxy-contractor-marketing' },
+      { name: 'Denver, CO', slug: 'denver-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Severe Nebraska freeze-thaw cycles, heavy winter magnesium and calcium chloride de-icing salts tracked off I-80, and expansive glacial clay subgrades cause aggressive surface spalling and pitting.',
+      prepRequirement: 'Deep mechanical diamond grinding to ICRI CSP 2–3 profile to remove salt-compromised paste, rigid polyurea crack mending, and ASTM F1869 moisture vapor testing.',
+      coatingRecommendation: 'Deep-penetrating 100% solids epoxy vapor barrier basecoat, 100% full broadcast vinyl flake across floors and stem walls, and salt-proof aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ASTM F1869 Moisture Test Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling Elkhorn and Gretna homeowners to four shops, starting an immediate price war.',
+      'Road de-icing salt pitting and freeze-thaw spalling destroying cheap big-box coatings after a single Nebraska winter.',
+      'Burning time driving across West Omaha and Sarpy County to quote prospects expecting a $350 DIY kit.',
+      'Top-tier owner-operators buried on page 2 of Google Maps behind national franchise chains.',
+    ],
+    growthPillars: [
+      {
+        title: 'West Omaha & Sarpy Google 3-Pack Lockout',
+        description: 'Secures your shop in the top 3 spots on Google Maps across Elkhorn, Papillion, Gretna, and West Omaha when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car & 4-Car Garage Estimator',
+        description: 'Pre-qualifies serious Nebraska homeowners with live commercial square-foot pricing ($5.50–$7.50/sq ft) upfront before you book an on-site slab inspection.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Displays salt-resistant full broadcast flake floors and clean stem walls instantaneously on any smartphone with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help an Omaha contractor educate homeowners on winter road-salt damage?",
+        answer: "Nebraska road brine and sub-zero freeze-thaw cycles eat unprotected concrete fast. Our showrooms highlight why ICRI CSP 2–3 diamond grinding, polyurea crack mending, and chemical-resistant aliphatic polyaspartic topcoats stop salt pitting and hot-tire pickup—commanding $5,100–$7,600+ tickets over cheap paint kits.",
+      },
+      {
+        question: "Are Omaha phone calls and quote requests 100% exclusive to my shop?",
+        answer: "Yes, 100% exclusive. Unlike Angi or HomeAdvisor, we never sell shared inquiries to competing crews. We lock out the entire Greater Omaha territory strictly for one partner.",
+      },
+      {
+        question: "How do you filter out $400 tire-kickers in Elkhorn, Gretna, and Papillion?",
+        answer: "Homeowners use our instant pricing estimator to see realistic $5.50–$7.50/sq ft commercial pricing before requesting an on-site moisture test, eliminating low-budget price shoppers upfront.",
+      },
+      {
+        question: "How long does it take to rank in the Omaha Google Maps 3-Pack?",
+        answer: "Your custom showroom website and pricing calculator go live in 7 days. Strong Google Maps 3-Pack visibility across Douglas and Sarpy counties typically develops within 45 to 90 days.",
+      },
+      {
+        question: "Do you require annual contracts, or do I keep ownership of my assets?",
+        answer: "Zero annual contracts—strictly month-to-month. You retain 100% ownership of your Google Business Profile, domain, and brand assets.",
+      },
+    ],
+  },
+  'des-moines-epoxy-contractor-marketing': {
+    slug: 'des-moines-epoxy-contractor-marketing',
+    city: 'Des Moines',
+    state: 'IA',
+    stateFullName: 'Iowa',
+    region: 'Central Iowa Metro',
+    metaTitle: 'Epoxy Contractor Marketing in Des Moines, IA | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Des Moines epoxy contractors. Own Google Maps in West Des Moines & Waukee, stop shared inquiries, and book 3-car garages.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Des Moines',
+    subheadline: 'Stop fighting four other crews over the same recycled Angi inquiry in Polk and Dallas counties. We partner with strictly one Des Moines concrete coating contractor to lock out the local market and capture exclusive 3-car and 4-car garage projects.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,000 – $7,500',
+    garageType: 'Suburban 3-car & 4-car garages, acreages & heated shop buildings',
+    sqftRate: '$5.25 – $7.50 / sq ft',
+    suburbs: ['West Des Moines', 'Waukee', 'Ankeny', 'Urbandale', 'Johnston', 'Grimes', 'Clive', 'Altoona', 'Norwalk', 'Polk City'],
+    nearbyMarkets: [
+      { name: 'Omaha, NE', slug: 'omaha-epoxy-contractor-marketing' },
+      { name: 'Minneapolis–St. Paul, MN', slug: 'minneapolis-epoxy-contractor-marketing' },
+      { name: 'Kansas City, MO/KS', slug: 'kansas-city-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Extreme -20°F Iowa winter freeze-thaw cycles, heavy liquid calcium chloride road brine pitting garage aprons, and expansive glacial till soils creating control-joint spalling.',
+      prepRequirement: 'Heavy planetary diamond grinding to ICRI CSP 2–3 profile, full polyurea crack mending along expansion joints, and ASTM F1869 moisture vapor emission testing.',
+      coatingRecommendation: 'Moisture-mitigating 100% solids epoxy basecoat, full broadcast vinyl flake across floors and stem walls, and brine-proof aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling West Des Moines and Ankeny homeowners to four competing coating crews.',
+      'Liquid road brine and sub-zero freeze-thaw popping cheap paint kits right off garage slabs every spring.',
+      'Driving 40 minutes across Polk and Dallas counties to quote homeowners expecting a $300 big-box roll-on kit.',
+      'Skilled local contractors stuck on page 2 of Google Maps while franchise operators take the high-ticket Waukee garages.',
+    ],
+    growthPillars: [
+      {
+        title: 'Western Suburbs & Ankeny 3-Pack Lockout',
+        description: 'Puts your business in the top 3 spots on Google Maps across West Des Moines, Waukee, Ankeny, and Johnston when homeowners search for garage floor epoxy.',
+      },
+      {
+        title: 'Instant 3-Car & Acreage Shop Estimator',
+        description: 'Pre-qualifies Central Iowa homeowners with real square-foot ballpark pricing ($5.25–$7.50/sq ft) upfront before you schedule an on-site moisture test.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Loads crisp full broadcast flake, stem wall, and outbuilding floor transformations instantly on mobile phones with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Des Moines epoxy shop beat cheap handymen and big-box kits?",
+        answer: "Iowa winters destroy un-prepped slabs. We build your digital authority around commercial ICRI CSP 2–3 diamond grinding, polyurea crack mending, ASTM F1869 moisture vapor barriers, and salt-proof aliphatic polyaspartic topcoats—helping West Des Moines and Waukee homeowners see why a permanent floor costs $5,000–$7,500+.",
+      },
+      {
+        question: "Are Des Moines phone calls and estimate submissions 100% exclusive to my shop?",
+        answer: "Yes, strictly 100% exclusive. We never resell homeowner inquiries like Angi or HomeAdvisor, and we enforce a strict 1-contractor territory lockout across Greater Des Moines.",
+      },
+      {
+        question: "How do you stop tire-kickers in Waukee or Ankeny from wasting my estimating hours?",
+        answer: "Our instant online estimator shows realistic $5.25–$7.50/sq ft pricing upfront based on garage size before a prospect books an inspection, filtering out $400 paint shoppers automatically.",
+      },
+      {
+        question: "How long before we see Google Maps 3-Pack movement in Central Iowa?",
+        answer: "Your custom high-speed showroom website and estimator launch in 7 days. Strong Google Maps 3-Pack movement across Polk and Dallas counties typically builds within 45 to 90 days.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and do I own my website and profile?",
+        answer: "No contracts ever—strictly month-to-month. You own 100% of your Google Business Profile, domain, and brand assets.",
+      },
+    ],
+  },
+  'madison-epoxy-contractor-marketing': {
+    slug: 'madison-epoxy-contractor-marketing',
+    city: 'Madison',
+    state: 'WI',
+    stateFullName: 'Wisconsin',
+    region: 'South Central Wisconsin & Dane County',
+    metaTitle: 'Epoxy Contractor Marketing in Madison, WI | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Madison epoxy contractors. Own Google Maps in Middleton & Waunakee, stop buying shared inquiries, and book 3-car garages.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in Madison',
+    subheadline: 'Stop splitting $95 Angi inquiries with four other crews while your grinder sits in the trailer. We help strictly one Dane County concrete coating contractor own the Google 3-Pack and capture exclusive 3-car garage projects across Middleton, Waunakee, and Verona.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,400 – $8,100',
+    garageType: 'Affluent Dane County 3-car & 4-car garages, lake-house bays & basements',
+    sqftRate: '$5.50 – $7.75 / sq ft',
+    suburbs: ['Middleton', 'Waunakee', 'Verona', 'Sun Prairie', 'Fitchburg', 'Oregon', 'Monona', 'Cross Plains', 'DeForest', 'Stoughton'],
+    nearbyMarkets: [
+      { name: 'Milwaukee, WI', slug: 'milwaukee-epoxy-contractor-marketing' },
+      { name: 'Minneapolis–St. Paul, MN', slug: 'minneapolis-epoxy-contractor-marketing' },
+      { name: 'Chicago, IL', slug: 'chicago-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Sub-zero Wisconsin freeze-thaw cycling, heavy chloride de-icing brine pitting, glacial till heaving, and high isthmus/lake-basin water tables driving severe hydrostatic slab moisture.',
+      prepRequirement: 'Aggressive planetary diamond grinding to ICRI CSP 2–3 profile, structural polyurea crack mending, and mandatory ASTM F2170 relative humidity testing prior to coating.',
+      coatingRecommendation: 'High-build moisture vapor barrier 100% solids epoxy primer, full broadcast vinyl flake across floors and stem walls, and cold-weather cured aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'ASTM F2170 Concrete Moisture Standards',
+      externalAuthorityUrl: 'https://www.astm.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling Middleton and Waunakee homeowners to five contractors, triggering aggressive price wars.',
+      'Extreme winter road salt pitting concrete aprons and peeling unprimed coatings rolled by inexperienced painters.',
+      'Affluent Dane County tech and medical professionals bouncing off slow, outdated contractor websites on mobile.',
+      'Driving across Dane County to quote prospects expecting a $350 hardware-store DIY floor kit.',
+    ],
+    growthPillars: [
+      {
+        title: 'Dane County Google 3-Pack Lockout',
+        description: 'Secures your shop in the top 3 spots on Google Maps across Middleton, Waunakee, Verona, and Sun Prairie when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car Garage Price Estimator',
+        description: 'Pre-qualifies Dane County homeowners with realistic square-foot pricing ($5.50–$7.75/sq ft) upfront before you drive out for moisture testing.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Loads crisp full broadcast flake and stem wall transformations instantaneously on mobile devices with zero lag so discerning buyers never bounce.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro position a Madison coating contractor against cheap paint crews and franchises?",
+        answer: "Dane County homeowners in Middleton, Waunakee, and Verona want technical proof. We showcase your ICRI CSP 2–3 diamond grinding, ASTM F2170 moisture vapor barriers, polyurea crack mending, and salt-proof aliphatic polyaspartic topcoats on a sub-1.5s mobile showroom backed by a strict 1-shop lockout.",
+      },
+      {
+        question: "Are Madison phone calls and quote requests 100% exclusive to my business?",
+        answer: "100% exclusive. We never operate a shared inquiry pool like Angi or Thumbtack, and we partner with strictly one concrete coating contractor in Greater Madison.",
+      },
+      {
+        question: "How do you stop $400 tire-kickers from wasting my time across Dane County?",
+        answer: "Our instant garage estimator displays realistic $5.50–$7.75/sq ft pricing upfront before a homeowner requests an on-site moisture test, filtering out low-budget shoppers immediately.",
+      },
+      {
+        question: "How long does it take to rank in the Madison Google Maps 3-Pack?",
+        answer: "Your custom showroom website and pricing estimator go live in 7 days. Strong Google Maps 3-Pack rankings across Madison, Middleton, and Waunakee typically develop within 45 to 90 days.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and do I retain ownership of my Google Business Profile?",
+        answer: "Zero contracts—we work strictly month-to-month, and you keep 100% ownership of your Google Business Profile, domain, and media assets.",
+      },
+    ],
+  },
+  'grand-rapids-epoxy-contractor-marketing': {
+    slug: 'grand-rapids-epoxy-contractor-marketing',
+    city: 'Grand Rapids',
+    state: 'MI',
+    stateFullName: 'Michigan',
+    region: 'West Michigan & Lakeshore Corridor',
+    metaTitle: 'Epoxy Contractor Marketing in Grand Rapids, MI | MultiPro Digital',
+    metaDescription: 'Exclusive 1-shop lockout for Grand Rapids epoxy contractors. Own Google Maps in Ada & East Grand Rapids, stop shared inquiries, and book 3-car garages.',
+    headline: 'Dominate Google Maps & Lock Out Competing Epoxy Shops in Grand Rapids',
+    subheadline: 'Stop fighting four other crews over recycled Angi inquiries across Kent and Ottawa counties. We partner with strictly one West Michigan concrete coating contractor to own the Google 3-Pack and capture exclusive 3-car garages in Ada, East Grand Rapids, and Rockford.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,200 – $7,800',
+    garageType: 'Suburban 3-car garages, lakeshore toy barns & heated workshops',
+    sqftRate: '$5.50 – $7.60 / sq ft',
+    suburbs: ['Ada', 'East Grand Rapids', 'Forest Hills', 'Rockford', 'Byron Center', 'Caledonia', 'Hudsonville', 'Zeeland', 'Jenison', 'Grandville'],
+    nearbyMarkets: [
+      { name: 'Detroit, MI', slug: 'detroit-epoxy-contractor-marketing' },
+      { name: 'Milwaukee, WI', slug: 'milwaukee-epoxy-contractor-marketing' },
+      { name: 'Chicago, IL', slug: 'chicago-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Heavy Lake Michigan lake-effect snowmelt carrying corrosive road salts, severe freeze-thaw spalling, and high Grand River basin water tables creating persistent slab moisture vapor pressure.',
+      prepRequirement: 'Heavy planetary diamond grinding to ICRI CSP 2–3 to remove salt-damaged laitance, structural polyurea crack mending, and ASTM F1869 calcium chloride vapor testing.',
+      coatingRecommendation: 'Deep-penetrating 100% solids epoxy moisture vapor barrier, full broadcast vinyl flake across slabs and stem walls, and road-salt proof aliphatic polyaspartic topcoat.',
+      externalAuthorityName: 'AMPP Concrete Protection Standards',
+      externalAuthorityUrl: 'https://www.ampp.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling Ada and Forest Hills homeowners to multiple crews, crushing profit margins.',
+      'Lake-effect snowmelt and road salt chewing up bare concrete and cheap DIY paint kits every Michigan winter.',
+      'Driving out to Rockford, Zeeland, or Byron Center to quote homeowners expecting a $350 hardware-store kit.',
+      'Top coating shops buried below franchise chains on West Michigan Google Maps.',
+    ],
+    growthPillars: [
+      {
+        title: 'Kent & Ottawa County 3-Pack Lockout',
+        description: 'Puts your shop in the top 3 spots on Google Maps across Ada, East Grand Rapids, Forest Hills, and Rockford when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car & Pole Barn Estimator',
+        description: 'Pre-qualifies West Michigan homeowners with live square-foot pricing ($5.50–$7.60/sq ft) upfront before you drive out for on-site moisture testing.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Showcases full broadcast flake garages, stem walls, and heated workshops instantaneously on any iPhone with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Grand Rapids shop win against cheap painters and national franchises?",
+        answer: "West Michigan concrete takes a beating from lake-effect snowmelt, de-icing brine, and high water tables. We highlight ICRI CSP 2–3 diamond grinding, polyurea crack mending, ASTM F1869 moisture vapor barriers, and aliphatic polyaspartic chemistry—commanding $5,200–$7,800+ projects in Ada, Forest Hills, and East Grand Rapids.",
+      },
+      {
+        question: "Are Grand Rapids phone calls and estimates 100% exclusive to my business?",
+        answer: "Yes, 100% exclusive. We never sell shared inquiries like Angi or Thumbtack, and we strictly lock out the entire Greater Grand Rapids market for one coating contractor.",
+      },
+      {
+        question: "How do you keep $400 price-shoppers from wasting my driving time across Kent and Ottawa counties?",
+        answer: "Our instant garage floor pricing estimator displays realistic commercial rates ($5.50–$7.60/sq ft) upfront before homeowners request a visit, filtering out tire-kickers automatically.",
+      },
+      {
+        question: "How long before we see Google Maps 3-Pack movement in Ada and Rockford?",
+        answer: "Your custom sub-1.5s showroom site and pricing calculator launch in 7 days. Strong Google Maps 3-Pack rankings across Kent and Ottawa counties typically build within 45 to 90 days.",
+      },
+      {
+        question: "Do you require long-term contracts, and do I own my website and Google Business Profile?",
+        answer: "Never. We operate strictly month-to-month, and you retain 100% ownership of your Google Business Profile, domain, and brand assets.",
+      },
+    ],
+  },
+  'colorado-springs-epoxy-contractor-marketing': {
+    slug: 'colorado-springs-epoxy-contractor-marketing',
+    city: 'Colorado Springs',
+    state: 'CO',
+    stateFullName: 'Colorado',
+    region: 'Pikes Peak & Front Range',
+    metaTitle: 'Epoxy Contractor Marketing in Colorado Springs | MultiPro',
+    metaDescription: 'Exclusive 1-shop lockout for Colorado Springs epoxy contractors. Own Google Maps in Monument & Flying Horse, stop shared inquiries, and book 3-car & RV garages.',
+    headline: 'Lock Out Competing Epoxy Shops & Own Google Maps in Colorado Springs',
+    subheadline: 'Stop splitting $95 shared inquiries with four other crews while your grinder sits in the trailer. We help strictly one Pikes Peak concrete coating contractor own the Google 3-Pack and capture exclusive 3-car and RV-bay garages across Monument, Flying Horse, and Briargate.',
+    territoryStatus: 'OPEN',
+    activePartner: null,
+    avgTicket: '$5,600 – $8,600',
+    garageType: 'High-bay 3-car & 4-car garages, RV bays & mountain-view workshops',
+    sqftRate: '$5.75 – $8.25 / sq ft',
+    suburbs: ['Monument', 'Flying Horse', 'Briargate', 'Broadmoor', 'Black Forest', 'Falcon', 'Peyton', 'Manitou Springs', 'Fountain', 'Woodland Park'],
+    nearbyMarkets: [
+      { name: 'Denver, CO', slug: 'denver-epoxy-contractor-marketing' },
+      { name: 'Salt Lake City, UT', slug: 'salt-lake-city-epoxy-contractor-marketing' },
+      { name: 'Phoenix, AZ', slug: 'phoenix-epoxy-contractor-marketing' },
+    ],
+    climateAndSlabProfile: {
+      slabChallenge: 'Notorious Front Range expansive bentonite clay and Pierre Shale soils drive aggressive slab heaving, while 6,000+ ft high-altitude UV radiation yellows inferior epoxies and rapid freeze-thaw magnesium chloride de-icer pits concrete aprons.',
+      prepRequirement: 'Heavy planetary diamond grinding to ICRI CSP 2–3 profile, flexible polyurea crack mending across expansive clay fractures, and strict pot-life management under arid low-humidity conditions.',
+      coatingRecommendation: 'Deep-penetrating 100% solids epoxy moisture barrier basecoat, 100% full broadcast vinyl flake including stem walls, and UV-stable aliphatic polyaspartic topcoat engineered against yellowing and hot-tire pickup.',
+      externalAuthorityName: 'ICRI Concrete Surface Profile Guidelines',
+      externalAuthorityUrl: 'https://www.icri.org',
+    },
+    marketPainPoints: [
+      'Shared inquiry brokers reselling Monument and Flying Horse homeowners to five shops, starting an immediate price race.',
+      '6,000+ ft UV exposure turning cheap contractor epoxies amber-yellow along sunlit garage thresholds within months.',
+      'Expansive bentonite clay slab cracks and magnesium chloride road brine pitting un-prepped garage floors.',
+      'Driving up I-25 to Monument or out to Black Forest only to quote prospects expecting a $350 DIY kit.',
+    ],
+    growthPillars: [
+      {
+        title: 'North Gate & Pikes Peak 3-Pack Lockout',
+        description: 'Secures your shop in the top 3 spots on Google Maps across Monument, Flying Horse, Briargate, and Broadmoor when homeowners search for garage floor coatings.',
+      },
+      {
+        title: 'Instant 3-Car & RV Garage Estimator',
+        description: 'Pre-qualifies El Paso County homeowners with live square-foot pricing ($5.75–$8.25/sq ft) upfront before you drive out for moisture testing.',
+      },
+      {
+        title: 'Sub-1.5s High-Speed Mobile Showroom',
+        description: 'Displays UV-stable full broadcast flake, stem wall finishes, and RV-bay transformations instantaneously on any smartphone with zero lag.',
+      },
+    ],
+    faqs: [
+      {
+        question: "How does MultiPro help a Colorado Springs contractor handle Front Range bentonite clay and high-altitude UV?",
+        answer: "Front Range slabs sit on shifting bentonite clay at 6,000+ feet where intense UV yellows standard epoxies fast. We educate Monument, Flying Horse, and Broadmoor homeowners on ICRI CSP 2–3 diamond grinding, polyurea crack mending, pot-life management, and UV-stable aliphatic polyaspartic topcoats—justifying $5,600–$8,600+ installations.",
+      },
+      {
+        question: "Are Colorado Springs phone calls and quote requests 100% exclusive to my crew?",
+        answer: "Yes, strictly 100% exclusive. We never operate a shared inquiry pool like Angi or Thumbtack, and we lock out the entire Colorado Springs and El Paso County territory for one shop.",
+      },
+      {
+        question: "How do you stop $400 price-shoppers from wasting my fuel driving to Monument or Black Forest?",
+        answer: "Our built-in instant estimator displays realistic commercial pricing ($5.75–$8.25/sq ft) upfront before homeowners submit their info, ensuring you only inspect pre-qualified 3-car and RV-bay garages.",
+      },
+      {
+        question: "How long does it take to climb into the Google Maps 3-Pack in Colorado Springs?",
+        answer: "Your custom sub-1.5s showroom site and pricing estimator launch in 7 days. Strong Google Maps 3-Pack rankings across Briargate, Monument, and Broadmoor typically build within 45 to 90 days.",
+      },
+      {
+        question: "Do I have to sign a long-term contract, and do I keep ownership of my Google Business Profile?",
+        answer: "Never. We work strictly month-to-month, and you retain 100% ownership of your Google Business Profile, domain, and brand assets at all times.",
+      },
+    ],
+  },
 };
 
 export const ALL_LOCATION_SLUGS = Object.keys(LOCATIONS);
